@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A21086202A7FAC3B00EB7A89 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210861F2A7FAC3B00EB7A89 /* Quests.swift */; };
+		A21086222A8026F900EB7A89 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
+		A211B1752A7B6F7C004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
+		A211B17C2A7B7397004680E8 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
+		A211B1802A7D012D004680E8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A211B17F2A7D012D004680E8 /* Realm */; };
+		A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A211B1812A7D012D004680E8 /* RealmSwift */; };
+		A211B1842A7D16B4004680E8 /* CharactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1832A7D16B4004680E8 /* CharactDataManager.swift */; };
+		A211B1872A7D356D004680E8 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
+		A211B1882A7D3570004680E8 /* CharactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1832A7D16B4004680E8 /* CharactDataManager.swift */; };
+		A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
+		A211B18B2A7D359D004680E8 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
+		A211B18C2A7D379E004680E8 /* CharactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1832A7D16B4004680E8 /* CharactDataManager.swift */; };
+		A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E652A58A90C00315995 /* ReLifeApp.swift */; };
+		A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* ContentView.swift */; };
+		A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E692A58A90D00315995 /* Assets.xcassets */; };
+		A2DD8E6E2A58A90D00315995 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E6D2A58A90D00315995 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A211B1692A7B6F10004680E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2DD8E5A2A58A90C00315995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2DD8E612A58A90C00315995;
+			remoteInfo = ReLife;
+		};
+		A211B1762A7B6F7C004680E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2DD8E5A2A58A90C00315995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2DD8E612A58A90C00315995;
+			remoteInfo = ReLife;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A210861F2A7FAC3B00EB7A89 /* Quests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
+		A21086212A8026F900EB7A89 /* RealmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
+		A211B1652A7B6F0F004680E8 /* ReLifeCharacteristics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReLifeCharacteristics.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A211B1722A7B6F7C004680E8 /* ReLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeTests.swift; sourceTree = "<group>"; };
+		A211B17B2A7B7397004680E8 /* Characteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristics.swift; sourceTree = "<group>"; };
+		A211B1832A7D16B4004680E8 /* CharactDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactDataManager.swift; sourceTree = "<group>"; };
+		A2DD8E622A58A90C00315995 /* ReLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2DD8E652A58A90C00315995 /* ReLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeApp.swift; sourceTree = "<group>"; };
+		A2DD8E672A58A90C00315995 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2DD8E692A58A90D00315995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2DD8E6B2A58A90D00315995 /* ReLife.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReLife.entitlements; sourceTree = "<group>"; };
+		A2DD8E6D2A58A90D00315995 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A211B1622A7B6F0F004680E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A211B16F2A7B6F7C004680E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DD8E5F2A58A90C00315995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
+				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A211B1602A7A8075004680E8 /* Back */ = {
+			isa = PBXGroup;
+			children = (
+				A211B17B2A7B7397004680E8 /* Characteristics.swift */,
+				A211B1832A7D16B4004680E8 /* CharactDataManager.swift */,
+				A210861F2A7FAC3B00EB7A89 /* Quests.swift */,
+			);
+			path = Back;
+			sourceTree = "<group>";
+		};
+		A211B1732A7B6F7C004680E8 /* ReLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */,
+			);
+			path = ReLifeTests;
+			sourceTree = "<group>";
+		};
+		A2DD8E592A58A90C00315995 = {
+			isa = PBXGroup;
+			children = (
+				A2DD8E642A58A90C00315995 /* ReLife */,
+				A211B1732A7B6F7C004680E8 /* ReLifeTests */,
+				A2DD8E632A58A90C00315995 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2DD8E632A58A90C00315995 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD8E622A58A90C00315995 /* ReLife.app */,
+				A211B1652A7B6F0F004680E8 /* ReLifeCharacteristics.xctest */,
+				A211B1722A7B6F7C004680E8 /* ReLifeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2DD8E642A58A90C00315995 /* ReLife */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
+				A2DD8E672A58A90C00315995 /* ContentView.swift */,
+				A21086212A8026F900EB7A89 /* RealmController.swift */,
+				A2DD8E742A58AB5000315995 /* View */,
+				A211B1602A7A8075004680E8 /* Back */,
+				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
+				A2DD8E6B2A58A90D00315995 /* ReLife.entitlements */,
+				A2DD8E6C2A58A90D00315995 /* Preview Content */,
+			);
+			path = ReLife;
+			sourceTree = "<group>";
+		};
+		A2DD8E6C2A58A90D00315995 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD8E6D2A58A90D00315995 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A2DD8E742A58AB5000315995 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A211B1642A7B6F0F004680E8 /* ReLifeCharacteristics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A211B16B2A7B6F10004680E8 /* Build configuration list for PBXNativeTarget "ReLifeCharacteristics" */;
+			buildPhases = (
+				A211B1612A7B6F0F004680E8 /* Sources */,
+				A211B1622A7B6F0F004680E8 /* Frameworks */,
+				A211B1632A7B6F0F004680E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A211B16A2A7B6F10004680E8 /* PBXTargetDependency */,
+			);
+			name = ReLifeCharacteristics;
+			productName = ReLifeCharacteristics;
+			productReference = A211B1652A7B6F0F004680E8 /* ReLifeCharacteristics.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A211B1712A7B6F7C004680E8 /* ReLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A211B1782A7B6F7C004680E8 /* Build configuration list for PBXNativeTarget "ReLifeTests" */;
+			buildPhases = (
+				A211B16E2A7B6F7C004680E8 /* Sources */,
+				A211B16F2A7B6F7C004680E8 /* Frameworks */,
+				A211B1702A7B6F7C004680E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A211B1772A7B6F7C004680E8 /* PBXTargetDependency */,
+			);
+			name = ReLifeTests;
+			productName = ReLifeTests;
+			productReference = A211B1722A7B6F7C004680E8 /* ReLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A2DD8E612A58A90C00315995 /* ReLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2DD8E712A58A90D00315995 /* Build configuration list for PBXNativeTarget "ReLife" */;
+			buildPhases = (
+				A2DD8E5E2A58A90C00315995 /* Sources */,
+				A2DD8E5F2A58A90C00315995 /* Frameworks */,
+				A2DD8E602A58A90C00315995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReLife;
+			packageProductDependencies = (
+				A211B17F2A7D012D004680E8 /* Realm */,
+				A211B1812A7D012D004680E8 /* RealmSwift */,
+			);
+			productName = ReLife;
+			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2DD8E5A2A58A90C00315995 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A211B1642A7B6F0F004680E8 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = A2DD8E612A58A90C00315995;
+					};
+					A211B1712A7B6F7C004680E8 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = A2DD8E612A58A90C00315995;
+					};
+					A2DD8E612A58A90C00315995 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A2DD8E5D2A58A90C00315995 /* Build configuration list for PBXProject "ReLife" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A2DD8E592A58A90C00315995;
+			packageReferences = (
+				A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			productRefGroup = A2DD8E632A58A90C00315995 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2DD8E612A58A90C00315995 /* ReLife */,
+				A211B1642A7B6F0F004680E8 /* ReLifeCharacteristics */,
+				A211B1712A7B6F7C004680E8 /* ReLifeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A211B1632A7B6F0F004680E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A211B1702A7B6F7C004680E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DD8E602A58A90C00315995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2DD8E6E2A58A90D00315995 /* Preview Assets.xcassets in Resources */,
+				A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A211B1612A7B6F0F004680E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A211B1882A7D3570004680E8 /* CharactDataManager.swift in Sources */,
+				A211B1872A7D356D004680E8 /* Characteristics.swift in Sources */,
+				A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A211B16E2A7B6F7C004680E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A211B18C2A7D379E004680E8 /* CharactDataManager.swift in Sources */,
+				A211B18B2A7D359D004680E8 /* Characteristics.swift in Sources */,
+				A211B1752A7B6F7C004680E8 /* ReLifeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2DD8E5E2A58A90C00315995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */,
+				A21086202A7FAC3B00EB7A89 /* Quests.swift in Sources */,
+				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
+				A21086222A8026F900EB7A89 /* RealmController.swift in Sources */,
+				A211B17C2A7B7397004680E8 /* Characteristics.swift in Sources */,
+				A211B1842A7D16B4004680E8 /* CharactDataManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A211B16A2A7B6F10004680E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2DD8E612A58A90C00315995 /* ReLife */;
+			targetProxy = A211B1692A7B6F10004680E8 /* PBXContainerItemProxy */;
+		};
+		A211B1772A7B6F7C004680E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2DD8E612A58A90C00315995 /* ReLife */;
+			targetProxy = A211B1762A7B6F7C004680E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A211B16C2A7B6F10004680E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLifeCharacteristics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReLife";
+			};
+			name = Debug;
+		};
+		A211B16D2A7B6F10004680E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLifeCharacteristics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReLife";
+			};
+			name = Release;
+		};
+		A211B1792A7B6F7C004680E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReLife";
+			};
+			name = Debug;
+		};
+		A211B17A2A7B6F7C004680E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReLife";
+			};
+			name = Release;
+		};
+		A2DD8E6F2A58A90D00315995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A2DD8E702A58A90D00315995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A2DD8E722A58A90D00315995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ReLife/ReLife.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2DD8E732A58A90D00315995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ReLife/ReLife.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A211B16B2A7B6F10004680E8 /* Build configuration list for PBXNativeTarget "ReLifeCharacteristics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A211B16C2A7B6F10004680E8 /* Debug */,
+				A211B16D2A7B6F10004680E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A211B1782A7B6F7C004680E8 /* Build configuration list for PBXNativeTarget "ReLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A211B1792A7B6F7C004680E8 /* Debug */,
+				A211B17A2A7B6F7C004680E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2DD8E5D2A58A90C00315995 /* Build configuration list for PBXProject "ReLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2DD8E6F2A58A90D00315995 /* Debug */,
+				A2DD8E702A58A90D00315995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2DD8E712A58A90D00315995 /* Build configuration list for PBXNativeTarget "ReLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2DD8E722A58A90D00315995 /* Debug */,
+				A2DD8E732A58A90D00315995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A211B17F2A7D012D004680E8 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A211B1812A7D012D004680E8 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A2DD8E5A2A58A90C00315995 /* Project object */;
+}
