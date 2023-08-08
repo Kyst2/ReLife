@@ -1,24 +1,23 @@
 import Foundation
 import RealmSwift
 
-struct Characteristic {
-    var id: String = UUID().uuidString
-    var name: String
-    var points: Int
+class Characteristic: Object {
+    @Persisted(primaryKey: true) var key: String
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var name: String
+    @Persisted var points: Int
 }
 
 
+class Quest: Object {
+    @Persisted(primaryKey: true) var key: String
+    @Persisted var name: String
+    @Persisted var value: Int
+    @Persisted var blablabla: Bool
 
-class BD {
-    //Tables
-    var characteristics: [Characteristic] = []
-    var quests: [Quest] = []
+     init(key: String, name: String, value: Int, blablabla: Bool) {
+        self.name = name
+        self.value = value
+        self.blablabla = blablabla
+    }
 }
-
-struct Quest {
-    let key: Int
-    let name: String
-    let value: Int
-    let blablabla: Bool
-}
-

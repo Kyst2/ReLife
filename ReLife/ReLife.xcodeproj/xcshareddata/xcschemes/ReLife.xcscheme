@@ -51,6 +51,17 @@
                ReferencedContainer = "container:ReLife.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A21086282A813A1A00EB7A89"
+               BuildableName = "QuestsTests.xctest"
+               BlueprintName = "QuestsTests"
+               ReferencedContainer = "container:ReLife.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
