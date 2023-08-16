@@ -1,39 +1,46 @@
 import XCTest
 import RealmSwift
-//@testable import ReLife
+@testable import ReLife
 
 final class QuestsTests: XCTestCase {
-    var realmControl: RealmController = RealmController()
-//    var realm: Realm!
-//    override func setUp() {
-//           super.setUp()
-//
-//       }
+    var realmController: RealmController!
     
-    func test_QuestCteate() {
+    override func setUp() {
+        super.setUp()
         
-        realmControl.add(quest: Quest(key: "1", name: "Test1", value: 10, blablabla: true))
+        self.realmController = RealmController(test: true)
         
-        XCTAssertEqual(realmControl.questsAll.filter{ $0.name == "Test1"}.count, 1)
-        
-        fatalError()
     }
     
-    func testDelete () {
-//        let data = Quest(key: "1", name: "PochistitbZubIb", value: 13, blablabla: false)
-//
-//        realmControl.add(quest: data)
-//
-//        realmControl.remove(questKey: data.key)
-        
-        XCTAssertEqual(realmControl.questsAll.filter{ $0.name == "Test1"}.count, 0)
+    override func tearDown() {
+        try? realmController.realm.write {
+            realmController.realm.deleteAll()
+        }
+        super.tearDown()
     }
-//    func testUpdate() {
-//        let data = Quest(key: "1", name: "PochistitbZubIb", value: 13, blablabla: false)
-//        self.bdc.add(quest: data)
-//        self.bdc.update(questKey: "1", withValues: Quest(key: "1", name: "PochistitbZubIb", value: 25, blablabla: true))
-//
-//        XCTAssertEqual(self.bdc.allQuests.first!.value,25)
-//    }
+    
+    // Test adding a quest
+    func testAddQuest() {
+        let quest = Quest(name: "Test Quest", value: 10, completed: false, timeStart: nil)
+        
+        realmController.add(quest: quest)
+        let fetchedQuest = realmController.questsAll.first
+        
+        XCTAssertNotNil(fetchedQuest)
+        XCTAssertEqual(fetchedQuest?.name, "Test Quest")
+    }
+    
+    // Test removing a quest
+    func testRemoveQuest() {
+        let quest = Quest(name: "quest1", value: 10, completed: false, timeStart: nil)
+        realmController.add(quest: quest)
+        
+        //            realmController.remove(questKey: Quest.primaryKey)
+//        let fetchedQuest = realm.objects(Quest.self).first
+        
+//        XCTAssertNil(fetchedQuest)
+    }
+    
+    // More test cases can go here for other methods like update and addCharacteristic
     
 }

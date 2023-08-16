@@ -7,22 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A21086222A8026F900EB7A89 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
-		A21086232A8121D300EB7A89 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
-		A21086242A8121D300EB7A89 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
-		A21086322A813A4900EB7A89 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A211B1752A7B6F7C004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
 		A211B17C2A7B7397004680E8 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
 		A211B1802A7D012D004680E8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A211B17F2A7D012D004680E8 /* Realm */; };
 		A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A211B1812A7D012D004680E8 /* RealmSwift */; };
 		A211B1842A7D16B4004680E8 /* CharactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1832A7D16B4004680E8 /* CharactDataManager.swift */; };
-		A211B1882A7D3570004680E8 /* CharactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1832A7D16B4004680E8 /* CharactDataManager.swift */; };
 		A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
-		A211B18C2A7D379E004680E8 /* CharactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1832A7D16B4004680E8 /* CharactDataManager.swift */; };
-		A26165772A826BDD00531283 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
-		A2783CB92A829AE9008C8FCA /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
-		A2783CBA2A829AE9008C8FCA /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B17B2A7B7397004680E8 /* Characteristics.swift */; };
+		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
+		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E652A58A90C00315995 /* ReLifeApp.swift */; };
 		A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* ContentView.swift */; };
 		A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E692A58A90D00315995 /* Assets.xcassets */; };
@@ -62,6 +55,7 @@
 		A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeTests.swift; sourceTree = "<group>"; };
 		A211B17B2A7B7397004680E8 /* Characteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristics.swift; sourceTree = "<group>"; };
 		A211B1832A7D16B4004680E8 /* CharactDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactDataManager.swift; sourceTree = "<group>"; };
+		A252720B2A8D3AF700DD4B75 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		A2DD8E622A58A90C00315995 /* ReLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DD8E652A58A90C00315995 /* ReLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeApp.swift; sourceTree = "<group>"; };
 		A2DD8E672A58A90C00315995 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +111,7 @@
 			children = (
 				A211B17B2A7B7397004680E8 /* Characteristics.swift */,
 				A211B1832A7D16B4004680E8 /* CharactDataManager.swift */,
+				A252720B2A8D3AF700DD4B75 /* Quest.swift */,
 			);
 			path = Back;
 			sourceTree = "<group>";
@@ -154,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
-				A2DD8E672A58A90C00315995 /* ContentView.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				A2DD8E742A58AB5000315995 /* View */,
 				A211B1602A7A8075004680E8 /* Back */,
@@ -176,6 +170,7 @@
 		A2DD8E742A58AB5000315995 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2DD8E672A58A90C00315995 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,9 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A26165772A826BDD00531283 /* Characteristics.swift in Sources */,
 				A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */,
-				A21086322A813A4900EB7A89 /* RealmController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2783CBA2A829AE9008C8FCA /* Characteristics.swift in Sources */,
-				A211B1882A7D3570004680E8 /* CharactDataManager.swift in Sources */,
-				A21086242A8121D300EB7A89 /* RealmController.swift in Sources */,
 				A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,9 +358,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2783CB92A829AE9008C8FCA /* Characteristics.swift in Sources */,
-				A211B18C2A7D379E004680E8 /* CharactDataManager.swift in Sources */,
-				A21086232A8121D300EB7A89 /* RealmController.swift in Sources */,
 				A211B1752A7B6F7C004680E8 /* ReLifeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,8 +368,9 @@
 			files = (
 				A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */,
 				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
-				A21086222A8026F900EB7A89 /* RealmController.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristics.swift in Sources */,
+				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
+				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				A211B1842A7D16B4004680E8 /* CharactDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

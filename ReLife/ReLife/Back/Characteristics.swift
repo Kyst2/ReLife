@@ -1,23 +1,23 @@
 import Foundation
 import RealmSwift
 
-class Characteristic: Object {
+public class Characteristic: Object {
     @Persisted(primaryKey: true) var key: String
     @Persisted var id: String = UUID().uuidString
     @Persisted var name: String
     @Persisted var points: Int
-}
-
-
-class Quest: Object {
-    @Persisted(primaryKey: true) var key: String
-    @Persisted var name: String
-    @Persisted var value: Int
-    @Persisted var blablabla: Bool
-
-     init(key: String, name: String, value: Int, blablabla: Bool) {
+    
+    public override init(){
+        super.init()
+        self.id = UUID().uuidString
+        self.name = ""
+        self.points = 10
+    }
+    
+    public init(id: String, name: String, points: Int) {
+        super.init()
+        self.id = id
         self.name = name
-        self.value = value
-        self.blablabla = blablabla
+        self.points = points
     }
 }
