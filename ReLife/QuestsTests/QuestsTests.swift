@@ -35,12 +35,19 @@ final class QuestsTests: XCTestCase {
         let quest = Quest(name: "quest1", value: 10, completed: false, timeStart: nil)
         realmController.add(quest: quest)
         
-        //            realmController.remove(questKey: Quest.primaryKey)
-//        let fetchedQuest = realm.objects(Quest.self).first
+        realmController.remove(questKey: quest.id)
+        let doesNotExist = realmController.questsAll.first(where: { $0.name == "quest1"}) == nil
         
-//        XCTAssertNil(fetchedQuest)
+        XCTAssertTrue(doesNotExist)
     }
     
     // More test cases can go here for other methods like update and addCharacteristic
+    func testUPDQuest() {
+        let quest = Quest(name: "quest1", value: 10, completed: false, timeStart: nil)
+        realmController.add(quest: quest)
+        print(realmController.questsAll.first!.name)
+        realmController.update(questKey: quest.id, withValues: Quest(name: "quest2", value: 15, completed: false, timeStart: nil))
+        XCTAssertEqual(realmController.questsAll.first?.value, 15)
+    }
     
 }

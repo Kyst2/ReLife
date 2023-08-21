@@ -2,7 +2,7 @@ import Foundation
 import RealmSwift
 
 public class Quest: Object {
-    @Persisted(primaryKey: true) var key: String
+    @Persisted(primaryKey: true) var id: String = UUID().uuidString
     @Persisted var name: String
     @Persisted var value: Int
     @Persisted var completed: Bool
@@ -11,7 +11,6 @@ public class Quest: Object {
     public override init() {
         super.init()
         
-        self.key = UUID().uuidString
         self.name = ""
         self.value = 0
         self.completed = false

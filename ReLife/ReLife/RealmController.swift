@@ -6,6 +6,7 @@ public class RealmController {
     
     var questsAll: [Quest] { realm.objects(Quest.self).map{ $0 } }
     var characteristicsAll: [Characteristic] { realm.objects(Characteristic.self).map{ $0 } }
+    var allHystory: [History] { realm.objects(History.self).map{ $0 } }
     
     public init(test: Bool = false) {
         
