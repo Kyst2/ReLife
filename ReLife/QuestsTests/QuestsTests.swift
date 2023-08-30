@@ -9,7 +9,6 @@ final class QuestsTests: XCTestCase {
         super.setUp()
         
         self.realmController = RealmController(test: true)
-        
     }
     
     override func tearDown() {

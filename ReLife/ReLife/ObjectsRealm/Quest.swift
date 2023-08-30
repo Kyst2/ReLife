@@ -9,8 +9,8 @@ public class Quest: Object {
     @Persisted private var iconStr: String
     @Persisted var colorHex: List<Float>
     
-    var icon: MyIcon { MyIcon(rawValue: self.iconStr)! }
-
+    var icon: MyIcon { get { MyIcon(rawValue: self.iconStr)! } set { self.iconStr = newValue.rawValue } }
+    
     override init() {
         self.name = ""
         self.iconStr = MyIcon.americanFootball.rawValue
