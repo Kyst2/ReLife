@@ -38,8 +38,8 @@ public class RealmController {
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
                 quest.name = withValues.name
-                quest.value = withValues.value
-                quest.completed = withValues.completed
+//                quest.value = withValues.value
+//                quest.completed = withValues.completed
             }
         }
     }
