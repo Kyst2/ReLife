@@ -22,42 +22,60 @@ final class HistoryTests: XCTestCase {
     
     // Test adding a characteristic
     func testAddHistory() {
-        var charachSet = [Characteristic : Int]()
-        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green, charachPoints: charachSet))
-
+        
+        var quest = realmController.generateQuest()
+        
+        let history = History(quest: quest)
+        
         realmController.add(history: history)
         let fetchedQuest = realmController.allHistory.first
-
+        
         XCTAssertNotNil(fetchedQuest)
         XCTAssertEqual(fetchedQuest?.quest?.name, "quest")
     }
     
     // Test removing a characteristic
     func testRemoveHistory() {
-        var charachSet = [Characteristic : Int]()
-        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green, charachPoints: charachSet))
+        var quest = realmController.generateQuest()
+        
+        let history = History(quest: quest)
         realmController.add(history: history)
         
         realmController.remove(historyKey: realmController.allHistory.first!.key)
-
+        
         let doesNotExist = realmController.allHistory.first?.quest?.name == nil
-
+        
         XCTAssertTrue(doesNotExist)
     }
     
-    // More test cases can go here for other methods like update and addCharacteristic
-    func testUPDHistory() {
-        var charachSet = [Characteristic : Int]()
-        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green, charachPoints: charachSet))
-        realmController.add(history: history)
+    func test_calcPointsPerCharacteristic() {
+        var quest1 = realmController.generateQuest()
+        var quest2 = realmController.generateQuest()
         
-        print(realmController.allHistory.first?.quest?.name ?? "2")
-        realmController.update(historyKey: realmController.allHistory.first!.key, withValues: History(dateCompleted: Date.now, quest: Quest(name: "room", icon: .bicycle, color: .red, charachPoints: charachSet)))
+        realmController.add(history: History(quest: quest1) )
+        realmController.add(history: History(quest: quest1) )
+        realmController.add(history: History(quest: quest1) )
         
-        print(realmController.allHistory.first?.quest?.name ?? "1")
+        realmController.add(history: History(quest: quest2) )
+        realmController.add(history: History(quest: quest2) )
         
-        XCTAssertEqual(realmController.allHistory.first?.quest?.name, "room")
+        
+        
+        
+        
     }
+    
+    
     
 }
 
+fileprivate extension RealmController {
+    func generateQuest() -> Quest {
+        var charachSet = [Characteristic : Int]()
+        charachSet[self.characteristicsAll.first!] = 10
+        
+        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet)
+        
+        return quest
+    }
+}

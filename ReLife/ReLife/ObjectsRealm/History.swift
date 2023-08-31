@@ -12,9 +12,9 @@ public class History: Object {
 //        self.quest = nil
 //    }
     
-    convenience init(dateCompleted: Date, quest: Quest) {
+    convenience init(quest: Quest) {
         self.init()
-        self.dateCompleted = dateCompleted
+        self.dateCompleted = Date.now
         self.quest = quest
     }
 }

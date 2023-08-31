@@ -52,5 +52,4 @@ final class CharacteristicsTests: XCTestCase {
         XCTAssertEqual(realmController.characteristicsAll.filter({$0.name == "char2"}).first?.name, "char2")
         XCTAssertEqual(realmController.characteristicsAll.filter({$0.key == characteristic.key}).first?.name, "char2")
     }
-    
 }
