@@ -20,33 +20,33 @@ final class QuestsTests: XCTestCase {
     
     // Test adding a quest
     func testAddQuest() {
-//        let quest = Quest(name: "Test Quest", value: 10, completed: false, timeStart: nil)
-//
-//        realmController.add(quest: quest)
-//        let fetchedQuest = realmController.questsAll.first
-//
-//        XCTAssertNotNil(fetchedQuest)
-//        XCTAssertEqual(fetchedQuest?.name, "Test Quest")
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green)
+
+        realmController.add(quest: quest)
+        let fetchedQuest = realmController.questsAll.first
+
+        XCTAssertNotNil(fetchedQuest)
+        XCTAssertEqual(fetchedQuest?.name, "Quest")
     }
     
     // Test removing a quest
     func testRemoveQuest() {
-//        let quest = Quest(name: "quest1", value: 10, completed: false, timeStart: nil)
-//        realmController.add(quest: quest)
-//
-//        realmController.remove(questKey: quest.id)
-//        let doesNotExist = realmController.questsAll.first(where: { $0.name == "quest1"}) == nil
-//
-//        XCTAssertTrue(doesNotExist)
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green)
+        realmController.add(quest: quest)
+
+        realmController.remove(questKey: quest.key)
+        let doesNotExist = realmController.questsAll.first(where: { $0.name == "quest1"}) == nil
+
+        XCTAssertTrue(doesNotExist)
     }
     
     // More test cases can go here for other methods like update and addCharacteristic
     func testUPDQuest() {
-//        let quest = Quest(name: "quest1", value: 10, completed: false, timeStart: nil)
-//        realmController.add(quest: quest)
-//        print(realmController.questsAll.first!.name)
-//        realmController.update(questKey: quest.id, withValues: Quest(name: "quest2", value: 15, completed: false, timeStart: nil))
-//        XCTAssertEqual(realmController.questsAll.first?.value, 15)
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green)
+        realmController.add(quest: quest)
+        print(realmController.questsAll.first!.name)
+        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "VIE", icon: .bathtub, color: .yellow))
+        XCTAssertEqual(realmController.questsAll.first?.name, "VIE")
     }
     
 }
