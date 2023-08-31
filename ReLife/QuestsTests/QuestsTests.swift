@@ -28,9 +28,9 @@ final class QuestsTests: XCTestCase {
         XCTAssertNotNil(fetchedQuest)
         XCTAssertEqual(fetchedQuest?.name, "Quest")
         
-        XCTAssertEqual(quest.colorHex[0], 0)
-        XCTAssertEqual(quest.colorHex[1], 0)
-        XCTAssertEqual(quest.colorHex[2], 0)
+        XCTAssertEqual(fetchedQuest!.colorHex[0], 0)
+        XCTAssertEqual(fetchedQuest!.colorHex[1], 0)
+        XCTAssertEqual(fetchedQuest!.colorHex[2], 0)
     
     }
     
