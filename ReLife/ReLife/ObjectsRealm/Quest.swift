@@ -40,11 +40,15 @@ enum QuestRepeatType {
 
 public extension NSColor {
     var hexValues: [Float] {
-        return [Float(self.redComponent), Float(self.greenComponent), Float(self.blueComponent), Float(self.alphaComponent)]
+        guard let fixedColor = self.usingColorSpace(.sRGB) else { return [] }
+        
+        let a = [Float(fixedColor.redComponent), Float(fixedColor.greenComponent), Float(fixedColor.blueComponent)]
+        
+        return a
     }
     
     convenience init(hexValues: [Float]) {
-        self.init(red: hexValues[0].cgFloat, green: hexValues[1].cgFloat, blue: hexValues[2].cgFloat, alpha: hexValues[3].cgFloat)
+        self.init(red: hexValues[0].cgFloat, green: hexValues[1].cgFloat, blue: hexValues[2].cgFloat, alpha: 1)
     }
 }
 

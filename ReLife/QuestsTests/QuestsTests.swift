@@ -20,13 +20,18 @@ final class QuestsTests: XCTestCase {
     
     // Test adding a quest
     func testAddQuest() {
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green)
+        let quest = Quest(name: "Quest", icon: .backpack, color: .black)
         
         realmController.add(quest: quest)
         let fetchedQuest = realmController.questsAll.first
         
         XCTAssertNotNil(fetchedQuest)
         XCTAssertEqual(fetchedQuest?.name, "Quest")
+        
+        XCTAssertEqual(quest.colorHex[0], 0)
+        XCTAssertEqual(quest.colorHex[1], 0)
+        XCTAssertEqual(quest.colorHex[2], 0)
+    
     }
     
     // Test removing a quest
