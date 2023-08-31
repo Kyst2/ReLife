@@ -6,7 +6,7 @@ public class RealmController {
     
     var questsAll: [Quest] { realm.objects(Quest.self).map{ $0 } }
     var characteristicsAll: [Characteristic] { realm.objects(Characteristic.self).map{ $0 } }
-    var allHystory: [History] { realm.objects(History.self).map{ $0 } }
+    var allHistory: [History] { realm.objects(History.self).map{ $0 } }
     
     public init(test: Bool = false) {
         
@@ -72,5 +72,31 @@ extension RealmController {
                 
             }
         }
-    } 
+    }
+}
+//func History
+extension RealmController {
+    func add(history: History) {
+        try! realm.write {
+            realm.add(history)
+        }
+    }
+    
+    func remove(historyKey: String) {
+        if let history = realm.object(ofType: History.self, forPrimaryKey: historyKey) {
+            try! realm.write {
+                realm.delete(history)
+            }
+        }
+    }
+    
+    func update(historyKey: String, withValues: History) {
+        if let history = realm.object(ofType: History.self, forPrimaryKey: historyKey) {
+            try! realm.write {
+                history.dateCompleted = withValues.dateCompleted
+                history.quest = withValues.quest
+                
+            }
+        }
+    }
 }

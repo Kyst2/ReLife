@@ -21,10 +21,10 @@ final class QuestsTests: XCTestCase {
     // Test adding a quest
     func testAddQuest() {
         let quest = Quest(name: "Quest", icon: .backpack, color: .green)
-
+        
         realmController.add(quest: quest)
         let fetchedQuest = realmController.questsAll.first
-
+        
         XCTAssertNotNil(fetchedQuest)
         XCTAssertEqual(fetchedQuest?.name, "Quest")
     }
@@ -33,10 +33,10 @@ final class QuestsTests: XCTestCase {
     func testRemoveQuest() {
         let quest = Quest(name: "Quest", icon: .backpack, color: .green)
         realmController.add(quest: quest)
-
+        
         realmController.remove(questKey: quest.key)
         let doesNotExist = realmController.questsAll.first(where: { $0.name == "quest1"}) == nil
-
+        
         XCTAssertTrue(doesNotExist)
     }
     
