@@ -37,7 +37,7 @@ final class CharacteristicsTests: XCTestCase {
         realmController.add(characteristic: characteristic)
 //        let id = characteristic.id
 //        print(id as Any)
-        realmController.remove(characteristicKey: characteristic.id)
+        realmController.remove(characteristicKey: characteristic.key)
         
         let doesNotExist = realmController.characteristicsAll.first(where: { $0.name == "Health"}) == nil
         
@@ -48,7 +48,7 @@ final class CharacteristicsTests: XCTestCase {
     func testUPDCharacteristic() {
         let characteristic = Characteristic(name: "char1")
         realmController.add(characteristic: characteristic)
-        realmController.update(characteristicKey: realmController.characteristicsAll.first!.id, withValues: Characteristic(name: "char2"))
+        realmController.update(characteristicKey: realmController.characteristicsAll.first!.key, withValues: Characteristic(name: "char2"))
         XCTAssertEqual(realmController.characteristicsAll.filter({$0.name == "char2"}).first?.name, "char2")
     }
     

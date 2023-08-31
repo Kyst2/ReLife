@@ -2,7 +2,7 @@ import Foundation
 import RealmSwift
 
 public class Characteristic: Object {
-    @Persisted(primaryKey: true) var id: String = UUID().uuidString
+    @Persisted(primaryKey: true) var key: String = UUID().uuidString
     @Persisted var name: String
     
     public override init(){

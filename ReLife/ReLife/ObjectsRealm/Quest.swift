@@ -5,7 +5,7 @@ import AppKit
 public class Quest: Object {
     @Persisted(primaryKey: true) var key: String = UUID().uuidString
     @Persisted var name: String
-//    @Persisted var characteristics: Map<String,Int>
+    @Persisted var charachPoints = Map<String, Int>()
     @Persisted private var iconStr: String
     @Persisted var colorHex: List<Float>
     
@@ -16,12 +16,15 @@ public class Quest: Object {
         self.iconStr = MyIcon.americanFootball.rawValue
     }
     
-    convenience init(name: String, icon: MyIcon, color: NSColor) {
+    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>) {
         self.init()
         self.name = name
-//        self.characteristics = [Characteristic.primaryKey(): ]
         self.iconStr = icon.rawValue
         self.colorHex.append(objectsIn: color.hexValues)
+        
+        charachPoints.forEach {
+            self.charachPoints.setValue($0.value, forKey: $0.key.key)
+        }
     }
 }
 

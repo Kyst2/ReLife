@@ -9,6 +9,7 @@ final class HistoryTests: XCTestCase {
         super.setUp()
         
         self.realmController = RealmController(test: true)
+        realmController.add(characteristic: Characteristic(name: "Health"))
         
     }
     
@@ -21,7 +22,8 @@ final class HistoryTests: XCTestCase {
     
     // Test adding a characteristic
     func testAddHistory() {
-        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green))
+        var charachSet = [Characteristic : Int]()
+        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green, charachPoints: charachSet))
 
         realmController.add(history: history)
         let fetchedQuest = realmController.allHistory.first
@@ -32,7 +34,8 @@ final class HistoryTests: XCTestCase {
     
     // Test removing a characteristic
     func testRemoveHistory() {
-        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green))
+        var charachSet = [Characteristic : Int]()
+        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green, charachPoints: charachSet))
         realmController.add(history: history)
         
         realmController.remove(historyKey: realmController.allHistory.first!.key)
@@ -44,11 +47,12 @@ final class HistoryTests: XCTestCase {
     
     // More test cases can go here for other methods like update and addCharacteristic
     func testUPDHistory() {
-        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green))
+        var charachSet = [Characteristic : Int]()
+        let history = History(dateCompleted: Date.now, quest: Quest(name: "quest", icon: .batteryFull, color: .green, charachPoints: charachSet))
         realmController.add(history: history)
         
         print(realmController.allHistory.first?.quest?.name ?? "2")
-        realmController.update(historyKey: realmController.allHistory.first!.key, withValues: History(dateCompleted: Date.now, quest: Quest(name: "room", icon: .bicycle, color: .red)))
+        realmController.update(historyKey: realmController.allHistory.first!.key, withValues: History(dateCompleted: Date.now, quest: Quest(name: "room", icon: .bicycle, color: .red, charachPoints: charachSet)))
         
         print(realmController.allHistory.first?.quest?.name ?? "1")
         

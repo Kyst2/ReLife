@@ -9,6 +9,8 @@ final class QuestsTests: XCTestCase {
         super.setUp()
         
         self.realmController = RealmController(test: true)
+        
+        realmController.add(characteristic: Characteristic(name: "Health"))
     }
     
     override func tearDown() {
@@ -20,7 +22,14 @@ final class QuestsTests: XCTestCase {
     
     // Test adding a quest
     func testAddQuest() {
-        let quest = Quest(name: "Quest", icon: .backpack, color: .black)
+        XCTAssertEqual(realmController.characteristicsAll.count, 1)
+        
+        let charach = realmController.characteristicsAll.first!
+        
+        var charachSet = [Characteristic : Int]()
+        charachSet[charach] = 10
+        
+        let quest = Quest(name: "Quest", icon: .backpack, color: .black, charachPoints: charachSet )
         
         realmController.add(quest: quest)
         let fetchedQuest = realmController.questsAll.first
@@ -31,12 +40,18 @@ final class QuestsTests: XCTestCase {
         XCTAssertEqual(fetchedQuest!.colorHex[0], 0)
         XCTAssertEqual(fetchedQuest!.colorHex[1], 0)
         XCTAssertEqual(fetchedQuest!.colorHex[2], 0)
-    
+        
+        XCTAssertEqual(fetchedQuest!.charachPoints[charach.key], 10)
+        
+        
     }
     
     // Test removing a quest
     func testRemoveQuest() {
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green)
+        
+        var charachSet = [Characteristic : Int]()
+        
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet)
         realmController.add(quest: quest)
         
         realmController.remove(questKey: quest.key)
@@ -47,10 +62,11 @@ final class QuestsTests: XCTestCase {
     
     // More test cases can go here for other methods like update and addCharacteristic
     func testUPDQuest() {
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green)
+        var charachSet = [Characteristic : Int]()
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet)
         realmController.add(quest: quest)
         print(realmController.questsAll.first!.name)
-        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "VIE", icon: .bathtub, color: .yellow))
+        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "VIE", icon: .bathtub, color: .yellow, charachPoints: charachSet))
         XCTAssertEqual(realmController.questsAll.first?.name, "VIE")
     }
     
