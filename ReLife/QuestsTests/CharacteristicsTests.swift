@@ -21,9 +21,8 @@ final class CharacteristicsTests: XCTestCase {
     
     // Test adding a characteristic
     func testAddCharacteristic() {
-        let characteristic = Characteristic(name: "Health")
-
-        realmController.add(characteristic: characteristic)
+        realmController.add(characteristic: Characteristic(name: "Health"))
+        
         let fetchedQuest = realmController.characteristicsAll.first
 
         XCTAssertNotNil(fetchedQuest)
@@ -35,11 +34,9 @@ final class CharacteristicsTests: XCTestCase {
         let characteristic = Characteristic(name: "Health123")
         
         realmController.add(characteristic: characteristic)
-//        let id = characteristic.id
-//        print(id as Any)
         realmController.remove(characteristicKey: characteristic.key)
         
-        let doesNotExist = realmController.characteristicsAll.first(where: { $0.name == "Health"}) == nil
+        let doesNotExist = realmController.characteristicsAll.first(where: { $0.name == characteristic.name}) == nil
         
         XCTAssertTrue(doesNotExist)
     }
@@ -47,9 +44,13 @@ final class CharacteristicsTests: XCTestCase {
     // More test cases can go here for other methods like update and addCharacteristic
     func testUPDCharacteristic() {
         let characteristic = Characteristic(name: "char1")
+        
         realmController.add(characteristic: characteristic)
-        realmController.update(characteristicKey: realmController.characteristicsAll.first!.key, withValues: Characteristic(name: "char2"))
+        
+        realmController.update(characteristicKey: characteristic.key, withValues: Characteristic(name: "char2"))
+        
         XCTAssertEqual(realmController.characteristicsAll.filter({$0.name == "char2"}).first?.name, "char2")
+        XCTAssertEqual(realmController.characteristicsAll.filter({$0.key == characteristic.key}).first?.name, "char2")
     }
     
 }
