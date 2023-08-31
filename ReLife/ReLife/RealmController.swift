@@ -19,7 +19,12 @@ public class RealmController {
         self.realm = r!
         
     }
+   
     
+      
+}
+//func Quest
+extension RealmController {
     func add(quest: Quest) {
         try! realm.write {
             realm.add(quest)
@@ -38,12 +43,14 @@ public class RealmController {
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
                 quest.name = withValues.name
-//                quest.value = withValues.value
-//                quest.completed = withValues.completed
+                quest.icon = withValues.icon
+                quest.colorHex = withValues.colorHex
             }
         }
     }
-    
+}
+//func Characteristic
+extension RealmController {
     func add(characteristic: Characteristic) {
         try! realm.write {
             realm.add(characteristic)
@@ -62,8 +69,8 @@ public class RealmController {
         if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
             try! realm.write {
                 characteristic.name = withValues.name
-                characteristic.points = withValues.points
+                
             }
         }
-    }   
+    } 
 }
