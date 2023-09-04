@@ -66,7 +66,6 @@ final class HistoryTests: XCTestCase {
     }
     
     
-    
 }
 
 fileprivate extension RealmController {
@@ -74,7 +73,7 @@ fileprivate extension RealmController {
         var charachSet = [Characteristic : Int]()
         charachSet[self.characteristicsAll.first!] = 10
         
-        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet)
+        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1,2]))
         
         return quest
     }

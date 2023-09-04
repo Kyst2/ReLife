@@ -8,7 +8,9 @@ public class Quest: Object {
     @Persisted var charachPoints = Map<String, Int>()
     @Persisted private var iconStr: String
     @Persisted var colorHex: List<Float>
+    @Persisted private var questRepeatStr: String
     
+    var questRepeat:QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
     var icon: MyIcon { get { MyIcon(rawValue: self.iconStr)! } set { self.iconStr = newValue.rawValue } }
     
     override init() {
@@ -16,11 +18,12 @@ public class Quest: Object {
         self.iconStr = MyIcon.americanFootball.rawValue
     }
     
-    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>) {
+    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType) {
         self.init()
         self.name = name
         self.iconStr = icon.rawValue
         self.colorHex.append(objectsIn: color.hexValues)
+        self.questRepeatStr = questRepeatStr.toString()
         
         charachPoints.forEach {
             self.charachPoints.setValue($0.value, forKey: $0.key.key)
@@ -34,11 +37,23 @@ enum QuestType {
     case ml(ml: Int)
 }
 
-enum QuestRepeatType {
+enum QuestRepeatType: Codable {
     case singleDayQuest(date: Date)
     case eachWeek(days: [Int])
     case dayOfMonth(days: [Int])
     case repeatEvery(days: Int, startingFrom: Date)
+}
+
+extension QuestRepeatType: Equatable { }
+
+extension QuestRepeatType {
+    func toString() -> String {
+        return (try? self.asJson().get()) ?? ""
+    }
+    
+    static func fromString(_ str: String ) -> QuestRepeatType {
+        return (try? str.decodeFromJson(type: QuestRepeatType.self).get() ) ?? .eachWeek(days: [])
+    }
 }
 
 public extension NSColor {
@@ -46,6 +61,11 @@ public extension NSColor {
         guard let fixedColor = self.usingColorSpace(.sRGB) else { return [] }
         
         let a = [Float(fixedColor.redComponent), Float(fixedColor.greenComponent), Float(fixedColor.blueComponent)]
+        
+        
+        
+        
+        
         
         return a
     }
@@ -66,6 +86,8 @@ public extension List  where Element : RealmCollectionValue, Element == Float {
         NSColor(hexValues: Array(self))
     }
 }
+
+
 
 enum MyIcon: String, RawRepresentable {
     case tray = "tray.2.fill"

@@ -6,11 +6,6 @@ public class History: Object {
     @Persisted(primaryKey: true) var key: String = UUID().uuidString
     @Persisted var dateCompleted: Date = Date()
     @Persisted var quest: Quest?
-//
-//    override init() {
-//        self.dateCompleted = Date.now
-//        self.quest = nil
-//    }
     
     convenience init(quest: Quest) {
         self.init()

@@ -89,14 +89,4 @@ extension RealmController {
             }
         }
     }
-    
-    func update(historyKey: String, withValues: History) {
-        if let history = realm.object(ofType: History.self, forPrimaryKey: historyKey) {
-            try! realm.write {
-                history.dateCompleted = withValues.dateCompleted
-                history.quest = withValues.quest
-                
-            }
-        }
-    }
 }

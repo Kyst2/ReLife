@@ -29,7 +29,7 @@ final class QuestsTests: XCTestCase {
         var charachSet = [Characteristic : Int]()
         charachSet[charach] = 10
         
-        let quest = Quest(name: "Quest", icon: .backpack, color: .black, charachPoints: charachSet )
+        let quest = Quest(name: "Quest", icon: .backpack, color: .black, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,3,4]) )
         
         realmController.add(quest: quest)
         let fetchedQuest = realmController.questsAll.first
@@ -42,6 +42,7 @@ final class QuestsTests: XCTestCase {
         XCTAssertEqual(fetchedQuest!.colorHex[2], 0)
         
         XCTAssertEqual(fetchedQuest!.charachPoints[charach.key], 10)
+        XCTAssertEqual(fetchedQuest!.questRepeat, .eachWeek(days: [1,3,4]))
         
         
     }
@@ -51,7 +52,7 @@ final class QuestsTests: XCTestCase {
         
         var charachSet = [Characteristic : Int]()
         
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet)
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1,2]))
         realmController.add(quest: quest)
         
         realmController.remove(questKey: quest.key)
@@ -63,10 +64,10 @@ final class QuestsTests: XCTestCase {
     // More test cases can go here for other methods like update and addCharacteristic
     func testUPDQuest() {
         var charachSet = [Characteristic : Int]()
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet)
+        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .singleDayQuest(date: Date.now))
         realmController.add(quest: quest)
         print(realmController.questsAll.first!.name)
-        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "VIE", icon: .bathtub, color: .yellow, charachPoints: charachSet))
+        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "VIE", icon: .bathtub, color: .yellow, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1])))
         XCTAssertEqual(realmController.questsAll.first?.name, "VIE")
     }
     
