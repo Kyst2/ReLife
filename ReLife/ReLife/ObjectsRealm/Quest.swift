@@ -10,7 +10,7 @@ public class Quest: Object {
     @Persisted var colorHex: List<Float>
     @Persisted private var questRepeatStr: String
     
-    var questRepeat:QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
+    var questRepeat: QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
     var icon: MyIcon { get { MyIcon(rawValue: self.iconStr)! } set { self.iconStr = newValue.rawValue } }
     
     override init() {
@@ -61,11 +61,6 @@ public extension NSColor {
         guard let fixedColor = self.usingColorSpace(.sRGB) else { return [] }
         
         let a = [Float(fixedColor.redComponent), Float(fixedColor.greenComponent), Float(fixedColor.blueComponent)]
-        
-        
-        
-        
-        
         
         return a
     }
