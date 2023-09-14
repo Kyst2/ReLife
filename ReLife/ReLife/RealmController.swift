@@ -140,8 +140,9 @@ extension RealmController {
                       dateStart <= today
                 else { return nil }
                 
-                // TODO: make Date+ ext: date1.distance(to: date2, type: .day) -> Int
-                let daysSinceStart = Calendar.current.dateComponents([.day], from: dateStart, to: today).day ?? 0
+// ++++         TODO: make Date+ ext: date1.distance(to: date2, type: .day) -> Int
+                let daysSinceStart = dateStart.distance(to: today, type: .day)
+//                Calendar.current.dateComponents([.day], from: dateStart, to: today).day ?? 0
                 
                 return ((daysSinceStart % repeatEachDays) == 0) ? quest : nil
             }
@@ -151,10 +152,29 @@ extension RealmController {
         
         return allQuestsToday.flatMap{ $0 }
         
-        //витягування актуальних задач на сьогоднішній день (окрім виконаних) - окрема функции которая использует эту
-//        витягування виконаних задач на сьогоднішній день(окрім актуальних)- окрема функции которая использует эту
+//++++++  витягування актуальних задач на сьогоднішній день (окрім виконаних) - окрема функции которая использует эту
+//++++++  витягування виконаних задач на сьогоднішній день(окрім актуальних)- окрема функции которая использует эту
     }
     
+    func getFinishedQuestsToday() -> [Quest] {
+        let actualQuests = getQuestsToday()
+        
+//        realm.objects(History.self).where {
+//            $0.dateCompleted == Date.now.time
+//        }
+        
+//        return actualQuests.map({ quest -> Quest? in
+//            if allHistory.contains(where: { history in
+//                (history.quest?.name.contains(quest.name))!
+//            }){
+//                return quest
+//            } else {
+//                return nil
+//            }
+//        })
+//        .compactMap{ $0 }
+        return []
+    }
     func getActualQuestsToday() -> [Quest]?{
         let actualQuests = getQuestsToday()
         
@@ -169,30 +189,41 @@ extension RealmController {
         })
         .compactMap{ $0 }
     }
-    func getSingleQuestHalfYear() -> [Quest]? {
+    
+    func getSingleQuestHalfYear() -> [Quest] {
         let allQuests = questsAll
         let allHistory = allHistory
         
         let singleDayQuests = allQuests.map { quest -> Quest? in
-
-
             guard case let .singleDayQuest(date) = quest.questRepeat,date <= Date.now.adding(days: 182),
                  !allHistory.contains(where: { history in
                 (history.quest?.name.contains(quest.name))!
             })
             else { return nil }
             
-            
             return quest
         }
-            .compactMap{ $0 }
+        .compactMap{ $0 }
         
         return singleDayQuests
+    }
+    func getCharacteristicPoints(characteristic: String) -> Int {
+        let allCharacteristics = allHistory.map{$0.quest}
+        let allPoints = allCharacteristics
+//        for quest in allCharacteristics {
+//            quest?.charachPoints.where({
+//                $0 == characteristic
+//            })
+//        }
+        
+
+        var points = 0
+        return points
     }
 }
 
 //TODO NOW:
-// * витягування невиконаних разових задач на найближчі пів року
+// * витягування невиконаних разових задач на найближчі пів року +++++
 // * витягнути з історії зароблену к-сть балів на конкретну характеристику
 // * Знімати бали за невиконаний квест (галочка) - додати в квест і написати тест
 

@@ -14,5 +14,6 @@ public class Characteristic: Object {
     public init(name: String) {
         super.init()
         self.name = name
+        
     }
 }

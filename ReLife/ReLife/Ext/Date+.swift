@@ -31,4 +31,21 @@ public extension Date {
     func adding(sec: Int) -> Date {
         return self.addingTimeInterval(TimeInterval(sec))
     }
+    
+    func distance(to: Date, type: Calendar.Component ) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([type], from: self, to: to)
+        
+        switch type {
+        case .day:
+            return components.day ?? 0
+        case .month:
+            return components.month ?? 0
+        case .year:
+            return components.year ?? 0
+        default:
+            return 0
+        }
+        
+    }
 }
