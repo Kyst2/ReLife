@@ -3,7 +3,7 @@ import RealmSwift
 import AppKit
 
 public class Quest: Object {
-    @Persisted(primaryKey: true) var key: String = UUID().uuidString
+    @Persisted(primaryKey: true) var key: String
     @Persisted var name: String
     @Persisted var charachPoints = Map<String, Int>()
     @Persisted private var iconStr: String
@@ -13,18 +13,21 @@ public class Quest: Object {
     var questRepeat: QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
     var icon: MyIcon { get { MyIcon(rawValue: self.iconStr)! } set { self.iconStr = newValue.rawValue } }
     
+    @Persisted var repeatTimes: Int
+    
     override init() {
         self.name = ""
         self.iconStr = MyIcon.americanFootball.rawValue
     }
     
-    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType) {
+    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType,repeatTimes: Int = 1) {
         self.init()
+        self.key = name
         self.name = name
         self.iconStr = icon.rawValue
         self.colorHex.append(objectsIn: color.hexValues)
         self.questRepeatStr = questRepeatStr.toString()
-        
+        self.repeatTimes = repeatTimes
         charachPoints.forEach {
             self.charachPoints.setValue($0.value, forKey: $0.key.key)
         }

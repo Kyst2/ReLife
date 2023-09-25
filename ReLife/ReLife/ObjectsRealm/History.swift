@@ -9,7 +9,7 @@ public class History: Object {
     
     convenience init(quest: Quest) {
         self.init()
-        self.dateCompleted = Date.now
+        self.dateCompleted = Date.now.dateWithoutTime()
         self.quest = quest
     }
 }
