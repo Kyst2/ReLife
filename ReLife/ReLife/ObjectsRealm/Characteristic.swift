@@ -22,4 +22,8 @@ public class Characteristic: Object {
         self.key = name
         self.name = name
     }
+    
+    static func ==(lhs: Characteristic, rhs: Characteristic) -> Bool {
+        return lhs.key == rhs.key && lhs.icon == rhs.icon
+    }
 }
