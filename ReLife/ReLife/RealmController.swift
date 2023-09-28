@@ -42,7 +42,7 @@ extension RealmController {
     func update(questKey: String, withValues: Quest) {
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
-                quest.key = withValues.name
+//                quest.key = withValues.name
                 quest.name = withValues.name
                 quest.icon = withValues.icon
                 quest.colorHex = withValues.colorHex
@@ -53,7 +53,7 @@ extension RealmController {
 //func Characteristic
 extension RealmController {
     func add(characteristic: Characteristic) {
-        guard characteristicsAll.filter{$0.name == characteristic.name}.count == 0 else { return }
+        guard characteristicsAll.filter({$0.name == characteristic.name}).count == 0 else { return }
         
         try! realm.write {
             realm.add(characteristic)
@@ -158,16 +158,12 @@ extension RealmController {
         //++++++  витягування виконаних задач на сьогоднішній день(окрім актуальних)- окрема функции которая использует эту
     }
     
-    func getFinishedQuestsToday() -> Dictionary<Quest,Int> {
+    func getFinishedQuestsToday(dateNow: Date = Date.now) -> Dictionary<Quest,Int> {
         // здихатися квестсТудей
-        let quests = allHistory.filter({$0.dateCompleted == Date.now.dateWithoutTime()})
+        let quests = allHistory.filter({$0.dateCompleted == dateNow.dateWithoutTime()})
             .compactMap { history -> Quest? in
                 return history.quest
             }
-        //        var result = Dictionary<Quest, Int>()
-        //        for quest in quests {
-        //            result[quest, default: 0] += 1
-        //        }
         let questsAndCount = Dictionary(quests.map { ($0, 1) }, uniquingKeysWith: +)
         
         
@@ -178,11 +174,11 @@ extension RealmController {
     //достать все квесты на сегодня
     //сравнить которые есть в истории отсеять
     //отфильтровать по количеству повторений к количеству репитТаймов
-    func getActualQuestsToday() -> [Quest] {
-        guard let questsToday = getQuestsToday() else { return [] }
+    func getActualQuestsToday(dateNow: Date = Date.now) -> [Quest] {
+        guard let questsToday = getQuestsToday(dateNow: dateNow) else { return [] }
         
         let historyObject = realm.objects(History.self)
-        let historyFilter = historyObject.where({$0.dateCompleted == Date.now.dateWithoutTime()})
+        let historyFilter = historyObject.where({$0.dateCompleted == dateNow.dateWithoutTime()})
         
         let filterQuestsInHistory = questsToday.map { quest -> Quest? in
             if !historyFilter.contains(where: { history in
@@ -209,12 +205,12 @@ extension RealmController {
         return actualQuestsToday
     }
     
-    func getSingleQuestHalfYear() -> [Quest] {
+    func getSingleQuestHalfYear(dateNow: Date = Date.now) -> [Quest] {
         let allQuests = questsAll
         let allHistory = allHistory
         
         let singleDayQuests = allQuests.map { quest -> Quest? in
-            guard case let .singleDayQuest(date) = quest.questRepeat,date <= Date.now.adding(days: 182),
+            guard case let .singleDayQuest(date) = quest.questRepeat,date <= dateNow.adding(days: 182),
                   !allHistory.contains(where: { history in
                       (history.quest?.name.contains(quest.name))!
                   })
@@ -340,4 +336,6 @@ public extension Sequence {
         
         return dict
     }
+    
+    
 }

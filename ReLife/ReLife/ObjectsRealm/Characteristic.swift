@@ -3,7 +3,8 @@ import RealmSwift
 
 public class Characteristic: Object {
     @Persisted(primaryKey: true) var key: String
-    @Persisted private(set) var name: String
+//    @Persisted private(set) var name: String
+    @Persisted var name: String
     @Persisted var icon: String
     
     public override init(){
@@ -12,10 +13,10 @@ public class Characteristic: Object {
         self.name = ""
     }
     
-    public init(name: String) {
-        super.init()
-        self.key = name
+    convenience init(name: String) {
+        self.init()
         self.name = name
+        self.key = name
     }
     
     func setName(_ name: String) {

@@ -23,7 +23,7 @@ final class QuestsTests: XCTestCase {
     
     // Test adding a quest
     func testAddQuest() {
-        XCTAssertEqual(realmController.characteristicsAll.count, 1)
+        XCTAssertEqual(realmController.characteristicsAll.count, 2)
         
         let charach = realmController.characteristicsAll.first!
         
@@ -125,13 +125,12 @@ final class QuestsTests: XCTestCase {
     }
     
     func testGetSingleQuestHalfYear() {
-        let day2023 = Date.from(str: "2023/09/20")!.adding(hrs: 3)
-        
+        let day3000 = Date.from(str: "3000/01/01")!.adding(hrs: 2)
         let dates = [
-            QuestRepeatType.singleDayQuest(date: day2023),        // will be
-            QuestRepeatType.singleDayQuest(date: day2023.adding(days: +365)),
-            QuestRepeatType.singleDayQuest(date: day2023.adding(days: -30)),   //will be
-            QuestRepeatType.singleDayQuest(date: day2023.adding(days: -200))
+            QuestRepeatType.singleDayQuest(date: day3000),        // will be
+            QuestRepeatType.singleDayQuest(date: day3000.adding(days: +365)),
+            QuestRepeatType.singleDayQuest(date: day3000.adding(days: -30)),   //will be
+            QuestRepeatType.singleDayQuest(date: day3000.adding(days: -200))
         ]
         
         let charachSet = [Characteristic : Int]()
@@ -144,37 +143,37 @@ final class QuestsTests: XCTestCase {
         
         realmController.add(history: History(quest: quests.last! ) )
         
-        XCTAssertEqual(realmController.getSingleQuestHalfYear().count, 2)
+        XCTAssertEqual(realmController.getSingleQuestHalfYear(dateNow: day3000).count, 2)
     }
     
     func testGetActualQuestToday() {
         let charachSet = [Characteristic : Int]()
-        
+        let day3000 = Date.from(str: "3000/01/01")!.adding(hrs: 2)
         let repeatTypes = [
-            QuestRepeatType.singleDayQuest(date: (Date.from(str: "2023/09/20")!.adding(hrs: +3))),  // will be
-            QuestRepeatType.singleDayQuest(date: Date.now.adding(hrs: +3)),
+            QuestRepeatType.singleDayQuest(date: day3000),  // will be
+            QuestRepeatType.singleDayQuest(date: day3000),
             
             QuestRepeatType.eachWeek(days: [4]),                                           // will be
             QuestRepeatType.eachWeek(days: [1,2,4]),
             
-            QuestRepeatType.dayOfMonth(days: [20]),                                         // will be
+            QuestRepeatType.dayOfMonth(days: [1]),                                         // will be
             QuestRepeatType.dayOfMonth(days: [2,4,5,6]),
             
-            QuestRepeatType.repeatEvery(days: 2, startingFrom: Date.now.adding(days: -2) ), // will be
-            QuestRepeatType.repeatEvery(days: 3, startingFrom: Date.now),                   // will be
-            QuestRepeatType.repeatEvery(days: 2, startingFrom: Date.now),
-            QuestRepeatType.repeatEvery(days: 3, startingFrom: Date.now.adding(days: +2)),
+            QuestRepeatType.repeatEvery(days: 2, startingFrom: day3000.adding(days: -2) ), // will be
+            QuestRepeatType.repeatEvery(days: 3, startingFrom: day3000),                   // will be
+            QuestRepeatType.repeatEvery(days: 2, startingFrom: day3000),
+            QuestRepeatType.repeatEvery(days: 3, startingFrom: day3000.adding(days: +2)),
         ]
-        
+
         let quests = repeatTypes.enumerated().map {
             Quest(name: "Quest\($0.offset )", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: $0.element )
         }
         
         quests.forEach{ realmController.add(quest: $0) }
         
-        realmController.add(history: History(quest: quests[1]))
-        realmController.add(history: History(quest: quests[8]))
-        realmController.add(history: History(quest: quests[3]))
+        realmController.add(history: History(quest: quests[1],dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[8],dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[3],dateCompleted: day3000))
         
         let expected = [
               realmController.questsAll.filter{$0.name == "Quest0"}.first!,
@@ -184,25 +183,26 @@ final class QuestsTests: XCTestCase {
             realmController.questsAll.filter{$0.name == "Quest7"}.first!
         ]
         
-        XCTAssertEqual(realmController.getActualQuestsToday(), expected )
+        XCTAssertEqual(realmController.getActualQuestsToday(dateNow: day3000), expected )
     }
     func testGetFinishQuestsToday() {
+        let day3000 = Date.from(str: "3000/01/01")!.adding(hrs: 2)
         let charachSet = [Characteristic : Int]()
         
         let repeatTypes = [
-            QuestRepeatType.singleDayQuest(date: (Date.from(str: "2023/09/25")!.adding(hrs: +3))),            // will be
-            QuestRepeatType.singleDayQuest(date: Date.now.adding(hrs: +3)),
+            QuestRepeatType.singleDayQuest(date: day3000),            // will be
+            QuestRepeatType.singleDayQuest(date: day3000),
             
-            QuestRepeatType.eachWeek(days: [7]),                                           // will be
+            QuestRepeatType.eachWeek(days: [4]),                                           // will be
             QuestRepeatType.eachWeek(days: [1,2]),
             
-            QuestRepeatType.dayOfMonth(days: [23]),                                         // will be
+            QuestRepeatType.dayOfMonth(days: [1]),                                         // will be
             QuestRepeatType.dayOfMonth(days: [2,4,5,6]),
             
-            QuestRepeatType.repeatEvery(days: 2, startingFrom: Date.now.adding(days: -2)), // will be
-            QuestRepeatType.repeatEvery(days: 3, startingFrom: Date.now),                   // will be
-            QuestRepeatType.repeatEvery(days: 2, startingFrom: Date.now),
-            QuestRepeatType.repeatEvery(days: 3, startingFrom: Date.now.adding(days: +2)),
+            QuestRepeatType.repeatEvery(days: 2, startingFrom: day3000.adding(days: -2)), // will be
+            QuestRepeatType.repeatEvery(days: 3, startingFrom: day3000),                   // will be
+            QuestRepeatType.repeatEvery(days: 2, startingFrom: day3000),
+            QuestRepeatType.repeatEvery(days: 3, startingFrom: day3000.adding(days: +2)),
         ]
         
         
@@ -211,13 +211,13 @@ final class QuestsTests: XCTestCase {
         }
         quests.forEach{ realmController.add(quest: $0) }
         
-        realmController.add(history: History(quest: realmController.questsAll.filter{$0.name == "Quest0"}.first!))
-        realmController.add(history: History(quest: realmController.questsAll.filter{$0.name == "Quest0"}.first!))
-        realmController.add(history: History(quest: quests[0]))
-        realmController.add(history: History(quest: quests[2]))
-        realmController.add(history: History(quest: quests[4]))
-        realmController.add(history: History(quest: quests[6]))
-        realmController.add(history: History(quest: quests[7]))
+        realmController.add(history: History(quest: realmController.questsAll.filter{$0.name == "Quest0"}.first!,dateCompleted: day3000))
+        realmController.add(history: History(quest: realmController.questsAll.filter{$0.name == "Quest0"}.first!,dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[0],dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[2],dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[4],dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[6],dateCompleted: day3000))
+        realmController.add(history: History(quest: quests[7],dateCompleted: day3000))
         
         let expected = [
             realmController.questsAll.filter{$0.name == "Quest0"}.first!:3,
@@ -226,7 +226,7 @@ final class QuestsTests: XCTestCase {
             realmController.questsAll.filter{$0.name == "Quest6"}.first!:1,
             realmController.questsAll.filter{$0.name == "Quest7"}.first!:1
         ]
-        XCTAssertEqual(realmController.getFinishedQuestsToday(),expected)
+        XCTAssertEqual(realmController.getFinishedQuestsToday(dateNow: day3000),expected)
     }
 
     func testGetCharsPoints() {
@@ -268,5 +268,6 @@ final class QuestsTests: XCTestCase {
         XCTAssertEqual(healthPoints, 10*3 + 15)
         XCTAssertEqual(levelPoints, 30*3 )
     }
+    
 }
 
