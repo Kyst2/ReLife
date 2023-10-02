@@ -20,10 +20,8 @@ public class RealmController {
         
     }
    
-    
-      
 }
-//func Quest
+
 extension RealmController {
     func add(quest: Quest) {
         try! realm.write {
@@ -38,7 +36,6 @@ extension RealmController {
             }
         }
     }
-    // квест должен меняться  но при этом ключ менять нельзя и нельзя через удаление потому что удаляется из истории
 
     func update(questKey: String, withValues: Quest) {
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
@@ -81,16 +78,8 @@ extension RealmController {
             realm.add(withValues)
         }
     }
-//    func update(characteristicKey: String, withValues: Characteristic) {
-//        if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
-//            try! realm.write {
-//                characteristic.setName(withValues.name)
-//            }
-//        }
-//
-//    }
+
 }
-//func History
 extension RealmController {
     func add(history: History) {
         try! realm.write {
@@ -155,10 +144,8 @@ extension RealmController {
                 guard case let .repeatEvery(repeatEachDays, dateStart) = quest.questRepeat,
                       dateStart <= today
                 else { return nil }
-                
-                // ++++         TODO: make Date+ ext: date1.distance(to: date2, type: .day) -> Int
+
                 let daysSinceStart = dateStart.distance(to: today, type: .day)
-                //                Calendar.current.dateComponents([.day], from: dateStart, to: today).day ?? 0
                 
                 return ((daysSinceStart % repeatEachDays) == 0) ? quest : nil
             }
@@ -234,49 +221,6 @@ extension RealmController {
         
         return singleDayQuests
     }
-
-    /// це список всіх балів по кожній характеристиці як у персонажа RPG
-    /// достаем все характеристики
-    /// достаем все квсесты из истории
-    /// достаем количество одинаковых квестов
-    /// из квеста вытягиваем характеристики и количество балов
-    /// количество балов умножаем на количество повторения квеста
-    ///
-    ///
-//    func getAllCharAndPoints() -> [Characteristic : Int] {
-//        var allCharacteristicsAndPoints = Dictionary<Characteristic, Int>()
-//        
-//        let allCharacteristics = self.characteristicsAll
-//        let questsFromHistory = self.allHistory.compactMap{$0.quest}
-//        
-//        let questsAndCount = Dictionary(questsFromHistory.map { ($0, 1) }, uniquingKeysWith: +)
-//        
-//        /// у нас есть квесты и количество этих квестов
-//        /// нам нужно сравить именa характеристик и характеристик в базе пропустив подходящие
-//        /// если имя характеристики соответствует имени характеристики(квеста)  мы добавляем её в дикшенари со значением поинтов умноженых на количество квестов
-//        let allCharacterisitcAndPointFromQuests = questsAndCount.map { (quest , count) -> Dictionary<String,Int> in
-//            var charactAndPoints = Dictionary<String, Int>()
-//            quest.charachPoints.forEach { char in
-//                let name = char.key
-//                let points = char.value
-//                charactAndPoints[name] = points * count
-//            }
-//            
-//            return charactAndPoints
-//        }.flatMap{$0}
-//        
-//        allCharacterisitcAndPointFromQuests.forEach { (key , value ) in
-//            
-//            allCharacteristics.forEach{ chars in
-//                if key == chars.name {
-//                    allCharacteristicsAndPoints[chars] = value
-//                }
-//            }
-//            
-//        }
-//        
-//        return allCharacteristicsAndPoints
-//    }
     
     func getAllCharacteristicPoints() -> Dictionary<Characteristic, Int> {
         let characs = self.characteristicsAll
