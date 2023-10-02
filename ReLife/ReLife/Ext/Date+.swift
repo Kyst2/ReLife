@@ -1,6 +1,6 @@
 import Foundation
 
-/// move to essentials and cover tests
+/// move to essentials and cover tests 
 public extension Date {
     static func from(str: String, format: String = "yyyy'/'MM'/'dd") -> Date? {
         let dateFormatter = DateFormatter()

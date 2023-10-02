@@ -31,14 +31,12 @@ final class CharacteristicsTests: XCTestCase {
     
     // Test removing a characteristic
     func testRemoveChars() {
-        let characteristic = Characteristic(name: "Health123")
+        let char = Characteristic(name: "L")
+        realmController.add(characteristic: char)
+        print(realmController.characteristicsAll.first!.key)
+        realmController.remove(characteristicKey: realmController.characteristicsAll.first!.key)
         
-        realmController.add(characteristic: characteristic)
-        realmController.remove(characteristicKey: characteristic.key)
-        
-        let doesNotExist = realmController.characteristicsAll.first(where: { $0.name == characteristic.name}) == nil
-        
-        XCTAssertTrue(doesNotExist)
+        XCTAssertTrue(realmController.characteristicsAll.first == nil)
     }
     
     // More test cases can go here for other methods like update and addCharacteristic
@@ -50,6 +48,47 @@ final class CharacteristicsTests: XCTestCase {
         realmController.update(characteristicKey: characteristic.key, withValues: Characteristic(name: "char2"))
         
         XCTAssertEqual(realmController.characteristicsAll.filter({$0.name == "char2"}).first?.name, "char2")
-        XCTAssertEqual(realmController.characteristicsAll.filter({$0.key == characteristic.key}).first?.name, "char2")
+        XCTAssertEqual(realmController.characteristicsAll.first?.key, "char2")
+    }
+    func testGetCharsPoints() {
+        realmController.add(characteristic: Characteristic(name: "Health"))
+        realmController.add(characteristic: Characteristic(name: "Level"))
+        let helth = realmController.characteristicsAll.filter{ $0.name == "Health"}.first!
+        let level = realmController.characteristicsAll.filter{ $0.name == "Level"}.first!
+        
+        print("2: \(realmController.characteristicsAll[0].key)")
+        
+        let charSet1 = [ helth: 10, level: 30]
+        let charSet2 = [ helth: 15]
+        
+        let quest = Quest(name: "Quest1", icon: .americanFootball, color: .black, charachPoints: charSet1, questRepeatStr: .eachWeek(days: [4]))
+        realmController.add(quest: quest)
+        let quest2 = Quest(name: "Quest2", icon: .americanFootball, color: .black, charachPoints: charSet2, questRepeatStr: .eachWeek(days: [4]))
+        realmController.add(quest: quest)
+        
+        realmController.add(history: History(quest: quest))
+        realmController.add(history: History(quest: quest))
+        
+        XCTAssertEqual(realmController.characteristicsAll.count, 2)
+        XCTAssertEqual(realmController.questsAll.count, 1)
+        
+        var allCharacsPoints = realmController.getAllCharacteristicPoints().map{ $0 }
+        
+        var healthPoints = allCharacsPoints.filter{ $0.key.key == "Health" }.first!.value
+        var levelPoints = allCharacsPoints.filter{ $0.key.key == "Level" }.first!.value
+        
+        XCTAssertEqual(healthPoints, 10*2 )
+        XCTAssertEqual(levelPoints, 30*2 )
+        
+        realmController.add(history: History(quest: quest))
+        realmController.add(history: History(quest: quest2))
+        
+        allCharacsPoints = realmController.getAllCharacteristicPoints().map{ $0 }
+        
+        healthPoints = allCharacsPoints.filter{ $0.key.key == "Health" }.first!.value
+        levelPoints = allCharacsPoints.filter{ $0.key.key == "Level" }.first!.value
+        
+        XCTAssertEqual(healthPoints, 10*3 + 15)
+        XCTAssertEqual(levelPoints, 30*3 )
     }
 }

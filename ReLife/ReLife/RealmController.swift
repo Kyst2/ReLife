@@ -38,14 +38,17 @@ extension RealmController {
             }
         }
     }
-    
+    // квест должен меняться  но при этом ключ менять нельзя и нельзя через удаление потому что удаляется из истории
+
     func update(questKey: String, withValues: Quest) {
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
-//                quest.key = withValues.name
                 quest.name = withValues.name
                 quest.icon = withValues.icon
                 quest.colorHex = withValues.colorHex
+                quest.charachPoints = withValues.charachPoints
+                quest.questRepeat = withValues.questRepeat
+                quest.repeatTimes = withValues.repeatTimes
             }
         }
     }
@@ -68,13 +71,24 @@ extension RealmController {
         }
     }
     
-    func update(characteristicKey: String, withValues: Characteristic) {
-        if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
+    func update(characteristicKey: String , withValues:Characteristic){
+        if let oldCharacteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey){
             try! realm.write {
-                characteristic.setName(withValues.name)
+                realm.delete(oldCharacteristic)
             }
         }
+        try! realm.write{
+            realm.add(withValues)
+        }
     }
+//    func update(characteristicKey: String, withValues: Characteristic) {
+//        if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
+//            try! realm.write {
+//                characteristic.setName(withValues.name)
+//            }
+//        }
+//
+//    }
 }
 //func History
 extension RealmController {
@@ -169,11 +183,7 @@ extension RealmController {
         
         return questsAndCount
     }
-    
-    //врахувать що може бути Н виконаних квестів за сьогодні
-    //достать все квесты на сегодня
-    //сравнить которые есть в истории отсеять
-    //отфильтровать по количеству повторений к количеству репитТаймов
+ 
     func getActualQuestsToday(dateNow: Date = Date.now) -> [Quest] {
         guard let questsToday = getQuestsToday(dateNow: dateNow) else { return [] }
         
@@ -191,7 +201,9 @@ extension RealmController {
         }
             .compactMap{ $0 }
         
-        let questsAndCount = Dictionary(filterQuestsInHistory.map { ($0, 1) }, uniquingKeysWith: +)
+        let questsAndCount = filterQuestsInHistory
+            .asDict(groupedBy: { $0 } ) // [Quest: [Quest]]
+            .mapValues { items in items.count } // [Quest : Count]
         
         let actualQuestsToday = questsAndCount.compactMap { (quest , count) -> Quest? in
             if count <= quest.repeatTimes {
@@ -231,40 +243,40 @@ extension RealmController {
     /// количество балов умножаем на количество повторения квеста
     ///
     ///
-    func getAllCharAndPoints() -> [Characteristic : Int] {
-        var allCharacteristicsAndPoints = Dictionary<Characteristic, Int>()
-        
-        let allCharacteristics = self.characteristicsAll
-        let questsFromHistory = self.allHistory.compactMap{$0.quest}
-        
-        let questsAndCount = Dictionary(questsFromHistory.map { ($0, 1) }, uniquingKeysWith: +)
-        
-        /// у нас есть квесты и количество этих квестов
-        /// нам нужно сравить именa характеристик и характеристик в базе пропустив подходящие
-        /// если имя характеристики соответствует имени характеристики(квеста)  мы добавляем её в дикшенари со значением поинтов умноженых на количество квестов
-        let allCharacterisitcAndPointFromQuests = questsAndCount.map { (quest , count) -> Dictionary<String,Int> in
-            var charactAndPoints = Dictionary<String, Int>()
-            quest.charachPoints.forEach { char in
-                let name = char.key
-                let points = char.value
-                charactAndPoints[name] = points * count
-            }
-            
-            return charactAndPoints
-        }.flatMap{$0}
-        
-        allCharacterisitcAndPointFromQuests.forEach { (key , value ) in
-            
-            allCharacteristics.forEach{ chars in
-                if key == chars.name {
-                    allCharacteristicsAndPoints[chars] = value
-                }
-            }
-            
-        }
-        
-        return allCharacteristicsAndPoints
-    }
+//    func getAllCharAndPoints() -> [Characteristic : Int] {
+//        var allCharacteristicsAndPoints = Dictionary<Characteristic, Int>()
+//        
+//        let allCharacteristics = self.characteristicsAll
+//        let questsFromHistory = self.allHistory.compactMap{$0.quest}
+//        
+//        let questsAndCount = Dictionary(questsFromHistory.map { ($0, 1) }, uniquingKeysWith: +)
+//        
+//        /// у нас есть квесты и количество этих квестов
+//        /// нам нужно сравить именa характеристик и характеристик в базе пропустив подходящие
+//        /// если имя характеристики соответствует имени характеристики(квеста)  мы добавляем её в дикшенари со значением поинтов умноженых на количество квестов
+//        let allCharacterisitcAndPointFromQuests = questsAndCount.map { (quest , count) -> Dictionary<String,Int> in
+//            var charactAndPoints = Dictionary<String, Int>()
+//            quest.charachPoints.forEach { char in
+//                let name = char.key
+//                let points = char.value
+//                charactAndPoints[name] = points * count
+//            }
+//            
+//            return charactAndPoints
+//        }.flatMap{$0}
+//        
+//        allCharacterisitcAndPointFromQuests.forEach { (key , value ) in
+//            
+//            allCharacteristics.forEach{ chars in
+//                if key == chars.name {
+//                    allCharacteristicsAndPoints[chars] = value
+//                }
+//            }
+//            
+//        }
+//        
+//        return allCharacteristicsAndPoints
+//    }
     
     func getAllCharacteristicPoints() -> Dictionary<Characteristic, Int> {
         let characs = self.characteristicsAll
@@ -295,11 +307,6 @@ extension RealmController {
         
         return result
     }
-    
-    //TODO NOW:
-    // * витягування невиконаних разових задач на найближчі пів року +++++
-    // * витягнути з історії зароблену к-сть балів на конкретну характеристику
-    // * Знімати бали за невиконаний квест (галочка) - додати в квест і написати тест
     
     enum QuestFinishType: Codable {
         case mililitres

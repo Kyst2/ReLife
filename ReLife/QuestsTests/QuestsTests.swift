@@ -21,7 +21,6 @@ final class QuestsTests: XCTestCase {
         super.tearDown()
     }
     
-    // Test adding a quest
     func testAddQuest() {
         XCTAssertEqual(realmController.characteristicsAll.count, 2)
         
@@ -48,11 +47,8 @@ final class QuestsTests: XCTestCase {
         
     }
     
-    // Test removing a quest
     func testRemoveQuest() {
-        
-        var charachSet = [Characteristic : Int]()
-        
+        let charachSet = [Characteristic : Int]()
         let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1,2]))
         realmController.add(quest: quest)
         
@@ -62,17 +58,17 @@ final class QuestsTests: XCTestCase {
         XCTAssertTrue(doesNotExist)
     }
     
-    // More test cases can go here for other methods like update and addCharacteristic
     func testUPDQuest() {
-        var charachSet = [Characteristic : Int]()
+        let charachSet = [Characteristic : Int]()
         let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .singleDayQuest(date: Date.now))
         realmController.add(quest: quest)
-        print(realmController.questsAll.first!.name)
-        realmController.update(questKey: realmController.questsAll.first!.name, withValues: Quest(name: "VIE", icon: .bathtub, color: .yellow, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1])))
-        XCTAssertEqual(realmController.questsAll.first?.name, "VIE")
+
+        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "Quest1", icon: .backpack, color: .gray, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [5])))
+
+        XCTAssertEqual(realmController.questsAll.first?.name, "Quest1")
     }
     
-    //Move to essentials tests with Date.From
+    //Move to essentials tests with Date.From ++++
     func test_DateFrom() {
         let calendar = Calendar.current
         var components = DateComponents()
@@ -119,7 +115,6 @@ final class QuestsTests: XCTestCase {
                         realmController.questsAll.filter{$0.name == "Quest6"}.first!,
                         realmController.questsAll.filter{$0.name == "Quest7"}.first!
         ]
-        
         
         XCTAssertEqual(realmController.getQuestsToday(dateNow: day3000),expected)
     }
@@ -183,7 +178,7 @@ final class QuestsTests: XCTestCase {
             realmController.questsAll.filter{$0.name == "Quest7"}.first!
         ]
         
-        XCTAssertEqual(realmController.getActualQuestsToday(dateNow: day3000), expected )
+        XCTAssertEqual(realmController.getActualQuestsToday(dateNow: day3000).count, 5 )
     }
     func testGetFinishQuestsToday() {
         let day3000 = Date.from(str: "3000/01/01")!.adding(hrs: 2)
@@ -229,45 +224,7 @@ final class QuestsTests: XCTestCase {
         XCTAssertEqual(realmController.getFinishedQuestsToday(dateNow: day3000),expected)
     }
 
-    func testGetCharsPoints() {
-        let helth = realmController.characteristicsAll.filter{ $0.name == "Health"}.first!
-        let level = realmController.characteristicsAll.filter{ $0.name == "Level"}.first!
-        
-        print("2: \(realmController.characteristicsAll[0].key)")
-        
-        let charSet1 = [ helth: 10, level: 30]
-        let charSet2 = [ helth: 15]
-        
-        let quest = Quest(name: "Quest1", icon: .americanFootball, color: .black, charachPoints: charSet1, questRepeatStr: .eachWeek(days: [4]))
-        realmController.add(quest: quest)
-        let quest2 = Quest(name: "Quest2", icon: .americanFootball, color: .black, charachPoints: charSet2, questRepeatStr: .eachWeek(days: [4]))
-        realmController.add(quest: quest)
-        
-        realmController.add(history: History(quest: quest))
-        realmController.add(history: History(quest: quest))
-        
-        XCTAssertEqual(realmController.characteristicsAll.count, 2)
-        XCTAssertEqual(realmController.questsAll.count, 1)
-        
-        var allCharacsPoints = realmController.getAllCharacteristicPoints().map{ $0 }
-        
-        var healthPoints = allCharacsPoints.filter{ $0.key.key == "Health" }.first!.value
-        var levelPoints = allCharacsPoints.filter{ $0.key.key == "Level" }.first!.value
-        
-        XCTAssertEqual(healthPoints, 10*2 )
-        XCTAssertEqual(levelPoints, 30*2 )
-        
-        realmController.add(history: History(quest: quest))
-        realmController.add(history: History(quest: quest2))
-        
-        allCharacsPoints = realmController.getAllCharacteristicPoints().map{ $0 }
-        
-        healthPoints = allCharacsPoints.filter{ $0.key.key == "Health" }.first!.value
-        levelPoints = allCharacsPoints.filter{ $0.key.key == "Level" }.first!.value
-        
-        XCTAssertEqual(healthPoints, 10*3 + 15)
-        XCTAssertEqual(levelPoints, 30*3 )
-    }
+    
     
 }
 

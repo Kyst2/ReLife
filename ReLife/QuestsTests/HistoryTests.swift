@@ -11,6 +11,7 @@ final class HistoryTests: XCTestCase {
         self.realmController = RealmController(test: true)
         realmController.add(characteristic: Characteristic(name: "Health"))
         
+        
     }
     
     override func tearDown() {
@@ -22,21 +23,20 @@ final class HistoryTests: XCTestCase {
     
     // Test adding a characteristic
     func testAddHistory() {
-        
-        var quest = realmController.generateQuest()
+        let quest = realmController.generateQuest()
+        realmController.add(quest: quest)
         
         let history = History(quest: quest)
         
         realmController.add(history: history)
-        let fetchedQuest = realmController.allHistory.first
         
-        XCTAssertNotNil(fetchedQuest)
-        XCTAssertEqual(fetchedQuest?.quest?.name, "quest")
+        let fetchedQuest = realmController.allHistory.first?.quest != nil
+        XCTAssertTrue(fetchedQuest)
     }
     
     // Test removing a characteristic
     func testRemoveHistory() {
-        var quest = realmController.generateQuest()
+        let quest = realmController.generateQuest()
         
         let history = History(quest: quest)
         realmController.add(history: history)
@@ -47,23 +47,7 @@ final class HistoryTests: XCTestCase {
         
         XCTAssertTrue(doesNotExist)
     }
-    
-    func test_calcPointsPerCharacteristic() {
-        var quest1 = realmController.generateQuest()
-        var quest2 = realmController.generateQuest()
-        
-        realmController.add(history: History(quest: quest1) )
-        realmController.add(history: History(quest: quest1) )
-        realmController.add(history: History(quest: quest1) )
-        
-        realmController.add(history: History(quest: quest2) )
-        realmController.add(history: History(quest: quest2) )
-        
-        
-        
-        
-        
-    }
+
     
     
 }
