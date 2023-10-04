@@ -9,18 +9,20 @@ public class Quest: Object {
     @Persisted private var iconStr: String
     @Persisted var colorHex: List<Float>
     @Persisted private var questRepeatStr: String
+    @Persisted var descript: String
     
     var questRepeat: QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
     var icon: MyIcon { get { MyIcon(rawValue: self.iconStr)! } set { self.iconStr = newValue.rawValue } }
     
     @Persisted var repeatTimes: Int
     
+    
     override init() {
         self.name = ""
         self.iconStr = MyIcon.americanFootball.rawValue
     }
     
-    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType,repeatTimes: Int = 1) {
+    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType,repeatTimes: Int = 1, descript: String = "") {
         self.init()
         self.name = name
         self.iconStr = icon.rawValue
@@ -30,6 +32,7 @@ public class Quest: Object {
         charachPoints.forEach {
             self.charachPoints.setValue($0.value, forKey: $0.key.key)
         }
+        self.descript = descript
     }
 }
 

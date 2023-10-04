@@ -9,15 +9,23 @@ public class RealmController {
     var allHistory: [History] { realm.objects(History.self).map{ $0 } }
     
     public init(test: Bool = false) {
+        let testDbUrlDir = URL.temporaryDirectory.appendingPathComponent("ReLife/")
+        try? FileManager.default.createDirectory(at: testDbUrlDir, withIntermediateDirectories: true)
+        
+        let testDbUrl = URL.temporaryDirectory.appendingPathComponent("ReLife/realmTest.realm")
+        
+        if test {
+            try? FileManager.default.removeItem(atPath: testDbUrl.path)
+            print("db: \(testDbUrl.path)")
+        }
         
         let config = test
-        ? Realm.Configuration(fileURL: URL.applicationDirectory.appendingPathComponent("realmTest.realm") ,inMemoryIdentifier: "testRealm")
-                        : Realm.Configuration(encryptionKey: nil)
+        ? Realm.Configuration(fileURL: testDbUrl, inMemoryIdentifier: "testRealm", schemaVersion: 1)
+        : Realm.Configuration(encryptionKey: nil, schemaVersion: 1)
         
         let r = try? Realm(configuration: config)
         
         self.realm = r!
-        
     }
    
 }
@@ -30,6 +38,9 @@ extension RealmController {
     }
     
     func remove(questKey: String) {
+        // видалити всі записи з історії з цим квестом
+        
+        
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
                 realm.delete(quest)
@@ -61,6 +72,9 @@ extension RealmController {
     }
     
     func remove(characteristicKey: String) {
+        // видалити з усіх квестів бали зав'язані на цю характеристику
+        
+        
         if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
             try! realm.write {
                 realm.delete(characteristic)
@@ -80,11 +94,14 @@ extension RealmController {
     }
 
 }
+
 extension RealmController {
     func add(history: History) {
         try! realm.write {
             realm.add(history)
         }
+        
+        // тут в характеристики записуємо в квесті ми зразу записуємо бали
     }
     
     func remove(historyKey: String) {
