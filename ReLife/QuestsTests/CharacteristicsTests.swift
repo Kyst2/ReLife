@@ -31,12 +31,21 @@ final class CharacteristicsTests: XCTestCase {
     
     // Test removing a characteristic
     func testRemoveChars() {
-        let char = Characteristic(name: "L")
-        realmController.add(characteristic: char)
-        print(realmController.characteristicsAll.first!.key)
-        realmController.remove(characteristicKey: realmController.characteristicsAll.first!.key)
+        let quest = Quest(name: "Quest", icon: .moon, color: .gray, charachPoints: [Characteristic(name: "Health"):15,Characteristic(name: "Strong"):10], questRepeatStr: .eachWeek(days: [5]))
+        realmController.add(quest: quest)
         
-        XCTAssertTrue(realmController.characteristicsAll.first == nil)
+        let char = Characteristic(name: "Health")
+        realmController.add(characteristic: char)
+        let char2 = Characteristic(name: "Strong")
+        realmController.add(characteristic: char2)
+        print(realmController.questsAll.first?.charachPoints)
+        
+        realmController.remove(characteristicKey: realmController.characteristicsAll.first!.key)
+        print(realmController.questsAll.first?.charachPoints)
+        
+        XCTAssertTrue(realmController.characteristicsAll.count == 1)
+        XCTAssertEqual(realmController.questsAll.first?.charachPoints.count, 1 )
+        print(realmController.questsAll.first!)
     }
     
     // More test cases can go here for other methods like update and addCharacteristic

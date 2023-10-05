@@ -73,10 +73,16 @@ extension RealmController {
     
     func remove(characteristicKey: String) {
         // видалити з усіх квестів бали зав'язані на цю характеристику
-        
-        
         if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
             try! realm.write {
+                let quests = self.questsAll
+                quests.forEach { quest in
+                    quest.charachPoints.forEach { char in
+                        if  char.key ==  characteristic.name {
+                            quest.charachPoints.removeObject(for: char.key)
+                        }
+                    }
+                }
                 realm.delete(characteristic)
             }
         }
