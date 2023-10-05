@@ -21,6 +21,8 @@
 		A25272142A8E3E4100DD4B75 /* CharacteristicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */; };
 		A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCC2AAA273400128B3C /* Date+.swift */; };
 		A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */; };
+		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
+		A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E652A58A90C00315995 /* ReLifeApp.swift */; };
 		A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* ContentView.swift */; };
 		A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E692A58A90D00315995 /* Assets.xcassets */; };
@@ -50,6 +52,20 @@
 			remoteInfo = ReLife;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2CCA02C2ACF0739006A3A7F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -101,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
+				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +170,13 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		A2CCA0282ACF0739006A3A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2DD8E592A58A90C00315995 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +184,7 @@
 				A211B1732A7B6F7C004680E8 /* ReLifeTests */,
 				A210862A2A813A1A00EB7A89 /* QuestsTests */,
 				A2DD8E632A58A90C00315995 /* Products */,
+				A2CCA0282ACF0739006A3A7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +295,7 @@
 				A2DD8E5E2A58A90C00315995 /* Sources */,
 				A2DD8E5F2A58A90C00315995 /* Frameworks */,
 				A2DD8E602A58A90C00315995 /* Resources */,
+				A2CCA02C2ACF0739006A3A7F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +305,7 @@
 			packageProductDependencies = (
 				A211B17F2A7D012D004680E8 /* Realm */,
 				A211B1812A7D012D004680E8 /* RealmSwift */,
+				A2CCA0292ACF0739006A3A7F /* KystEssentials */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -820,6 +847,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		A2CCA0292ACF0739006A3A7F /* KystEssentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KystEssentials;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
