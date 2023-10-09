@@ -1,6 +1,8 @@
 import Foundation
 import RealmSwift
+#if os(macOS)
 import AppKit
+#endif
 
 public class Quest: Object {
     @Persisted(primaryKey: true) var key: String = UUID().uuidString

@@ -25,10 +25,13 @@ final class HistoryTests: XCTestCase {
     func testAddHistory() {
         let quest = realmController.generateQuest()
         realmController.add(quest: quest)
+        print(quest)
         
         let history = History(quest: quest)
         
+        
         realmController.add(history: history)
+        print(realmController.characteristicsAll.first!)
         
         let fetchedQuest = realmController.allHistory.first?.quest != nil
         XCTAssertTrue(fetchedQuest)

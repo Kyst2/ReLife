@@ -102,11 +102,20 @@ extension RealmController {
 }
 
 extension RealmController {
+    // у нас есть все характеристики
+    // выбираем нужную и добавляем ей балы
     func add(history: History) {
         try! realm.write {
             realm.add(history)
+            history.quest?.charachPoints.forEach({ char in
+                characteristicsAll.forEach { character in
+                    if char.key == character.name {
+                        character.points += char.value
+                    }
+                }
+            })
         }
-        
+       
         // тут в характеристики записуємо в квесті ми зразу записуємо бали
     }
     
