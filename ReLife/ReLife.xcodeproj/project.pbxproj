@@ -24,8 +24,10 @@
 		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
 		A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */; };
+		A2CCA0312AD5E8AA006A3A7F /* MainViewTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */; };
+		A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */; };
 		A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E652A58A90C00315995 /* ReLifeApp.swift */; };
-		A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* ContentView.swift */; };
+		A2DD8E682A58A90C00315995 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* MainView.swift */; };
 		A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E692A58A90D00315995 /* Assets.xcassets */; };
 		A2DD8E6E2A58A90D00315995 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E6D2A58A90D00315995 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -84,9 +86,11 @@
 		A2AEDCCC2AAA273400128B3C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
+		A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTabBar.swift; sourceTree = "<group>"; };
+		A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsView.swift; sourceTree = "<group>"; };
 		A2DD8E622A58A90C00315995 /* ReLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DD8E652A58A90C00315995 /* ReLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeApp.swift; sourceTree = "<group>"; };
-		A2DD8E672A58A90C00315995 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2DD8E672A58A90C00315995 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A2DD8E692A58A90D00315995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2DD8E6B2A58A90D00315995 /* ReLife.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReLife.entitlements; sourceTree = "<group>"; };
 		A2DD8E6D2A58A90D00315995 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -182,8 +186,10 @@
 		A2CCA02D2AD4974A006A3A7F /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				A2DD8E672A58A90C00315995 /* ContentView.swift */,
+				A2DD8E672A58A90C00315995 /* MainView.swift */,
 				A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */,
+				A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */,
+				A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -439,9 +445,11 @@
 			files = (
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
-				A2DD8E682A58A90C00315995 /* ContentView.swift in Sources */,
+				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
+				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,
 				A25272122A8E3C8400DD4B75 /* History.swift in Sources */,
+				A2CCA0312AD5E8AA006A3A7F /* MainViewTabBar.swift in Sources */,
 				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
