@@ -1,79 +1,99 @@
 import SwiftUI
 
 struct TabBar: View {
-
-    @State var selectedTab = "Quests"
+    @State var selectedTab: MainViewTab = .Quests
+    
     var body: some View {
-        HStack(alignment: .center, content: {
-            VStack(spacing: 0 ){
-                
-                InsideTabBar(selectedTab: $selectedTab)
-                
-            }
-            switch(selectedTab){
-            case "Quests" : QuestsView()
-            case "Characteristics" : CharacteristicsView()
-            default:
-                QuestsView()
-            }
-//            .background(Color("Back"))
+        HStack(alignment: .top, content: {
+            TabsPanel()
+            
+            ContentPanel()
         })
-        
     }
-}
-struct InsideTabBar: View{
-    @Binding var selectedTab: String
-    var body: some View{
-        Group{
-
-            TabButton(image: "list.bullet.clipboard", title: "Quests", selectedTab: $selectedTab)
-            TabButton(image: "medal", title: "Characteristics", selectedTab: $selectedTab)
-            TabButton(image: "book.circle", title: "History", selectedTab: $selectedTab)
-            TabButton(image: "gearshape.circle", title: "Settings", selectedTab: $selectedTab)
+    
+    func TabsPanel() -> some View {
+        ZStack(alignment: .top){
+            VisualEffectView(type:.withinWindow, material: .m5_sidebar)
+                .frame(width:120)
+            VStack(spacing: 0 ){
+                TabButton(tab: .Quests, selectedTab: $selectedTab)
+                TabButton(tab: .Characteristics, selectedTab: $selectedTab)
+                TabButton(tab: .History, selectedTab: $selectedTab)
+                TabButton(tab: .Settings, selectedTab: $selectedTab)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func ContentPanel() -> some View {
+        switch(selectedTab){
+        case .Quests : QuestsView()
+        case .Characteristics : CharacteristicsView()
+        case .History :Text("History")
+        case .Settings: Text("Settings")
         }
     }
 }
 
+///////////////////////
+///HELPERS
+//////////////////////
+
 struct TabButton: View {
-    var image:String
-    var title: String
-    @Binding var selectedTab: String
-    @State var isButton = false
+    let tab: MainViewTab
+    
+    @Binding var selectedTab: MainViewTab
+    
     var body: some View {
-        
         Button {
-            withAnimation(.easeInOut){selectedTab = title}
-        } label: {
+            withAnimation(.easeInOut) { selectedTab = tab}
+        } label: { ButtonLabel() }
+        .overlay(
+            RoundedRectangle(cornerRadius: 0)
+                .stroke(Color.primary, lineWidth: 0.1)
+        )
+        .buttonStyle(PlainButtonStyle())
+    }
+    
+    func ButtonLabel() -> some View {
+        ZStack {
+            VisualEffectView(type:.withinWindow, material: .m5_sidebar)
+            
             VStack(spacing: 6){
-                
-                Image(systemName: image)
+                Image(systemName: tab.icon)
                     .font(.system(size: 25))
                     .foregroundColor(.black)
-                Text(title)
+                Text(tab.title)
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
-                    
             }
-            .padding(.bottom,8)
-            .frame(width: 100, height: 55 + self.getSafeAreaBottom() )
-            .contentShape(Rectangle())
-            .background(Color("textColor").offset(x: selectedTab == title ? 0 : -100))
         }
-        .overlay(
-                    RoundedRectangle(cornerRadius: 0)
-                        .stroke(Color.primary, lineWidth: 0.1)
-                )
-        .buttonStyle(PlainButtonStyle())
-
+        .padding(.bottom,8)
+        .frame(width: 120,height: 70)
+        .contentShape(Rectangle())
+        .background(Color("textColor").offset(x: selectedTab == tab ? 0 : -120))
     }
 }
-extension View {
-    func getScreen() -> CGRect {
-        return NSScreen.main!.visibleFrame
+
+enum MainViewTab: String {
+    case Quests
+    case Characteristics
+    case History
+    case Settings
+}
+
+extension MainViewTab{
+    var title: String {
+        self.rawValue
     }
     
-    func getSafeAreaBottom() -> CGFloat{
-        return 10
+    var icon: String {
+        switch self {
+        case .Quests:           return "list.bullet.clipboard"
+        case .Characteristics:  return "medal"
+        case .History:          return "book.circle"
+        case .Settings:         return "gearshape.circle"
+        }
     }
 }
