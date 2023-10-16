@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "essentials",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/sergiy.vynnychenko/essentials.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4f4c312a301b7b345cd742592a97b98f15ce0ae0"
+      }
+    },
+    {
+      "identity" : "moreswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/UKS/moreswiftui.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "19da64eadd0607fe727d89dd935f8f5dfbdae233"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",

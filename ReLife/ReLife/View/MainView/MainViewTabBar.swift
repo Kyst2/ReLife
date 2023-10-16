@@ -1,4 +1,5 @@
 import SwiftUI
+import MoreSwiftUI
 
 struct TabBar: View {
     @State var selectedTab: MainViewTab = .Quests
@@ -29,8 +30,8 @@ struct TabBar: View {
         switch(selectedTab){
         case .Quests : QuestsView()
         case .Characteristics : CharacteristicsView()
-        case .History :Text("History")
-        case .Settings: Text("Settings")
+        case .History :Text("History").fillParent()
+        case .Settings: Text("Settings").fillParent()
         }
     }
 }
@@ -46,7 +47,7 @@ struct TabButton: View {
     
     var body: some View {
         Button {
-            withAnimation(.easeInOut) { selectedTab = tab}
+            withAnimation( .easeIn(duration: 0.2 )) { selectedTab = tab}
         } label: { ButtonLabel() }
         .overlay(
             RoundedRectangle(cornerRadius: 0)

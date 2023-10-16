@@ -27,6 +27,7 @@
 		A2CCA0312AD5E8AA006A3A7F /* MainViewTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */; };
 		A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */; };
 		A2CCA0352AD6E66D006A3A7F /* backgroundGaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0342AD6E66D006A3A7F /* backgroundGaussianBlur.swift */; };
+		A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */; };
 		A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E652A58A90C00315995 /* ReLifeApp.swift */; };
 		A2DD8E682A58A90C00315995 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* MainView.swift */; };
 		A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DD8E692A58A90D00315995 /* Assets.xcassets */; };
@@ -125,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
+				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
 				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
@@ -334,6 +336,7 @@
 				A211B17F2A7D012D004680E8 /* Realm */,
 				A211B1812A7D012D004680E8 /* RealmSwift */,
 				A2CCA0292ACF0739006A3A7F /* KystEssentials */,
+				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -377,6 +380,7 @@
 			mainGroup = A2DD8E592A58A90C00315995;
 			packageReferences = (
 				A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */,
 			);
 			productRefGroup = A2DD8E632A58A90C00315995 /* Products */;
 			projectDirPath = "";
@@ -867,6 +871,14 @@
 				kind = branch;
 			};
 		};
+		A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/UKS/moreswiftui.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -883,6 +895,11 @@
 		A2CCA0292ACF0739006A3A7F /* KystEssentials */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KystEssentials;
+		};
+		A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */;
+			productName = MoreSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
