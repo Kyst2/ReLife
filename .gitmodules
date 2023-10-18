@@ -1,6 +1,3 @@
 [submodule "KystEssentials"]
 	path = KystEssentials
 	url = git@github.com:Kyst2/KystEssentials.git
-[submodule "ParallaxPackage"]
-	path = ParallaxPackage
-	url = git@github.com:Kyst2/ParallaxPackage.git
