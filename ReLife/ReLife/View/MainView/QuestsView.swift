@@ -1,68 +1,33 @@
 import Foundation
 import SwiftUI
+import MoreSwiftUI
 
 struct QuestsView:View {
+    
     var body: some View {
         ScrollView{
-            Sectinos(header: "Today's Quests")
-            Sectinos(header: "Tomorrow's Quests")
-            Sectinos(header: "Long-term Quests")
+            Sections(header: "Today's Quests")
+            Sections(header: "Tomorrow's Quests")
+            Sections(header: "Long-term Quests")
         }
         
     }
 }
 
+
+
 extension QuestsView {
-    func Sectinos(header: String) -> some View {
+    func Sections(header:String) -> some View {
         Section(header: Text(header).foregroundColor(Color("textColor"))) {
             ForEach(quests.indices, id: \.self) { index in
                 let quest = quests[index]
-                
-                HStack {
-                    Image(systemName: quest.icon)
-                        .foregroundColor(Color("textColor"))
-                        .font(.largeTitle)
-                    
-                    Text(quest.name)
-                        .font(.headline)
-                    Spacer()
+                CustomDisclosureView(icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
-                        .foregroundColor(Color("textColor"))
-                        .font(.subheadline)
-                    //                                if quest.isCompleted {
-                    //                                    Image(systemName: "checkmark.circle.fill")
-                    //                                        .foregroundColor(.green)
-                    //                                }
-                }
-                .padding(10)
-                
-                .overlay(
-                    RoundedRectangle(cornerRadius: 0)
-                        .stroke(Color.primary, lineWidth: 0.08)
-                )
-                
-                .onTapGesture(count: 2) {
-                    // Show confirmation screen
-                }
-                .contextMenu {
-                    Button(action: {
-                        //                                    toggleCompletion(for: index)
-                    }) {
-                        Text(
-                            //                                        quest.isCompleted ?
-                            "Mark as Incomplete")
-                        Image(systemName:
-                                //                                            quest.isCompleted ?
-                              "arrow.uturn.left.circle")
-                    }
                 }
             }
         }
     }
 }
-
-
-
 
 class Questec {
     var name: String
@@ -75,3 +40,43 @@ class Questec {
     }
 }
 var quests = [Questec(name: "Quest1", icon: "heart.fill" , deteils: "wash up "),Questec(name: "Quest2", icon: "heart.fill", deteils: "clean room"), Questec(name: "Quest3", icon: "heart.fill", deteils: "buy apple")]
+
+
+struct CustomDisclosureView<Content: View>: View {
+    
+    @State private var isExpanded = false
+    let icon:String
+    let name:String
+    let content: () -> Content
+    
+    
+    var body: some View {
+        VStack{
+            HStack{
+                Image(systemName: icon)
+                    .foregroundColor(Color("textColor"))
+                    .font(.largeTitle)
+                
+                Text(name)
+                    .font(.headline)
+                Spacer()
+                Button(action: {
+                    withAnimation(.easeIn(duration: 0.2 )){
+                        isExpanded.toggle()}
+                }) {
+                    HStack {
+                        Image(systemName: isExpanded ? "arrow.up" : "arrow.down" )
+                    }
+                }.padding(.trailing,20)
+            }
+            if isExpanded {
+                content()
+                    .padding()
+            }
+        }.padding(10)
+        .overlay {
+            RoundedRectangle(cornerRadius: 0)
+                .stroke(Color.primary, lineWidth: 0.1)
+        }
+    }
+}
