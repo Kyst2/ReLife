@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "parallaxpackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kyst2/ParallaxPackage.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "70a04c6dc5b3f0a74178fc9e41c862da470a791b"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",

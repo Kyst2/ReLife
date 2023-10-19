@@ -15,6 +15,7 @@
 		A211B1802A7D012D004680E8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A211B17F2A7D012D004680E8 /* Realm */; };
 		A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A211B1812A7D012D004680E8 /* RealmSwift */; };
 		A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
+		A21989922AE138400004A5D9 /* KystParallax in Frameworks */ = {isa = PBXBuildFile; productRef = A21989912AE138400004A5D9 /* KystParallax */; };
 		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
@@ -127,6 +128,7 @@
 			files = (
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
+				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
 				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
@@ -337,6 +339,7 @@
 				A211B1812A7D012D004680E8 /* RealmSwift */,
 				A2CCA0292ACF0739006A3A7F /* KystEssentials */,
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
+				A21989912AE138400004A5D9 /* KystParallax */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -381,6 +384,7 @@
 			packageReferences = (
 				A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */,
+				A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */,
 			);
 			productRefGroup = A2DD8E632A58A90C00315995 /* Products */;
 			projectDirPath = "";
@@ -871,6 +875,14 @@
 				kind = branch;
 			};
 		};
+		A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kyst2/ParallaxPackage.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.com/UKS/moreswiftui.git";
@@ -891,6 +903,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		A21989912AE138400004A5D9 /* KystParallax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */;
+			productName = KystParallax;
 		};
 		A2CCA0292ACF0739006A3A7F /* KystEssentials */ = {
 			isa = XCSwiftPackageProductDependency;

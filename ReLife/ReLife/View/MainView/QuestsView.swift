@@ -3,12 +3,14 @@ import SwiftUI
 import MoreSwiftUI
 
 struct QuestsView:View {
+    
     var body: some View {
-        ScrollView {
+        ScrollView{
             Sections(header: "Today's Quests")
             Sections(header: "Tomorrow's Quests")
             Sections(header: "Long-term Quests")
         }
+        
     }
 }
 
@@ -37,16 +39,16 @@ class Questec {
         self.deteils = deteils
     }
 }
-
 var quests = [Questec(name: "Quest1", icon: "heart.fill" , deteils: "wash up "),Questec(name: "Quest2", icon: "heart.fill", deteils: "clean room"), Questec(name: "Quest3", icon: "heart.fill", deteils: "buy apple")]
 
 
 struct CustomDisclosureView<Content: View>: View {
-    @State private var isExpanded = false
     
+    @State private var isExpanded = false
     let icon:String
     let name:String
     let content: () -> Content
+    
     
     var body: some View {
         VStack{
@@ -69,7 +71,6 @@ struct CustomDisclosureView<Content: View>: View {
                 .padding(.trailing,20)
                 .buttonStyle(.plain)
             }
-            
             if isExpanded {
                 content()
                     .padding()
