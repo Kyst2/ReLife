@@ -32,7 +32,7 @@ struct TabBar: View {
     func ContentPanel() -> some View {
         switch(selectedTab){
         case .Quests : QuestsView()
-        case .Characteristics : CharacteristicsView()
+        case .Characteristics : CharacteristicsView().fillParent()
         case .History :Text("History").fillParent()
         case .Settings: Text("Settings").fillParent()
         }

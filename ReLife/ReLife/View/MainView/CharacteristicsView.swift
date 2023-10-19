@@ -16,9 +16,11 @@ struct CharacteristicsView: View {
 }
 func CharacterView() -> some View {
     ScrollView{
-        ForEach(char.sorted {$0.name > $1.name}, id: \.self) { char in
-            //        let char = char[index]
-            Charact(name: char.name, icon: char.icon, points: char.points)
+        LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
+            ForEach(char.sorted {$0.name > $1.name}, id: \.self) { char in
+                //        let char = char[index]
+                Charact(name: char.name, icon: char.icon, points: char.points)
+            }
         }
     }
 }
