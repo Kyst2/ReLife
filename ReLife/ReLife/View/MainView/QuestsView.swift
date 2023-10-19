@@ -18,7 +18,9 @@ struct QuestsView:View {
 
 extension QuestsView {
     func Sections(header:String) -> some View {
-        Section(header: Text(header).foregroundColor(Color("textColor"))) {
+        Section(header: Text(header)
+            .font(.system(size: 17))
+            .foregroundColor(Color("textColor"))) {
             ForEach(quests.indices, id: \.self) { index in
                 let quest = quests[index]
                 CustomDisclosureView(icon: quest.icon, name: quest.name) {

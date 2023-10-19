@@ -5,16 +5,19 @@ struct TabBar: View {
     @State var selectedTab: MainViewTab = .Quests
     
     var body: some View {
-        HStack(alignment: .top, content: {
-            TabsPanel()
-            
-            ContentPanel()
-        })
+        ZStack{
+            RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 100, endRadius: 500).offset(x: 70)
+            HStack(alignment: .top, content: {
+                TabsPanel()
+                
+                ContentPanel()
+            })
+        }
     }
     
     func TabsPanel() -> some View {
         ZStack(alignment: .top){
-            VisualEffectView(type:.withinWindow, material: .m5_sidebar)
+            VisualEffectView(type:.behindWindow, material: .m4_headerView)
                 .frame(width:120)
             VStack(spacing: 0 ){
                 TabButton(tab: .Quests, selectedTab: $selectedTab)
@@ -58,16 +61,17 @@ struct TabButton: View {
     
     func ButtonLabel() -> some View {
         ZStack {
-            VisualEffectView(type:.withinWindow, material: .m5_sidebar)
+            VisualEffectView(type:.behindWindow, material: .m4_headerView)
             
             VStack(spacing: 6){
                 Image(systemName: tab.icon)
                     .font(.system(size: 25))
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
+//                    .foregroundColor(Color("textColor"))
                 Text(tab.title)
                     .font(.caption)
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("textColor"))
             }
         }
         .padding(.bottom,8)
