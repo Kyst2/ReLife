@@ -16,6 +16,7 @@
 		A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A211B1812A7D012D004680E8 /* RealmSwift */; };
 		A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
 		A21989922AE138400004A5D9 /* KystParallax in Frameworks */ = {isa = PBXBuildFile; productRef = A21989912AE138400004A5D9 /* KystParallax */; };
+		A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21989952AE319560004A5D9 /* SheetConfirmationView.swift */; };
 		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
@@ -83,6 +84,7 @@
 		A211B1722A7B6F7C004680E8 /* ReLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeTests.swift; sourceTree = "<group>"; };
 		A211B17B2A7B7397004680E8 /* Characteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
+		A21989952AE319560004A5D9 /* SheetConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetConfirmationView.swift; sourceTree = "<group>"; };
 		A252720B2A8D3AF700DD4B75 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
@@ -161,6 +163,22 @@
 				A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */,
 			);
 			path = ReLifeTests;
+			sourceTree = "<group>";
+		};
+		A21989932AE3192A0004A5D9 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				A21989942AE319370004A5D9 /* SheetConfirmation */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		A21989942AE319370004A5D9 /* SheetConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				A21989952AE319560004A5D9 /* SheetConfirmationView.swift */,
+			);
+			path = SheetConfirmation;
 			sourceTree = "<group>";
 		};
 		A25272102A8E3C5700DD4B75 /* ObjectsRealm */ = {
@@ -258,6 +276,7 @@
 		A2DD8E742A58AB5000315995 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A21989932AE3192A0004A5D9 /* Sheets */,
 				A2CCA02D2AD4974A006A3A7F /* MainView */,
 			);
 			path = View;
@@ -471,6 +490,7 @@
 				A25272122A8E3C8400DD4B75 /* History.swift in Sources */,
 				A2CCA0312AD5E8AA006A3A7F /* MainViewTabBar.swift in Sources */,
 				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
+				A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
