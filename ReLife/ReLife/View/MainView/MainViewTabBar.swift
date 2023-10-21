@@ -6,7 +6,7 @@ struct TabBar: View {
     
     var body: some View {
         ZStack{
-            RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 100, endRadius: 500).offset(x: 70)
+            RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
             HStack(alignment: .top, content: {
                 TabsPanel()
                 
@@ -17,7 +17,7 @@ struct TabBar: View {
     
     func TabsPanel() -> some View {
         ZStack(alignment: .top){
-            VisualEffectView(type:.behindWindow, material: .m4_headerView)
+            VisualEffectView(type:.behindWindow, material: .m3_selection)
                 .frame(width:120)
             VStack(spacing: 0 ){
                 TabButton(tab: .Quests, selectedTab: $selectedTab)
@@ -45,7 +45,7 @@ struct TabBar: View {
 
 struct TabButton: View {
     let tab: MainViewTab
-    
+    let customFont = Font.custom("Montserrat-Italic-VariableFont_wght", size: 16)
     @Binding var selectedTab: MainViewTab
     
     var body: some View {
@@ -61,14 +61,16 @@ struct TabButton: View {
     
     func ButtonLabel() -> some View {
         ZStack {
-            VisualEffectView(type:.behindWindow, material: .m4_headerView)
+            VisualEffectView(type:.behindWindow, material: .m3_selection)
             
             VStack(spacing: 6){
                 Image(systemName: tab.icon)
+//                    .font(customFont)
                     .font(.system(size: 25))
                     .foregroundColor(.white)
 //                    .foregroundColor(Color("textColor"))
                 Text(tab.title)
+//                    .font(customFont)
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(Color("textColor"))
@@ -97,8 +99,8 @@ extension MainViewTab{
         switch self {
         case .Quests:           return "list.bullet.clipboard"
         case .Characteristics:  return "medal"
-        case .History:          return "book.circle"
-        case .Settings:         return "gearshape.circle"
+        case .History:          return "book"
+        case .Settings:         return "gearshape"
         }
     }
 }

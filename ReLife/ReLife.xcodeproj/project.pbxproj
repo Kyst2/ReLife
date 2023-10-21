@@ -17,6 +17,8 @@
 		A211B1892A7D3597004680E8 /* ReLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */; };
 		A21989922AE138400004A5D9 /* KystParallax in Frameworks */ = {isa = PBXBuildFile; productRef = A21989912AE138400004A5D9 /* KystParallax */; };
 		A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21989952AE319560004A5D9 /* SheetConfirmationView.swift */; };
+		A21989992AE3E7B80004A5D9 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A21989982AE3E7B80004A5D9 /* Montserrat-VariableFont_wght.ttf */; };
+		A219899B2AE3E8AB0004A5D9 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A219899A2AE3E8AB0004A5D9 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
@@ -85,6 +87,8 @@
 		A211B1742A7B6F7C004680E8 /* ReLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeTests.swift; sourceTree = "<group>"; };
 		A211B17B2A7B7397004680E8 /* Characteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
 		A21989952AE319560004A5D9 /* SheetConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetConfirmationView.swift; sourceTree = "<group>"; };
+		A21989982AE3E7B80004A5D9 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-VariableFont_wght.ttf"; path = "../../../../Downloads/Montserrat/Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		A219899A2AE3E8AB0004A5D9 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Italic-VariableFont_wght.ttf"; path = "../../../../Downloads/Montserrat/Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		A252720B2A8D3AF700DD4B75 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 			path = SheetConfirmation;
 			sourceTree = "<group>";
 		};
+		A21989972AE3E7990004A5D9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A21989982AE3E7B80004A5D9 /* Montserrat-VariableFont_wght.ttf */,
+				A219899A2AE3E8AB0004A5D9 /* Montserrat-Italic-VariableFont_wght.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		A25272102A8E3C5700DD4B75 /* ObjectsRealm */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +243,7 @@
 		A2DD8E592A58A90C00315995 = {
 			isa = PBXGroup;
 			children = (
+				A21989972AE3E7990004A5D9 /* Font */,
 				A2DD8E642A58A90C00315995 /* ReLife */,
 				A211B1732A7B6F7C004680E8 /* ReLifeTests */,
 				A210862A2A813A1A00EB7A89 /* QuestsTests */,
@@ -443,7 +457,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A219899B2AE3E8AB0004A5D9 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
 				A2DD8E6E2A58A90D00315995 /* Preview Assets.xcassets in Resources */,
+				A21989992AE3E7B80004A5D9 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

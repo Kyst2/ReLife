@@ -49,7 +49,7 @@ struct AccordeonView<Content: View>: View {
     func TitleView() -> some View {
         HStack{
             Image(systemName: icon)
-                .foregroundColor(Color("textColor"))
+                .foregroundColor(Color("1"))
                 .font(.largeTitle)
             
             Text(name)
@@ -91,14 +91,16 @@ struct AccordeonView<Content: View>: View {
     }
     
     func tapReaction() {
-        if isComplete == false {
-            let sheet = AnyView(SheetConfirmationView(dialog: $dialog))
-            
-            dialog = .view(view: sheet )
-            
-            isComplete = true
-        } else {
-            isComplete = false
+        if questToday == true {
+            if isComplete == false {
+                let sheet = AnyView(SheetConfirmationView(dialog: $dialog))
+                
+                dialog = .view(view: sheet )
+                
+                isComplete = true
+            } else {
+                isComplete = false
+            }
         }
     }
 }
@@ -135,7 +137,7 @@ fileprivate extension QuestsView {
 fileprivate extension Text {
     var titleStyle: some View {
         self.font(.system(size: 17))
-            .foregroundColor(Color("textColor"))
+            .foregroundColor(Color("1"))
     }
 }
 
