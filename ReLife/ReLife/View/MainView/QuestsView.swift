@@ -6,12 +6,12 @@ struct QuestsView:View {
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
-                Space(15)
+                Space(3)
                 CustomSection(header: "Today's Quests", isFinishable: true)
              
                 CustomSection(header: "Tomorrow's Quests", isFinishable: false)
                 
-                CustomSection(header: "Long-term Quests", isFinishable: true)
+                CustomSection(header: "Long-term Quests", isFinishable: false)
             }
         }
     }
@@ -49,11 +49,12 @@ struct AccordeonView<Content: View>: View {
     func TitleView() -> some View {
         HStack{
             Image(systemName: icon)
-                .foregroundColor(Color("1"))
+                .foregroundColor(Color("iconColor"))
                 .font(.largeTitle)
             
             Text(name)
-                .font(.headline)
+                .foregroundColor(Color("textColor"))
+                .font(.custom("MontserratRoman-Regular", size: 15))
             
             Spacer()
             
@@ -123,10 +124,12 @@ fileprivate extension QuestsView {
             if isFinishable {
                 AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
+                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
                 }
             } else {
                 AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
+                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
                 }
             }
         }
@@ -136,8 +139,8 @@ fileprivate extension QuestsView {
 
 fileprivate extension Text {
     var titleStyle: some View {
-        self.font(.system(size: 17))
-            .foregroundColor(Color("1"))
+        self.font(.custom("MontserratRoman-Regular", size: 17).bold())
+            .foregroundColor(Color("textColor"))
     }
 }
 

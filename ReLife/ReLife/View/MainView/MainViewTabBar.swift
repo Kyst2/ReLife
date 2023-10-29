@@ -8,12 +8,11 @@ struct TabBar: View {
     var body: some View {
         ZStack{
             RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
-//            ParallaxLayer(image: Image("Stars1"),speed: 20)
-//            ParallaxLayer(image: Image("Stars2"),speed: 30)
-//            ParallaxLayer(image: Image("Stars3").resizable(),speed: 40).offset(x: 70)
+            ParallaxLayer(image: Image("Stars1"),speed: 20).fillParent()
+            ParallaxLayer(image: Image("Stars2"),speed: 30).fillParent()
             HStack(alignment: .top, content: {
                 TabsPanel()
-                
+               
                 ContentPanel()
             })
         }
@@ -38,16 +37,12 @@ struct TabBar: View {
     
     @ViewBuilder
     func ContentPanel() -> some View {
-        ZStack{
-            ParallaxLayer(image: Image("Stars1"),speed: 20).fillParent()
-            ParallaxLayer(image: Image("Stars2"),speed: 30).fillParent()
             switch(selectedTab){
             case .Quests : QuestsView()
             case .Characteristics : CharacteristicsView().fillParent()
             case .History :Text("History").fillParent()
             case .Settings: Text("Settings").fillParent()
             }
-        }
     }
 }
 
@@ -78,21 +73,19 @@ struct TabButton: View {
                 .opacity(0.5)
             VStack(spacing: 6){
                 Image(systemName: tab.icon)
-//                    .font(customFont)
                     .font(.system(size: 25))
-                    .foregroundColor(.white)
-//                    .foregroundColor(Color("textColor"))
+                    .foregroundColor(Color("iconColor"))
                 Text(tab.title)
-//                    .font(customFont)
+                    .font(.custom("MontserratRoman-Regular", size: 12))
 //                    .font(.caption)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color("1"))
+                    .foregroundColor(Color("textColor"))
             }
         }
         .padding(.bottom,8)
         .frame(width: 120,height: 70)
         .contentShape(Rectangle())
-        .background(Color("textColor").offset(x: selectedTab == tab ? 0 : -120))
+        .background(Color("tabLineColor").offset(x: selectedTab == tab ? 0 : -120))
     }
 }
 
