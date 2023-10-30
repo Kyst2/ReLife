@@ -125,11 +125,13 @@ fileprivate extension QuestsView {
                 AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
                         .font(.custom("MontserratRoman-Regular", size: 14).italic())
+                        .foregroundColor(Color("textColor"))
                 }
             } else {
                 AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
                         .font(.custom("MontserratRoman-Regular", size: 14).italic())
+                        .foregroundColor(Color("textColor"))
                 }
             }
         }

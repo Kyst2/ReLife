@@ -41,7 +41,7 @@ struct TabBar: View {
             case .Quests : QuestsView()
             case .Characteristics : CharacteristicsView().fillParent()
             case .History :Text("History").fillParent()
-            case .Settings: Text("Settings").fillParent()
+            case .Settings: SettingsView()
             }
     }
 }

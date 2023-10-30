@@ -31,15 +31,18 @@ struct Charact: View {
     var body: some View {
         HStack{
             Image(systemName: icon)
-                .foregroundColor(Color("textColor"))
                 .font(.largeTitle)
+                .foregroundColor(Color("iconColor"))
+                
             
             Text(name)
-                .font(.headline)
+                .foregroundColor(Color("textColor"))
+                .font(.custom("MontserratRoman-Regular", size: 17))
             
             Spacer()
             
             Text("\(points)")
+                .font(.custom("MontserratRoman-Regular", size: 17).italic())
                 .padding(.trailing,20)
         }.padding()
             .overlay {

@@ -6,7 +6,7 @@ struct SheetConfirmationView: View {
     
     var body: some View {
         VStack{
-            Text("Are You Sure?")
+            Text("Have you completed the quest?")
             
             HStack{
                 Button("yes", action: { dialog = .none })
