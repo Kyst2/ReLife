@@ -150,10 +150,10 @@ fileprivate extension Text {
 ///TEMP
 /////////////////////////
 
-class Questec {
-    var name: String
-    var icon: String
-    var deteils:String
+class Questec: ObservableObject {
+    @Published var name: String
+    @Published var icon: String
+    @Published var deteils:String
     init(name: String, icon: String, deteils: String) {
         self.name = name
         self.icon = icon
@@ -161,4 +161,6 @@ class Questec {
     }
 }
 
-var quests = [Questec(name: "Quest1", icon: "heart.fill" , deteils: "wash up "),Questec(name: "Quest2", icon: "heart.fill", deteils: "clean room"), Questec(name: "Quest3", icon: "heart.fill", deteils: "buy apple")]
+var quests = [Questec(name: "Clean box", icon: "heart.fill" , deteils: "wash up "),Questec(name: "alarm", icon: "heart.fill", deteils: "clean room"), Questec(name: "shop", icon: "heart.fill", deteils: "buy apple")]
+
+

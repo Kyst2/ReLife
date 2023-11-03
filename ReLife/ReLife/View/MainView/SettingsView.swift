@@ -1,58 +1,122 @@
+import Foundation
 import SwiftUI
 import MoreSwiftUI
 
+fileprivate enum SettingsTab: String {
+    case General
+    case Quest
+    case Characteristics
+}
+
 struct SettingsView: View {
-    @State var isQuest: Bool = true
+    @State fileprivate var tab: SettingsTab = .General
+    
+    @State private var dialog: SheetDialogType = .none
+    
     var body: some View {
-        VStack(spacing: 10){
-            ButtonTab()
+        VStack(spacing: 15){
+            TabsPanel()
             
-            QuestsSettings()
+            TabsBody()
+        }
+    }
+//    func tapReaction() {
+//
+//        let sheet = AnyView(QuestsEditSheet(quest: sel, dialog: $dialog))
+//
+//        dialog = .view(view: sheet )
+//
+//    }
+    
+    func TabsPanel() -> some View {
+        HStack(spacing: 0) {
+            ConfigTabView(tab: $tab, curr: .General)
             
-            AddQuestOrCharacteristics()
+            ConfigTabView(tab: $tab, curr: .Quest)
+            
+            ConfigTabView(tab: $tab, curr: .Characteristics)
+        }
+    }
+    
+    @ViewBuilder
+    func TabsBody() -> some View {
+        switch tab {
+        case .General:
+            ConfigGeneralView()
+        case .Quest:
+            ConfigQuestView()
+        case .Characteristics:
+            ConfigCharacteristicsView()
         }
     }
 }
+
+struct ConfigGeneralView: View {
+    var body: some View {
+        Text("General")
+            .fillParent()
+    }
+}
+
+struct ConfigQuestView: View {
+    var body: some View {
+        Text("Quests")
+            .fillParent()
+    }
+}
+
+struct ConfigCharacteristicsView: View {
+    var body: some View {
+        Text("Characteristics")
+            .fillParent()
+    }
+}
+
+struct ConfigTabView: View {
+    @Binding fileprivate var tab: SettingsTab
+    fileprivate let curr: SettingsTab
+    
+    var body: some View {
+        MenuButtons(lebel: curr.rawValue ) {
+            tab = curr
+        }.background{
+            tab == curr ? Color.gray.opacity(0.5) : Color.clear
+        }
+    }
+}
+
 extension SettingsView {
-    func ButtonTab() -> some View {
-        HStack{
-            Space(2)
-            MenuButtons(lebel: "Quests") {
-                isQuest = true
-            }.background{
-                 isQuest ? Color.gray.opacity(0.5) : Color.clear
-            }
-            Space(0)
-            MenuButtons(lebel: "Characteristics") {
-                isQuest = false
-            }.background{
-                !isQuest ? Color.gray.opacity(0.5) : Color.clear
-           }
-            Space(2)
-        }
-    }
+
     
-    func QuestsSettings() -> some View {
-        ScrollView{
-            
-        }
-    }
     
-    func AddQuestOrCharacteristics() -> some View {
-        HStack(alignment: .top){
-            Spacer()
-            if isQuest == true {
-                AddButton(lebel: "Quest") {
-                    
-                }
-            }else {
-                AddButton(lebel: "Characteristic") {
-                    
-                }
-            }
-           Space(10)
-        }
-    }
+//    @ViewBuilder
+//    func QuestsSettings() -> some View {
+//        ScrollView{
+//            LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
+//                if isQuest {
+//                    bodyScrollQuests()
+//                } else {
+//                    bodyScrollCharacteristics()
+//                }
+//            }
+//        }
+//    }
+//
+//    func AddQuestOrCharacteristics() -> some View {
+//        HStack(alignment: .top){
+//            Spacer()
+//            if isQuest == true {
+//                AddButton(lebel: "Quest") {
+//
+//                }
+//            }else {
+//                AddButton(lebel: "Characteristic") {
+//
+//                }
+//            }
+//            Space(10)
+//        }
+//    }
 }
 
 
@@ -63,6 +127,92 @@ extension SettingsView {
 /////////////////
 ///HELPERS
 /////////////////
+fileprivate extension SettingsView {
+    func bodyScrollQuests() -> some View {
+        ForEach(quests.indices, id: \.self) { index in
+            let quest = quests[index]
+            QuestSettingView(name: quest.name, icon: quest.icon , deteils: quest.deteils)
+        }
+    }
+    func bodyScrollCharacteristics() -> some View {
+        ForEach(char.indices, id: \.self) { index in
+            let char = char[index]
+            CharactSettingView(name: char.name, icon: char.icon, points: char.points)
+        }
+    }
+}
+
+
+struct CharactSettingView : View {
+    @State private var hoverEffect = false
+    
+    @State var name: String
+    @State var icon: String
+    @State var points: Int
+    var body: some View {
+        HStack{
+            Space(5)
+            Image(systemName: icon)
+                .foregroundColor(Color("iconColor"))
+                .font(.largeTitle)
+            
+            Text(name)
+                .foregroundColor(Color("textColor"))
+                .font(.custom("MontserratRoman-Regular", size: 15))
+            Spacer()
+        }.padding(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+            .background( hoverEffect ? Color.gray.opacity(0.5) : Color.clear )
+            .onHover{ hover in
+                withAnimation(.easeOut(duration: 0.2 )){
+                    self.hoverEffect = hover
+                }
+            }
+            .onTapGesture(count: 2) {
+                
+                ///open settings view for element
+            }
+    }
+}
+
+struct QuestSettingView: View {
+    @State private var hoverEffect = false
+    
+    @State var name: String
+    @State var icon: String
+    @State var deteils: String
+    var body: some View {
+        HStack{
+            Space(5)
+            Image(systemName: icon)
+                .foregroundColor(Color("iconColor"))
+                .font(.largeTitle)
+            
+            Text(name)
+                .foregroundColor(Color("textColor"))
+                .font(.custom("MontserratRoman-Regular", size: 15))
+            Spacer()
+        }.padding(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+            .background( hoverEffect ? Color.gray.opacity(0.5) : Color.clear )
+            .onHover{ hover in
+                withAnimation(.easeOut(duration: 0.2 )){
+                    self.hoverEffect = hover
+                }
+            }
+            .onTapGesture(count: 2) {
+                
+                ///open settings view for element
+            }
+    }
+}
+
 struct AddButton: View {
     let lebel: String
     let action: () -> Void
@@ -78,7 +228,7 @@ struct AddButton: View {
                 Text(lebel)
                     .foregroundColor(Color("textColor"))
                     .font(.custom("MontserratRoman-Regular", size: 20))
-                    
+                
             }
         }
         .buttonStyle(.plain)
@@ -86,10 +236,8 @@ struct AddButton: View {
         .background{
             RoundedRectangle(cornerRadius: 12)
                 .foregroundColor(Color("blurColor")).opacity(0.8)
-            
         }
         .padding(20)
-        
         .fixedSize()
         .frame(maxWidth: .infinity)
         

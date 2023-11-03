@@ -8,13 +8,13 @@ struct TabBar: View {
     var body: some View {
         ZStack{
             RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
-            ParallaxLayer(image: Image("Stars1"),speed: 20).fillParent()
-            ParallaxLayer(image: Image("Stars2"),speed: 30).fillParent()
-            HStack(alignment: .top, content: {
+            ParallaxLayer(image: Image("Stars1"),speed: 2).fillParent()
+            ParallaxLayer(image: Image("Stars2"),speed: 7).fillParent()
+            HStack(alignment: .top, spacing: 0) {
                 TabsPanel()
                
                 ContentPanel()
-            })
+            }
         }
     }
     
@@ -37,12 +37,12 @@ struct TabBar: View {
     
     @ViewBuilder
     func ContentPanel() -> some View {
-            switch(selectedTab){
-            case .Quests : QuestsView()
-            case .Characteristics : CharacteristicsView().fillParent()
-            case .History :Text("History").fillParent()
-            case .Settings: SettingsView()
-            }
+        switch(selectedTab){
+        case .Quests : QuestsView()
+        case .Characteristics : CharacteristicsView().fillParent()
+        case .History :Text("History").fillParent()
+        case .Settings: SettingsView()
+        }
     }
 }
 

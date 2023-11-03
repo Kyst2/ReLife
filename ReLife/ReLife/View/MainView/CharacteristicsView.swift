@@ -59,9 +59,9 @@ struct CharacteristicsView_Previews: PreviewProvider {
 
 
 class Characteristics1: Hashable {
-    var name: String
-    var icon:String
-    var points: Int
+    @Published var name: String
+    @Published var icon:String
+    @Published var points: Int
     func hash(into hasher: inout Hasher) {
             hasher.combine(name)
             hasher.combine(icon)
