@@ -25,6 +25,9 @@
 		A25272142A8E3E4100DD4B75 /* CharacteristicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
 		A27286702AF537F3005EE9B8 /* QuestsEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* QuestsEditSheet.swift */; };
+		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
+		A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */; };
+		A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */; };
 		A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCC2AAA273400128B3C /* Date+.swift */; };
 		A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */; };
 		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
@@ -97,6 +100,9 @@
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A272866F2AF537F3005EE9B8 /* QuestsEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsEditSheet.swift; sourceTree = "<group>"; };
+		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
+		A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQuestView.swift; sourceTree = "<group>"; };
+		A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCharacteristicsView.swift; sourceTree = "<group>"; };
 		A2AEDCCC2AAA273400128B3C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
@@ -210,6 +216,25 @@
 			path = ObjectsRealm;
 			sourceTree = "<group>";
 		};
+		A27286712AF55CE9005EE9B8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A272866D2AEFD44F005EE9B8 /* SettingsView.swift */,
+				A27286722AF55D0B005EE9B8 /* Tabs */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A27286722AF55D0B005EE9B8 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */,
+				A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */,
+				A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		A2AEDCCB2AAA271100128B3C /* Ext */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +259,7 @@
 				A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */,
 				A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */,
 				A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */,
-				A272866D2AEFD44F005EE9B8 /* SettingsView.swift */,
+				A27286712AF55CE9005EE9B8 /* Settings */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -506,11 +531,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
+				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
 				A2CCA0352AD6E66D006A3A7F /* backgroundGaussianBlur.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A27286702AF537F3005EE9B8 /* QuestsEditSheet.swift in Sources */,
+				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
+				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,
 				A25272122A8E3C8400DD4B75 /* History.swift in Sources */,
