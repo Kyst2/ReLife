@@ -1,10 +1,3 @@
-//
-//  CharacteristicsView.swift
-//  ReLife
-//
-//  Created by Andrew Kuzmich on 09.10.2023.
-//
-
 import SwiftUI
 
 struct CharacteristicsView: View {

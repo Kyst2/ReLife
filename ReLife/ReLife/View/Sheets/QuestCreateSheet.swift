@@ -1,7 +1,7 @@
 import SwiftUI
 import MoreSwiftUI
 
-struct QuestsEditSheet: View {
+struct QuestsCreateSheet: View {
     @Binding var dialog: SheetDialogType
     
     @Binding var name: String
@@ -16,10 +16,12 @@ struct QuestsEditSheet: View {
                 
                 ChangeTab()
                 
-                Buttons()
+                CharactAndPoints()
+                
+                CreateAndCancelButtons()
             }
         }
-        .frame(width: 600,height: 500)
+        .frame(width: 700,height: 600)
     }
     
     func TitleEdit() -> some View {
@@ -31,7 +33,7 @@ struct QuestsEditSheet: View {
     
     @ViewBuilder
     func ChangeTab() -> some View {
-        TextStyle(text: "Enter a new quest name")
+        TextStyle(text: "Enter quest name")
         textField(title: "WriteName", text: $name)
         
         TextStyle(text: "Pick new icon")
@@ -39,6 +41,28 @@ struct QuestsEditSheet: View {
         
         TextStyle(text: "update the new details of the quest")
         TextEditorDeteils()
+    }
+    
+    func CharactAndPoints() -> some View {
+        List {
+            ForEach(char, id: \.self) { char in
+                
+                        HStack {
+                            Text(char.name)
+                                .lineLimit(2)
+                            Spacer()
+                            Button {
+                                
+                                
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                        }
+                    }
+                    .onMove { indices, destination in
+                        // TODO: update items array accordingly
+                    }
+                }
     }
     
     func TextStyle(text:String) -> some View {
@@ -66,12 +90,12 @@ struct QuestsEditSheet: View {
         
     }
     
-    func Buttons() -> some View {
+    func CreateAndCancelButtons() -> some View {
         HStack{
-            SaveButton(label: "Save") {
+            CreateButton(label: "Create") {
                 
             }
-            SaveButton(label: "Cancel") {
+            CreateButton(label: "Cancel") {
                 dialog = .none
             }
         }
@@ -84,7 +108,7 @@ struct QuestsEditSheet: View {
 ////////////////
 ///HELPERS
 ////////////////
-struct SaveButton: View {
+struct CreateButton: View {
     let label: String
     let action: () -> Void
     
@@ -93,7 +117,7 @@ struct SaveButton: View {
             action()
         } label: {
             HStack{
-                if label == "Save"{
+                if label == "Create"{
                     Text(label)
                         .foregroundColor(Color("iconColor"))
                         .font(.custom("MontserratRoman-Regular", size: 17))
@@ -107,7 +131,7 @@ struct SaveButton: View {
         .buttonStyle(.plain)
         .frame(width: 100,height: 40)
         .background{
-            if label == "Save"{
+            if label == "Create"{
                 RoundedRectangle(cornerRadius: 12)
                 
                     .foregroundColor(Color("blurColor")).opacity(0.8)
