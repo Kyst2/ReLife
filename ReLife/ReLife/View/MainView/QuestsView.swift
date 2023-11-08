@@ -5,8 +5,9 @@ import MoreSwiftUI
 struct QuestsView:View {
     var body: some View {
         ScrollView {
+            Space(18)
+            
             VStack(spacing: 15) {
-                Space(3)
                 CustomSection(header: "Today's Quests", isFinishable: true)
              
                 CustomSection(header: "Tomorrow's Quests", isFinishable: false)
@@ -17,6 +18,39 @@ struct QuestsView:View {
     }
 }
 
+///////////////////////
+///HELPERS
+///////////////////////
+
+fileprivate extension QuestsView {
+    func CustomSection(header:String, isFinishable: Bool) -> some View {
+        Section(header: Text(header).titleStyle ) {
+            SectionBody(isFinishable: isFinishable)
+        }
+    }
+    
+    func SectionBody(isFinishable: Bool) -> some View {
+        ForEach(quests.indices, id: \.self) { index in
+            let quest = quests[index]
+            
+            if isFinishable {
+                AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
+                    Text(quest.deteils)
+                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
+                        .foregroundColor(Color("textColor"))
+                }
+            } else {
+                AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
+                    Text(quest.deteils)
+                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
+                        .foregroundColor(Color("textColor"))
+                }
+            }
+        }
+    }
+}
+
+/// привести в порядок
 struct AccordeonView<Content: View>: View {
     @State private var isExpanded = false
     @State private var hoverEffect = false
@@ -105,38 +139,6 @@ struct AccordeonView<Content: View>: View {
     }
 }
 
-///////////////////////
-///HELPERS
-///////////////////////
-
-fileprivate extension QuestsView {
-    func CustomSection(header:String, isFinishable: Bool) -> some View {
-        Section(header: Text(header).titleStyle ) {
-            SectionBody(isFinishable: isFinishable)
-        }
-    }
-    
-    func SectionBody(isFinishable: Bool) -> some View {
-        ForEach(quests.indices, id: \.self) { index in
-            let quest = quests[index]
-            
-            if isFinishable {
-                AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
-                    Text(quest.deteils)
-                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
-                        .foregroundColor(Color("textColor"))
-                }
-            } else {
-                AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
-                    Text(quest.deteils)
-                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
-                        .foregroundColor(Color("textColor"))
-                }
-            }
-        }
-    }
-}
-
 
 fileprivate extension Text {
     var titleStyle: some View {
@@ -161,5 +163,3 @@ class Questec: ObservableObject {
 }
 
 var quests = [Questec(name: "Clean box", icon: "heart.fill" , deteils: "wash up "),Questec(name: "alarm", icon: "heart.fill", deteils: "clean room"), Questec(name: "shop", icon: "heart.fill", deteils: "buy apple")]
-
-

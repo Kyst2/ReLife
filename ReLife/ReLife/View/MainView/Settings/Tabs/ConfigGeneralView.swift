@@ -1,10 +1,3 @@
-//
-//  ConfigGeneralView.swift
-//  ReLife
-//
-//  Created by Andrew Kuzmich on 03.11.2023.
-//
-
 import SwiftUI
 
 struct ConfigGeneralView: View {

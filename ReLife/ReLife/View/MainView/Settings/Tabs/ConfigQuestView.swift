@@ -29,21 +29,26 @@ fileprivate extension ConfigQuestView {
         LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
             ForEach(quests.indices, id: \.self) { index in
                 let quest = quests[index]
+                
                 QuestSettingView(name: quest.name, icon: quest.icon , deteils: quest.deteils)
             }
         }
     }
 }
 
+
+/// мабуть прывесты в порядок
 struct QuestSettingView: View {
-    @State private var hoverEffect = false
     @State var name: String
     @State var icon: String
     @State var deteils: String
     
+    @State private var isHovering = false
+    
     var body: some View {
         HStack{
             Space(5)
+            
             Image(systemName: icon)
                 .foregroundColor(Color("iconColor"))
                 .font(.largeTitle)
@@ -51,23 +56,24 @@ struct QuestSettingView: View {
             Text(name)
                 .foregroundColor(Color("textColor"))
                 .font(.custom("MontserratRoman-Regular", size: 15))
+            
             Spacer()
-        }.padding(10)
-            .overlay {
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color.primary, lineWidth: 0.1)
+        }
+        .padding(10)
+        .overlay {
+            RoundedRectangle(cornerRadius: 0)
+                .stroke(Color.primary, lineWidth: 0.1)
+        }
+        .background( isHovering ? Color.gray.opacity(0.5) : Color.clear )
+        .onHover { hover in
+            withAnimation(.easeOut(duration: 0.2 )){
+                self.isHovering = hover
             }
-            .background( hoverEffect ? Color.gray.opacity(0.5) : Color.clear )
-            .onHover{ hover in
-                withAnimation(.easeOut(duration: 0.2 )){
-                    self.hoverEffect = hover
-                }
-            }
-            .onTapGesture(count: 2) {
-                let sheet = AnyView(QuestsEditSheet())
-                
-                GlobalDialog.shared.dialog = .view(view: sheet)
-                ///open settings view for element
-            }
+        }
+        .onTapGesture(count: 2) {
+            let sheet = AnyView(QuestsEditSheet())
+            
+            GlobalDialog.shared.dialog = .view(view: sheet)
+        }
     }
 }

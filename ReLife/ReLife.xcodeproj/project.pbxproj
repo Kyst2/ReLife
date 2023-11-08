@@ -30,6 +30,7 @@
 		A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */; };
 		A272867A2AFA9FFB005EE9B8 /* QuestCreateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* QuestCreateSheet.swift */; };
 		A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */; };
+		A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286832AFBEEA4005EE9B8 /* AddButton.swift */; };
 		A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCC2AAA273400128B3C /* Date+.swift */; };
 		A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */; };
 		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
@@ -37,7 +38,6 @@
 		A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */; };
 		A2CCA0312AD5E8AA006A3A7F /* MainViewTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */; };
 		A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */; };
-		A2CCA0352AD6E66D006A3A7F /* backgroundGaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0342AD6E66D006A3A7F /* backgroundGaussianBlur.swift */; };
 		A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */; };
 		A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E652A58A90C00315995 /* ReLifeApp.swift */; };
 		A2DD8E682A58A90C00315995 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD8E672A58A90C00315995 /* MainView.swift */; };
@@ -107,12 +107,12 @@
 		A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCharacteristicsView.swift; sourceTree = "<group>"; };
 		A27286792AFA9FFB005EE9B8 /* QuestCreateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCreateSheet.swift; sourceTree = "<group>"; };
 		A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialog.swift; sourceTree = "<group>"; };
+		A27286832AFBEEA4005EE9B8 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		A2AEDCCC2AAA273400128B3C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
 		A2CCA0302AD5E8AA006A3A7F /* MainViewTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTabBar.swift; sourceTree = "<group>"; };
 		A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsView.swift; sourceTree = "<group>"; };
-		A2CCA0342AD6E66D006A3A7F /* backgroundGaussianBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundGaussianBlur.swift; sourceTree = "<group>"; };
 		A2DD8E622A58A90C00315995 /* ReLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DD8E652A58A90C00315995 /* ReLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLifeApp.swift; sourceTree = "<group>"; };
 		A2DD8E672A58A90C00315995 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -241,10 +241,33 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
+		A272867F2AFBEE71005EE9B8 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A27286822AFBEE8C005EE9B8 /* Styles */,
+				A27286812AFBEE85005EE9B8 /* Views */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		A27286812AFBEE85005EE9B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A27286832AFBEEA4005EE9B8 /* AddButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A27286822AFBEE8C005EE9B8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		A2AEDCCB2AAA271100128B3C /* Ext */ = {
 			isa = PBXGroup;
 			children = (
-				A2CCA0362AD6E681006A3A7F /* MoreSwiftUI */,
 				A2AEDCCC2AAA273400128B3C /* Date+.swift */,
 				A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */,
 			);
@@ -268,14 +291,6 @@
 				A27286712AF55CE9005EE9B8 /* Settings */,
 			);
 			path = MainView;
-			sourceTree = "<group>";
-		};
-		A2CCA0362AD6E681006A3A7F /* MoreSwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				A2CCA0342AD6E66D006A3A7F /* backgroundGaussianBlur.swift */,
-			);
-			path = MoreSwiftUI;
 			sourceTree = "<group>";
 		};
 		A2DD8E592A58A90C00315995 = {
@@ -308,6 +323,7 @@
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
+				A272867F2AFBEE71005EE9B8 /* SwiftUI */,
 				A2DD8E742A58AB5000315995 /* View */,
 				A211B1602A7A8075004680E8 /* Back */,
 				A2AEDCCB2AAA271100128B3C /* Ext */,
@@ -538,7 +554,6 @@
 			files = (
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
-				A2CCA0352AD6E66D006A3A7F /* backgroundGaussianBlur.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* QuestCreateSheet.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
@@ -553,6 +568,7 @@
 				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
 				A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
+				A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,

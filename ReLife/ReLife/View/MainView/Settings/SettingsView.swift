@@ -16,11 +16,11 @@ struct SettingsView: View {
             TabsPanel()
             
             TabsBody()
-            
         }
     }
+}
 
-    
+extension SettingsView {
     func TabsPanel() -> some View {
         HStack(spacing: 0) {
             ConfigTabView(tab: $tab, curr: .General)
@@ -45,12 +45,17 @@ struct SettingsView: View {
 }
 
 
+
+
+/////////////////
+///HELPERS
+/////////////////
 struct ConfigTabView: View {
     @Binding fileprivate var tab: SettingsTab
     fileprivate let curr: SettingsTab
     
     var body: some View {
-        MenuButtons(lebel: curr.rawValue ) {
+        MenuButton(lebel: curr.rawValue ) {
             tab = curr
         }.background{
             tab == curr ? Color.gray.opacity(0.5) : Color.clear
@@ -58,36 +63,10 @@ struct ConfigTabView: View {
     }
 }
 
-/////////////////
-///HELPERS
-/////////////////
-struct AddButton: View {
-    let action: () -> Void
-    
-    var body: some View{
-        Button {
-            action()
-        } label: {
-            HStack{
-                Image(systemName: "plus")
-                    .foregroundColor(Color("iconColor"))
-                    .font(.largeTitle)
-            }
-        }
-        .buttonStyle(.plain)
-        .frame(width: 400,height: 40)
-        .background{
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundColor(Color("blurColor")).opacity(0.8)
-        }
-        .padding(20)
-        .fixedSize()
-        .frame(maxWidth: .infinity)
-        
-    }
-}
 
-struct MenuButtons: View {
+
+/// привести в порядок 
+fileprivate struct MenuButton: View {
     let lebel: String
     let action: () -> Void
     var body: some View {

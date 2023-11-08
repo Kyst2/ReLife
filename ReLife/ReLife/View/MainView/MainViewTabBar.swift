@@ -8,8 +8,11 @@ struct TabBar: View {
     var body: some View {
         ZStack{
             RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
+            
             ParallaxLayer(image: Image("Stars1"),speed: 2).fillParent()
+            
             ParallaxLayer(image: Image("Stars2"),speed: 7).fillParent()
+            
             HStack(alignment: .top, spacing: 0) {
                 TabsPanel()
                
@@ -22,6 +25,7 @@ struct TabBar: View {
         ZStack(alignment: .top){
             VisualEffectView(type:.behindWindow, material: .m5_sidebar)
                 .frame(width:120)
+            
             Color("blurColor")
                 .opacity(0.5)
                 .frame(width: 120)
@@ -69,15 +73,17 @@ struct TabButton: View {
     func ButtonLabel() -> some View {
         ZStack {
             VisualEffectView(type:.behindWindow, material: .m5_sidebar)
+            
             Color("blurColor")
                 .opacity(0.5)
+            
             VStack(spacing: 6){
                 Image(systemName: tab.icon)
                     .font(.system(size: 25))
                     .foregroundColor(Color("iconColor"))
+                
                 Text(tab.title)
                     .font(.custom("MontserratRoman-Regular", size: 12))
-//                    .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(Color("textColor"))
             }
