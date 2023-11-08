@@ -11,8 +11,6 @@ fileprivate enum SettingsTab: String {
 struct SettingsView: View {
     @State fileprivate var tab: SettingsTab = .General
     
-    @State private var dialog: SheetDialogType = .none
-    
     var body: some View {
         VStack(spacing: 15){
             TabsPanel()

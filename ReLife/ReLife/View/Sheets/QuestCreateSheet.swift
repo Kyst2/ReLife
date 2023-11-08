@@ -2,11 +2,9 @@ import SwiftUI
 import MoreSwiftUI
 
 struct QuestsCreateSheet: View {
-    @Binding var dialog: SheetDialogType
-    
-    @Binding var name: String
-    @Binding var icon: String
-    @Binding var deteils: String
+    @State var name: String = ""
+    @State var icon: String = ""
+    @State var deteils: String = ""
     var body: some View {
         ZStack{
             Color("gradient3").opacity(0.4)
@@ -96,7 +94,7 @@ struct QuestsCreateSheet: View {
                 
             }
             CreateButton(label: "Cancel") {
-                dialog = .none
+                GlobalDialog.shared.dialog = .none
             }
         }
     }

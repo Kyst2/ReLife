@@ -20,7 +20,6 @@ struct QuestsView:View {
 struct AccordeonView<Content: View>: View {
     @State private var isExpanded = false
     @State private var hoverEffect = false
-    @State private var dialog: SheetDialogType = .none
     
     let questToday:Bool
     let icon:String
@@ -42,7 +41,6 @@ struct AccordeonView<Content: View>: View {
             }
         }
         .background { ViewBackground() }
-        .sheet(sheet: dialog)
         .onTapGesture(count: 2) { tapReaction() }
     }
     
@@ -94,9 +92,10 @@ struct AccordeonView<Content: View>: View {
     func tapReaction() {
         if questToday == true {
             if isComplete == false {
-                let sheet = AnyView(SheetConfirmationView(dialog: $dialog))
+                let sheet = AnyView(SheetConfirmationView())
                 
-                dialog = .view(view: sheet )
+                
+                GlobalDialog.shared.dialog = .view(view: sheet )
                 
                 isComplete = true
             } else {

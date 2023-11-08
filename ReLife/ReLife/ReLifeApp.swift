@@ -1,10 +1,3 @@
-//
-//  ReLifeApp.swift
-//  ReLife
-//
-//  Created by Andrew Kuzmich on 07.07.2023.
-//
-
 import SwiftUI
 
 @main

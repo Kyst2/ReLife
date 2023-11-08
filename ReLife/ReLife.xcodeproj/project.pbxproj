@@ -29,6 +29,7 @@
 		A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */; };
 		A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */; };
 		A272867A2AFA9FFB005EE9B8 /* QuestCreateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* QuestCreateSheet.swift */; };
+		A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */; };
 		A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCC2AAA273400128B3C /* Date+.swift */; };
 		A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */; };
 		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
@@ -105,6 +106,7 @@
 		A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQuestView.swift; sourceTree = "<group>"; };
 		A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCharacteristicsView.swift; sourceTree = "<group>"; };
 		A27286792AFA9FFB005EE9B8 /* QuestCreateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCreateSheet.swift; sourceTree = "<group>"; };
+		A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialog.swift; sourceTree = "<group>"; };
 		A2AEDCCC2AAA273400128B3C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		A21989932AE3192A0004A5D9 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */,
 				A21989942AE319370004A5D9 /* SheetConfirmation */,
 				A272866F2AF537F3005EE9B8 /* QuestsEditSheet.swift */,
 				A27286792AFA9FFB005EE9B8 /* QuestCreateSheet.swift */,
@@ -552,6 +555,7 @@
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
+				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
