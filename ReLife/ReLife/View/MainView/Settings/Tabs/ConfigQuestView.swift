@@ -9,7 +9,9 @@ struct ConfigQuestView: View {
             Spacer()
             
             AddButton {
-                let sheet = AnyView( QuestsCreateSheet())
+                let sheet = AnyView( SheetWorkWithQuest(title: "Quest Creater", action: {
+                    
+                }))
                 
                 GlobalDialog.shared.dialog = .view(view: sheet)
             }
@@ -71,7 +73,9 @@ struct QuestSettingView: View {
             }
         }
         .onTapGesture(count: 2) {
-            let sheet = AnyView(QuestsEditSheet())
+            let sheet = AnyView(SheetWorkWithQuest(title: "Quest update", action: {
+                
+            }))
             
             GlobalDialog.shared.dialog = .view(view: sheet)
         }

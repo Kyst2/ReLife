@@ -3,8 +3,9 @@ import MoreSwiftUI
 
 struct QuestsCreateSheet: View {
     @State var name: String = ""
-    @State var icon: String = ""
     @State var deteils: String = ""
+    
+    @State private var icon: String = ""
     var body: some View {
         ZStack{
             Color("gradient3").opacity(0.4)
@@ -23,7 +24,7 @@ struct QuestsCreateSheet: View {
     }
     
     func TitleEdit() -> some View {
-        Text("Quest editing window")
+        Text("Quest Creating")
             .foregroundColor(Color("textColor"))
             .font(.custom("MontserratRoman-Regular", size: 17))
             .padding()
@@ -31,11 +32,11 @@ struct QuestsCreateSheet: View {
     
     @ViewBuilder
     func ChangeTab() -> some View {
+        TextStyle(text: "Pick new icon")
+//        textField(title: "Quest Icon", text: $icon)
+        
         TextStyle(text: "Enter quest name")
         textField(title: "WriteName", text: $name)
-        
-        TextStyle(text: "Pick new icon")
-        textField(title: "Quest Icon", text: $icon)
         
         TextStyle(text: "update the new details of the quest")
         TextEditorDeteils()

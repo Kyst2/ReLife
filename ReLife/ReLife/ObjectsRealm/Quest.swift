@@ -89,7 +89,7 @@ public extension List  where Element : RealmCollectionValue, Element == Float {
     }
 }
 
-enum MyIcon: String, RawRepresentable {
+enum MyIcon: String, RawRepresentable, CaseIterable{
     case tray = "tray.2.fill"
     case charBook = "character.book.closed.fill"
     case pencilAndRule = "pencil.and.ruler"

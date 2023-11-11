@@ -24,7 +24,7 @@
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
 		A25272142A8E3E4100DD4B75 /* CharacteristicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
-		A27286702AF537F3005EE9B8 /* QuestsEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* QuestsEditSheet.swift */; };
+		A27286702AF537F3005EE9B8 /* SheetWorkWithQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetWorkWithQuest.swift */; };
 		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
 		A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */; };
 		A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */; };
@@ -101,7 +101,7 @@
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A272866F2AF537F3005EE9B8 /* QuestsEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsEditSheet.swift; sourceTree = "<group>"; };
+		A272866F2AF537F3005EE9B8 /* SheetWorkWithQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithQuest.swift; sourceTree = "<group>"; };
 		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
 		A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQuestView.swift; sourceTree = "<group>"; };
 		A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCharacteristicsView.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			children = (
 				A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */,
 				A21989942AE319370004A5D9 /* SheetConfirmation */,
-				A272866F2AF537F3005EE9B8 /* QuestsEditSheet.swift */,
+				A272866F2AF537F3005EE9B8 /* SheetWorkWithQuest.swift */,
 				A27286792AFA9FFB005EE9B8 /* QuestCreateSheet.swift */,
 			);
 			path = Sheets;
@@ -557,7 +557,7 @@
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* QuestCreateSheet.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
-				A27286702AF537F3005EE9B8 /* QuestsEditSheet.swift in Sources */,
+				A27286702AF537F3005EE9B8 /* SheetWorkWithQuest.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,

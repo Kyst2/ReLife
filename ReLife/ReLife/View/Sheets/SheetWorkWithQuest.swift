@@ -1,10 +1,18 @@
 import SwiftUI
 import MoreSwiftUI
 
-struct QuestsEditSheet: View {
+struct SheetWorkWithQuest: View {
+    let title: String
+    let action: () -> Void
+    
     @State var name: String = ""
-    @State var icon: String = ""
     @State var deteils: String = ""
+    @State var characteristics:String = ""
+    @State var points:Int = 0
+
+    let allIcons = MyIcon.allCases.map{ $0.rawValue }
+    
+    @State private var icon: String = MyIcon.batteryFull.rawValue
     
     var body: some View {
         VStack {
@@ -14,14 +22,14 @@ struct QuestsEditSheet: View {
             
             Buttons()
         }
-        .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow, color: Color(rgbaHex: 0x00ff0050))
-        .frame(width: 600,height: 500)
+        .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
+        .frame(width: 700,height: 600)
     }
 }
 
-extension QuestsEditSheet {
+extension SheetWorkWithQuest {
     func Title() -> some View {
-        Text("Quest editing window")
+        Text(title)
             .foregroundColor(Color("textColor"))
             .font(.custom("MontserratRoman-Regular", size: 17))
             .padding()
@@ -29,20 +37,22 @@ extension QuestsEditSheet {
     
     @ViewBuilder
     func SheetContent() -> some View {
-        Text("Enter a new quest name")
+        Text("Pick icon")
+            .applyTextStyle()
+        
+        IconPicker()
+
+        Text("Enter quest name")
             .applyTextStyle()
         
         TextField("WriteName", text: $name)
             .applyFieldStyle()
         
-        Text("Pick new icon")
+        CharacteristicsList()
+        
+        Text("Enter quests deteils")
             .applyTextStyle()
         
-        TextField("Quest Icon", text: $icon)
-            .applyFieldStyle()
-        
-        Text("update the new details of the quest")
-            .applyTextStyle()
         
         TextEditor(text: $deteils)
             .frame(minHeight: 60)
@@ -50,12 +60,30 @@ extension QuestsEditSheet {
             .padding(10)
             .font(.custom("MontserratRoman-Regular", size: 13)).italic()
             .foregroundColor(Color("textColor"))
+        
+    }
+    func IconPicker() -> some View {
+            Picker("", selection: $icon) {
+                ForEach(allIcons, id: \.self ) { image in
+                    Text.sfIcon(image, size: 15)
+                }
+            }.frame(width: 70)
+    }
+    func CharacteristicsList() -> some View {
+        List {
+            ForEach(char, id: \.self) { char in
+                CharacteristicsAndPointList(name: char.name)
+            }
+            .onMove { indices, destination in
+                // TODO: update items array accordingly
+            }
+        }
     }
     
     func Buttons() -> some View {
         HStack {
             MyButton(label: "Save", txtColor: Color("iconColor"), bgColor: Color("blurColor").opacity(0.8)) {
-                
+                action()
                 GlobalDialog.shared.dialog = .none
             }
             
@@ -72,6 +100,33 @@ extension QuestsEditSheet {
 ////////////////
 ///HELPERS
 ////////////////
+fileprivate struct CharacteristicsAndPointList: View {
+    let name: String
+    @State var points = 0
+    var body: some View {
+        HStack {
+            Text(name)
+                .lineLimit(2)
+            TextField("Enter an integer", value: $points, formatter: NumberFormatter())
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Spacer()
+            CharacteristicsAndPointsListButton()
+        }
+    }
+}
+fileprivate struct CharacteristicsAndPointsListButton: View {
+    @State var isCharacteristic: Bool = false
+    var body: some View {
+        Button {
+            
+            isCharacteristic.toggle()
+        } label: {
+            Image(systemName: "checkmark")
+                .foregroundColor(isCharacteristic ? .gray : .black)
+        }
+    }
+}
 fileprivate struct MyButton: View {
     let label: String
     
@@ -98,6 +153,7 @@ fileprivate struct MyButton: View {
         .background{
             RoundedRectangle(cornerRadius: 12)
                 .foregroundColor(bgColor)
+                .frame(width: 70,height: 35)
         }
     }
 }
