@@ -1,7 +1,7 @@
 import SwiftUI
 import MoreSwiftUI
 
-struct QuestsCreateSheet: View {
+struct SheetWorkWithCharacteristic: View {
     @State var name: String = ""
     @State var deteils: String = ""
     
@@ -15,7 +15,7 @@ struct QuestsCreateSheet: View {
                 
                 ChangeTab()
                 
-                CharactAndPoints()
+//                CharactAndPoints()
                 
                 CreateAndCancelButtons()
             }

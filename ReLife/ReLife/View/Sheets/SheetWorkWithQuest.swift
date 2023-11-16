@@ -2,7 +2,7 @@ import SwiftUI
 import MoreSwiftUI
 
 struct SheetWorkWithQuest: View {
-    let title: String
+    let type: WorkWithTestsType
     let action: () -> Void
     
     @State var name: String = ""
@@ -29,7 +29,7 @@ struct SheetWorkWithQuest: View {
 
 extension SheetWorkWithQuest {
     func Title() -> some View {
-        Text(title)
+        Text(type.asTitle())
             .foregroundColor(Color("textColor"))
             .font(.custom("MontserratRoman-Regular", size: 17))
             .padding()
@@ -48,7 +48,9 @@ extension SheetWorkWithQuest {
         TextField("WriteName", text: $name)
             .applyFieldStyle()
         
-        CharacteristicsList()
+        if type == .questCreator || type == .questEditor {
+            CharacteristicsList()
+        }
         
         Text("Enter quests deteils")
             .applyTextStyle()
@@ -74,15 +76,12 @@ extension SheetWorkWithQuest {
             ForEach(char, id: \.self) { char in
                 CharacteristicsAndPointList(name: char.name)
             }
-            .onMove { indices, destination in
-                // TODO: update items array accordingly
-            }
         }
     }
     
     func Buttons() -> some View {
         HStack {
-            MyButton(label: "Save", txtColor: Color("iconColor"), bgColor: Color("blurColor").opacity(0.8)) {
+            MyButton(label: type.asBtnText(), txtColor: Color("iconColor"), bgColor: Color("blurColor").opacity(0.8)) {
                 action()
                 GlobalDialog.shared.dialog = .none
             }
@@ -173,5 +172,41 @@ fileprivate extension TextField {
             .foregroundColor(Color("textColor"))
             .font(.custom("MontserratRoman-Regular", size: 15))
             .padding()
+    }
+}
+
+
+enum WorkWithTestsType{
+    case characteristicEdit
+    case questCreator
+    case questEditor
+    case somethingAnother
+}
+
+extension WorkWithTestsType {
+    func asTitle() -> String {
+        switch self {
+        case .characteristicEdit :
+            return "Characteristic Edit"
+        case .questCreator:
+            return "Quest Creator"
+        case .questEditor:
+            return "Quest edit"
+        default:
+            return "Fuuuu"
+        }
+    }
+    
+    func asBtnText() -> String {
+        switch self {
+        case .characteristicEdit :
+            return "Save"
+        case .questCreator:
+            return "Create"
+        case .questEditor:
+            return "Save"
+        default:
+            return "Fuuuu"
+        }
     }
 }

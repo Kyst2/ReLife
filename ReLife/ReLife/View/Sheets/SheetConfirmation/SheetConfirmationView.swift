@@ -14,9 +14,3 @@ struct SheetConfirmationView: View {
         .padding()
     }
 }
-//
-//struct SheetConfirmationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SheetConfirmationView()
-//    }
-//}
