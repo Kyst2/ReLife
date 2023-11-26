@@ -1,14 +1,13 @@
-
 import SwiftUI
 
-/// привести в порядок
-struct AddButton: View {
+struct SettingButton: View {
+    let label: String
     let action: () -> Void
     
     var body: some View{
         Button( action: action ) {
             HStack {
-                Image(systemName: "plus")
+                Text(label)
                     .foregroundColor(Color("iconColor"))
                     .font(.largeTitle)
             }
@@ -25,5 +24,3 @@ struct AddButton: View {
         
     }
 }
-
-

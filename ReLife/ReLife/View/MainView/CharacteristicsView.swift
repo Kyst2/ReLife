@@ -22,18 +22,19 @@ struct Charact: View {
     var body: some View {
         HStack{
             Image(systemName: icon)
+                .myImageColor()
                 .font(.largeTitle)
-                .foregroundColor(Color("iconColor"))
+                
                 
             
             Text(name)
-                .foregroundColor(Color("textColor"))
-                .font(.custom("MontserratRoman-Regular", size: 17))
+                .myFont(size: 17)
+                .myColorBlue()
             
             Spacer()
             
             Text("\(points)")
-                .font(.custom("MontserratRoman-Regular", size: 17).italic())
+                .myFont(size: 17).italic()
                 .padding(.trailing,20)
         }
         .padding()

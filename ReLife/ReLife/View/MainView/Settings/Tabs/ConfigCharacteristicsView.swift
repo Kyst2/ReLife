@@ -7,8 +7,21 @@ struct ConfigCharacteristicsView: View {
         
         Spacer()
         
-        AddButton {
+        ButtonsPanel()
+    }
+    func ButtonsPanel() -> some View {
+        HStack{
+            AddButton {
+                let sheet = AnyView( SheetWorkWithQuest(type: .characteristicCreator, action: {
+                    
+                }))
+                
+                GlobalDialog.shared.dialog = .view(view: sheet)
+            }
             
+            SettingButton(label: "Reset to default characteristics") {
+                
+            }
         }
     }
 }

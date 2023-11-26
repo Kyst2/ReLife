@@ -23,7 +23,7 @@ struct SheetWorkWithQuest: View {
             Buttons()
         }
         .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
-        .frame(width: 700,height: 600)
+        .frame(minWidth: 500,minHeight: 200)
     }
 }
 
@@ -42,7 +42,7 @@ extension SheetWorkWithQuest {
         
         IconPicker()
 
-        Text("Enter quest name")
+        Text("Enter \(type.asEnterName()) name")
             .applyTextStyle()
         
         TextField("WriteName", text: $name)
@@ -51,18 +51,19 @@ extension SheetWorkWithQuest {
         if type == .questCreator || type == .questEditor {
             CharacteristicsList()
         }
-        
-        Text("Enter quests deteils")
-            .applyTextStyle()
-        
-        
-        TextEditor(text: $deteils)
-            .frame(minHeight: 60)
-            .cornerRadius(10)
-            .padding(10)
-            .font(.custom("MontserratRoman-Regular", size: 13)).italic()
-            .foregroundColor(Color("textColor"))
-        
+        if type == .questCreator || type == .questEditor {
+            Text("Enter \(type.asEnterName()) deteils")
+                .applyTextStyle()
+            
+            
+            
+            TextEditor(text: $deteils)
+                .frame(minHeight: 60)
+                .cornerRadius(10)
+                .padding(10)
+                .font(.custom("MontserratRoman-Regular", size: 13)).italic()
+                .foregroundColor(Color("textColor"))
+        }
     }
     func IconPicker() -> some View {
             Picker("", selection: $icon) {
@@ -177,36 +178,48 @@ fileprivate extension TextField {
 
 
 enum WorkWithTestsType{
-    case characteristicEdit
     case questCreator
     case questEditor
-    case somethingAnother
+    case characteristicCreator
+    case characteristicEdit
 }
 
 extension WorkWithTestsType {
     func asTitle() -> String {
         switch self {
-        case .characteristicEdit :
-            return "Characteristic Edit"
         case .questCreator:
             return "Quest Creator"
         case .questEditor:
             return "Quest edit"
-        default:
-            return "Fuuuu"
+        case .characteristicCreator:
+            return "Characteristic Creator"
+        case .characteristicEdit :
+            return "Characteristic Edit"
         }
     }
     
     func asBtnText() -> String {
         switch self {
-        case .characteristicEdit :
-            return "Save"
         case .questCreator:
             return "Create"
         case .questEditor:
             return "Save"
-        default:
-            return "Fuuuu"
+        case .characteristicCreator:
+            return "Creator"
+        case .characteristicEdit :
+            return "Save"
+        }
+    }
+    func asEnterName() -> String {
+        switch self {
+        case .questCreator:
+            return "quest"
+        case .questEditor:
+            return "quest"
+        case .characteristicCreator:
+            return "characteristic"
+        case .characteristicEdit :
+            return "сharacteristic"
         }
     }
 }

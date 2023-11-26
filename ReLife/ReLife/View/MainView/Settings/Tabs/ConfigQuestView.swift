@@ -8,12 +8,21 @@ struct ConfigQuestView: View {
             
             Spacer()
             
+            ButtonsPanel()
+        }
+    }
+    func ButtonsPanel() -> some View {
+        HStack{
             AddButton {
                 let sheet = AnyView( SheetWorkWithQuest(type: .questCreator, action: {
                     
                 }))
                 
                 GlobalDialog.shared.dialog = .view(view: sheet)
+            }
+            
+            SettingButton(label: "Reset to default quests") {
+                
             }
         }
     }
@@ -44,49 +53,3 @@ fileprivate extension ConfigQuestView {
         }
     }
 }
-
-
-
-
-/// мабуть прывесты в порядок
-//struct QuestSettingView: View {
-//    @State var name: String
-//    @State var icon: String
-//    @State var deteils: String
-//
-//    @State private var isHovering = false
-//
-//    var body: some View {
-//        HStack{
-//            Space(5)
-//
-//            Image(systemName: icon)
-//                .foregroundColor(Color("iconColor"))
-//                .font(.largeTitle)
-//
-//            Text(name)
-//                .foregroundColor(Color("textColor"))
-//                .font(.custom("MontserratRoman-Regular", size: 15))
-//
-//            Spacer()
-//        }
-//        .padding(10)
-//        .overlay {
-//            RoundedRectangle(cornerRadius: 0)
-//                .stroke(Color.primary, lineWidth: 0.1)
-//        }
-//        .background( isHovering ? Color.gray.opacity(0.5) : Color.clear )
-//        .onHover { hover in
-//            withAnimation(.easeOut(duration: 0.2 )){
-//                self.isHovering = hover
-//            }
-//        }
-//        .onTapGesture(count: 2) {
-//            let sheet = AnyView(SheetWorkWithQuest(title: "Quest edit", buttonName: "Save", action: {
-//
-//            }))
-//
-//            GlobalDialog.shared.dialog = .view(view: sheet)
-//        }
-//    }
-//}

@@ -36,14 +36,14 @@ fileprivate extension QuestsView {
             if isFinishable {
                 AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
-                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
-                        .foregroundColor(Color("textColor"))
+                        .myColorBlue()
+                        .myFont(size: 14).italic()
                 }
             } else {
                 AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
-                        .font(.custom("MontserratRoman-Regular", size: 14).italic())
-                        .foregroundColor(Color("textColor"))
+                        .myColorBlue()
+                        .myFont(size: 14).italic()
                 }
             }
         }
@@ -77,16 +77,17 @@ struct AccordeonView<Content: View>: View {
         .background { ViewBackground() }
         .onTapGesture(count: 2) { tapReaction() }
     }
-    
+    @ViewBuilder
     func TitleView() -> some View {
         HStack{
             Image(systemName: icon)
-                .foregroundColor(Color("iconColor"))
+                .myImageColor()
                 .font(.largeTitle)
             
             Text(name)
-                .foregroundColor(Color("textColor"))
-                .font(.custom("MontserratRoman-Regular", size: 15))
+                .myColorBlue()
+                .myFont(size: 15)
+
             
             Spacer()
             
@@ -126,7 +127,9 @@ struct AccordeonView<Content: View>: View {
     func tapReaction() {
         if questToday == true {
             if isComplete == false {
-                let sheet = AnyView(SheetConfirmationView())
+                let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
+                    
+                })
                 
                 
                 GlobalDialog.shared.dialog = .view(view: sheet )
@@ -142,8 +145,9 @@ struct AccordeonView<Content: View>: View {
 
 fileprivate extension Text {
     var titleStyle: some View {
-        self.font(.custom("MontserratRoman-Regular", size: 17).bold())
-            .foregroundColor(Color("textColor"))
+        self
+            .myFont(size: 17).bold()
+            .myColorBlue()
     }
 }
 
