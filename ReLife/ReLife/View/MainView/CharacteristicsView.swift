@@ -5,7 +5,6 @@ struct CharacteristicsView: View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
                 ForEach(char.sorted {$0.name > $1.name}, id: \.self) { char in
-                    //        let char = char[index]
                     Charact(name: char.name, icon: char.icon, points: char.points)
                 }
             }

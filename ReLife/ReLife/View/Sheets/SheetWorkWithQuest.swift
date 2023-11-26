@@ -15,23 +15,26 @@ struct SheetWorkWithQuest: View {
     @State private var icon: String = MyIcon.batteryFull.rawValue
     
     var body: some View {
-        VStack {
-            Title()
-            
-            SheetContent()
-            
-            Buttons()
+        ScrollView{
+            VStack {
+                Title()
+                
+                SheetContent()
+                
+                Buttons()
+            }
         }
         .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
         .frame(minWidth: 500,minHeight: 200)
+        
     }
 }
 
 extension SheetWorkWithQuest {
     func Title() -> some View {
         Text(type.asTitle())
-            .foregroundColor(Color("textColor"))
-            .font(.custom("MontserratRoman-Regular", size: 17))
+            .myColorBlue()
+            .myFont(size: 17)
             .padding()
     }
     
@@ -55,8 +58,6 @@ extension SheetWorkWithQuest {
             Text("Enter \(type.asEnterName()) deteils")
                 .applyTextStyle()
             
-            
-            
             TextEditor(text: $deteils)
                 .frame(minHeight: 60)
                 .cornerRadius(10)
@@ -73,11 +74,11 @@ extension SheetWorkWithQuest {
             }.frame(width: 70)
     }
     func CharacteristicsList() -> some View {
-        List {
+//        List {
             ForEach(char, id: \.self) { char in
                 CharacteristicsAndPointList(name: char.name)
             }
-        }
+//        }
     }
     
     func Buttons() -> some View {
@@ -127,7 +128,7 @@ fileprivate struct CharacteristicsAndPointsListButton: View {
         }
     }
 }
-fileprivate struct MyButton: View {
+struct MyButton: View {
     let label: String
     
     let txtColor: Color // Color("iconColor") .black

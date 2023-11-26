@@ -12,9 +12,9 @@ struct SettingsView: View {
     @State fileprivate var tab: SettingsTab = .General
     
     var body: some View {
-        VStack(spacing: 15){
+        VStack(spacing: 0){
             TabsPanel()
-            
+//            Spacer()
             TabsBody()
         }
     }
@@ -76,8 +76,8 @@ fileprivate struct MenuButton: View {
             }
         } label: {
             Text(lebel)
-                .foregroundColor(Color("textColor"))
-                .font(.custom("MontserratRoman-Regular", size: 18))
+                .myColorBlue()
+                .myFont(size: 18)
         }
         .buttonStyle(.plain)
         .frame(maxWidth: .infinity)

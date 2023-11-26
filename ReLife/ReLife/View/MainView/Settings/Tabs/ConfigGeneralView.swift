@@ -48,8 +48,8 @@ struct ConfigGeneralView: View {
     func PickerFirstWeekDay() -> some View {
         VStack(spacing: 20){
             Text("First week day")
-                .foregroundColor(Color("iconColor"))
-                .font(.custom("MontserratRoman-Regular", size: 17))
+                .myColorWhite()
+                .myFont(size: 17)
             
             Picker("", selection: $firstWickDay) {
                 Text("Sunday").tag(FirstWeekDay.sunday)
@@ -62,8 +62,8 @@ struct ConfigGeneralView: View {
     func PickerLanguage() -> some View {
         VStack(spacing: 20){
             Text("Wich of Language ?")
-                .foregroundColor(Color("iconColor"))
-                .font(.custom("MontserratRoman-Regular", size: 17))
+                .myColorWhite()
+                .myFont(size: 17)
             
             Picker("", selection: $language) {
                 Text("English").tag(Language.english)

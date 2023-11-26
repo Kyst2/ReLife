@@ -16,12 +16,12 @@ struct ItemEdit: View {
             Space(5)
             
             Image(systemName: icon)
-                .foregroundColor(Color("iconColor"))
+                .myImageColor()
                 .font(.largeTitle)
             
             Text(name)
-                .foregroundColor(Color("textColor"))
-                .font(.custom("MontserratRoman-Regular", size: 15))
+                .myColorBlue()
+                .myFont(size: 15)
             
             Spacer()
         }

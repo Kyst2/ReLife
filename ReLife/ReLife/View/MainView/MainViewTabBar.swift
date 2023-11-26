@@ -79,13 +79,14 @@ struct TabButton: View {
             
             VStack(spacing: 6){
                 Image(systemName: tab.icon)
+                    .myImageColor()
                     .font(.system(size: 25))
-                    .foregroundColor(Color("iconColor"))
+                    
                 
                 Text(tab.title)
-                    .font(.custom("MontserratRoman-Regular", size: 12))
+                    .myFont(size: 13)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color("textColor"))
+                    .myColorBlue()
             }
         }
         .padding(.bottom,8)
