@@ -300,6 +300,30 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A2C11F532B1649300062AFDE /* Quests */ = {
+			isa = PBXGroup;
+			children = (
+				A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */,
+			);
+			path = Quests;
+			sourceTree = "<group>";
+		};
+		A2C11F542B16494C0062AFDE /* Characteristics */ = {
+			isa = PBXGroup;
+			children = (
+				A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */,
+			);
+			path = Characteristics;
+			sourceTree = "<group>";
+		};
+		A2C11F552B16495C0062AFDE /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A2C11F4E2B13C1C00062AFDE /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		A2CCA0282ACF0739006A3A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,16 +331,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A2CCA02D2AD4974A006A3A7F /* MainView */ = {
+		A2CCA02D2AD4974A006A3A7F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				A2C11F502B16486B0062AFDE /* Main */,
-				A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */,
-				A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */,
-				A2C11F4E2B13C1C00062AFDE /* HistoryView.swift */,
+				A2C11F532B1649300062AFDE /* Quests */,
+				A2C11F542B16494C0062AFDE /* Characteristics */,
+				A2C11F552B16495C0062AFDE /* History */,
 				A27286712AF55CE9005EE9B8 /* Settings */,
 			);
-			path = MainView;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		A2DD8E592A58A90C00315995 = {
@@ -372,7 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				A21989932AE3192A0004A5D9 /* Sheets */,
-				A2CCA02D2AD4974A006A3A7F /* MainView */,
+				A2CCA02D2AD4974A006A3A7F /* Scenes */,
 			);
 			path = View;
 			sourceTree = "<group>";
