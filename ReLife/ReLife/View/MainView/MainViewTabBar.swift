@@ -7,11 +7,7 @@ struct TabBar: View {
     
     var body: some View {
         ZStack{
-            RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
-            
-            ParallaxLayer(image: Image("Stars1"),speed: 2).fillParent()
-            
-            ParallaxLayer(image: Image("Stars2"),speed: 7).fillParent()
+            BackgroundView()
             
             HStack(alignment: .top, spacing: 0) {
                 TabsPanel()
@@ -19,6 +15,18 @@ struct TabBar: View {
                 ContentPanel()
             }
         }
+    }
+    
+}
+
+extension TabBar {
+    @ViewBuilder
+    func BackgroundView() -> some View {
+        RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
+        
+        ParallaxLayer(image: Image("Stars1"),speed: 2).fillParent()
+        
+        ParallaxLayer(image: Image("Stars2"),speed: 7).fillParent()
     }
     
     func TabsPanel() -> some View {
@@ -44,7 +52,7 @@ struct TabBar: View {
         switch(selectedTab){
         case .Quests : QuestsView()
         case .Characteristics : CharacteristicsView().fillParent()
-        case .History :Text("History").fillParent()
+        case .History : HistoryView().fillParent()
         case .Settings: SettingsView()
         }
     }
@@ -56,43 +64,69 @@ struct TabBar: View {
 
 struct TabButton: View {
     let tab: MainViewTab
-    let customFont = Font.custom("SF Pro", size: 14)
     @Binding var selectedTab: MainViewTab
     
     var body: some View {
         Button {
             withAnimation( .easeIn(duration: 0.2 )) { selectedTab = tab}
         } label: { ButtonLabel() }
-        .overlay(
-            RoundedRectangle(cornerRadius: 0)
-                .stroke(Color.primary, lineWidth: 0.1)
-        )
-        .buttonStyle(PlainButtonStyle())
+            .buttonLabelModifier()
     }
     
     func ButtonLabel() -> some View {
         ZStack {
-            VisualEffectView(type:.behindWindow, material: .m5_sidebar)
-            
-            Color("blurColor")
-                .opacity(0.5)
+            BattonBackground()
             
             VStack(spacing: 6){
-                Image(systemName: tab.icon)
-                    .myImageColor()
-                    .font(.system(size: 25))
+                TabIcon()
                     
-                
-                Text(tab.title)
-                    .myFont(size: 13)
-                    .fontWeight(.semibold)
-                    .myColorBlue()
+                TabTitle()
             }
         }
-        .padding(.bottom,8)
-        .frame(width: 120,height: 70)
-        .contentShape(Rectangle())
-        .background(Color("tabLineColor").offset(x: selectedTab == tab ? 0 : -120))
+        .tabButtonModifier(selectedTab: selectedTab, tab: tab)
+        
+    }
+}
+extension TabButton {
+    @ViewBuilder
+    func BattonBackground() -> some View {
+        VisualEffectView(type:.behindWindow, material: .m5_sidebar)
+        
+        Color("blurColor")
+            .opacity(0.5)
+    }
+    
+    func TabIcon() -> some View {
+        Image(systemName: tab.icon)
+            .myImageColor()
+            .font(.system(size: 25))
+    }
+    
+    func TabTitle() -> some View {
+        Text(tab.title)
+            .myFont(size: 13, textColor: .blue)
+            .fontWeight(.semibold)
+    }
+}
+////////////////
+///HELPERS
+////////////////
+fileprivate extension View {
+    func tabButtonModifier(selectedTab: MainViewTab , tab: MainViewTab) -> some View {
+        self
+            .padding(.bottom,8)
+            .frame(width: 120,height: 70)
+            .contentShape(Rectangle())
+            .background(Color("tabLineColor").offset(x: selectedTab == tab ? 0 : -120))
+    }
+    
+    func buttonLabelModifier() -> some View {
+        self
+            .overlay(
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.primary, lineWidth: 0.1)
+            )
+            .buttonStyle(PlainButtonStyle())
     }
 }
 

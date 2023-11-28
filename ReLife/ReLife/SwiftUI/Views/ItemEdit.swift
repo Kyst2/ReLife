@@ -12,6 +12,24 @@ struct ItemEdit: View {
     @State private var isHovering = false
     
     var body: some View {
+        
+        ItemPanel()
+            .padding(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+            .background( isHovering ? Color.gray.opacity(0.5) : Color.clear )
+            .onHover { hover in
+                withAnimation(.easeOut(duration: 0.2 )){
+                    self.isHovering = hover
+                }
+            }
+            .onTapGesture(count: 2) {
+                action()
+            }
+    }
+    func ItemPanel() -> some View {
         HStack{
             Space(5)
             
@@ -20,25 +38,9 @@ struct ItemEdit: View {
                 .font(.largeTitle)
             
             Text(name)
-                .myColorBlue()
-                .myFont(size: 15)
+                .myFont(size: 15, textColor: .blue)
             
             Spacer()
-        }
-        .padding(10)
-        .overlay {
-            RoundedRectangle(cornerRadius: 0)
-                .stroke(Color.primary, lineWidth: 0.1)
-        }
-        .background( isHovering ? Color.gray.opacity(0.5) : Color.clear )
-        .onHover { hover in
-            withAnimation(.easeOut(duration: 0.2 )){
-                self.isHovering = hover
-            }
-        }
-        .onTapGesture(count: 2) {
-           
-            action()
         }
     }
 }

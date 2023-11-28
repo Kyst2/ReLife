@@ -9,7 +9,7 @@ struct AddButton: View {
         Button( action: action ) {
             HStack {
                 Image(systemName: "plus")
-                    .foregroundColor(Color("iconColor"))
+                    .myImageColor()
                     .font(.largeTitle)
             }
         }

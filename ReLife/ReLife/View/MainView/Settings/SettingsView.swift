@@ -2,19 +2,13 @@ import Foundation
 import SwiftUI
 import MoreSwiftUI
 
-fileprivate enum SettingsTab: String {
-    case General
-    case Quests
-    case Characteristics
-}
-
 struct SettingsView: View {
     @State fileprivate var tab: SettingsTab = .General
     
     var body: some View {
         VStack(spacing: 0){
             TabsPanel()
-//            Spacer()
+            
             TabsBody()
         }
     }
@@ -76,15 +70,28 @@ fileprivate struct MenuButton: View {
             }
         } label: {
             Text(lebel)
-                .myColorBlue()
-                .myFont(size: 18)
+                .myFont(size: 18, textColor: .blue)
         }
-        .buttonStyle(.plain)
-        .frame(maxWidth: .infinity)
-        .padding(10)
-        .overlay {
-            RoundedRectangle(cornerRadius: 0)
-                .stroke(Color.primary, lineWidth: 0.1)
-        }
+        .menuBttonModifier()
+        
     }
+}
+
+fileprivate extension View {
+    func menuBttonModifier() -> some View{
+        self
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity)
+            .padding(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+    }
+}
+
+fileprivate enum SettingsTab: String {
+    case General
+    case Quests
+    case Characteristics
 }

@@ -3,47 +3,73 @@ import SwiftUI
 struct CharacteristicsView: View {
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
-                ForEach(char.sorted {$0.name > $1.name}, id: \.self) { char in
-                    Charact(name: char.name, icon: char.icon, points: char.points)
-                }
+            LazyCharacteristics()
+        }
+    }
+}
+
+
+extension CharacteristicsView {
+    func LazyCharacteristics() -> some View {
+        LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
+            ForEach(char.sorted {$0.name > $1.name}, id: \.self) { char in
+                Charact(name: char.name, icon: char.icon, points: char.points)
             }
         }
     }
 }
+/////////////////
+///HELPERS
+/////////////////
 
 struct Charact: View {
     var name: String
     var icon:String
-    
     var points:Int
     
     var body: some View {
         HStack{
-            Image(systemName: icon)
-                .myImageColor()
-                .font(.largeTitle)
+            ImagePanel()
                 
-                
-            
-            Text(name)
-                .myFont(size: 17)
-                .myColorBlue()
+            NamePanel()
             
             Spacer()
             
-            Text("\(points)")
-                .myFont(size: 17).italic()
-                .padding(.trailing,20)
+            PointsPanel()
         }
-        .padding()
-        .overlay {
-            RoundedRectangle(cornerRadius: 0)
-                .stroke(Color.primary, lineWidth: 0.1)
-        }
+        .charactModifire()
+        
     }
+    
+    func ImagePanel() -> some View {
+        Image(systemName: icon)
+            .myImageColor()
+            .font(.largeTitle)
+    }
+    
+    func NamePanel() -> some View {
+        Text(name)
+            .myFont(size: 17, textColor: .blue)
+    }
+    
+    func PointsPanel() -> some View {
+        Text("\(points)")
+            .myFont(size: 17, textColor: .white).italic()
+            .padding(.trailing,20)
+    }
+    
 }
 
+fileprivate extension View {
+    func charactModifire() -> some View {
+        self
+            .padding()
+            .overlay {
+                RoundedRectangle(cornerRadius: 0)
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+    }
+}
 
 //// ///////////////
 /// TEMP
@@ -71,14 +97,5 @@ var char = [Characteristics1(name: "Health", icon: "heart.fill", points: 15),Cha
 extension Characteristics1: Equatable {
     static func == (lhs: Characteristics1, rhs: Characteristics1) -> Bool {
         return lhs.name == rhs.name
-    }
-}
-
-//// ///////////////
-///PREVIEW
-////////////////////
-struct CharacteristicsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacteristicsView()
     }
 }

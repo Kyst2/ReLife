@@ -6,15 +6,20 @@ struct SheetConfirmationView: View {
     let action: () -> Void
     var body: some View {
         VStack{
-            Text(text)
-                .myFont(size: 18).bold()
-                .myColorWhite()
+            SheetText()
             
             sheetButtons()
         }
         .frame(width: 400 , height: 200)
         .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
     }
+    
+    func SheetText() -> some View {
+        Text(text)
+            .myFont(size: 18, textColor: .white).bold()
+            .myColorWhite()
+    }
+    
     func sheetButtons() -> some View {
         HStack{
             MyButton(label: "Yes", txtColor: Color("iconColor"), bgColor: Color("blurColor")) {
@@ -31,16 +36,4 @@ struct SheetConfirmationView: View {
 /////////////////
 ///HELPERS
 /////////////////
-struct SheetButton: View {
-    let label: String
-    let action: () -> Void
-    var body: some View {
-        Button {
-            action()
-        } label: {
-            Text(label)
-                .myColorBlue()
-                .myFont(size: 15)
-        }.padding()
-    }
-}
+

@@ -5,12 +5,11 @@ struct SettingButton: View {
     let action: () -> Void
     
     var body: some View{
+        
         Button( action: action ) {
-            HStack {
-                Text(label)
-                    .foregroundColor(Color("iconColor"))
-                    .font(.largeTitle)
-            }
+            
+            LabelButton()
+            
         }
         .buttonStyle(.plain)
         .frame(width: 400,height: 40)
@@ -21,6 +20,13 @@ struct SettingButton: View {
         .padding(20)
         .fixedSize()
         .frame(maxWidth: .infinity)
-        
+    }
+    
+    func LabelButton() -> some View {
+        HStack {
+            Text(label)
+                .myColorWhite()
+                .font(.largeTitle)
+        }
     }
 }

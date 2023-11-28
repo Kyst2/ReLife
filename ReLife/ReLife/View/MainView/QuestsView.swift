@@ -36,14 +36,12 @@ fileprivate extension QuestsView {
             if isFinishable {
                 AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
-                        .myColorBlue()
-                        .myFont(size: 14).italic()
+                        .myFont(size: 14, textColor: .blue).italic()
                 }
             } else {
                 AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
                     Text(quest.deteils)
-                        .myColorBlue()
-                        .myFont(size: 14).italic()
+                        .myFont(size: 14, textColor: .blue).italic()
                 }
             }
         }
@@ -67,16 +65,9 @@ struct AccordeonView<Content: View>: View {
             
             DecrView()
         }
-        .padding(10)
-        .background( hoverEffect ? Color.gray.opacity(0.5) : Color.clear )
-        .onHover{ hover in
-            withAnimation(.easeOut(duration: 0.2 )){
-                self.hoverEffect = hover
-            }
-        }
-        .background { ViewBackground() }
-        .onTapGesture(count: 2) { tapReaction() }
+        .questModifire(hoverEffect: $hoverEffect, background1: ViewBackground(), tapReaction: tapReaction)
     }
+    
     @ViewBuilder
     func TitleView() -> some View {
         HStack{
@@ -85,8 +76,7 @@ struct AccordeonView<Content: View>: View {
                 .font(.largeTitle)
             
             Text(name)
-                .myColorBlue()
-                .myFont(size: 15)
+                .myFont(size: 15, textColor: .blue)
 
             
             Spacer()
@@ -131,7 +121,6 @@ struct AccordeonView<Content: View>: View {
                     
                 })
                 
-                
                 GlobalDialog.shared.dialog = .view(view: sheet )
                 
                 isComplete = true
@@ -141,15 +130,28 @@ struct AccordeonView<Content: View>: View {
         }
     }
 }
-
+fileprivate extension View {
+    func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {
+        self
+            .padding(10)
+            .background( hoverEffect.wrappedValue ? Color.gray.opacity(0.5) : Color.clear )
+            .onHover{ hover in
+                withAnimation(.easeOut(duration: 0.2 )){
+                    hoverEffect.wrappedValue = hover
+                }
+            }
+            .background { background1 }
+            .onTapGesture(count: 2) { tapReaction() }
+    }
+}
 
 fileprivate extension Text {
     var titleStyle: some View {
         self
-            .myFont(size: 17).bold()
-            .myColorBlue()
+            .myFont(size: 17, textColor: .blue).bold()
     }
 }
+
 
 /////////////////////////
 ///TEMP

@@ -33,8 +33,7 @@ struct SheetWorkWithQuest: View {
 extension SheetWorkWithQuest {
     func Title() -> some View {
         Text(type.asTitle())
-            .myColorBlue()
-            .myFont(size: 17)
+            .myFont(size: 17, textColor: .blue)
             .padding()
     }
     
@@ -66,6 +65,7 @@ extension SheetWorkWithQuest {
                 .foregroundColor(Color("textColor"))
         }
     }
+    
     func IconPicker() -> some View {
             Picker("", selection: $icon) {
                 ForEach(allIcons, id: \.self ) { image in
@@ -73,12 +73,11 @@ extension SheetWorkWithQuest {
                 }
             }.frame(width: 70)
     }
+    
     func CharacteristicsList() -> some View {
-//        List {
             ForEach(char, id: \.self) { char in
                 CharacteristicsAndPointList(name: char.name)
             }
-//        }
     }
     
     func Buttons() -> some View {
