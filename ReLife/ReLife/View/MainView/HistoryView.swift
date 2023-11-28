@@ -6,6 +6,9 @@ struct HistoryView: View {
             HistoryPanel()
         }
     }
+}
+
+extension HistoryView {
     func HistoryPanel() -> some View {
         ForEach(hiss.indices, id: \.self) { index in
             let his = hiss[index]
@@ -23,7 +26,6 @@ struct HistoryItem: View {
     
     var body: some View {
         HStack{
-            
             Text(name)
                 .myFont(size: 15, textColor: .blue)
             Spacer()

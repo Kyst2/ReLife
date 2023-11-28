@@ -8,7 +8,6 @@ struct ConfigGeneralView: View {
     var body: some View {
         ScrollView{
             VStack(spacing: 30 ){
-                
                 BDButtons()
                 
                 PickerGroup()
@@ -18,12 +17,12 @@ struct ConfigGeneralView: View {
                 SoundToggle()
                 
                 LinkSupport()
-                
-                
             }
         }
     }
-    
+}
+
+extension ConfigGeneralView {
     func BDButtons() -> some View {
         GroupBox {
             HStack{
@@ -36,6 +35,7 @@ struct ConfigGeneralView: View {
             }
         }
     }
+    
     func PickerGroup() -> some View {
         GroupBox {
             HStack{
@@ -45,6 +45,7 @@ struct ConfigGeneralView: View {
             }
         }
     }
+    
     func PickerFirstWeekDay() -> some View {
         VStack(spacing: 20){
             Text("First week day")
@@ -93,12 +94,11 @@ struct ConfigGeneralView: View {
         }
         .toggleStyle(SwitchToggleStyle(tint: Color("textColor")))
     }
+    
     func LinkSupport() -> some View {
         Link("Support Email", destination: URL(string: "mailto:deradus@ukr.net")!)
     }
-    
 }
-
 
 /////////////////
 ///HELPERS

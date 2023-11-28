@@ -11,6 +11,9 @@ struct ConfigQuestView: View {
             ButtonsPanel()
         }
     }
+}
+
+extension ConfigQuestView {
     func ButtonsPanel() -> some View {
         HStack{
             AddButton {
@@ -27,11 +30,6 @@ struct ConfigQuestView: View {
         }
     }
 }
-
-
-
-
-
 
 /////////////////
 ///HELPERS
