@@ -13,12 +13,12 @@ struct ItemEdit: View {
     
     var body: some View {
         ItemPanel()
-            .padding(10)
             .overlay {
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.primary, lineWidth: 0.1)
             }
             .background( isHovering ? Color.gray.opacity(0.5) : Color.clear )
+            .padding(5)
             .onHover { hover in
                 withAnimation(.easeOut(duration: 0.2 )){
                     self.isHovering = hover
@@ -35,6 +35,7 @@ struct ItemEdit: View {
             Image(systemName: icon)
                 .myImageColor()
                 .font(.largeTitle)
+                .padding(10)
             
             Text(name)
                 .myFont(size: 15, textColor: .blue)

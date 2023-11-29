@@ -4,7 +4,7 @@ import MoreSwiftUI
 struct ConfigQuestView: View {
     var body: some View {
         VStack {
-            BodyScrollQuests()
+            BodyScrollQuests()//TODO: Rename me
             
             Spacer()
             
@@ -25,7 +25,7 @@ extension ConfigQuestView {
                 GlobalDialog.shared.dialog = .view(view: sheet)
             }
             
-            SettingButton(label: "Reset to default quests") {
+            SettingButton(label: "Reset to default quests") {//TODO: change button text
                 
             }
         }
@@ -51,7 +51,6 @@ fileprivate extension ConfigQuestView {
                     }
                 }
             }
-            .padding(.vertical, 1)
         }
     }
 }

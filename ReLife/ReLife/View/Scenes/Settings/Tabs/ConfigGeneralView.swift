@@ -48,16 +48,6 @@ extension ConfigGeneralView {
             }
     }
     
-    func PickerGroup() -> some View {
-        GroupBox {
-            HStack{
-                PickerFirstWeekDay()
-                
-                PickerLanguage()
-            }
-        }
-    }
-    
     func PickerFirstWeekDay() -> some View {
         VStack(spacing: 20) {
             TitleText("First Day of week")
@@ -130,15 +120,14 @@ struct TitleText: View {
     }
 }
 
-
 enum FirstWeekDay: String, CaseIterable {
     case sunday = "Sunday"
     case monday = "Monday"
 }
 
 enum Language: String, CaseIterable {
-//    case system
+    case system  = "System"
     case english = "Engilsh"
-    case german = "German"
+    case german  = "German"
     case ukraine = "Ukraine"
 }

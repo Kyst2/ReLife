@@ -43,7 +43,7 @@ fileprivate extension ConfigCharacteristicsView {
                 GlobalDialog.shared.dialog = .view(view: sheet)
             }
             
-            SettingButton(label: "Reset to default characteristics") {
+            SettingButton(label: "Reset to default characteristics") {//TODO: Change btn text
                 
             }
         }
