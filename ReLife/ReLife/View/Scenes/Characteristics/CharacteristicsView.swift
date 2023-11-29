@@ -45,6 +45,7 @@ struct Charact: View {
         Image(systemName: icon)
             .myImageColor()
             .font(.largeTitle)
+            .padding(10)
     }
     
     func NamePanel() -> some View {
@@ -62,12 +63,12 @@ struct Charact: View {
 
 fileprivate extension View {
     func charactModifire() -> some View {
-        self
-            .padding()
-            .overlay {
+        self.overlay {
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.primary, lineWidth: 0.1)
             }
+        .padding(.top,5)
+        .padding(.leading,10)
     }
 }
 

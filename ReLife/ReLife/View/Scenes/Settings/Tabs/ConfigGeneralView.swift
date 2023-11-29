@@ -3,7 +3,7 @@ import MoreSwiftUI
 
 struct ConfigGeneralView: View {
     @State var firstWickDay: FirstWeekDay = .monday
-    @State var language: Language = .english
+    @State var languages: Language = .english
     @State var sound = false
     var body: some View {
         ScrollView {
@@ -11,30 +11,9 @@ struct ConfigGeneralView: View {
                 VStack(spacing: 30) {
                     DbButtons()
                     
-                    VStack(spacing: 20) {
-                        TitleText("First Day of week")
-                        
-                        Picker("", selection: $firstWickDay) {
-                            ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
-                                Text(day.rawValue).tag(day.rawValue)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        .frame(width: 130)
-                    }
+                    PickerFirstWeekDay()
                     
-                    //TODO: fix me
-                    VStack(spacing: 20) {
-                        TitleText("Language")
-                        
-                        Picker("", selection: $language) {
-                            Text("English").tag(Language.english)
-                            Text("German").tag(Language.german)
-                            Text("Ukraine").tag(Language.ukraine)
-                        }
-                        .pickerStyle(.menu)
-                        .frame(width: 130)
-                    }
+                    PickerLanguage()
                     
                     ResetButtons()
                     
@@ -80,29 +59,30 @@ extension ConfigGeneralView {
     }
     
     func PickerFirstWeekDay() -> some View {
-        VStack(spacing: 20){
-            Text("First week day")
-                .myFont(size: 17, textColor: .white)
+        VStack(spacing: 20) {
+            TitleText("First Day of week")
             
             Picker("", selection: $firstWickDay) {
-                Text("Sunday").tag(FirstWeekDay.sunday)
-                Text("Monday").tag(FirstWeekDay.monday)
+                ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
+                    Text(day.rawValue).tag(day)
+                }
             }
             .pickerStyle(.menu)
-        }.padding()
+            .frame(width: 130)
+        }
     }
     
     func PickerLanguage() -> some View {
-        VStack(spacing: 20){
-            Text("Wich of Language ?")
-                .myFont(size: 17, textColor: .white)
+        VStack(spacing: 20) {
+            TitleText("Language")
             
-            Picker("", selection: $language) {
-                Text("English").tag(Language.english)
-                Text("German").tag(Language.german)
-                Text("Ukraine").tag(Language.ukraine)
+            Picker("", selection: $languages) {
+                ForEach(Language.allCases, id: \.rawValue) { language in
+                    Text(language.rawValue).tag(language)
+                }
             }
             .pickerStyle(.menu)
+            .frame(width: 130)
         }
     }
     
@@ -157,8 +137,8 @@ enum FirstWeekDay: String, CaseIterable {
 }
 
 enum Language: String, CaseIterable {
-    case system
-    case english
-    case german
-    case ukraine
+//    case system
+    case english = "Engilsh"
+    case german = "German"
+    case ukraine = "Ukraine"
 }
