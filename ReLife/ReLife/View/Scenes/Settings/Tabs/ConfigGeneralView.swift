@@ -1,39 +1,72 @@
 import SwiftUI
-
+import MoreSwiftUI
 
 struct ConfigGeneralView: View {
     @State var firstWickDay: FirstWeekDay = .monday
     @State var language: Language = .english
     @State var sound = false
     var body: some View {
-        ScrollView{
-            VStack(spacing: 30 ){
-                BDButtons()
-                
-                PickerGroup()
-                
-                ResetButtons()
-                
-                SoundToggle()
-                
-                LinkSupport()
+        ScrollView {
+            GroupBox {
+                VStack(spacing: 30) {
+                    DbButtons()
+                    
+                    VStack(spacing: 20) {
+                        TitleText("First Day of week")
+                        
+                        Picker("", selection: $firstWickDay) {
+                            ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
+                                Text(day.rawValue).tag(day.rawValue)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .frame(width: 130)
+                    }
+                    
+                    //TODO: fix me
+                    VStack(spacing: 20) {
+                        TitleText("Language")
+                        
+                        Picker("", selection: $language) {
+                            Text("English").tag(Language.english)
+                            Text("German").tag(Language.german)
+                            Text("Ukraine").tag(Language.ukraine)
+                        }
+                        .pickerStyle(.menu)
+                        .frame(width: 130)
+                    }
+                    
+                    ResetButtons()
+                    
+                    SoundToggle()
+                    
+                    LinkSupport()
+                }
             }
         }
+        .padding(20)
     }
 }
 
 extension ConfigGeneralView {
-    func BDButtons() -> some View {
-        GroupBox {
-            HStack{
-                SettingButton(label: "ExportBD") {
+    func DbButtons() -> some View {
+            VStack(alignment: .leading) {
+                VStack{
+                    TitleText("Database actions")
                     
+                    HStack{
+                        SettingButton(label: "Export") {
+                            
+                        }
+                        
+                        SettingButton(label: "Import") {
+                            
+                        }
+                    }
                 }
-                SettingButton(label: "ImportBD") {
-                    
-                }
+                .fillParent()
+                .padding(20)
             }
-        }
     }
     
     func PickerGroup() -> some View {
@@ -104,12 +137,27 @@ extension ConfigGeneralView {
 ///HELPERS
 /////////////////
 
-enum FirstWeekDay: String {
-    case sunday
-    case monday
+struct TitleText: View {
+    let txt: String
+    
+    init(_ text: String) {
+        self.txt = text
+    }
+    
+    var body: some View {
+        Text(txt)
+            .font(.moncerat(size: 20))
+    }
 }
 
-enum Language: String {
+
+enum FirstWeekDay: String, CaseIterable {
+    case sunday = "Sunday"
+    case monday = "Monday"
+}
+
+enum Language: String, CaseIterable {
+    case system
     case english
     case german
     case ukraine

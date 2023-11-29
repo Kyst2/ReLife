@@ -14,7 +14,7 @@ struct QuestsView:View {
                 
                 CustomSection(header: "Long-term Quests", isFinishable: false)
             }
-        }
+        }.padding(10)
     }
 }
 
@@ -60,7 +60,7 @@ struct AccordeonView<Content: View>: View {
     @State var isComplete = false
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center){
             TitleView()
             
             DecrView()
@@ -89,14 +89,14 @@ struct AccordeonView<Content: View>: View {
             }
             .padding(.trailing,20)
             .buttonStyle(.plain)
-        }
+        }.padding(10)
     }
     
     @ViewBuilder
     func DecrView() -> some View {
         if isExpanded {
             content()
-                .padding()
+                .padding(20)
         }
     }
     
@@ -132,15 +132,14 @@ struct AccordeonView<Content: View>: View {
 }
 fileprivate extension View {
     func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {
-        self
-            .padding(10)
-            .background( hoverEffect.wrappedValue ? Color.gray.opacity(0.5) : Color.clear )
+        self.background( hoverEffect.wrappedValue ? Color.gray.opacity(0.5) : Color.clear )
             .onHover{ hover in
                 withAnimation(.easeOut(duration: 0.2 )){
                     hoverEffect.wrappedValue = hover
                 }
             }
             .background { background1 }
+            .padding(3)
             .onTapGesture(count: 2) { tapReaction() }
     }
 }

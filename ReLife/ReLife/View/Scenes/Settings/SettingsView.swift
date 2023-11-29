@@ -44,45 +44,33 @@ extension SettingsView {
 /////////////////
 ///HELPERS
 /////////////////
+//TODO: fix button to fill parent
 struct ConfigTabView: View {
     @Binding fileprivate var tab: SettingsTab
     fileprivate let curr: SettingsTab
     
     var body: some View {
-        MenuButton(lebel: curr.rawValue ) {
-            tab = curr
-        }.background{
-            tab == curr ? Color.gray.opacity(0.5) : Color.clear
-        }
-    }
-}
-
-
-
-/// привести в порядок 
-fileprivate struct MenuButton: View {
-    let lebel: String
-    let action: () -> Void
-    var body: some View {
-        Button {
+        Button(action: {
             withAnimation(.easeIn(duration: 0.2 )){
-                action()
+                tab = curr
             }
-        } label: {
-            Text(lebel)
+        }) {
+            Text(curr.rawValue)
                 .myFont(size: 18, textColor: .blue)
+                .menuBttonModifier(tab: tab, curr: curr)
         }
-        .menuBttonModifier()
-        
+        .buttonStyle(.plain)
     }
 }
 
 fileprivate extension View {
-    func menuBttonModifier() -> some View{
-        self
-            .buttonStyle(.plain)
-            .frame(maxWidth: .infinity)
-            .padding(10)
+    func menuBttonModifier(tab: SettingsTab,curr:SettingsTab) -> some View{
+        self.frame(height: 40)
+            .frame(minWidth: 200,maxWidth: .infinity)
+            .contentShape(Rectangle())
+            .background {
+                tab == curr ? Color.gray.opacity(0.5) : Color.clear
+            }
             .overlay {
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.primary, lineWidth: 0.1)

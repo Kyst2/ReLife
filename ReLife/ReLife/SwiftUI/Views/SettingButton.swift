@@ -4,29 +4,9 @@ struct SettingButton: View {
     let label: String
     let action: () -> Void
     
-    var body: some View{
-        
-        Button( action: action ) {
-            
-            LabelButton()
-            
-        }
-        .buttonStyle(.plain)
-        .frame(width: 400,height: 40)
-        .background{
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundColor(Color("blurColor")).opacity(0.8)
-        }
-        .padding(20)
-        .fixedSize()
-        .frame(maxWidth: .infinity)
-    }
-    
-    func LabelButton() -> some View {
-        HStack {
-            Text(label)
-                .myColorWhite()
-                .font(.largeTitle)
+    var body: some View {
+        Button(label) {
+            action()
         }
     }
 }

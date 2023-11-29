@@ -10,6 +10,7 @@ struct ConfigQuestView: View {
             
             ButtonsPanel()
         }
+        .padding(7)
     }
 }
 
@@ -36,7 +37,7 @@ extension ConfigQuestView {
 /////////////////
 fileprivate extension ConfigQuestView {
     func BodyScrollQuests() -> some View {
-        ScrollView{
+        ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
                 ForEach(quests.indices, id: \.self) { index in
                     let quest = quests[index]
@@ -50,6 +51,7 @@ fileprivate extension ConfigQuestView {
                     }
                 }
             }
+            .padding(.vertical, 1)
         }
     }
 }

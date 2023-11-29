@@ -12,7 +12,6 @@ struct ItemEdit: View {
     @State private var isHovering = false
     
     var body: some View {
-        
         ItemPanel()
             .padding(10)
             .overlay {
