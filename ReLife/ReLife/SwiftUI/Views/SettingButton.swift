@@ -5,8 +5,11 @@ struct SettingButton: View {
     let action: () -> Void
     
     var body: some View {
-        Button(label) {
+        Button(action: {
             action()
-        }
+        }, label: {
+            Text(label)
+                .frame(height: 25)
+        })
     }
 }

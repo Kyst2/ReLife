@@ -77,16 +77,9 @@ extension ConfigGeneralView {
     }
     
     func ResetButtons() -> some View {
-        GroupBox {
-            HStack{
-                SettingButton(label: "delete all history") {
+                SettingButton(label: "Clear History") {
                     
                 }
-                SettingButton(label: "reset to default settings") {
-                    
-                }
-            }
-        }
     }
     
     func SoundToggle() -> some View {
@@ -100,6 +93,7 @@ extension ConfigGeneralView {
     
     func LinkSupport() -> some View {
         Link("Support Email", destination: URL(string: "mailto:deradus@ukr.net")!)
+            .padding(.bottom,20)
     }
 }
 

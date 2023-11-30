@@ -3,11 +3,25 @@ import MoreSwiftUI
 
 struct ConfigCharacteristicsView: View {
     var body: some View {
-        bodyScrollCharacteristics()
-        
-        Spacer()
-        
-        ButtonsPanel()
+        VStack{
+            bodyScrollCharacteristics()
+            
+            Spacer()
+            
+            ButtonsPanel()
+        }.padding(7)
+            .contextMenu{
+                Button {
+                    
+                } label: {
+                    Text("Delete all characteristics")
+                }
+                Button {
+                    
+                } label: {
+                    Text("Reset to default characteristics")
+                }
+            }
     }
 }
 
@@ -27,6 +41,13 @@ fileprivate extension ConfigCharacteristicsView {
                         }))
                         
                         GlobalDialog.shared.dialog = .view(view: sheet)
+                    }.contextMenu{
+                        Button {
+                            
+                        } label: {
+                            Text("Delete")
+                        }
+
                     }
                 }
             }
@@ -34,18 +55,12 @@ fileprivate extension ConfigCharacteristicsView {
     }
     
     func ButtonsPanel() -> some View {
-        HStack{
-            AddButton {
-                let sheet = AnyView( SheetWorkWithQuest(type: .characteristicCreator, action: {
-                    
-                }))
+        AddButton {
+            let sheet = AnyView( SheetWorkWithQuest(type: .characteristicCreator, action: {
                 
-                GlobalDialog.shared.dialog = .view(view: sheet)
-            }
+            }))
             
-            SettingButton(label: "Reset to default characteristics") {//TODO: Change btn text
-                
-            }
-        }
+            GlobalDialog.shared.dialog = .view(view: sheet)
+        }.padding(10)
     }
 }

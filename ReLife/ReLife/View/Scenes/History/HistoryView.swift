@@ -27,14 +27,15 @@ struct HistoryItem: View {
     var body: some View {
         HStack{
             Text(name)
-                .myFont(size: 15, textColor: .blue)
+                .myFont(size: 17, textColor: .blue)
+                .padding(13)
             Spacer()
         }
-        .padding()
         .overlay{
             RoundedRectangle(cornerRadius: 0)
                 .stroke(Color.primary, lineWidth: 0.1)
         }
+        .padding(7)
     }
 }
 

@@ -9,26 +9,31 @@ struct ConfigQuestView: View {
             Spacer()
             
             ButtonsPanel()
-        }
-        .padding(7)
+        }.padding(7)
+            .contextMenu{
+                Button {
+                    
+                } label: {
+                    Text("Delete all quests")
+                }
+                Button {
+                    
+                } label: {
+                    Text("Reset to default quests")
+                }
+            }
     }
 }
 
 extension ConfigQuestView {
     func ButtonsPanel() -> some View {
-        HStack{
-            AddButton {
-                let sheet = AnyView( SheetWorkWithQuest(type: .questCreator, action: {
-                    
-                }))
+        AddButton {
+            let sheet = AnyView( SheetWorkWithQuest(type: .questCreator, action: {
                 
-                GlobalDialog.shared.dialog = .view(view: sheet)
-            }
+            }))
             
-            SettingButton(label: "Reset to default quests") {//TODO: change button text
-                
-            }
-        }
+            GlobalDialog.shared.dialog = .view(view: sheet)
+        }.padding(10)
     }
 }
 
@@ -48,6 +53,13 @@ fileprivate extension ConfigQuestView {
                         }))
                         
                         GlobalDialog.shared.dialog = .view(view: sheet)
+                    }.contextMenu {
+                        Button {
+                            
+                        } label: {
+                            Text("Delete")
+                        }
+
                     }
                 }
             }
