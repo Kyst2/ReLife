@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct CharacteristicsView: View {
+    @ObservedObject var model : MainViewModel
+    
     var body: some View {
         ScrollView {
             LazyCharacteristics()

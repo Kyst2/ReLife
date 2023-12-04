@@ -13,13 +13,13 @@ struct MainView: View {
             HStack(alignment: .top, spacing: 0) {
                 TabsPanel()
                
+                //TODO: Fix UI in case of all quests are empty
                 ContentPanel()
             }
         }
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
     }
-    
 }
 
 extension MainView {
@@ -53,10 +53,15 @@ extension MainView {
     @ViewBuilder
     func ContentPanel() -> some View {
         switch(model.selectedTab){
-        case .Quests : QuestsView()
-        case .Characteristics : CharacteristicsView().fillParent()
-        case .History : HistoryView().fillParent()
-        case .Settings: SettingsView()
+        case .Quests : 
+            QuestsView(model: model)
+        case .Characteristics :
+            CharacteristicsView(model: model)
+                .fillParent()
+        case .History :
+            HistoryView().fillParent()
+        case .Settings: 
+            SettingsView()
         }
     }
 }

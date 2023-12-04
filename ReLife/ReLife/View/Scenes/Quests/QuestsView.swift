@@ -3,16 +3,19 @@ import SwiftUI
 import MoreSwiftUI
 
 struct QuestsView:View {
+    @ObservedObject var model : MainViewModel
+    
+    
     var body: some View {
         ScrollView {
             Space(18)
             
             VStack(spacing: 15) {
-                CustomSection(header: "Today's Quests", isFinishable: true)
+                CustomSection(header: "Today's Quests", isFinishable: true, quests: model.questToday)
              
-                CustomSection(header: "Tomorrow's Quests", isFinishable: false)
+                CustomSection(header: "Tomorrow's Quests", isFinishable: false, quests: model.questTomorrow)
                 
-                CustomSection(header: "Long-term Quests", isFinishable: false)
+                CustomSection(header: "Long-term Quests", isFinishable: true, quests: model.questLongTerm)
             }
         }.padding(10)
     }
@@ -23,37 +26,30 @@ struct QuestsView:View {
 ///////////////////////
 
 fileprivate extension QuestsView {
-    func CustomSection(header:String, isFinishable: Bool) -> some View {
+    func CustomSection(header:String, isFinishable: Bool, quests: [Quest] ) -> some View {
         Section(header: Text(header).titleStyle ) {
-            SectionBody(isFinishable: isFinishable)
+            SectionBody(isFinishable: isFinishable, quests: quests)
         }
     }
     
-    func SectionBody(isFinishable: Bool) -> some View {
+    func SectionBody(isFinishable: Bool, quests: [Quest] ) -> some View {
         ForEach(quests.indices, id: \.self) { index in
             let quest = quests[index]
             
-            if isFinishable {
-                AccordeonView(questToday: true, icon: quest.icon, name: quest.name) {
-                    Text(quest.deteils)
-                        .myFont(size: 14, textColor: .blue).italic()
-                }
-            } else {
-                AccordeonView(questToday: false, icon: quest.icon, name: quest.name) {
-                    Text(quest.deteils)
-                        .myFont(size: 14, textColor: .blue).italic()
-                }
+            QuestAccordeonView(isFinishable: isFinishable, icon: quest.icon.rawValue , name: quest.name) {
+                Text(quest.descript)
+                   .myFont(size: 14, textColor: .blue).italic()
             }
         }
     }
 }
 
 /// привести в порядок
-struct AccordeonView<Content: View>: View {
+struct QuestAccordeonView<Content: View>: View {
     @State private var isExpanded = false
     @State private var hoverEffect = false
     
-    let questToday:Bool
+    let isFinishable:Bool
     let icon:String
     let name:String
     let content: () -> Content
@@ -103,7 +99,7 @@ struct AccordeonView<Content: View>: View {
     @ViewBuilder
     func ViewBackground() -> some View {
         ZStack {
-            if questToday == false {
+            if isFinishable == false {
                 Color.clear
             } else {
                 isComplete ? Color.gray.opacity(0.5) : Color.clear
@@ -115,7 +111,7 @@ struct AccordeonView<Content: View>: View {
     }
     
     func tapReaction() {
-        if questToday == true {
+        if isFinishable == true {
             if isComplete == false {
                 let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
                     
@@ -156,15 +152,15 @@ fileprivate extension Text {
 ///TEMP
 /////////////////////////
 
-class Questec: ObservableObject {
-    @Published var name: String
-    @Published var icon: String
-    @Published var deteils:String
-    init(name: String, icon: String, deteils: String) {
-        self.name = name
-        self.icon = icon
-        self.deteils = deteils
-    }
-}
-
-var quests = [Questec(name: "Clean box", icon: "heart.fill" , deteils: "wash up "),Questec(name: "alarm", icon: "heart.fill", deteils: "clean room"), Questec(name: "shop", icon: "heart.fill", deteils: "buy apple")]
+//class Questec: ObservableObject {
+//    @Published var name: String
+//    @Published var icon: String
+//    @Published var deteils:String
+//    init(name: String, icon: String, deteils: String) {
+//        self.name = name
+//        self.icon = icon
+//        self.deteils = deteils
+//    }
+//}
+//
+//var quests = [Questec(name: "Clean box", icon: "heart.fill" , deteils: "wash up "),Questec(name: "alarm", icon: "heart.fill", deteils: "clean room"), Questec(name: "shop", icon: "heart.fill", deteils: "buy apple")]

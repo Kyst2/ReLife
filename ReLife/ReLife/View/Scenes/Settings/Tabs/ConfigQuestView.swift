@@ -44,24 +44,24 @@ fileprivate extension ConfigQuestView {
     func BodyScrollQuests() -> some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
-                ForEach(quests.indices, id: \.self) { index in
-                    let quest = quests[index]
-                    
-                    ItemEdit(name: quest.name, icon: quest.icon){
-                        let sheet = AnyView(SheetWorkWithQuest(type:.questEditor, action: {
-                            
-                        }))
-                        
-                        GlobalDialog.shared.dialog = .view(view: sheet)
-                    }.contextMenu {
-                        Button {
-                            
-                        } label: {
-                            Text("Delete")
-                        }
-
-                    }
-                }
+//                ForEach(quests.indices, id: \.self) { index in
+//                    let quest = quests[index]
+//                    
+//                    ItemEdit(name: quest.name, icon: quest.icon){
+//                        let sheet = AnyView(SheetWorkWithQuest(type:.questEditor, action: {
+//                            
+//                        }))
+//                        
+//                        GlobalDialog.shared.dialog = .view(view: sheet)
+//                    }.contextMenu {
+//                        Button {
+//                            
+//                        } label: {
+//                            Text("Delete")
+//                        }
+//
+//                    }
+//                }
             }
         }
     }
