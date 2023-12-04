@@ -11,6 +11,7 @@ struct QuestsView:View {
             Space(18)
             
             VStack(spacing: 15) {
+                //TODO: якщо немає опису нєфіг розгортати
                 CustomSection(header: "Today's Quests", isFinishable: true, quests: model.questToday)
              
                 CustomSection(header: "Tomorrow's Quests", isFinishable: false, quests: model.questTomorrow)
