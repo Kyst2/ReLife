@@ -7,7 +7,6 @@ struct AddButton: View {
         Button( action: action ) {
             Image(systemName: "plus")
                 .font(.largeTitle)
-
         }
     }
 }
