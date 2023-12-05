@@ -11,7 +11,7 @@ struct QuestsView:View {
             Space(18)
             
             VStack(spacing: 15) {
-                //TODO: якщо немає опису нєфіг розгортати
+                //TODO: якщо немає опису нєфіг розгортати +++
                 CustomSection(header: "Today's Quests", isFinishable: true, quests: model.questToday)
              
                 CustomSection(header: "Tomorrow's Quests", isFinishable: false, quests: model.questTomorrow)
@@ -37,23 +37,20 @@ fileprivate extension QuestsView {
         ForEach(quests.indices, id: \.self) { index in
             let quest = quests[index]
             
-            QuestAccordeonView(isFinishable: isFinishable, icon: quest.icon.rawValue , name: quest.name) {
-                Text(quest.descript)
-                   .myFont(size: 14, textColor: .blue).italic()
-            }
+            QuestAccordeonView(isFinishable: isFinishable, icon: quest.icon.rawValue , name: quest.name, questDescript: quest.descript)
         }
     }
 }
 
 /// привести в порядок
-struct QuestAccordeonView<Content: View>: View {
+struct QuestAccordeonView: View {
     @State private var isExpanded = false
     @State private var hoverEffect = false
     
     let isFinishable:Bool
     let icon:String
     let name:String
-    let content: () -> Content
+    let questDescript:String
     @State var isComplete = false
     
     var body: some View {
@@ -78,21 +75,29 @@ struct QuestAccordeonView<Content: View>: View {
             
             Spacer()
             
-            Button(action: {
-                withAnimation(.easeIn(duration: 0.2 )){
-                    isExpanded.toggle()}
-            }) {
-                Text.sfSymbol(isExpanded ? "chevron.up" : "chevron.right")
-            }
-            .padding(.trailing,20)
-            .buttonStyle(.plain)
+                Button(action: {
+                    withAnimation(.easeIn(duration: 0.2 )){
+                        isExpanded.toggle()}
+                }) {
+                    Text.sfSymbol(isExpanded ? "chevron.up" : "chevron.right")
+                        .foregroundStyle(.black)
+                        .frame(width: 25, height: 25)
+                        .background{
+                            Circle()
+                        }
+                }
+                .padding(.trailing,20)
+                .buttonStyle(BtnUksStyle.default)
+                .disableButton(questDescript: questDescript)
+            
         }.padding(10)
     }
     
     @ViewBuilder
     func DecrView() -> some View {
         if isExpanded {
-            content()
+            Text(questDescript)
+               .myFont(size: 14, textColor: .blue).italic()
                 .padding(20)
         }
     }
@@ -129,7 +134,7 @@ struct QuestAccordeonView<Content: View>: View {
 }
 fileprivate extension View {
     func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {
-        self.background( hoverEffect.wrappedValue ? Color.gray.opacity(0.5) : Color.clear )
+        self.background( hoverEffect.wrappedValue ? Color.gray.opacity(0.1) : Color.clear )
             .onHover{ hover in
                 withAnimation(.easeOut(duration: 0.2 )){
                     hoverEffect.wrappedValue = hover
@@ -138,6 +143,14 @@ fileprivate extension View {
             .background { background1 }
             .padding(3)
             .onTapGesture(count: 2) { tapReaction() }
+    }
+    @ViewBuilder
+    func disableButton(questDescript: String) -> some View {
+        if questDescript == "" {
+            self.disabled(true)
+        }else {
+            self
+        }
     }
 }
 

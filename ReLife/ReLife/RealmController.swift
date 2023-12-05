@@ -105,8 +105,6 @@ extension RealmController {
 }
 
 extension RealmController {
-    // у нас есть все характеристики
-    // выбираем нужную и добавляем ей балы
     func add(history: History) {
         try! realm.write {
             realm.add(history)
@@ -118,8 +116,6 @@ extension RealmController {
                 }
             })
         }
-       
-        // тут в характеристики записуємо в квесті ми зразу записуємо бали
     }
     
     func remove(historyKey: String) {
