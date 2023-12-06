@@ -37,20 +37,26 @@ fileprivate extension QuestsView {
         ForEach(quests.indices, id: \.self) { index in
             let quest = quests[index]
             
-            QuestAccordeonView(isFinishable: isFinishable, icon: quest.icon.rawValue , name: quest.name, questDescript: quest.descript)
+            QuestAccordeonView(model: model, isFinishable: isFinishable, icon: quest.icon.rawValue , name: quest.name, repeats: quest.repeatTimes, questDescript: quest.descript){
+                
+            }
         }
     }
 }
 
 /// привести в порядок
 struct QuestAccordeonView: View {
+    @ObservedObject var model : MainViewModel
     @State private var isExpanded = false
     @State private var hoverEffect = false
+    @State var repetsCount: Int = 0
     
     let isFinishable:Bool
     let icon:String
     let name:String
+    let repeats:Int
     let questDescript:String
+    let action:() -> Void
     @State var isComplete = false
     
     var body: some View {
@@ -72,6 +78,8 @@ struct QuestAccordeonView: View {
             Text(name)
                 .myFont(size: 15, textColor: .blue)
 
+            Text("(\(repetsCount)/\(repeats))")
+                .myFont(size: 15, textColor: .white)
             
             Spacer()
             
@@ -91,6 +99,13 @@ struct QuestAccordeonView: View {
                 .disableButton(questDescript: questDescript)
             
         }.padding(10)
+    }
+     func repeatsCount() {
+        if repeats == repetsCount {
+            model.realmController.add(history: History(quest: Quest, dateCompleted: <#T##Date#>))
+        }else {
+            self.repetsCount += 1
+        }
     }
     
     @ViewBuilder
@@ -120,7 +135,7 @@ struct QuestAccordeonView: View {
         if isFinishable == true {
             if isComplete == false {
                 let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
-                    
+                    repeatsCount()
                 })
                 
                 GlobalDialog.shared.dialog = .view(view: sheet )
@@ -131,6 +146,7 @@ struct QuestAccordeonView: View {
             }
         }
     }
+    
 }
 fileprivate extension View {
     func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {

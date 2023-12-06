@@ -37,7 +37,31 @@ class MainViewModel: ObservableObject {
         refreshData()
     }
     
-    func refreshData() {
+    func refreshData(forceRefresh: Bool = false) {
+        let newQuestToday = realmController.getActualQuestsToday()
+        let newQuestTomorrow = realmController.getActualQuestsToday(dateNow: Date.now.adding(days: 1) )
+        let newQuestLongTerm = realmController.getSingleQuestHalfYear(dateNow: Date.now)
         
+        if self.questToday != newQuestToday || self.questTomorrow != newQuestTomorrow || self.questLongTerm != newQuestLongTerm{
+            self.questToday = newQuestToday
+            self.questTomorrow = newQuestTomorrow
+            self.questLongTerm = newQuestLongTerm
+        }else {
+            if forceRefresh {
+                self.objectWillChange.send()
+            }
+        }
+    }
+    func addQuest(quest:Quest) {
+        realmController.add(quest: quest)
+        refreshData()
+    }
+    func removeQuest(questKey: String) {
+        realmController.remove(questKey: questKey)
+        refreshData()
+    }
+    func addToHistory(quest:Quest) {
+        realmController.add(history: History(quest: quest, dateCompleted: Date.now))
+        refreshData()
     }
 }

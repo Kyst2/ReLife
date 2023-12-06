@@ -41,9 +41,6 @@ extension RealmController {
     }
     
     func remove(questKey: String) {
-        // видалити всі записи з історії з цим квестом
-        
-        
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
                 realm.delete(quest)
@@ -64,7 +61,7 @@ extension RealmController {
         }
     }
 }
-//func Characteristic
+
 extension RealmController {
     func add(characteristic: Characteristic) {
         guard characteristicsAll.filter({$0.name == characteristic.name}).count == 0 else { return }
@@ -75,7 +72,6 @@ extension RealmController {
     }
     
     func remove(characteristicKey: String) {
-        // видалити з усіх квестів бали зав'язані на цю характеристику
         if let characteristic = realm.object(ofType: Characteristic.self, forPrimaryKey: characteristicKey) {
             try! realm.write {
                 let quests = self.questsAll
@@ -185,19 +181,15 @@ extension RealmController {
         allQuestsToday.append(repeatEvery)
         
         return allQuestsToday.flatMap{ $0 }
-        
-        //++++++  витягування актуальних задач на сьогоднішній день (окрім виконаних) - окрема функции которая использует эту
-        //++++++  витягування виконаних задач на сьогоднішній день(окрім актуальних)- окрема функции которая использует эту
     }
     
     func getFinishedQuestsToday(dateNow: Date = Date.now) -> Dictionary<Quest,Int> {
-        // здихатися квестсТудей
         let quests = allHistory.filter({$0.dateCompleted == dateNow.dateWithoutTime()})
             .compactMap { history -> Quest? in
                 return history.quest
             }
-        let questsAndCount = Dictionary(quests.map { ($0, 1) }, uniquingKeysWith: +)
         
+        let questsAndCount = Dictionary(quests.map { ($0, 1) }, uniquingKeysWith: +)
         
         return questsAndCount
     }
@@ -288,10 +280,6 @@ extension RealmController {
         case timesRepeat
         case timer(sec: Int)
     }
-    
-    //func questNeedToDoTimes(_ quest: Quest) -> Int {
-    //
-    //}
 }
 
 extension Sequence {
