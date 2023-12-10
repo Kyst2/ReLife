@@ -121,6 +121,21 @@ extension RealmController {
             }
         }
     }
+    func deleteAllHistory() {
+        for key in allHistory{
+            if let allHistory = realm.object(ofType: History.self, forPrimaryKey: key.key){
+                try! realm.write{
+                    realm.delete(allHistory)
+                }
+            }
+        }
+    }
+}
+
+
+struct QuestWrapper {
+    let quest: Quest
+    let count: Int
 }
 
 extension RealmController {
@@ -182,6 +197,16 @@ extension RealmController {
         
         return allQuestsToday.flatMap{ $0 }
     }
+    // берем историю
+    // фильтруем квесты по тому который нам надо
+    // и высчитываем их количество
+    
+    func getFinishCountQuest(quest: Quest) -> Int {
+        let quest = allHistory.filter({$0.dateCompleted == Date.now.dateWithoutTime()})
+            .filter({$0.quest?.key == quest.key}).count
+            
+        return quest
+    }
     
     func getFinishedQuestsToday(dateNow: Date = Date.now) -> Dictionary<Quest,Int> {
         let quests = allHistory.filter({$0.dateCompleted == dateNow.dateWithoutTime()})
@@ -197,26 +222,12 @@ extension RealmController {
     func getActualQuestsToday(dateNow: Date = Date.now) -> [Quest] {
         guard let questsToday = getQuestsToday(dateNow: dateNow) else { return [] }
         
-        let historyObject = realm.objects(History.self)
-        let historyFilter = historyObject.where({$0.dateCompleted == dateNow.dateWithoutTime()})
-        
-        let filterQuestsInHistory = questsToday.map { quest -> Quest? in
-            if !historyFilter.contains(where: { history in
-                (history.quest?.key.contains(quest.key))!
-            }) {
-                return quest
-            } else {
-                return nil
-            }
-        }
-            .compactMap{ $0 }
-        
-        let questsAndCount = filterQuestsInHistory
+        let questsAndCount = questsToday
             .asDict(groupedBy: { $0 } ) // [Quest: [Quest]]
             .mapValues { items in items.count } // [Quest : Count]
         
         let actualQuestsToday = questsAndCount.compactMap { (quest , count) -> Quest? in
-            if count <= quest.repeatTimes {
+            if count <= quest.repeatTimes  {
                 return quest
             }
             else {

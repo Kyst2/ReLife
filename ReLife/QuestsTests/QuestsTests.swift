@@ -20,6 +20,7 @@ final class QuestsTests: XCTestCase {
         }
         super.tearDown()
     }
+    
     func testAddQuest() {
         XCTAssertEqual(realmController.characteristicsAll.count, 2)
         

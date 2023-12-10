@@ -37,27 +37,26 @@ fileprivate extension QuestsView {
         ForEach(quests.indices, id: \.self) { index in
             let quest = quests[index]
             
-            QuestAccordeonView(model: model, isFinishable: isFinishable, icon: quest.icon.rawValue , name: quest.name, repeats: quest.repeatTimes, questDescript: quest.descript){
-                
+            QuestAccordeonView(model: model, isFinishable: isFinishable, repetsCount: model.realmController.getFinishCountQuest(quest: quest), quest: quest){
+                model.addToHistory(quest: quest)
             }
+            
         }
     }
 }
 
-/// привести в порядок
+
 struct QuestAccordeonView: View {
     @ObservedObject var model : MainViewModel
     @State private var isExpanded = false
     @State private var hoverEffect = false
-    @State var repetsCount: Int = 0
-    
-    let isFinishable:Bool
-    let icon:String
-    let name:String
-    let repeats:Int
-    let questDescript:String
+    let isFinishable: Bool
+    let repetsCount: Int
+    let quest:Quest
     let action:() -> Void
+
     @State var isComplete = false
+    
     
     var body: some View {
         VStack(alignment: .center){
@@ -71,47 +70,41 @@ struct QuestAccordeonView: View {
     @ViewBuilder
     func TitleView() -> some View {
         HStack{
-            Image(systemName: icon)
+            Image(systemName: quest.icon.rawValue)
                 .myImageColor()
                 .font(.largeTitle)
             
-            Text(name)
+            Text(quest.name)
                 .myFont(size: 15, textColor: .blue)
-
-            Text("(\(repetsCount)/\(repeats))")
-                .myFont(size: 15, textColor: .white)
-            
+            if isFinishable {
+                Text("(\(repetsCount)/\(quest.repeatTimes))")
+                    .myFont(size: 15, textColor: .white)
+                    .id("repeatCount_\(quest.name)_\(repetsCount)")
+            }
             Spacer()
             
-                Button(action: {
-                    withAnimation(.easeIn(duration: 0.2 )){
-                        isExpanded.toggle()}
-                }) {
-                    Text.sfSymbol(isExpanded ? "chevron.up" : "chevron.right")
-                        .foregroundStyle(.black)
-                        .frame(width: 25, height: 25)
-                        .background{
-                            Circle()
-                        }
-                }
-                .padding(.trailing,20)
-                .buttonStyle(BtnUksStyle.default)
-                .disableButton(questDescript: questDescript)
+            Button(action: {
+                withAnimation(.easeIn(duration: 0.2 )){
+                    isExpanded.toggle()}
+            }) {
+                Text.sfSymbol(isExpanded ? "chevron.up" : "chevron.right")
+                    .foregroundStyle(.black)
+                    .frame(width: 25, height: 25)
+                    .background{
+                        Circle()
+                    }
+            }
+            .padding(.trailing,20)
+            .buttonStyle(BtnUksStyle.default)
+            .disableButton(questDescript: quest.descript)
             
         }.padding(10)
     }
-     func repeatsCount() {
-        if repeats == repetsCount {
-            model.realmController.add(history: History(quest: Quest, dateCompleted: <#T##Date#>))
-        }else {
-            self.repetsCount += 1
-        }
-    }
-    
+
     @ViewBuilder
     func DecrView() -> some View {
         if isExpanded {
-            Text(questDescript)
+            Text(quest.descript)
                .myFont(size: 14, textColor: .blue).italic()
                 .padding(20)
         }
@@ -120,10 +113,11 @@ struct QuestAccordeonView: View {
     @ViewBuilder
     func ViewBackground() -> some View {
         ZStack {
-            if isFinishable == false {
+            if quest.repeatTimes < repetsCount {
                 Color.clear
             } else {
-                isComplete ? Color.gray.opacity(0.5) : Color.clear
+                isComplete ?
+                Color.gray.opacity(0.3) : Color.clear
             }
             
             RoundedRectangle(cornerRadius: 0)
@@ -132,21 +126,22 @@ struct QuestAccordeonView: View {
     }
     
     func tapReaction() {
-        if isFinishable == true {
-            if isComplete == false {
+        if isFinishable {
+            if repetsCount < quest.repeatTimes {
                 let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
-                    repeatsCount()
+                    //                if repetsCount == quest.repeatTimes - 1{
+                    //                    action()
+                    //                    isComplete = true
+                    //                }else if repetsCount < quest.repeatTimes{
+                    //                    action()
+                    //                }
+                    action()
                 })
                 
                 GlobalDialog.shared.dialog = .view(view: sheet )
-                
-                isComplete = true
-            } else {
-                isComplete = false
             }
         }
     }
-    
 }
 fileprivate extension View {
     func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {
@@ -177,6 +172,143 @@ fileprivate extension Text {
     }
 }
 
+
+
+
+
+/////////////////////////////
+//struct QuestAccordeonView: View {
+//    @ObservedObject var model : MainViewModel
+//    @State private var isExpanded = false
+//    @State private var hoverEffect = false
+//    @State var repetsCount: Int = 0
+//    
+//    let isFinishable:Bool
+//    let icon:String
+//    let name:String
+//    let repeats:Int
+//    let questDescript:String
+//    let action:() -> Void
+//    @State var isComplete = false
+//    
+//    var body: some View {
+//        VStack(alignment: .center){
+//            TitleView()
+//            
+//            DecrView()
+//        }
+//        .questModifire(hoverEffect: $hoverEffect, background1: ViewBackground(), tapReaction: tapReaction)
+//    }
+//    
+//    @ViewBuilder
+//    func TitleView() -> some View {
+//        HStack{
+//            Image(systemName: icon)
+//                .myImageColor()
+//                .font(.largeTitle)
+//            
+//            Text(name)
+//                .myFont(size: 15, textColor: .blue)
+//
+//            Text("(\(repetsCount)/\(repeats))")
+//                .myFont(size: 15, textColor: .white)
+//            
+//            Spacer()
+//            
+//                Button(action: {
+//                    withAnimation(.easeIn(duration: 0.2 )){
+//                        isExpanded.toggle()}
+//                }) {
+//                    Text.sfSymbol(isExpanded ? "chevron.up" : "chevron.right")
+//                        .foregroundStyle(.black)
+//                        .frame(width: 25, height: 25)
+//                        .background{
+//                            Circle()
+//                        }
+//                }
+//                .padding(.trailing,20)
+//                .buttonStyle(BtnUksStyle.default)
+//                .disableButton(questDescript: questDescript)
+//            
+//        }.padding(10)
+//    }
+//     func repeatsCount() {
+//        if repeats == repetsCount {
+//            model.realmController.add(history: History(quest: Quest, dateCompleted: <#T##Date#>))
+//        }else {
+//            self.repetsCount += 1
+//        }
+//    }
+//    
+//    @ViewBuilder
+//    func DecrView() -> some View {
+//        if isExpanded {
+//            Text(questDescript)
+//               .myFont(size: 14, textColor: .blue).italic()
+//                .padding(20)
+//        }
+//    }
+//    
+//    @ViewBuilder
+//    func ViewBackground() -> some View {
+//        ZStack {
+//            if isFinishable == false {
+//                Color.clear
+//            } else {
+//                isComplete ? Color.gray.opacity(0.5) : Color.clear
+//            }
+//            
+//            RoundedRectangle(cornerRadius: 0)
+//                .stroke(Color.primary, lineWidth: 0.1)
+//        }
+//    }
+//    
+//    func tapReaction() {
+//        if isFinishable == true {
+//            if isComplete == false {
+//                let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
+//                    repeatsCount()
+//                })
+//                
+//                GlobalDialog.shared.dialog = .view(view: sheet )
+//                
+//                isComplete = true
+//            } else {
+//                isComplete = false
+//            }
+//        }
+//    }
+//    
+//}
+//fileprivate extension View {
+//    func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {
+//        self.background( hoverEffect.wrappedValue ? Color.gray.opacity(0.1) : Color.clear )
+//            .onHover{ hover in
+//                withAnimation(.easeOut(duration: 0.2 )){
+//                    hoverEffect.wrappedValue = hover
+//                }
+//            }
+//            .background { background1 }
+//            .padding(3)
+//            .onTapGesture(count: 2) { tapReaction() }
+//    }
+//    @ViewBuilder
+//    func disableButton(questDescript: String) -> some View {
+//        if questDescript == "" {
+//            self.disabled(true)
+//        }else {
+//            self
+//        }
+//    }
+//}
+//
+//fileprivate extension Text {
+//    var titleStyle: some View {
+//        self
+//            .myFont(size: 17, textColor: .blue).bold()
+//    }
+//}
+///////////
 
 /////////////////////////
 ///TEMP
