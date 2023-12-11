@@ -18,6 +18,14 @@ extension CharacteristicsView {
                 Charact(name: char.name, icon: char.icon, points: char.points)
             }
         }
+//        ForEach(quests.indices, id: \.self) { index in
+//            let quest = quests[index]
+//            
+//            QuestAccordeonView(isFinishable: isFinishable, repetsCount: model.realmController.getFinishCountQuest(quest: quest), quest: quest){
+//                model.addToHistory(quest: quest)
+//            }
+//            
+//        }
     }
 }
 /////////////////
@@ -77,7 +85,7 @@ fileprivate extension View {
 //// ///////////////
 /// TEMP
 ////////////////////
-
+//
 class Characteristics1: Hashable {
     @Published var name: String
     @Published var icon:String

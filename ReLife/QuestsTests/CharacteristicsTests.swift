@@ -100,4 +100,25 @@ final class CharacteristicsTests: XCTestCase {
         XCTAssertEqual(healthPoints, 10*3 + 15)
         XCTAssertEqual(levelPoints, 30*3 )
     }
+    
+    func testGetCharacteristicPoints () {
+        realmController.add(characteristic: Characteristic(name: "Health"))
+        realmController.add(characteristic: Characteristic(name: "Level"))
+        let helth = realmController.characteristicsAll.filter{ $0.name == "Health"}.first!
+        let level = realmController.characteristicsAll.filter{ $0.name == "Level"}.first!
+        
+        print("2: \(realmController.characteristicsAll[0].key)")
+        
+        let charSet1 = [ helth: 10, level: 30]
+        let charSet2 = [ helth: 15]
+        
+        let quest = Quest(name: "Quest1", icon: .americanFootball, color: .black, charachPoints: charSet1, questRepeatStr: .eachWeek(days: [4]))
+        realmController.add(quest: quest)
+        let quest2 = Quest(name: "Quest2", icon: .americanFootball, color: .black, charachPoints: charSet2, questRepeatStr: .eachWeek(days: [4]))
+        realmController.add(quest: quest)
+        
+        realmController.add(history: History(quest: quest))
+        realmController.add(history: History(quest: quest))
+        
+    }
 }

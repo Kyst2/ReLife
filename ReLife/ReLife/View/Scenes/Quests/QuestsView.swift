@@ -27,18 +27,17 @@ struct QuestsView:View {
 ///////////////////////
 
 fileprivate extension QuestsView {
-    func CustomSection(header:String, isFinishable: Bool, quests: [Quest] ) -> some View {
+    func CustomSection(header:String, isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
         Section(header: Text(header).titleStyle ) {
             SectionBody(isFinishable: isFinishable, quests: quests)
         }
     }
     
-    func SectionBody(isFinishable: Bool, quests: [Quest] ) -> some View {
-        ForEach(quests.indices, id: \.self) { index in
-            let quest = quests[index]
+    func SectionBody(isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
+        ForEach(quests) { wrapper in
             
-            QuestAccordeonView(model: model, isFinishable: isFinishable, repetsCount: model.realmController.getFinishCountQuest(quest: quest), quest: quest){
-                model.addToHistory(quest: quest)
+            QuestAccordeonView(isFinishable: isFinishable, repetsCount: wrapper.finishedTimes, quest: wrapper.quest){
+                model.addToHistory(quest: wrapper.quest)
             }
             
         }
@@ -47,7 +46,6 @@ fileprivate extension QuestsView {
 
 
 struct QuestAccordeonView: View {
-    @ObservedObject var model : MainViewModel
     @State private var isExpanded = false
     @State private var hoverEffect = false
     let isFinishable: Bool
@@ -127,19 +125,11 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            if repetsCount < quest.repeatTimes {
-                let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
-                    //                if repetsCount == quest.repeatTimes - 1{
-                    //                    action()
-                    //                    isComplete = true
-                    //                }else if repetsCount < quest.repeatTimes{
-                    //                    action()
-                    //                }
-                    action()
-                })
-                
-                GlobalDialog.shared.dialog = .view(view: sheet )
-            }
+            let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
+                action()
+            })
+            
+            GlobalDialog.shared.dialog = .view(view: sheet )
         }
     }
 }

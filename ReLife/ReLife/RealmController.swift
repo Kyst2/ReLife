@@ -132,12 +132,6 @@ extension RealmController {
     }
 }
 
-
-struct QuestWrapper {
-    let quest: Quest
-    let count: Int
-}
-
 extension RealmController {
     
     func getQuestsToday(dateNow today: Date = Date.now) -> [Quest]?{
@@ -197,10 +191,8 @@ extension RealmController {
         
         return allQuestsToday.flatMap{ $0 }
     }
-    // берем историю
-    // фильтруем квесты по тому который нам надо
-    // и высчитываем их количество
     
+    // optimize me
     func getFinishCountQuest(quest: Quest) -> Int {
         let quest = allHistory.filter({$0.dateCompleted == Date.now.dateWithoutTime()})
             .filter({$0.quest?.key == quest.key}).count
@@ -218,24 +210,21 @@ extension RealmController {
         
         return questsAndCount
     }
- 
-    func getActualQuestsToday(dateNow: Date = Date.now) -> [Quest] {
+    
+    func getActualQuestsToday(dateNow: Date = Date.now) -> [QuestWrapper] {
         guard let questsToday = getQuestsToday(dateNow: dateNow) else { return [] }
         
-        let questsAndCount = questsToday
-            .asDict(groupedBy: { $0 } ) // [Quest: [Quest]]
-            .mapValues { items in items.count } // [Quest : Count]
-        
-        let actualQuestsToday = questsAndCount.compactMap { (quest , count) -> Quest? in
-            if count <= quest.repeatTimes  {
+        let actualQuestToday = questsToday.map { quest -> Quest? in
+            if quest.repeatTimes > getFinishCountQuest(quest: quest) {
                 return quest
-            }
-            else {
+            }else {
                 return nil
             }
-        }
+        }.compactMap{ $0 }
         
-        return actualQuestsToday
+        return actualQuestToday
+            .map{ QuestWrapper(quest: $0, finishedTimes: getFinishCountQuest(quest: $0) )  }
+            .sorted{ $0.quest.name < $1.quest.name }
     }
     
     func getSingleQuestHalfYear(dateNow: Date = Date.now) -> [Quest] {
@@ -256,7 +245,7 @@ extension RealmController {
         return singleDayQuests
     }
     
-    func getAllCharacteristicPoints() -> Dictionary<Characteristic, Int> {
+    func getAllCharacteristicPoints() -> [CharacteristicsAndPoints] {
         let characs = self.characteristicsAll
         
         var result = characs.asDictionary(key: \.self, block: { _ in 0 })
@@ -284,7 +273,10 @@ extension RealmController {
             }
         
         return result
+            .map { CharacteristicsAndPoints(charac: $0.key, points: $0.value ) }
+            .sorted { $0.charac.name < $1.charac.name }
     }
+
     
     enum QuestFinishType: Codable {
         case mililitres
@@ -317,4 +309,17 @@ public extension Sequence {
         
         return dict
     }
+}
+
+struct CharacteristicsAndPoints {
+    let charac: Characteristic
+    let points: Int
+}
+
+
+struct QuestWrapper: Equatable , Identifiable {
+    var id = UUID()
+    
+    let quest: Quest
+    let finishedTimes: Int
 }
