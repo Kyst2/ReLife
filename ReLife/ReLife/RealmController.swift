@@ -227,22 +227,23 @@ extension RealmController {
             .sorted{ $0.quest.name < $1.quest.name }
     }
     
-    func getSingleQuestHalfYear(dateNow: Date = Date.now) -> [Quest] {
+    func getSingleQuestHalfYear(dateNow: Date = Date.now) -> [QuestWrapper] {
         let allQuests = questsAll
-        let allHistory = allHistory
         
         let singleDayQuests = allQuests.map { quest -> Quest? in
-            guard case let .singleDayQuest(date) = quest.questRepeat,date <= dateNow.adding(days: 182),
-                  !allHistory.contains(where: { history in
-                      (history.quest?.name.contains(quest.name))!
-                  })
+            guard case let .singleDayQuest(date) = quest.questRepeat,date <= dateNow.adding(days: 182)
             else { return nil }
-            
-            return quest
+            if quest.repeatTimes > getFinishCountQuest(quest: quest) {
+                return quest
+            }else {
+                return nil
+            }
         }
             .compactMap{ $0 }
         
         return singleDayQuests
+            .map{ QuestWrapper(quest: $0, finishedTimes: getFinishCountQuest(quest: $0) )  }
+            .sorted{ $0.quest.name < $1.quest.name }
     }
     
     func getAllCharacteristicPoints() -> [CharacteristicsAndPoints] {
@@ -311,7 +312,9 @@ public extension Sequence {
     }
 }
 
-struct CharacteristicsAndPoints {
+struct CharacteristicsAndPoints: Equatable , Identifiable {
+    var id = UUID()
+    
     let charac: Characteristic
     let points: Int
 }

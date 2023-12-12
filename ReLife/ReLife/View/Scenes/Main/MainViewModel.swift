@@ -10,7 +10,7 @@ class MainViewModel: ObservableObject {
     @Published var questTomorrow: [QuestWrapper] = []
     @Published var questLongTerm: [QuestWrapper] = []
     
-    @Published var characteristics: [Characteristic] = []
+    @Published var characteristicsAndPoints: [CharacteristicsAndPoints] = []
     
     func initFakeData() {
 //        let c1 = Characteristic(name: "Health")
@@ -40,7 +40,7 @@ class MainViewModel: ObservableObject {
         //quests
         let newQuestToday = realmController.getActualQuestsToday()
         let newQuestTomorrow = realmController.getActualQuestsToday(dateNow: Date.now.adding(days: 1))
-//        let newQuestLongTerm = realmController.getSingleQuestHalfYear(dateNow: Date.now).sorted(by: {$0.name < $1.name})
+        let newQuestLongTerm = realmController.getSingleQuestHalfYear(dateNow: Date.now)
         
         if self.questToday != newQuestToday {
             self.questToday = newQuestToday
@@ -48,11 +48,10 @@ class MainViewModel: ObservableObject {
         if self.questTomorrow != newQuestTomorrow {
             self.questTomorrow = newQuestTomorrow
         }
-        
-//         self.questLongTerm != newQuestLongTerm{
-//            
-//            self.questLongTerm = newQuestLongTerm
-//        } 
+        if self.questLongTerm != newQuestLongTerm{
+            
+            self.questLongTerm = newQuestLongTerm
+        } 
         else {
             if forceRefresh {
                 self.objectWillChange.send()
@@ -60,7 +59,10 @@ class MainViewModel: ObservableObject {
         }
         
         //characteristics
-        let newCharacteristics = realmController.getAllCharacteristicPoints()
+        let newCharacteristicsAndPoints = realmController.getAllCharacteristicPoints()
+        if self.characteristicsAndPoints != newCharacteristicsAndPoints {
+            self.characteristicsAndPoints = newCharacteristicsAndPoints
+        }
         
     }
     
@@ -82,9 +84,7 @@ class MainViewModel: ObservableObject {
     func deleteAllHistory() {
         realmController.deleteAllHistory()
     }
-    func getAllCharacteristirs() {
-        
-    }
+
     func getCharacteriscticsAndPoints() -> [CharacteristicsAndPoints]{
         realmController.getAllCharacteristicPoints()
     }

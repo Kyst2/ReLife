@@ -5,27 +5,19 @@ struct CharacteristicsView: View {
     
     var body: some View {
         ScrollView {
-            LazyCharacteristics()
+            LazyCharacteristics(characteristics: model.characteristicsAndPoints)
         }
     }
 }
 
 
 extension CharacteristicsView {
-    func LazyCharacteristics() -> some View {
+    func LazyCharacteristics(characteristics: [CharacteristicsAndPoints]) -> some View {
         LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
-            ForEach(char.sorted {$0.name > $1.name}, id: \.self) { char in
-                Charact(name: char.name, icon: char.icon, points: char.points)
+            ForEach(characteristics) { wrapper in
+                Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
             }
         }
-//        ForEach(quests.indices, id: \.self) { index in
-//            let quest = quests[index]
-//            
-//            QuestAccordeonView(isFinishable: isFinishable, repetsCount: model.realmController.getFinishCountQuest(quest: quest), quest: quest){
-//                model.addToHistory(quest: quest)
-//            }
-//            
-//        }
     }
 }
 /////////////////
@@ -61,6 +53,7 @@ struct Charact: View {
     func NamePanel() -> some View {
         Text(name)
             .myFont(size: 17, textColor: .blue)
+            .padding(10)
     }
     
     func PointsPanel() -> some View {
@@ -78,14 +71,14 @@ fileprivate extension View {
                     .stroke(Color.primary, lineWidth: 0.1)
             }
         .padding(.top,5)
-        .padding(.leading,10)
+        .padding(.horizontal,10)
     }
 }
 
 //// ///////////////
 /// TEMP
 ////////////////////
-//
+////
 class Characteristics1: Hashable {
     @Published var name: String
     @Published var icon:String
