@@ -32,6 +32,8 @@
 		A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */; };
 		A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286832AFBEEA4005EE9B8 /* AddButton.swift */; };
 		A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286852B03B799005EE9B8 /* ItemEdit.swift */; };
+		A2A5A8442B291BD800FD844A /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5A8432B291BD800FD844A /* HistoryViewModel.swift */; };
+		A2A5A8462B292B7E00FD844A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5A8452B292B7E00FD844A /* SettingsViewModel.swift */; };
 		A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCC2AAA273400128B3C /* Date+.swift */; };
 		A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */; };
 		A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BBB2682B19BE9F00348BC5 /* MainViewModel.swift */; };
@@ -115,6 +117,8 @@
 		A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialog.swift; sourceTree = "<group>"; };
 		A27286832AFBEEA4005EE9B8 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		A27286852B03B799005EE9B8 /* ItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEdit.swift; sourceTree = "<group>"; };
+		A2A5A8432B291BD800FD844A /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		A2A5A8452B292B7E00FD844A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		A2AEDCCC2AAA273400128B3C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A2AEDCCE2AAA4C5F00128B3C /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		A2BBB2682B19BE9F00348BC5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				A272866D2AEFD44F005EE9B8 /* SettingsView.swift */,
+				A2A5A8452B292B7E00FD844A /* SettingsViewModel.swift */,
 				A27286722AF55D0B005EE9B8 /* Tabs */,
 			);
 			path = Settings;
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C11F4E2B13C1C00062AFDE /* HistoryView.swift */,
+				A2A5A8432B291BD800FD844A /* HistoryViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,
+				A2A5A8462B292B7E00FD844A /* SettingsViewModel.swift in Sources */,
 				A25272122A8E3C8400DD4B75 /* History.swift in Sources */,
 				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
 				A2C11F4F2B13C1C00062AFDE /* HistoryView.swift in Sources */,
@@ -629,6 +636,7 @@
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
+				A2A5A8442B291BD800FD844A /* HistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

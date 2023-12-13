@@ -2,6 +2,8 @@ import SwiftUI
 import MoreSwiftUI
 
 struct ConfigGeneralView: View {
+    @ObservedObject var model: SettingsViewModel
+    
     @State var firstWickDay: FirstWeekDay = .monday
     @State var languages: Language = .english
     @State var sound = false

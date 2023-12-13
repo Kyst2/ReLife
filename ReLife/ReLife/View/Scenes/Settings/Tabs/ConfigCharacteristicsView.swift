@@ -2,6 +2,8 @@ import SwiftUI
 import MoreSwiftUI
 
 struct ConfigCharacteristicsView: View {
+    @ObservedObject var model: SettingsViewModel
+    
     var body: some View {
         VStack{
             bodyScrollCharacteristics()
@@ -35,20 +37,20 @@ fileprivate extension ConfigCharacteristicsView {
                 ForEach(char.indices, id: \.self) { index in
                     let char = char[index]
                     
-                    ItemEdit(name: char.name, icon: char.icon){
-                        let sheet = AnyView(SheetWorkWithQuest(type: .characteristicEdit, action: {
-                            
-                        }))
-                        
-                        GlobalDialog.shared.dialog = .view(view: sheet)
-                    }.contextMenu{
-                        Button {
-                            
-                        } label: {
-                            Text("Delete")
-                        }
-
-                    }
+                    //                    ItemEdit(name: char.name, icon: char.icon){
+                    //                        let sheet = AnyView(SheetWorkWithQuest(type: .characteristicEdit, action: {
+                    //
+                    //                        }))
+                    //
+                    //                        GlobalDialog.shared.dialog = .view(view: sheet)
+                    //                    }.contextMenu{
+                    //                        Button {
+                    //
+                    //                        } label: {
+                    //                            Text("Delete")
+                    //                        }
+                
+                    
                 }
             }
         }
@@ -56,7 +58,7 @@ fileprivate extension ConfigCharacteristicsView {
     
     func ButtonsPanel() -> some View {
         AddButton {
-            let sheet = AnyView( SheetWorkWithQuest(type: .characteristicCreator, action: {
+            let sheet = AnyView( SheetWorkWithQuest(model: model, type: .characteristicCreator, action: {
                 
             }))
             

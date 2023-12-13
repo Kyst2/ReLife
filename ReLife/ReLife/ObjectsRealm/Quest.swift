@@ -4,7 +4,7 @@ import RealmSwift
 import AppKit
 #endif
 
-public class Quest: Object {
+public class Quest: Object, Identifiable {
     @Persisted(primaryKey: true) var key: String = UUID().uuidString
     @Persisted var name: String
     @Persisted var charachPoints = Map<String, Int>()

@@ -3,7 +3,7 @@ import MoreSwiftUI
 
 struct ItemEdit: View {
     @State var name: String
-    @State var icon: String
+    @State var icon: MyIcon
     @State var deteils: String = ""
     @State var pointa: Int = 0
     
@@ -32,7 +32,7 @@ struct ItemEdit: View {
         HStack{
             Space(5)
             
-            Image(systemName: icon)
+            Image(systemName: icon.rawValue)
                 .myImageColor()
                 .font(.largeTitle)
                 .padding(10)

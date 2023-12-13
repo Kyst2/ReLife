@@ -4,6 +4,7 @@ import MoreSwiftUI
 
 struct SettingsView: View {
     @State fileprivate var tab: SettingsTab = .General
+    @ObservedObject var model = SettingsViewModel()
     
     var body: some View {
         VStack(spacing: 0){
@@ -29,11 +30,11 @@ extension SettingsView {
     func TabsBody() -> some View {
         switch tab {
         case .General:
-            ConfigGeneralView()
+            ConfigGeneralView(model: model)
         case .Quests:
-            ConfigQuestView()
+            ConfigQuestView(model: model)
         case .Characteristics:
-            ConfigCharacteristicsView()
+            ConfigCharacteristicsView(model: model)
         }
     }
 }

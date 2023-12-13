@@ -2,9 +2,10 @@ import SwiftUI
 import MoreSwiftUI
 
 struct ConfigQuestView: View {
+    @ObservedObject var model: SettingsViewModel
     var body: some View {
         VStack {
-            BodyScrollQuests()//TODO: Rename me
+            BodyScrollQuests(quests: model.allQuests)//TODO: Rename me
             
             Spacer()
             
@@ -28,7 +29,7 @@ struct ConfigQuestView: View {
 extension ConfigQuestView {
     func ButtonsPanel() -> some View {
         AddButton {
-            let sheet = AnyView( SheetWorkWithQuest(type: .questCreator, action: {
+            let sheet = AnyView( SheetWorkWithQuest(model: model, type: .questCreator, action: {
                 
             }))
             
@@ -41,27 +42,24 @@ extension ConfigQuestView {
 ///HELPERS
 /////////////////
 fileprivate extension ConfigQuestView {
-    func BodyScrollQuests() -> some View {
+    func BodyScrollQuests(quests:[Quest]) -> some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
-//                ForEach(quests.indices, id: \.self) { index in
-//                    let quest = quests[index]
-//                    
-//                    ItemEdit(name: quest.name, icon: quest.icon){
-//                        let sheet = AnyView(SheetWorkWithQuest(type:.questEditor, action: {
-//                            
-//                        }))
-//                        
-//                        GlobalDialog.shared.dialog = .view(view: sheet)
-//                    }.contextMenu {
-//                        Button {
-//                            
-//                        } label: {
-//                            Text("Delete")
-//                        }
-//
-//                    }
-//                }
+                ForEach(quests) { quest in
+                    ItemEdit(name: quest.name, icon: quest.icon){
+                        let sheet = AnyView(SheetWorkWithQuest(model: model, type: .questEditor, name: quest.name, deteils: quest.description,icon: quest.icon.rawValue, action: {
+                            
+                        }))
+                        
+                        GlobalDialog.shared.dialog = .view(view: sheet)
+                    }.contextMenu {
+                        Button {
+                            model.deleteQuest(quest: quest)
+                        } label: {
+                            Text("Delete")
+                        }
+                    }
+                }
             }
         }
     }

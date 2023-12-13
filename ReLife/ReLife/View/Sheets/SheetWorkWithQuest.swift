@@ -2,18 +2,34 @@ import SwiftUI
 import MoreSwiftUI
 
 struct SheetWorkWithQuest: View {
+    @ObservedObject var model: SettingsViewModel
     let type: WorkWithTestsType
     let action: () -> Void
     
     @State var name: String = ""
     @State var deteils: String = ""
-    @State var characteristics:String = ""
+    @State var characteristics:String = "" 
     @State var points:Int = 0
 
     let allIcons = MyIcon.allCases.map{ $0.rawValue }
     
     @State private var icon: String = MyIcon.batteryFull.rawValue
-    
+    init(model: SettingsViewModel, type: WorkWithTestsType, name: String, deteils: String, icon: String, action: @escaping () -> Void) {
+        self.model = model
+        self.type = type
+        self.action = action
+        self.name = name
+        self.deteils = deteils
+//        self.characteristics = characteristics
+//        self.points = points
+        self.icon = icon
+    }
+    init(model: SettingsViewModel, type: WorkWithTestsType, action: @escaping () -> Void) {
+        self.model = model
+        self.type = type
+        self.action = action
+        
+    }
     var body: some View {
         ScrollView{
             VStack {

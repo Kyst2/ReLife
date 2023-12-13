@@ -1,18 +1,19 @@
 import SwiftUI
+import Essentials
 
 struct HistoryView: View {
+    @ObservedObject var model = HistoryViewModel()
     var body: some View {
         ScrollView{
-            HistoryPanel()
+            HistoryPanel(history: model.history)
         }
     }
 }
 
 extension HistoryView {
-    func HistoryPanel() -> some View {
-        ForEach(hiss.indices, id: \.self) { index in
-            let his = hiss[index]
-            HistoryItem(name: his.name)
+    func HistoryPanel(history:[History]) -> some View {
+        ForEach(history) { his in
+            HistoryItem(quest: his.quest!, date: his.dateCompleted)
         }
     }
 }
@@ -22,14 +23,24 @@ extension HistoryView {
 ////////////////
 
 struct HistoryItem: View {
-    let name: String
+    let quest:Quest
+    let date:Date
     
     var body: some View {
         HStack{
-            Text(name)
+            Image(systemName: quest.icon.rawValue)
+                .myImageColor()
+                .font(.largeTitle)
+                .padding(10)
+            
+            Text(quest.name)
                 .myFont(size: 17, textColor: .blue)
-                .padding(13)
+            
             Spacer()
+            
+            Text("\(date.asString())")
+                .myFont(size: 13, textColor: .white)
+                .padding(10)
         }
         .overlay{
             RoundedRectangle(cornerRadius: 0)
@@ -42,12 +53,12 @@ struct HistoryItem: View {
 /////////////////////////
 ///TEMP
 /////////////////////////
-class His {
-    var name: String
-    
-    init(name: String) {
-        self.name = name
-    }
-}
-
-var hiss = [His(name: "clean room"), His(name: "wash up"), His(name: "cook dinner ")]
+//class His {
+//    var name: String
+//    
+//    init(name: String) {
+//        self.name = name
+//    }
+//}
+//
+//var hiss = [His(name: "clean room"), His(name: "wash up"), His(name: "cook dinner ")]

@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-public class History: Object {
+public class History: Object ,Identifiable {
     
     @Persisted(primaryKey: true) var key: String = UUID().uuidString
     @Persisted var dateCompleted: Date
