@@ -311,18 +311,3 @@ public extension Sequence {
         return dict
     }
 }
-
-struct CharacteristicsAndPoints: Equatable , Identifiable {
-    var id = UUID()
-    
-    let charac: Characteristic
-    let points: Int
-}
-
-
-struct QuestWrapper: Equatable , Identifiable {
-    var id = UUID()
-    
-    let quest: Quest
-    let finishedTimes: Int
-}

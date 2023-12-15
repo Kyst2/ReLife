@@ -24,11 +24,11 @@
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
 		A25272142A8E3E4100DD4B75 /* CharacteristicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
-		A27286702AF537F3005EE9B8 /* SheetWorkWithQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetWorkWithQuest.swift */; };
+		A27286702AF537F3005EE9B8 /* SheetWorkWithQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetWorkWithQuestView.swift */; };
 		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
 		A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */; };
 		A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */; };
-		A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristic.swift */; };
+		A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift */; };
 		A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */; };
 		A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286832AFBEEA4005EE9B8 /* AddButton.swift */; };
 		A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286852B03B799005EE9B8 /* ItemEdit.swift */; };
@@ -42,6 +42,8 @@
 		A2C11F4D2B12AF120062AFDE /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C11F4C2B12AF120062AFDE /* Image+.swift */; };
 		A2C11F4F2B13C1C00062AFDE /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C11F4E2B13C1C00062AFDE /* HistoryView.swift */; };
 		A2C11F522B1648880062AFDE /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C11F512B1648880062AFDE /* TabButton.swift */; };
+		A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C55E852B2D0D71001E67FB /* CharacteristicsAndPoints.swift */; };
+		A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C55E872B2D0D8E001E67FB /* QuestWrapper.swift */; };
 		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
 		A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */; };
@@ -109,11 +111,11 @@
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A272866F2AF537F3005EE9B8 /* SheetWorkWithQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithQuest.swift; sourceTree = "<group>"; };
+		A272866F2AF537F3005EE9B8 /* SheetWorkWithQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithQuestView.swift; sourceTree = "<group>"; };
 		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
 		A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQuestView.swift; sourceTree = "<group>"; };
 		A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCharacteristicsView.swift; sourceTree = "<group>"; };
-		A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithCharacteristic.swift; sourceTree = "<group>"; };
+		A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithCharacteristicView.swift; sourceTree = "<group>"; };
 		A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialog.swift; sourceTree = "<group>"; };
 		A27286832AFBEEA4005EE9B8 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		A27286852B03B799005EE9B8 /* ItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEdit.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 		A2C11F4C2B12AF120062AFDE /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
 		A2C11F4E2B13C1C00062AFDE /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		A2C11F512B1648880062AFDE /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		A2C55E852B2D0D71001E67FB /* CharacteristicsAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsAndPoints.swift; sourceTree = "<group>"; };
+		A2C55E872B2D0D8E001E67FB /* QuestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestWrapper.swift; sourceTree = "<group>"; };
 		A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
 		A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsView.swift; sourceTree = "<group>"; };
 		A2DD8E622A58A90C00315995 /* ReLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,8 +209,8 @@
 			children = (
 				A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */,
 				A21989942AE319370004A5D9 /* SheetConfirmation */,
-				A272866F2AF537F3005EE9B8 /* SheetWorkWithQuest.swift */,
-				A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristic.swift */,
+				A272866F2AF537F3005EE9B8 /* SheetWorkWithQuestView.swift */,
+				A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -330,6 +334,15 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		A2C55E842B2D0D5F001E67FB /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				A2C55E852B2D0D71001E67FB /* CharacteristicsAndPoints.swift */,
+				A2C55E872B2D0D8E001E67FB /* QuestWrapper.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
 		A2CCA0282ACF0739006A3A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +392,7 @@
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
+				A2C55E842B2D0D5F001E67FB /* Wrappers */,
 				A272867F2AFBEE71005EE9B8 /* SwiftUI */,
 				A2DD8E742A58AB5000315995 /* View */,
 				A211B1602A7A8075004680E8 /* Back */,
@@ -611,14 +625,16 @@
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
+				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
-				A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristic.swift in Sources */,
+				A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */,
-				A27286702AF537F3005EE9B8 /* SheetWorkWithQuest.swift in Sources */,
+				A27286702AF537F3005EE9B8 /* SheetWorkWithQuestView.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
+				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,

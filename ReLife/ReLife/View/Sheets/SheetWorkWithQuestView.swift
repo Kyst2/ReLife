@@ -1,37 +1,44 @@
 import SwiftUI
 import MoreSwiftUI
+import Realm
 
-struct SheetWorkWithQuest: View {
+
+struct SheetWorkWithQuestView: View {
     @ObservedObject var model: SettingsViewModel
     let type: WorkWithTestsType
     let action: () -> Void
     
-    @State var name: String = ""
-    @State var deteils: String = ""
-    @State var characteristics:String = "" 
-    @State var points:Int = 0
+    @State var name: String
+    @State var deteils: String
+    
+    @State var characsAndPoints: [CharacteristicsAndPoints]
 
     let allIcons = MyIcon.allCases.map{ $0.rawValue }
     
     @State private var icon: String = MyIcon.batteryFull.rawValue
-    init(model: SettingsViewModel, type: WorkWithTestsType, name: String, deteils: String, icon: String, action: @escaping () -> Void) {
+    
+    init(model: SettingsViewModel, type: WorkWithTestsType, quest: Quest?, action: @escaping () -> Void) {
         self.model = model
         self.type = type
-        self.action = action
-        self.name = name
-        self.deteils = deteils
-//        self.characteristics = characteristics
-//        self.points = points
-        self.icon = icon
-    }
-    init(model: SettingsViewModel, type: WorkWithTestsType, action: @escaping () -> Void) {
-        self.model = model
-        self.type = type
+        self.name = quest?.name ?? ""
+        self.deteils = quest?.descript ?? ""
+        
+        if let quest {
+            self.icon = type == .questEditor ? quest.icon.rawValue : MyIcon.batteryFull.rawValue
+        } else {
+            self.icon = MyIcon.batteryFull.rawValue
+        }
         self.action = action
         
+        self.characsAndPoints = model.allCharacteristics.map {
+            let questPoints = quest?.charachPoints[$0.key] ?? 0
+            
+            return CharacteristicsAndPoints(charac: $0, points: questPoints)
+        }
     }
+    
     var body: some View {
-        ScrollView{
+        ScrollView {
             VStack {
                 Title()
                 
@@ -40,13 +47,14 @@ struct SheetWorkWithQuest: View {
                 Buttons()
             }
         }
+        .padding(20)
         .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
         .frame(minWidth: 500,minHeight: 200)
         
     }
 }
 
-extension SheetWorkWithQuest {
+extension SheetWorkWithQuestView {
     func Title() -> some View {
         Text(type.asTitle())
             .myFont(size: 17, textColor: .blue)
@@ -55,30 +63,32 @@ extension SheetWorkWithQuest {
     
     @ViewBuilder
     func SheetContent() -> some View {
-        Text("Pick icon")
-            .applyTextStyle()
-        
-        IconPicker()
-
-        Text("Enter \(type.asEnterName()) name")
-            .applyTextStyle()
-        
-        TextField("WriteName", text: $name)
-            .applyFieldStyle()
-        
-        if type == .questCreator || type == .questEditor {
-            CharacteristicsList()
-        }
-        if type == .questCreator || type == .questEditor {
-            Text("Enter \(type.asEnterName()) deteils")
+        VStack(spacing: 4) {
+            Text("Pick icon")
                 .applyTextStyle()
             
-            TextEditor(text: $deteils)
-                .frame(minHeight: 60)
-                .cornerRadius(10)
-                .padding(10)
-                .font(.custom("MontserratRoman-Regular", size: 13)).italic()
-                .foregroundColor(Color("textColor"))
+            IconPicker()
+            
+            Text("Enter \(type.asEnterName()) name")
+                .applyTextStyle()
+            
+            TextField("WriteName", text: $name)
+                .applyFieldStyle()
+            
+            if type == .questCreator || type == .questEditor {
+                CharacteristicsAndPointsListView(charAndPoints: $characsAndPoints)
+            }
+            if type == .questCreator || type == .questEditor {
+                Text("Enter \(type.asEnterName()) deteils")
+                    .applyTextStyle()
+                
+                TextEditor(text: $deteils)
+                    .frame(minHeight: 60)
+                    .cornerRadius(10)
+                    .padding(10)
+                    .font(.custom("MontserratRoman-Regular", size: 13)).italic()
+                    .foregroundColor(Color("textColor"))
+            }
         }
     }
     
@@ -90,11 +100,11 @@ extension SheetWorkWithQuest {
             }.frame(width: 70)
     }
     
-    func CharacteristicsList() -> some View {
-            ForEach(char, id: \.self) { char in
-                CharacteristicsAndPointList(name: char.name)
-            }
-    }
+//    func CharacteristicsList() -> some View {
+//        ForEach(characteristicsAndPoints.indices) { char in
+////            CharacteristicsAndPointList(name: char)
+//            }
+//    }
     
     func Buttons() -> some View {
         HStack {
@@ -108,6 +118,7 @@ extension SheetWorkWithQuest {
             }
         }
     }
+    
 }
 
 
@@ -131,6 +142,7 @@ fileprivate struct CharacteristicsAndPointList: View {
         }
     }
 }
+
 fileprivate struct CharacteristicsAndPointsListButton: View {
     @State var isCharacteristic: Bool = false
     var body: some View {
@@ -143,6 +155,7 @@ fileprivate struct CharacteristicsAndPointsListButton: View {
         }
     }
 }
+
 struct MyButton: View {
     let label: String
     
@@ -192,8 +205,7 @@ fileprivate extension TextField {
     }
 }
 
-
-enum WorkWithTestsType{
+enum WorkWithTestsType {
     case questCreator
     case questEditor
     case characteristicCreator
@@ -237,5 +249,72 @@ extension WorkWithTestsType {
         case .characteristicEdit :
             return "сharacteristic"
         }
+    }
+}
+
+struct CharacteristicsAndPointsListView: View {
+    @Binding var charAndPoints: [CharacteristicsAndPoints]
+    
+    var body: some View {
+        GroupBox{
+            ScrollView {
+                VStack(spacing: 10){
+                    ForEach(charAndPoints) { pair in
+                        HStack {
+                            Text(pair.charac.name)
+                            
+                            Spacer()
+                            
+                            NumUpDown(allPairs: $charAndPoints, thisPair: pair)
+                        }
+                    }
+                }
+            }
+            .frame(height: 130)
+            .padding(.horizontal, 15)
+        }
+    }
+}
+
+struct NumUpDown: View {
+    @State private var isHovered: Bool = false
+    
+    @Binding var allPairs: [CharacteristicsAndPoints]
+    
+    public let thisPair: CharacteristicsAndPoints
+    @State var isEditing = false
+    
+    var body: some View {
+        let points = Array(0...10).map{ $0 * 5 }
+        
+        PopoverButt(edge: .leading, isPresented: $isEditing, TrueBody) {
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(points, id: \.self) { currPoints in
+                        Text("\(currPoints)")
+                            .onTapGesture {
+                                guard let idx = allPairs.firstIndex(of: thisPair) else { return }
+                                
+                                allPairs[idx] = CharacteristicsAndPoints(id: thisPair.id, charac: thisPair.charac, points: currPoints)
+                                
+                                isEditing = false
+                            }
+                    }
+                }
+            }
+            .padding( EdgeInsets(horizontal: 20, vertical: 10) )
+        }
+    }
+    
+    func TrueBody() -> some View {
+        HStack {
+            Text("\(thisPair.points)")
+            
+            Text.sfSymbol("chevron.up.chevron.down")
+                .foregroundColor(.black)
+                .background( RoundedRectangle(cornerRadius: 3).padding(.horizontal, -4) )
+        }
+        .opacity(isHovered ? 1 : 0.8)
+        .onHover{ hvr in withAnimation { self.isHovered = hvr } }
     }
 }

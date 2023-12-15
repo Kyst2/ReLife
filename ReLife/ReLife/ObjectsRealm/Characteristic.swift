@@ -30,7 +30,7 @@ public class Characteristic: Object {
         self.name = name
     }
     
-    static func ==(lhs: Characteristic, rhs: Characteristic) -> Bool {
+    static func == (lhs: Characteristic, rhs: Characteristic) -> Bool {
         return lhs.key == rhs.key && lhs.icon == rhs.icon
     }
 }

@@ -58,11 +58,13 @@ fileprivate extension ConfigCharacteristicsView {
     
     func ButtonsPanel() -> some View {
         AddButton {
-            let sheet = AnyView( SheetWorkWithQuest(model: model, type: .characteristicCreator, action: {
-                
-            }))
+//            let sheet = AnyView( SheetWorkWithQuest(model: model, type: .characteristicCreator, quest: <#T##Quest#>, action: <#T##() -> Void#>) )
             
-            GlobalDialog.shared.dialog = .view(view: sheet)
+//            let sheet = AnyView( SheetWorkWithQuest(model: model, type: .characteristicCreator, action: {
+//                
+//            }))
+//            
+//            GlobalDialog.shared.dialog = .view(view: sheet)
         }.padding(10)
     }
 }
