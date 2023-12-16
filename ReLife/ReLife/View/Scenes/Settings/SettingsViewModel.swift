@@ -26,4 +26,8 @@ class SettingsViewModel: ObservableObject {
         realmController.remove(questKey: quest.key)
         refresh()
     }
+    func updQuest(questKey:String , quest:Quest ){
+        realmController.update(questKey: questKey, withValues: quest)
+        refresh()
+    }
 }

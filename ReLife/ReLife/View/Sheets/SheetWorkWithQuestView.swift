@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 import MoreSwiftUI
 import Realm
@@ -10,8 +11,8 @@ struct SheetWorkWithQuestView: View {
     
     @State var name: String
     @State var deteils: String
-    
     @State var characsAndPoints: [CharacteristicsAndPoints]
+    
 
     let allIcons = MyIcon.allCases.map{ $0.rawValue }
     
@@ -20,6 +21,7 @@ struct SheetWorkWithQuestView: View {
     init(model: SettingsViewModel, type: WorkWithTestsType, quest: Quest?, action: @escaping () -> Void) {
         self.model = model
         self.type = type
+//        self.repeatType = quest?.questRepeat ?? .eachWeek(days: [1])
         self.name = quest?.name ?? ""
         self.deteils = quest?.descript ?? ""
         
@@ -75,9 +77,12 @@ extension SheetWorkWithQuestView {
             TextField("WriteName", text: $name)
                 .applyFieldStyle()
             
+            QuestRepeatTypeView()
+            
             if type == .questCreator || type == .questEditor {
                 CharacteristicsAndPointsListView(charAndPoints: $characsAndPoints)
             }
+            
             if type == .questCreator || type == .questEditor {
                 Text("Enter \(type.asEnterName()) deteils")
                     .applyTextStyle()
@@ -99,12 +104,7 @@ extension SheetWorkWithQuestView {
                 }
             }.frame(width: 70)
     }
-    
-//    func CharacteristicsList() -> some View {
-//        ForEach(characteristicsAndPoints.indices) { char in
-////            CharacteristicsAndPointList(name: char)
-//            }
-//    }
+
     
     func Buttons() -> some View {
         HStack {
@@ -316,5 +316,87 @@ struct NumUpDown: View {
         }
         .opacity(isHovered ? 1 : 0.8)
         .onHover{ hvr in withAnimation { self.isHovered = hvr } }
+    }
+}
+
+
+// separate to another file
+struct QuestRepeatTypeView : View {
+    @State var tab: CurrentTab!
+//    @Binding var repeatType: QuestRepeatType
+    
+    var repeatType: QuestRepeatType
+    
+    @State var tmpDayOfMonth = QuestRepeatType.dayOfMonth(days: [1])
+    @State var tmpEachWeek = QuestRepeatType.eachWeek(days: [1])
+    @State var tmpRepeatEvery = QuestRepeatType.repeatEvery(days: 30, startingFrom: Date.now.adding(days: 1) )
+    @State var tmpSingleDay = QuestRepeatType.singleDayQuest(date: Date.now.adding(days: 1))
+    
+    init(repeatType: QuestRepeatType? = nil) {
+        self.repeatType = repeatType ?? .eachWeek(days: [1])
+        
+        switch repeatType {
+        case .dayOfMonth(let days):
+            self.tab = .DayOfMonth
+            self.tmpDayOfMonth = QuestRepeatType.dayOfMonth(days: days)
+        case .eachWeek(let days ):
+            self.tab = .DayOfWeek
+            self.tmpEachWeek = QuestRepeatType.eachWeek(days: days)
+        case .repeatEvery(let days, let startingFrom):
+            self.tab = .RepeatEvery
+            self.tmpRepeatEvery = QuestRepeatType.repeatEvery(days: days, startingFrom: startingFrom)
+        case .singleDayQuest(let date):
+            self.tab = .SingleDay
+            self.tmpSingleDay = QuestRepeatType.singleDayQuest(date: date)
+        case .none:
+            fatalError()
+        }
+    }
+    
+    
+    var body: some View {
+        GroupBox {
+            VStack{
+                HStack {
+                    // Radiobuttons or dropdown here
+                }
+                
+                switch repeatType {
+                case .dayOfMonth(let days):
+                    DayOfMonth(days)
+                case .eachWeek(let days):
+                    DayOfWeek(days)
+                case .repeatEvery(let everyDays, let startingFromDate):
+                    RepeatEvery(days: everyDays, startfrom: startingFromDate)
+                case .singleDayQuest(let date):
+                    SingleDay(date: date)
+                }
+            }
+        }
+    }
+    
+    func DayOfMonth (_ days: [Int]) -> some View {
+        EmptyView()
+    }
+    
+    func DayOfWeek (_ days: [Int]) -> some View {
+        EmptyView()
+    }
+    
+    func RepeatEvery ( days: Int, startfrom date: Date) -> some View {
+        EmptyView()
+    }
+    
+    func SingleDay(date: Date) -> some View {
+        EmptyView()
+    }
+}
+
+extension QuestRepeatTypeView {
+    enum CurrentTab {
+        case DayOfMonth,
+        DayOfWeek,
+        RepeatEvery,
+        SingleDay
     }
 }
