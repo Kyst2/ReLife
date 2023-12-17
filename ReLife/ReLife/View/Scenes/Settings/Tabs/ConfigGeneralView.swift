@@ -8,6 +8,8 @@ struct ConfigGeneralView: View {
     @State var languages: Language = .english
     @State var sound = false
     
+    @State var enableDangerZone: Bool = false
+    
     let columns = [ GridItem(.fixed(200)), GridItem(.fixed(200)), GridItem(.fixed(200)) ]
     
     
@@ -77,10 +79,26 @@ extension ConfigGeneralView {
         }
     }
     
+    
+    
     func HistoryClearButton() -> some View {
-        MyGroupBox(header: "History") {
-            Button("Clear") { }
-                .frame(minWidth: 180, minHeight: 40)
+        MyGroupBox(header: "Danger") {
+            VStack(spacing: 0) {
+                Space(5)
+                
+                HStack {
+                    Toggle("", isOn: $enableDangerZone)
+                        .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
+                    
+                    Text("I know what I do")
+                }
+                
+                VStack{
+                    Button("Clear History") { }
+                        .frame(minWidth: 180, minHeight: 40)
+                }
+                .disabled(!enableDangerZone)
+            }
         }
     }
     

@@ -16,7 +16,7 @@ struct MyGroupBox<Content>: View where Content: View {
             .padding(15)
             .background(
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(.white.opacity(0.4) , lineWidth: 1)
+                    .stroke(.white.opacity(0.3) , lineWidth: 1)
                     .padding(8)
                     .mask(MaskView())
                     .overlay { HeaderView() }
