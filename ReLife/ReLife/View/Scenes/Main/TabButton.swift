@@ -6,35 +6,42 @@ struct TabButton: View {
     @Binding var selectedTab: MainViewTab
     
     var body: some View {
-        Button {
-            withAnimation( .easeIn(duration: 0.2 )) { selectedTab = tab}
-        } label: { ButtonLabel() }
-        .buttonLabelModifier()
+        Button(action: btnAction, label: BtnLabel )
+            .buttonStyle(PlainButtonStyle())
     }
     
-    func ButtonLabel() -> some View {
-        ZStack {
-            BattonBackground()
+    func btnAction() {
+        withAnimation( .easeIn(duration: 0.2 )) { selectedTab = tab }
+    }
+    
+    func BtnLabel() -> some View {
+        VStack(spacing: 0) {
+            Space(10)
             
-            VStack(spacing: 6){
-                TabIcon()
-                    
-                TabTitle()
-            }
+            TabIcon()
+            
+            Space(8)
+                
+            TabTitle()
+            
+            Space(8)
+            
+            Rectangle()
+                .fill(Color("iconColor"))
+                .frame(height: 6)
+                .offset(x: selectedTab == tab ? 0 : -120)
+            
+            Divider()
         }
-        .tabButtonModifier(selectedTab: selectedTab, tab: tab)
+        .background {
+            VisualEffectView(type:.behindWindow, material: .m5_sidebar)
+                .overlay{ Color("blurColor").opacity(0.1) }
+        }
+        .frame(width: 120)
     }
 }
 
-extension TabButton {
-    @ViewBuilder
-    func BattonBackground() -> some View {
-        VisualEffectView(type:.behindWindow, material: .m5_sidebar)
-        
-        Color("blurColor")
-            .opacity(0.1)
-    }
-    
+fileprivate extension TabButton {
     func TabIcon() -> some View {
         Image(systemName: tab.icon)
             .myImageColor()
@@ -45,22 +52,5 @@ extension TabButton {
         Text(tab.title)
             .myFont(size: 13, textColor: .blue)
             .fontWeight(.semibold)
-    }
-}
-
-fileprivate extension View {
-    func tabButtonModifier(selectedTab: MainViewTab , tab: MainViewTab) -> some View {
-        self.padding(.bottom,8)
-            .frame(width: 120,height: 70)
-            .contentShape(Rectangle())
-            .background(Color("iconColor").offset(x: selectedTab == tab ? 0 : -120))
-    }
-    
-    func buttonLabelModifier() -> some View {
-        self.overlay(
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color.primary, lineWidth: 0.1)
-            )
-            .buttonStyle(PlainButtonStyle())
     }
 }
