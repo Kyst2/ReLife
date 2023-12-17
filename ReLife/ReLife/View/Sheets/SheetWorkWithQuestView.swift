@@ -417,11 +417,7 @@ struct IconPicker: View {
     let columns = (1...10).map { _ in GridItem(.fixed(35)) }
     
     var body: some View {
-        
-        
-        PopoverButt(edge: .leading, isPresented: $iconPickerShown)
-        { Label(icon) }
-        content: {
+        PopoverButt(edge: .leading, isPresented: $iconPickerShown, { Label(icon) } ) {
             LazyVGrid(columns: columns, content: {
                 ForEach(allIcons, id: \.self ) { image in
                     Button(action: { icon = image; iconPickerShown = false }) {

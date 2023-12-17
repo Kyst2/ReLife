@@ -80,23 +80,19 @@ extension ConfigGeneralView {
     }
     
     func DangerButtons() -> some View {
-        MyGroupBox(header: "Danger") {
-            VStack(spacing: 0) {
-                Space(5)
+        MyGroupBox2 {
+            HStack {
+                Toggle("", isOn: $enableDangerZone)
+                    .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
                 
-                HStack {
-                    Toggle("", isOn: $enableDangerZone)
-                        .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
-                    
-                    Text("I know what I do")
-                }
-                
-                VStack{
-                    Button("Clear History") { }
-                        .frame(minWidth: 180, minHeight: 40)
-                }
-                .disabled(!enableDangerZone)
+                Text("Danger zone")
             }
+        } _: {
+            VStack {
+                Button("Clear History") { }
+                    .frame(minWidth: 180, minHeight: 40)
+            }
+            .disabled(!enableDangerZone)
         }
     }
     

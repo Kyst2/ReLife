@@ -6,9 +6,21 @@ struct MyGroupBox<Content>: View where Content: View {
     var header: String
     var content: () -> Content
     
-    init(header: String, _ content: @escaping () -> Content) {
-        self.header = header
+    var body: some View {
+        MyGroupBox2(headerView: {
+            Text(header)
+                .fixedSize()
+        }, content)
+    }
+}
+
+struct MyGroupBox2<Content, Header>: View where Content: View, Header: View {
+    var headerView: () -> Header
+    var content: () -> Content
+    
+    init(headerView: @escaping () -> Header, _ content: @escaping () -> Content) {
         self.content = content
+        self.headerView = headerView
     }
     
     var body: some View {
@@ -29,7 +41,7 @@ struct MyGroupBox<Content>: View where Content: View {
                 Spacer().frame(width: 20, height: 20)
                     .background(.white)
                 
-                Text(header)
+                headerView()
                     .padding(.horizontal, 5)
                     .foregroundColor(.clear)
                     .background(.clear)
@@ -48,9 +60,8 @@ struct MyGroupBox<Content>: View where Content: View {
     func HeaderView() -> some View {
         VStack {
             HStack {
-                Text(header)
+                headerView()
                     .padding(.horizontal, 25)
-                    .fixedSize()
                 
                 Spacer()
             }
