@@ -30,7 +30,7 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        deleteAllHistory()
+        realmController.deleteAllOf(type: History.self)
 //        initFakeData()
         
         refreshData()
@@ -81,10 +81,6 @@ class MainViewModel: ObservableObject {
         refreshData(forceRefresh: true)
     }
     
-    func deleteAllHistory() {
-        realmController.deleteAllHistory()
-    }
-
     func getCharacteriscticsAndPoints() -> [CharacteristicsAndPoints]{
         realmController.getAllCharacteristicPoints()
     }
