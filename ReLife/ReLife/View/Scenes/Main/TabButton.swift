@@ -33,10 +33,7 @@ struct TabButton: View {
             
             Divider()
         }
-        .background {
-            VisualEffectView(type:.behindWindow, material: .m5_sidebar)
-                .overlay{ Color("blurColor").opacity(0.1) }
-        }
+        .backgroundGaussianBlur(type: .behindWindow, material: .m5_sidebar, color: Color("blurColor").opacity(0.1))
         .frame(width: 120)
     }
 }
