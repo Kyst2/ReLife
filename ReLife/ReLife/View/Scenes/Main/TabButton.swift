@@ -30,8 +30,7 @@ struct TabButton: View {
             
             Divider()
         }
-        .backgroundGaussianBlur(type: .behindWindow, material: .m5_sidebar, color: Color("blurColor").opacity(0.1))
-        .frame(width: 120)
+        .backgroundGaussianBlur(type: .behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.17))
     }
 }
 
@@ -52,6 +51,6 @@ fileprivate extension TabButton {
         Rectangle()
             .fill(Color("iconColor"))
             .frame(height: 6)
-            .offset(x: selectedTab == tab ? 0 : -120)
+            .offset(x: selectedTab == tab ? 0 : -400 )
     }
 }

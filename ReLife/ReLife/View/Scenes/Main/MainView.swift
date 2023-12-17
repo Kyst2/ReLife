@@ -12,7 +12,7 @@ struct MainView: View {
                 .opacity(0.3)
             
             HStack(alignment: .top, spacing: 0) {
-                TabsPanel()
+                VerticalTabs()
                
                 //TODO: Fix UI in case of all quests are empty +++
                 ContentPanel()
@@ -34,19 +34,17 @@ extension MainView {
         ParallaxLayer(image: Image("Stars3"),speed: 10).fillParent()
     }
     
-    func TabsPanel() -> some View {
-        ZStack(alignment: .top) {
-            VisualEffectView(type:.behindWindow, material: .m1_hudWindow)
-                .frame(width:120)
-                .overlay { Color("blurColor").opacity(0.1) }
+    func VerticalTabs() -> some View {
+        VStack(spacing: 0 ) {
+            TabButton(tab: .Quests, selectedTab: $model.selectedTab)
+            TabButton(tab: .Characteristics, selectedTab: $model.selectedTab)
+            TabButton(tab: .History, selectedTab: $model.selectedTab)
+            TabButton(tab: .Settings, selectedTab: $model.selectedTab)
             
-            VStack(spacing: 0 ){
-                TabButton(tab: .Quests, selectedTab: $model.selectedTab)
-                TabButton(tab: .Characteristics, selectedTab: $model.selectedTab)
-                TabButton(tab: .History, selectedTab: $model.selectedTab)
-                TabButton(tab: .Settings, selectedTab: $model.selectedTab)
-            }
+            Spacer()
         }
+        .backgroundGaussianBlur(type:.behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.1))
+        .frame(width:120)
     }
     
     @ViewBuilder
