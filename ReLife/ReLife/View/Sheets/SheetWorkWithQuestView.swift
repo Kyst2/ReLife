@@ -349,7 +349,7 @@ struct QuestRepeatTypeView : View {
             self.tab = .SingleDay
             self.tmpSingleDay = QuestRepeatType.singleDayQuest(date: date)
         case .none:
-            fatalError()
+            self.tab = .DayOfWeek
         }
     }
     

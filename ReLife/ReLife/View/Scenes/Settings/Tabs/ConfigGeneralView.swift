@@ -39,7 +39,7 @@ struct ConfigGeneralView: View {
 
 extension ConfigGeneralView {
     func DbButtons() -> some View {
-        MyGroupBox(header: "Database actions") {
+        MyGroupBox(header: "Database") {
             HStack {
                 Button("Export") {
                     

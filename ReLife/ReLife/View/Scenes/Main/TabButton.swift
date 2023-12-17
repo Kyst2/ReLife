@@ -9,7 +9,7 @@ struct TabButton: View {
         Button {
             withAnimation( .easeIn(duration: 0.2 )) { selectedTab = tab}
         } label: { ButtonLabel() }
-            .buttonLabelModifier()
+        .buttonLabelModifier()
     }
     
     func ButtonLabel() -> some View {
@@ -32,7 +32,7 @@ extension TabButton {
         VisualEffectView(type:.behindWindow, material: .m5_sidebar)
         
         Color("blurColor")
-            .opacity(0.5)
+            .opacity(0.1)
     }
     
     func TabIcon() -> some View {
@@ -53,7 +53,7 @@ fileprivate extension View {
         self.padding(.bottom,8)
             .frame(width: 120,height: 70)
             .contentShape(Rectangle())
-            .background(Color("tabLineColor").offset(x: selectedTab == tab ? 0 : -120))
+            .background(Color("iconColor").offset(x: selectedTab == tab ? 0 : -120))
     }
     
     func buttonLabelModifier() -> some View {

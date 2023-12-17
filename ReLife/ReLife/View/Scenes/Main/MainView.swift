@@ -9,6 +9,7 @@ struct MainView: View {
     var body: some View {
         ZStack {
             BackgroundView()
+                .opacity(0.3)
             
             HStack(alignment: .top, spacing: 0) {
                 TabsPanel()
@@ -26,21 +27,18 @@ struct MainView: View {
 extension MainView {
     @ViewBuilder
     func BackgroundView() -> some View {
-        RadialGradient(colors: [Color("Back"),Color("gradient3")], center: .center , startRadius: 50, endRadius: 400).offset(x: 70)
-        
         ParallaxLayer(image: Image("Stars1"),speed: 2).fillParent()
         
         ParallaxLayer(image: Image("Stars2"),speed: 7).fillParent()
+        
+        ParallaxLayer(image: Image("Stars3"),speed: 10).fillParent()
     }
     
     func TabsPanel() -> some View {
         ZStack(alignment: .top) {
-            VisualEffectView(type:.behindWindow, material: .m5_sidebar)
+            VisualEffectView(type:.behindWindow, material: .m1_hudWindow)
                 .frame(width:120)
-            
-            Color("blurColor")
-                .opacity(0.5)
-                .frame(width: 120)
+                .overlay { Color("blurColor").opacity(0.1) }
             
             VStack(spacing: 0 ){
                 TabButton(tab: .Quests, selectedTab: $model.selectedTab)
