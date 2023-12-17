@@ -17,20 +17,20 @@ struct ConfigGeneralView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
                 DbButtons()
-                
                 PickerFirstWeekDay()
-                
                 PickerLanguage()
                 
-                HistoryClearButton()
-                
+                Spacer()
                 SoundSettings()
-                
                 Spacer()
                 
                 Spacer()
+                DangerButtons()
+                Spacer()
                 
+                Spacer()
                 LinkSupport()
+                Spacer()
             }
         }
         .padding(20)
@@ -79,9 +79,7 @@ extension ConfigGeneralView {
         }
     }
     
-    
-    
-    func HistoryClearButton() -> some View {
+    func DangerButtons() -> some View {
         MyGroupBox(header: "Danger") {
             VStack(spacing: 0) {
                 Space(5)
