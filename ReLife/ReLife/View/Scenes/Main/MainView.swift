@@ -35,16 +35,20 @@ extension MainView {
     }
     
     func VerticalTabs() -> some View {
-        VStack(spacing: 0 ) {
-            TabButton(tab: .Quests, selectedTab: $model.selectedTab)
-            TabButton(tab: .Characteristics, selectedTab: $model.selectedTab)
-            TabButton(tab: .History, selectedTab: $model.selectedTab)
-            TabButton(tab: .Settings, selectedTab: $model.selectedTab)
+        HStack(spacing: 0) {
+            VStack(spacing: 0 ) {
+                TabButton(tab: .Quests, selectedTab: $model.selectedTab)
+                TabButton(tab: .Characteristics, selectedTab: $model.selectedTab)
+                TabButton(tab: .History, selectedTab: $model.selectedTab)
+                TabButton(tab: .Settings, selectedTab: $model.selectedTab)
+                
+                Spacer()
+            }
+            .backgroundGaussianBlur(type:.behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.1))
+            .frame(width:120)
             
-            Spacer()
+            Divider()
         }
-        .backgroundGaussianBlur(type:.behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.1))
-        .frame(width:120)
     }
     
     @ViewBuilder
