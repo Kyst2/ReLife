@@ -89,9 +89,20 @@ extension ConfigGeneralView {
             }
         } _: {
             VStack {
-                Button("Clear History") { }
-                    .frame(minWidth: 180, minHeight: 40)
+                Button("Clear Characteristics") {
+                    
+                }
+                
+                Button("Clear Quests") {
+                    
+                }
+                
+                Button("Clear History") {
+                    
+                }
             }
+            .padding(.vertical, 10)
+            .frame(minWidth: 180, minHeight: 40)
             .disabled(!enableDangerZone)
         }
     }
