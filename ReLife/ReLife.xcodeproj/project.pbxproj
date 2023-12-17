@@ -418,8 +418,8 @@
 		A2DD8E742A58AB5000315995 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A21989932AE3192A0004A5D9 /* Sheets */,
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
+				A21989932AE3192A0004A5D9 /* Sheets */,
 			);
 			path = View;
 			sourceTree = "<group>";

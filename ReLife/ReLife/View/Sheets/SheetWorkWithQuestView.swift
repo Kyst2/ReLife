@@ -12,16 +12,13 @@ struct SheetWorkWithQuestView: View {
     @State var name: String
     @State var deteils: String
     @State var characsAndPoints: [CharacteristicsAndPoints]
-    
-
-    let allIcons = MyIcon.allCases.map{ $0.rawValue }
+    @State var questColor: Color = Color.white
     
     @State private var icon: String = MyIcon.batteryFull.rawValue
     
     init(model: SettingsViewModel, type: WorkWithTestsType, quest: Quest?, action: @escaping () -> Void) {
         self.model = model
         self.type = type
-//        self.repeatType = quest?.questRepeat ?? .eachWeek(days: [1])
         self.name = quest?.name ?? ""
         self.deteils = quest?.descript ?? ""
         
@@ -63,48 +60,47 @@ extension SheetWorkWithQuestView {
             .padding()
     }
     
+    var titleWidth: CGFloat { 50 }
+    
     @ViewBuilder
     func SheetContent() -> some View {
-        VStack(spacing: 4) {
-            Text("Pick icon")
-                .applyTextStyle()
+        VStack(spacing: 7) {
+            HStack {
+                Text("Title:")
+                    .frame(width: titleWidth)
+                
+                TextField("Don't let me empty!", text: $name)
+                    .applyFieldStyle()
+                    .foregroundColor(questColor)
+                
+                IconPicker(icon: $icon)
+                    .foregroundColor(questColor)
+                
+                //заміни на власний пікер аналогічний ікон пікера з тим набором кольорів який я просив
+                UksColorPicker(color: $questColor)
+                    .frame(width: 20, height: 20)
+            }
             
-            IconPicker()
-            
-            Text("Enter \(type.asEnterName()) name")
-                .applyTextStyle()
-            
-            TextField("WriteName", text: $name)
-                .applyFieldStyle()
+            if type == .questCreator || type == .questEditor {
+                HStack {
+                    Text("Descr:")
+                        .frame(width: titleWidth)
+                    
+                    TextEditor(text: $deteils)
+                        .frame(minHeight: 60)
+                        .cornerRadius(10)
+                        .font(.custom("MontserratRoman-Regular", size: 13)).italic()
+                        .foregroundColor(Color("textColor"))
+                }
+            }
             
             QuestRepeatTypeView()
             
             if type == .questCreator || type == .questEditor {
                 CharacteristicsAndPointsListView(charAndPoints: $characsAndPoints)
             }
-            
-            if type == .questCreator || type == .questEditor {
-                Text("Enter \(type.asEnterName()) deteils")
-                    .applyTextStyle()
-                
-                TextEditor(text: $deteils)
-                    .frame(minHeight: 60)
-                    .cornerRadius(10)
-                    .padding(10)
-                    .font(.custom("MontserratRoman-Regular", size: 13)).italic()
-                    .foregroundColor(Color("textColor"))
-            }
         }
     }
-    
-    func IconPicker() -> some View {
-            Picker("", selection: $icon) {
-                ForEach(allIcons, id: \.self ) { image in
-                    Text.sfIcon(image, size: 15)
-                }
-            }.frame(width: 70)
-    }
-
     
     func Buttons() -> some View {
         HStack {
@@ -199,9 +195,7 @@ fileprivate extension TextField {
     func applyFieldStyle() -> some View {
         self
             .textFieldStyle(.roundedBorder)
-            .foregroundColor(Color("textColor"))
             .font(.custom("MontserratRoman-Regular", size: 15))
-            .padding()
     }
 }
 
@@ -309,10 +303,6 @@ struct NumUpDown: View {
     func TrueBody() -> some View {
         HStack {
             Text("\(thisPair.points)")
-            
-            Text.sfSymbol("chevron.up.chevron.down")
-                .foregroundColor(.black)
-                .background( RoundedRectangle(cornerRadius: 3).padding(.horizontal, -4) )
         }
         .opacity(isHovered ? 1 : 0.8)
         .onHover{ hvr in withAnimation { self.isHovered = hvr } }
@@ -398,5 +388,63 @@ extension QuestRepeatTypeView {
         DayOfWeek,
         RepeatEvery,
         SingleDay
+    }
+}
+
+//move to another place!
+extension NSTextField {
+    open override var focusRingType: NSFocusRingType {
+        get { .none }
+        set { }
+    }
+}
+
+struct ChevronUpDown: View {
+    var body: some View {
+        Text.sfSymbol("chevron.up.chevron.down")
+            .foregroundColor(.black)
+            .background( RoundedRectangle(cornerRadius: 3).padding(.horizontal, -4) )
+    }
+}
+
+
+struct IconPicker: View {
+    @Binding var icon: String
+    @State private var iconPickerShown = false
+    
+    let allIcons = MyIcon.allCases.map{ $0.rawValue }
+    
+    let columns = (1...10).map { _ in GridItem(.fixed(30)) }
+    
+    var body: some View {
+        
+        
+        PopoverButt(edge: .leading, isPresented: $iconPickerShown)
+        { Label(icon) }
+        content: {
+            LazyVGrid(columns: columns, content: {
+                ForEach(allIcons, id: \.self ) { image in
+                    Button(action: { icon = image; iconPickerShown = false }) {
+                        Label(image, size: 30)
+                    }
+                    .buttonStyle(BtnUksStyle.default)
+                }
+            })
+            .padding(25)
+        }
+        .buttonStyle(BtnUksStyle.default)
+    }
+    
+    func Label(_ img: String, size: CGFloat = 20) -> some View {
+        Text.sfIcon2(img, size: size)
+    }
+}
+
+public extension Text {
+    static func sfIcon2( _ sysName: String, size: CGFloat) -> some View {
+        return Image(systemName: sysName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: size, height: size)
     }
 }
