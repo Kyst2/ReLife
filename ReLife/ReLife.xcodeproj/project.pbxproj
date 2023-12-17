@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
+		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		A200BD3C2AA6064200DCEBD9 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		A21086212A8026F900EB7A89 /* RealmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				A27286832AFBEEA4005EE9B8 /* AddButton.swift */,
 				A2C11F482B126AE40062AFDE /* SettingButton.swift */,
 				A27286852B03B799005EE9B8 /* ItemEdit.swift */,
+				1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift in Sources */,
+				1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */,
 				A27286702AF537F3005EE9B8 /* SheetWorkWithQuestView.swift in Sources */,

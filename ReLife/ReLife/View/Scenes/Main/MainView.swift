@@ -15,9 +15,9 @@ struct MainView: View {
                
                 //TODO: Fix UI in case of all quests are empty +++
                 ContentPanel()
+                    .frame(minWidth: 600)
             }
         }
-        
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
     }

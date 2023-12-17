@@ -7,22 +7,28 @@ struct ConfigGeneralView: View {
     @State var firstWickDay: FirstWeekDay = .monday
     @State var languages: Language = .english
     @State var sound = false
+    
+    let columns = [ GridItem(.fixed(200)), GridItem(.fixed(200)), GridItem(.fixed(200)) ]
+    
+    
     var body: some View {
         ScrollView {
-            GroupBox {
-                VStack(spacing: 30) {
-                    DbButtons()
-                    
-                    PickerFirstWeekDay()
-                    
-                    PickerLanguage()
-                    
-                    ResetButtons()
-                    
-                    SoundToggle()
-                    
-                    LinkSupport()
-                }
+            LazyVGrid(columns: columns, spacing: 20) {
+                DbButtons()
+                
+                PickerFirstWeekDay()
+                
+                PickerLanguage()
+                
+                HistoryClearButton()
+                
+                SoundSettings()
+                
+                Spacer()
+                
+                Spacer()
+                
+                LinkSupport()
             }
         }
         .padding(20)
@@ -31,29 +37,22 @@ struct ConfigGeneralView: View {
 
 extension ConfigGeneralView {
     func DbButtons() -> some View {
-            VStack(alignment: .leading) {
-                VStack{
-                    TitleText("Database actions")
+        MyGroupBox(header: "Database actions") {
+            HStack {
+                Button("Export") {
                     
-                    HStack{
-                        SettingButton(label: "Export") {
-                            
-                        }
-                        
-                        SettingButton(label: "Import") {
-                            
-                        }
-                    }
                 }
-                .fillParent()
-                .padding(20)
+                
+                Button("Import") {
+                    
+                }
             }
+            .frame(minWidth: 180, minHeight: 40)
+        }
     }
     
     func PickerFirstWeekDay() -> some View {
-        VStack(spacing: 20) {
-            TitleText("First Day of week")
-            
+        MyGroupBox(header: "First Day of week") {
             Picker("", selection: $firstWickDay) {
                 ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
                     Text(day.rawValue).tag(day)
@@ -61,13 +60,12 @@ extension ConfigGeneralView {
             }
             .pickerStyle(.menu)
             .frame(width: 130)
+            .frame(minWidth: 180, minHeight: 40)
         }
     }
     
     func PickerLanguage() -> some View {
-        VStack(spacing: 20) {
-            TitleText("Language")
-            
+        MyGroupBox(header: "Language") {
             Picker("", selection: $languages) {
                 ForEach(Language.allCases, id: \.rawValue) { language in
                     Text(language.rawValue).tag(language)
@@ -75,27 +73,33 @@ extension ConfigGeneralView {
             }
             .pickerStyle(.menu)
             .frame(width: 130)
+            .frame(minWidth: 180, minHeight: 40)
         }
     }
     
-    func ResetButtons() -> some View {
-                SettingButton(label: "Clear History") {
-                    
-                }
+    func HistoryClearButton() -> some View {
+        MyGroupBox(header: "History") {
+            Button("Clear") { }
+                .frame(minWidth: 180, minHeight: 40)
+        }
     }
     
-    func SoundToggle() -> some View {
-        Toggle(isOn: $sound){
-            Text("Sound")
-                .foregroundColor(Color("iconColor"))
-                .font(.custom("MontserratRoman-Regular", size: 17))
+    func SoundSettings() -> some View {
+        MyGroupBox(header: "Sound Settings") {
+            Toggle(isOn: $sound){
+                Text("Enabled")
+                    .foregroundColor(Color("iconColor"))
+                    .font(.custom("MontserratRoman-Regular", size: 17))
+            }
+            .toggleStyle(SwitchToggleStyle(tint: Color("textColor")))
+            .frame(minWidth: 180, minHeight: 40)
         }
-        .toggleStyle(SwitchToggleStyle(tint: Color("textColor")))
+        
     }
     
     func LinkSupport() -> some View {
         Link("Support Email", destination: URL(string: "mailto:deradus@ukr.net")!)
-            .padding(.bottom,20)
+            .padding(.bottom, 20)
     }
 }
 
