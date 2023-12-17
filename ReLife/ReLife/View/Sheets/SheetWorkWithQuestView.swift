@@ -414,7 +414,7 @@ struct IconPicker: View {
     
     let allIcons = MyIcon.allCases.map{ $0.rawValue }
     
-    let columns = (1...10).map { _ in GridItem(.fixed(30)) }
+    let columns = (1...10).map { _ in GridItem(.fixed(35)) }
     
     var body: some View {
         
@@ -425,7 +425,8 @@ struct IconPicker: View {
             LazyVGrid(columns: columns, content: {
                 ForEach(allIcons, id: \.self ) { image in
                     Button(action: { icon = image; iconPickerShown = false }) {
-                        Label(image, size: 30)
+                        Label(image, size: 26)
+                            .overlay( Selection(image:image).padding(-6) )
                     }
                     .buttonStyle(BtnUksStyle.default)
                 }
@@ -437,6 +438,16 @@ struct IconPicker: View {
     
     func Label(_ img: String, size: CGFloat = 20) -> some View {
         Text.sfIcon2(img, size: size)
+    }
+    
+    @ViewBuilder
+    func Selection(image: String) -> some View {
+        if icon == image {
+            Circle()
+                .stroke(Color.primary, lineWidth: 2)
+        } else {
+            Color.clear
+        }
     }
 }
 
