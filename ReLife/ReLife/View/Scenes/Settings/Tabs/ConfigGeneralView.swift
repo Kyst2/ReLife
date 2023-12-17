@@ -86,12 +86,11 @@ extension ConfigGeneralView {
     
     func SoundSettings() -> some View {
         MyGroupBox(header: "Sound Settings") {
-            Toggle(isOn: $sound){
-                Text("Enabled")
-                    .foregroundColor(Color("iconColor"))
-                    .font(.custom("MontserratRoman-Regular", size: 17))
+            HStack{
+                Text("Enabled:")
+                Toggle(isOn: $sound){ }
+                    .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
             }
-            .toggleStyle(SwitchToggleStyle(tint: Color("textColor")))
             .frame(minWidth: 180, minHeight: 40)
         }
         
