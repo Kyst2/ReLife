@@ -4,7 +4,7 @@ import Essentials
 struct HistoryView: View {
     @ObservedObject var model = HistoryViewModel()
     var body: some View {
-        ScrollView{
+        ScrollView {
             HistoryPanel(history: model.history)
         }
     }

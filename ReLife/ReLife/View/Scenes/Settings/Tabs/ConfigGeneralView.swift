@@ -90,15 +90,15 @@ extension ConfigGeneralView {
         } _: {
             VStack {
                 Button("Clear Characteristics") {
-                    
+                    RealmController.shared.deleteAllOf(type: Characteristic.self)
                 }
                 
                 Button("Clear Quests") {
-                    
+                    RealmController.shared.deleteAllOf(type: Quest.self)
                 }
                 
                 Button("Clear History") {
-                    
+                    RealmController.shared.deleteAllOf(type: History.self)
                 }
             }
             .padding(.vertical, 10)

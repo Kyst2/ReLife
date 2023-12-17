@@ -2,7 +2,7 @@ import Foundation
 import Essentials
 
 class MainViewModel: ObservableObject {
-    let realmController = RealmController()
+    let realmController = RealmController.shared
     
     @Published var selectedTab: MainViewTab = .Quests
     

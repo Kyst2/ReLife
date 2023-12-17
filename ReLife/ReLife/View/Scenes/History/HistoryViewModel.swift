@@ -1,7 +1,7 @@
 import Foundation
 
 class HistoryViewModel: ObservableObject {
-    let realmController = RealmController()
+    let realmController = RealmController.shared
     @Published var history:[History] = []
     
     init() {

@@ -1,7 +1,7 @@
 import Foundation
 
 class SettingsViewModel: ObservableObject {
-    let realmController = RealmController()
+    let realmController = RealmController.shared
     @Published var allQuests: [Quest] = []
     @Published var allCharacteristics: [Characteristic] = []
     

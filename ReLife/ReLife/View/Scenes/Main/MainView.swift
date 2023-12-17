@@ -7,18 +7,15 @@ struct MainView: View {
     @ObservedObject var dialogModel = GlobalDialog.shared
     
     var body: some View {
-        ZStack {
-            BackgroundView()
-                .opacity(0.3)
-            
-            HStack(alignment: .top, spacing: 0) {
-                VerticalTabs()
-               
-                //TODO: Fix UI in case of all quests are empty +++
-                ContentPanel()
-                    .frame(minWidth: 600)
-            }
+        HStack(alignment: .top, spacing: 0) {
+            VerticalTabs()
+           
+            //TODO: Fix UI in case of all quests are empty +++
+            ContentPanel()
+                .fillParent()
+                .frame(minWidth: 600)
         }
+        .background( BackgroundView().opacity(0.3) )
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
     }
@@ -56,15 +53,12 @@ extension MainView {
         switch(model.selectedTab){
         case .Quests : 
             QuestsView(model: model)
-                .fillParent()
         case .Characteristics :
             CharacteristicsView(model: model)
-                .fillParent()
         case .History :
-            HistoryView().fillParent()
+            HistoryView()
         case .Settings: 
             SettingsView()
-                .fillParent()
         }
     }
 }

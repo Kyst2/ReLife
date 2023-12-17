@@ -1,7 +1,10 @@
 import Foundation
+import Realm
 import RealmSwift
 
 public class RealmController {
+    static var shared = RealmController()
+    
     var realm: Realm
     
     var questsAll: [Quest] { realm.objects(Quest.self).map{ $0 } }
@@ -121,13 +124,12 @@ extension RealmController {
             }
         }
     }
-    func deleteAllHistory() {
-        for key in allHistory{
-            if let allHistory = realm.object(ofType: History.self, forPrimaryKey: key.key){
-                try! realm.write{
-                    realm.delete(allHistory)
-                }
-            }
+    
+    func deleteAllOf<Element>(type: Element.Type) where Element : RealmSwiftObject  {
+        let allUploadingObjects = realm.objects(type)
+        
+        try! realm.write {
+            realm.delete(allUploadingObjects)
         }
     }
 }
