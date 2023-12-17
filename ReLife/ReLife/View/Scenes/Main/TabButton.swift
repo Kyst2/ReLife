@@ -26,10 +26,7 @@ struct TabButton: View {
             
             Space(8)
             
-            Rectangle()
-                .fill(Color("iconColor"))
-                .frame(height: 6)
-                .offset(x: selectedTab == tab ? 0 : -120)
+            SelectionLine()
             
             Divider()
         }
@@ -49,5 +46,12 @@ fileprivate extension TabButton {
         Text(tab.title)
             .myFont(size: 13, textColor: .blue)
             .fontWeight(.semibold)
+    }
+    
+    func SelectionLine() -> some View {
+        Rectangle()
+            .fill(Color("iconColor"))
+            .frame(height: 6)
+            .offset(x: selectedTab == tab ? 0 : -120)
     }
 }
