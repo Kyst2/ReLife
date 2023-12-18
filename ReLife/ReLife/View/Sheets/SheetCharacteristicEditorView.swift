@@ -1,7 +1,7 @@
 import SwiftUI
 import MoreSwiftUI
 
-struct SheetWorkWithCharacteristicView: View {
+struct SheetCharacteristicEditorView: View {
     @ObservedObject var model: SettingsViewModel
     let type: WorkWithTestsType
     let action: () -> Void
@@ -48,7 +48,7 @@ struct SheetWorkWithCharacteristicView: View {
     }
 }
 
-extension SheetWorkWithCharacteristicView {
+extension SheetCharacteristicEditorView {
     func Title() -> some View {
         Text(type.asTitle())
             .myFont(size: 17, textColor: .blue)

@@ -25,11 +25,11 @@
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
 		A25272142A8E3E4100DD4B75 /* CharacteristicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
-		A27286702AF537F3005EE9B8 /* SheetWorkWithQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetWorkWithQuestView.swift */; };
+		A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */; };
 		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
 		A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */; };
 		A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */; };
-		A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift */; };
+		A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */; };
 		A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */; };
 		A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286832AFBEEA4005EE9B8 /* AddButton.swift */; };
 		A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286852B03B799005EE9B8 /* ItemEdit.swift */; };
@@ -113,11 +113,11 @@
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A272866F2AF537F3005EE9B8 /* SheetWorkWithQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithQuestView.swift; sourceTree = "<group>"; };
+		A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetQuestEditorView.swift; sourceTree = "<group>"; };
 		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
 		A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigQuestView.swift; sourceTree = "<group>"; };
 		A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCharacteristicsView.swift; sourceTree = "<group>"; };
-		A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWorkWithCharacteristicView.swift; sourceTree = "<group>"; };
+		A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetCharacteristicEditorView.swift; sourceTree = "<group>"; };
 		A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialog.swift; sourceTree = "<group>"; };
 		A27286832AFBEEA4005EE9B8 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		A27286852B03B799005EE9B8 /* ItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEdit.swift; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 			children = (
 				A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */,
 				A21989942AE319370004A5D9 /* SheetConfirmation */,
-				A272866F2AF537F3005EE9B8 /* SheetWorkWithQuestView.swift */,
-				A27286792AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift */,
+				A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */,
+				A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -631,11 +631,11 @@
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
-				A272867A2AFA9FFB005EE9B8 /* SheetWorkWithCharacteristicView.swift in Sources */,
+				A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */,
 				1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */,
-				A27286702AF537F3005EE9B8 /* SheetWorkWithQuestView.swift in Sources */,
+				A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,

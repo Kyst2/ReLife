@@ -4,7 +4,7 @@ import MoreSwiftUI
 import Realm
 
 
-struct SheetWorkWithQuestView: View {
+struct SheetQuestEditorView: View {
     @ObservedObject var model: SettingsViewModel
     let type: WorkWithTestsType
     let action: () -> Void
@@ -53,7 +53,7 @@ struct SheetWorkWithQuestView: View {
     }
 }
 
-extension SheetWorkWithQuestView {
+extension SheetQuestEditorView {
     func Title() -> some View {
         Text(type.asTitle())
             .myFont(size: 17, textColor: .blue)

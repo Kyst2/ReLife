@@ -29,7 +29,7 @@ struct ConfigQuestView: View {
 extension ConfigQuestView {
     func ButtonsPanel() -> some View {
         AddButton {
-            let sheet = AnyView( SheetWorkWithQuestView(model: model, type: .questCreator, quest: nil, action: {
+            let sheet = AnyView( SheetQuestEditorView(model: model, type: .questCreator, quest: nil, action: {
                 
             }))
             
@@ -47,7 +47,7 @@ fileprivate extension ConfigQuestView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
                 ForEach(quests) { quest in
                     ItemEdit(name: quest.name, icon: quest.icon){
-                        let sheet = AnyView(SheetWorkWithQuestView(model: model, type: .questEditor, quest: quest, action: {
+                        let sheet = AnyView(SheetQuestEditorView(model: model, type: .questEditor, quest: quest, action: {
                             
                         }))
                         
