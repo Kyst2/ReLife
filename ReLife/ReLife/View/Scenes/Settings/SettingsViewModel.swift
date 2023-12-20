@@ -9,9 +9,9 @@ class SettingsViewModel: ObservableObject {
     @Published var allQuests: [Quest] = []
     @Published var allCharacteristics: [Characteristic] = []
     
-    @Published(key: "firstWeekDay") var firstWeeckDay: FirstWeekDay = .monday
+    @Published var firstWeeckDay: FirstWeekDay = .monday
     @Published(key: "currLang") var currLang: Language = .system
-    @Published(key: "sound") var sound = false
+    @Published var sound = false
     
     private init() {
         refresh()
