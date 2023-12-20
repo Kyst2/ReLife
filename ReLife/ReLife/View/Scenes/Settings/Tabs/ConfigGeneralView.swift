@@ -78,7 +78,7 @@ extension ConfigGeneralView {
             .frame(minWidth: 180, minHeight: 40)
             .onChange(of: currLang, perform: {
                 forceCurrentLocale = $0.asLocaleName()
-                model.objectWillChange.send()
+                MyApp.signals.send(signal: RLSignal.LanguageChaned() )
             })
         }
     }

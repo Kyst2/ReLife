@@ -1,0 +1,3 @@
+struct RLSignal {
+    struct LanguageChaned { }
+}

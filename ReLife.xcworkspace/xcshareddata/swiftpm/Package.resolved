@@ -1,52 +1,50 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Essentials",
-        "repositoryURL": "https://gitlab.com/sergiy.vynnychenko/essentials.git",
-        "state": {
-          "branch": "master",
-          "revision": "3ea3654da23b5f7278e48dd6dffce5835dac4ad9",
-          "version": null
-        }
-      },
-      {
-        "package": "MoreSwiftUI",
-        "repositoryURL": "https://gitlab.com/UKS/moreswiftui.git",
-        "state": {
-          "branch": "main",
-          "revision": "157703d21fd75194b66591a4930baefe4dd0b9a0",
-          "version": null
-        }
-      },
-      {
-        "package": "KystParallax",
-        "repositoryURL": "https://github.com/Kyst2/ParallaxPackage.git",
-        "state": {
-          "branch": "main",
-          "revision": "d9cf91a0cf69a72aa8a44d3ead0662fb03c6548a",
-          "version": null
-        }
-      },
-      {
-        "package": "RealmDatabase",
-        "repositoryURL": "https://github.com/realm/realm-core.git",
-        "state": {
-          "branch": null,
-          "revision": "71f94d75e25bfc8913fcd93ae8de550b57577a4a",
-          "version": "13.25.0"
-        }
-      },
-      {
-        "package": "Realm",
-        "repositoryURL": "https://github.com/realm/realm-swift.git",
-        "state": {
-          "branch": "master",
-          "revision": "a73034c496d61a3adfd18436e9e886bfc31383ac",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "essentials",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/sergiy.vynnychenko/essentials.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3ea3654da23b5f7278e48dd6dffce5835dac4ad9"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "moreswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/UKS/moreswiftui.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "157703d21fd75194b66591a4930baefe4dd0b9a0"
+      }
+    },
+    {
+      "identity" : "parallaxpackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kyst2/ParallaxPackage.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d9cf91a0cf69a72aa8a44d3ead0662fb03c6548a"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "71f94d75e25bfc8913fcd93ae8de550b57577a4a",
+        "version" : "13.25.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a73034c496d61a3adfd18436e9e886bfc31383ac"
+      }
+    }
+  ],
+  "version" : 2
 }
