@@ -15,11 +15,11 @@ struct QuestsView:View {
                 Space(18)
                 
                 VStack(spacing: 15) {
-                    CustomSection(header: "Today's Quests", isFinishable: true, quests: model.questToday)
+                    CustomSection(header: "key.main.quests.today".localized, isFinishable: true, quests: model.questToday)
                     
-                    CustomSection(header: "Tomorrow's Quests", isFinishable: false, quests: model.questTomorrow)
+                    CustomSection(header: "key.main.quests.tomorrow".localized, isFinishable: false, quests: model.questTomorrow)
                     
-                    CustomSection(header: "Long-term Quests", isFinishable: true, quests: model.questLongTerm)
+                    CustomSection(header: "key.main.quests.long-term".localized, isFinishable: true, quests: model.questLongTerm)
                 }
             }.padding(10)
         }
@@ -27,13 +27,13 @@ struct QuestsView:View {
     
     func NoQuestsView() -> some View {
         HStack(spacing: 0) {
-            Text("You can create quest ")
+            Text("key.main.quests.you-can-create-quest".localized)
             
             Button {
                 model.selectedTab = .settings
                 SettingsViewModel.shared.tab = .quests
             } label: {
-                Text("HERE")
+                Text("key.main.quests.HERE".localized)
             }
             .buttonStyle(.link)
         }
@@ -146,7 +146,7 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
+            let sheet = AnyView(SheetConfirmationView(text: "key.complete-quest?".localized ) {
                 action()
             })
             

@@ -1,1 +1,53 @@
 // English
+
+////////////////////
+//MAIN MENU
+////////////////////
+"key.quests" = "Quests";
+"key.characteristics" = "Characteristics";
+"key.history" = "History";
+"key.settings" = "Settings";
+
+////////////////////
+//other
+////////////////////
+"key.other.enabled" = "Enabled";
+"key.other.day.1" = "Monday";
+"key.other.day.7" = "Sunday";
+"key.other.lang.system" = "System";
+// do not translate
+   "key.other.lang.eng"    = "Engilsh";
+   "key.other.lang.german" = "Deutsch";
+   "key.other.lang.urk"    = "Українська";
+// do not translate
+
+
+////////////////////
+//Main.Quests
+////////////////////
+"key.main.quests.today" = "Today's Quests";
+"key.main.quests.tomorrow" = "Tomorrow's Quests";
+"key.main.quests.long-term" = "Long-term Quests";
+"key.main.quests.you-can-create-quest" = "You can create quest ";
+"key.main.quests.HERE" = "HERE";
+
+////////////////////
+// Sheets
+////////////////////
+"key.complete-quest?" = "Do you want to complete the quest?";
+
+////////////////////
+// Settings
+////////////////////
+"key.settings.tab.general" = "General"; // other tabs in "other"
+"key.settings.db" = "Database";
+"key.settings.db.export" = "Export";
+"key.settings.db.import" = "Import";
+"key.settings.db.1st-weekday" = "First Day of week";
+"key.settings.db.lang" = "Language";
+"key.settings.db.danger" = "Danger zone";
+"key.settings.db.danger.clear-charach" = "Clear Characteristics";
+"key.settings.db.danger.clear-quests" = "Clear Quests";
+"key.settings.db.danger.clear-history" = "Clear History";
+"key.settings.db.sound-stngs" = "Sound Settings";
+"key.settings.db.support-email" = "Support Email";

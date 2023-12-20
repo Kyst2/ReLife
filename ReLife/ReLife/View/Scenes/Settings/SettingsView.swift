@@ -55,7 +55,7 @@ struct ConfigTabView: View {
                 tab = curr
             }
         }) {
-            Text(curr.rawValue)
+            Text(curr.rawValue.localized)
                 .myFont(size: 18, textColor: .blue)
                 .menuBttonModifier(tab: tab, curr: curr)
         }

@@ -23,11 +23,11 @@ struct MainView: View {
 extension MainView {
     @ViewBuilder
     func BackgroundView() -> some View {
-        ParallaxLayer(image: Image("Stars1"),speed: 2).fillParent()
+        ParallaxLayer(image: Image("Stars1"), speed: 2).fillParent()
         
-        ParallaxLayer(image: Image("Stars2"),speed: 7).fillParent()
+        ParallaxLayer(image: Image("Stars2"), speed: 7).fillParent()
         
-        ParallaxLayer(image: Image("Stars3"),speed: 10).fillParent()
+        ParallaxLayer(image: Image("Stars3"), speed: 10).fillParent()
     }
     
     func VerticalTabs() -> some View {
@@ -67,15 +67,15 @@ extension MainView {
 //////////////////////
 
 enum MainViewTab: String {
-    case quests = "Quests"
-    case characteristics = "Characteristics"
-    case history = "History"
+    case quests = "key.quests"
+    case characteristics = "key.characteristics"
+    case history = "key.history"
     case settings = "Settings"
 }
 
 extension MainViewTab {
     var title: String {
-        self.rawValue
+        self.rawValue.localized
     }
     
     var icon: String {

@@ -42,7 +42,7 @@ fileprivate extension TabButton {
     }
     
     func TabTitle() -> some View {
-        Text(tab.title)
+        Text(tab.title )
             .myFont(size: 13, textColor: .blue)
             .fontWeight(.semibold)
     }
