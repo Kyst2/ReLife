@@ -5,7 +5,7 @@ struct ConfigGeneralView: View {
     @ObservedObject var model: SettingsViewModel
     
     @State var firstWickDay: FirstWeekDay = .monday
-    @State var languages: Language = .english
+    @State var currLang: Language = .english
     @State var sound = false
     
     @State var enableDangerZone: Bool = false
@@ -68,7 +68,7 @@ extension ConfigGeneralView {
     
     func PickerLanguage() -> some View {
         MyGroupBox(header: "key.settings.db.lang".localized) {
-            Picker("", selection: $languages) {
+            Picker("", selection: $currLang) {
                 ForEach(Language.allCases, id: \.rawValue) { language in
                     Text(language.rawValue.localized ).tag(language)
                 }
@@ -76,6 +76,10 @@ extension ConfigGeneralView {
             .pickerStyle(.menu)
             .frame(width: 130)
             .frame(minWidth: 180, minHeight: 40)
+            .onChange(of: currLang, perform: {
+                forceCurrentLocale = $0.asLocaleName()
+                model.objectWillChange.send()
+            })
         }
     }
     
@@ -83,7 +87,7 @@ extension ConfigGeneralView {
         MyGroupBox2 {
             HStack {
                 Toggle("", isOn: $enableDangerZone)
-                    .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
+                    .toggleStyle( .nolblIosStyle )
                 
                 Text("key.settings.db.danger".localized)
             }
@@ -112,7 +116,7 @@ extension ConfigGeneralView {
             HStack{
                 Text("\("key.other.enabled".localized):")
                 Toggle(isOn: $sound){ }
-                    .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
+                    .toggleStyle( .nolblIosStyle )
             }
             .frame(minWidth: 180, minHeight: 40)
         }
@@ -151,5 +155,20 @@ enum Language: String, CaseIterable {
     case system  = "key.other.lang.system"
     case english = "key.other.lang.eng"
     case german  = "key.other.lang.german"
-    case ukraine = "key.other.lang.urk"
+    case ukrainian = "key.other.lang.urk"
+}
+
+extension Language {
+    func asLocaleName() -> String? {
+        switch self {
+        case .english:
+            return "en"
+        case .ukrainian:
+            return "uk"
+        case .german:
+            return "ge"
+        case .system:
+            return nil
+        }
+    }
 }
