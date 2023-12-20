@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
+		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -189,6 +190,7 @@
 			files = (
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
+				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
 				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
@@ -528,6 +530,7 @@
 				A2CCA0292ACF0739006A3A7F /* KystEssentials */,
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 				A21989912AE138400004A5D9 /* KystParallax */,
+				1D6E25482B338BD4001083CB /* AsyncNinja */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -1150,6 +1153,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D6E25482B338BD4001083CB /* AsyncNinja */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AsyncNinja;
+		};
 		A211B17F2A7D012D004680E8 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */;
