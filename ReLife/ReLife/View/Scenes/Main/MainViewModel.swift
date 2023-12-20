@@ -30,7 +30,7 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        realmController.deleteAllOf(type: History.self)
+//        realmController.deleteAllOf(type: History.self)
 //        initFakeData()
         
         refreshData()

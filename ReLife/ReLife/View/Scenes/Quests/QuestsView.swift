@@ -5,7 +5,7 @@ import MoreSwiftUI
 struct QuestsView:View {
     @ObservedObject var model : MainViewModel
     
-    var allQuestsIsEmpty: Bool { model.questToday.count == 0 &&  model.questTomorrow.count == 0 && model.questLongTerm.count == 0 }
+    var allQuestsIsEmpty: Bool { model.realmController.questsAll.count == 0 }
     
     var body: some View {
         if allQuestsIsEmpty {

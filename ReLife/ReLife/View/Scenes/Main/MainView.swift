@@ -67,10 +67,10 @@ extension MainView {
 //////////////////////
 
 enum MainViewTab: String {
-    case quests
-    case characteristics
-    case history
-    case settings
+    case quests = "Quests"
+    case characteristics = "Characteristics"
+    case history = "History"
+    case settings = "Settings"
 }
 
 extension MainViewTab {
