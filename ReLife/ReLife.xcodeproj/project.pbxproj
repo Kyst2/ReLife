@@ -13,6 +13,7 @@
 		1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254E2B338CD0001083CB /* SignalsService.swift */; };
 		1D6E25532B338CD0001083CB /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254F2B338CD0001083CB /* Signals.swift */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
+		1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25562B33AD88001083CB /* AppDelegate.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -122,6 +123,7 @@
 		1D6E254E2B338CD0001083CB /* SignalsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalsService.swift; sourceTree = "<group>"; };
 		1D6E254F2B338CD0001083CB /* Signals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
 		1D6E25542B338E30001083CB /* RLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLSignal.swift; sourceTree = "<group>"; };
+		1D6E25562B33AD88001083CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				1D6E25542B338E30001083CB /* RLSignal.swift */,
+				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				A2C55E842B2D0D5F001E67FB /* Wrappers */,
 				A272867F2AFBEE71005EE9B8 /* SwiftUI */,
@@ -714,6 +717,7 @@
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */,
 				A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */,
+				1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
