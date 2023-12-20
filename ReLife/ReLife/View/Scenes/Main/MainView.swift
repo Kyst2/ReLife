@@ -70,7 +70,7 @@ enum MainViewTab: String {
     case quests = "key.quests"
     case characteristics = "key.characteristics"
     case history = "key.history"
-    case settings = "Settings"
+    case settings = "key.settings"
 }
 
 extension MainViewTab {
