@@ -3,8 +3,7 @@ import SwiftUI
 import MoreSwiftUI
 
 struct SettingsView: View {
-    @State fileprivate var tab: SettingsTab = .General
-    @ObservedObject var model = SettingsViewModel()
+    @ObservedObject var model = SettingsViewModel.shared
     
     var body: some View {
         VStack(spacing: 0){
@@ -18,22 +17,22 @@ struct SettingsView: View {
 extension SettingsView {
     func TabsPanel() -> some View {
         HStack(spacing: 0) {
-            ConfigTabView(tab: $tab, curr: .General)
+            ConfigTabView(tab: $model.tab, curr: .general)
             
-            ConfigTabView(tab: $tab, curr: .Quests)
+            ConfigTabView(tab: $model.tab, curr: .quests)
             
-            ConfigTabView(tab: $tab, curr: .Characteristics)
+            ConfigTabView(tab: $model.tab, curr: .characteristics)
         }
     }
     
     @ViewBuilder
     func TabsBody() -> some View {
-        switch tab {
-        case .General:
+        switch model.tab {
+        case .general:
             ConfigGeneralView(model: model)
-        case .Quests:
+        case .quests:
             ConfigQuestView(model: model)
-        case .Characteristics:
+        case .characteristics:
             ConfigCharacteristicsView(model: model)
         }
     }
@@ -56,7 +55,7 @@ struct ConfigTabView: View {
                 tab = curr
             }
         }) {
-            Text(curr.rawValue)
+            Text(curr.rawValue.localized)
                 .myFont(size: 18, textColor: .blue)
                 .menuBttonModifier(tab: tab, curr: curr)
         }
@@ -77,10 +76,4 @@ fileprivate extension View {
                     .stroke(Color.primary, lineWidth: 0.1)
             }
     }
-}
-
-fileprivate enum SettingsTab: String {
-    case General
-    case Quests
-    case Characteristics
 }

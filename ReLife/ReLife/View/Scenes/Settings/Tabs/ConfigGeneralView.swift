@@ -5,7 +5,7 @@ struct ConfigGeneralView: View {
     @ObservedObject var model: SettingsViewModel
     
     @State var firstWickDay: FirstWeekDay = .monday
-    @State var languages: Language = .english
+    @State var currLang: Language = .english
     @State var sound = false
     
     @State var enableDangerZone: Bool = false
@@ -39,13 +39,13 @@ struct ConfigGeneralView: View {
 
 extension ConfigGeneralView {
     func DbButtons() -> some View {
-        MyGroupBox(header: "Database") {
+        MyGroupBox(header: "key.settings.db".localized) {
             HStack {
-                Button("Export") {
+                Button("key.settings.db.export".localized) {
                     
                 }
                 
-                Button("Import") {
+                Button("key.settings.db.import".localized) {
                     
                 }
             }
@@ -54,10 +54,10 @@ extension ConfigGeneralView {
     }
     
     func PickerFirstWeekDay() -> some View {
-        MyGroupBox(header: "First Day of week") {
+        MyGroupBox(header: "key.settings.db.1st-weekday".localized) {
             Picker("", selection: $firstWickDay) {
                 ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
-                    Text(day.rawValue).tag(day)
+                    Text(day.rawValue.localized ).tag(day)
                 }
             }
             .pickerStyle(.menu)
@@ -67,15 +67,19 @@ extension ConfigGeneralView {
     }
     
     func PickerLanguage() -> some View {
-        MyGroupBox(header: "Language") {
-            Picker("", selection: $languages) {
+        MyGroupBox(header: "key.settings.db.lang".localized) {
+            Picker("", selection: $currLang) {
                 ForEach(Language.allCases, id: \.rawValue) { language in
-                    Text(language.rawValue).tag(language)
+                    Text(language.rawValue.localized ).tag(language)
                 }
             }
             .pickerStyle(.menu)
             .frame(width: 130)
             .frame(minWidth: 180, minHeight: 40)
+            .onChange(of: currLang, perform: {
+                forceCurrentLocale = $0.asLocaleName()
+                model.objectWillChange.send()
+            })
         }
     }
     
@@ -83,21 +87,21 @@ extension ConfigGeneralView {
         MyGroupBox2 {
             HStack {
                 Toggle("", isOn: $enableDangerZone)
-                    .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
+                    .toggleStyle( .nolblIosStyle )
                 
-                Text("Danger zone")
+                Text("key.settings.db.danger".localized)
             }
         } _: {
             VStack {
-                Button("Clear Characteristics") {
+                Button("key.settings.db.danger.clear-charach".localized) {
                     RealmController.shared.deleteAllOf(type: Characteristic.self)
                 }
                 
-                Button("Clear Quests") {
+                Button("key.settings.db.danger.clear-quests".localized) {
                     RealmController.shared.deleteAllOf(type: Quest.self)
                 }
                 
-                Button("Clear History") {
+                Button("key.settings.db.danger.clear-history".localized) {
                     RealmController.shared.deleteAllOf(type: History.self)
                 }
             }
@@ -108,11 +112,11 @@ extension ConfigGeneralView {
     }
     
     func SoundSettings() -> some View {
-        MyGroupBox(header: "Sound Settings") {
+        MyGroupBox(header: "key.settings.db.sound-stngs".localized) {
             HStack{
-                Text("Enabled:")
+                Text("\("key.other.enabled".localized):")
                 Toggle(isOn: $sound){ }
-                    .toggleStyle(NoLblIosToggleStyle.nolblIosStyle )
+                    .toggleStyle( .nolblIosStyle )
             }
             .frame(minWidth: 180, minHeight: 40)
         }
@@ -120,7 +124,7 @@ extension ConfigGeneralView {
     }
     
     func LinkSupport() -> some View {
-        Link("Support Email", destination: URL(string: "mailto:deradus@ukr.net")!)
+        Link("key.settings.db.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
             .padding(.bottom, 20)
     }
 }
@@ -143,13 +147,28 @@ struct TitleText: View {
 }
 
 enum FirstWeekDay: String, CaseIterable {
-    case sunday = "Sunday"
-    case monday = "Monday"
+    case sunday = "key.other.day.7"
+    case monday = "key.other.day.1"
 }
 
 enum Language: String, CaseIterable {
-    case system  = "System"
-    case english = "Engilsh"
-    case german  = "German"
-    case ukraine = "Ukraine"
+    case system  = "key.other.lang.system"
+    case english = "key.other.lang.eng"
+    case german  = "key.other.lang.german"
+    case ukrainian = "key.other.lang.urk"
+}
+
+extension Language {
+    func asLocaleName() -> String? {
+        switch self {
+        case .english:
+            return "en"
+        case .ukrainian:
+            return "uk"
+        case .german:
+            return "ge"
+        case .system:
+            return nil
+        }
+    }
 }

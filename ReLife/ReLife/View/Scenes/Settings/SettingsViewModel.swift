@@ -1,13 +1,17 @@
 import Foundation
 
 class SettingsViewModel: ObservableObject {
+    static let shared = SettingsViewModel()
+    
     let realmController = RealmController.shared
+    @Published var tab: SettingsTab = .general
     @Published var allQuests: [Quest] = []
     @Published var allCharacteristics: [Characteristic] = []
     
-    init() {
+    private init() {
         refresh()
     }
+    
     func refresh() {
         let newAllQuests = realmController.questsAll.sorted{$0.name < $1.name}
         let newAllCharacteristics = realmController.characteristicsAll
@@ -30,4 +34,11 @@ class SettingsViewModel: ObservableObject {
         realmController.update(questKey: questKey, withValues: quest)
         refresh()
     }
+}
+
+
+enum SettingsTab: String {
+    case general = "key.settings.tab.general"
+    case quests = "key.quests"
+    case characteristics = "key.characteristics"
 }

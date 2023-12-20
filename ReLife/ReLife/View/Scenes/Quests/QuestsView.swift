@@ -5,20 +5,38 @@ import MoreSwiftUI
 struct QuestsView:View {
     @ObservedObject var model : MainViewModel
     
+    var allQuestsIsEmpty: Bool { model.realmController.questsAll.count == 0 }
     
     var body: some View {
-        ScrollView {
-            Space(18)
-            
-            VStack(spacing: 15) {
-                //TODO: якщо немає опису нєфіг розгортати +++
-                CustomSection(header: "Today's Quests", isFinishable: true, quests: model.questToday)
-             
-                CustomSection(header: "Tomorrow's Quests", isFinishable: false, quests: model.questTomorrow)
+        if allQuestsIsEmpty {
+            NoQuestsView()
+        } else {
+            ScrollView {
+                Space(18)
                 
-                CustomSection(header: "Long-term Quests", isFinishable: true, quests: model.questLongTerm)
+                VStack(spacing: 15) {
+                    CustomSection(header: "key.main.quests.today".localized, isFinishable: true, quests: model.questToday)
+                    
+                    CustomSection(header: "key.main.quests.tomorrow".localized, isFinishable: false, quests: model.questTomorrow)
+                    
+                    CustomSection(header: "key.main.quests.long-term".localized, isFinishable: true, quests: model.questLongTerm)
+                }
+            }.padding(10)
+        }
+    }
+    
+    func NoQuestsView() -> some View {
+        HStack(spacing: 0) {
+            Text("key.main.quests.you-can-create-quest".localized)
+            
+            Button {
+                model.selectedTab = .settings
+                SettingsViewModel.shared.tab = .quests
+            } label: {
+                Text("key.main.quests.HERE".localized)
             }
-        }.padding(10)
+            .buttonStyle(.link)
+        }
     }
 }
 
@@ -27,19 +45,22 @@ struct QuestsView:View {
 ///////////////////////
 
 fileprivate extension QuestsView {
+    @ViewBuilder
     func CustomSection(header:String, isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
-        Section(header: Text(header).titleStyle ) {
-            SectionBody(isFinishable: isFinishable, quests: quests)
+        if quests.count > 0 {
+            Section(header: Text(header).titleStyle ) {
+                SectionBody(isFinishable: isFinishable, quests: quests)
+            }
         }
     }
     
     func SectionBody(isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
         ForEach(quests) { wrapper in
             
+            //TODO: якщо немає опису нєфіг розгортати +++
             QuestAccordeonView(isFinishable: isFinishable, repetsCount: wrapper.finishedTimes, quest: wrapper.quest){
                 model.addToHistory(quest: wrapper.quest)
             }
-            
         }
     }
 }
@@ -125,7 +146,7 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            let sheet = AnyView(SheetConfirmationView(text: "Have you completed the quest?"){
+            let sheet = AnyView(SheetConfirmationView(text: "key.complete-quest?".localized ) {
                 action()
             })
             

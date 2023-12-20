@@ -6,7 +6,7 @@
       "location" : "https://gitlab.com/sergiy.vynnychenko/essentials.git",
       "state" : {
         "branch" : "master",
-        "revision" : "35735874031006ea4b987c4020464710054a34b6"
+        "revision" : "3ea3654da23b5f7278e48dd6dffce5835dac4ad9"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://gitlab.com/UKS/moreswiftui.git",
       "state" : {
         "branch" : "main",
-        "revision" : "8ccfda22883a7e36e92c377a12e6474fd2c69be1"
+        "revision" : "157703d21fd75194b66591a4930baefe4dd0b9a0"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
       "state" : {
-        "revision" : "c569bec4d04da84030d94f376437bc4efda3686b",
-        "version" : "13.23.1"
+        "revision" : "71f94d75e25bfc8913fcd93ae8de550b57577a4a",
+        "version" : "13.25.0"
       }
     },
     {
@@ -42,7 +42,7 @@
       "location" : "https://github.com/realm/realm-swift.git",
       "state" : {
         "branch" : "master",
-        "revision" : "f485d2a3bbfaf92186c52ff6d7fa32c924338cf2"
+        "revision" : "a73034c496d61a3adfd18436e9e886bfc31383ac"
       }
     }
   ],

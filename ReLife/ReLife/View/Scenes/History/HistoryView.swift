@@ -38,7 +38,7 @@ struct HistoryItem: View {
             
             Spacer()
             
-            Text("\(date.asString())")
+            Text("\(date.asString())") // "y-M-dd HH:mm" ?????
                 .myFont(size: 13, textColor: .white)
                 .padding(10)
         }
