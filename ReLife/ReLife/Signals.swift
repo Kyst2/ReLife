@@ -1,3 +1,0 @@
-struct RL {
-    struct LanguageChaned { }
-}

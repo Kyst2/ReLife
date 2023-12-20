@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
-		1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */; };
-		1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254E2B338CD0001083CB /* SignalsService.swift */; };
-		1D6E25532B338CD0001083CB /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254F2B338CD0001083CB /* Signals.swift */; };
-		1D6E25552B338E30001083CB /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* Signals.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -118,10 +114,6 @@
 		1D6E253A2B33696A001083CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E253B2B33696A001083CB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E253C2B33696A001083CB /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalDispatcher.swift; sourceTree = "<group>"; };
-		1D6E254E2B338CD0001083CB /* SignalsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalsService.swift; sourceTree = "<group>"; };
-		1D6E254F2B338CD0001083CB /* Signals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
-		1D6E25542B338E30001083CB /* Signals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -214,24 +206,6 @@
 				1D6E252B2B33696A001083CB /* Localizable.strings */,
 			);
 			path = Locals;
-			sourceTree = "<group>";
-		};
-		1D6E254A2B338C3D001083CB /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				1D6E254B2B338CD0001083CB /* SignalsService */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		1D6E254B2B338CD0001083CB /* SignalsService */ = {
-			isa = PBXGroup;
-			children = (
-				1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */,
-				1D6E254E2B338CD0001083CB /* SignalsService.swift */,
-				1D6E254F2B338CD0001083CB /* Signals.swift */,
-			);
-			path = SignalsService;
 			sourceTree = "<group>";
 		};
 		A210862A2A813A1A00EB7A89 /* QuestsTests */ = {
@@ -424,7 +398,6 @@
 			children = (
 				A21989972AE3E7990004A5D9 /* Font */,
 				A2DD8E642A58A90C00315995 /* ReLife */,
-				1D6E254A2B338C3D001083CB /* Other */,
 				1D6E252A2B33696A001083CB /* Locals */,
 				A211B1732A7B6F7C004680E8 /* ReLifeTests */,
 				A210862A2A813A1A00EB7A89 /* QuestsTests */,
@@ -450,7 +423,6 @@
 				A219899C2AE47BBB0004A5D9 /* Info.plist */,
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
-				1D6E25542B338E30001083CB /* Signals.swift */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				A2C55E842B2D0D5F001E67FB /* Wrappers */,
 				A272867F2AFBEE71005EE9B8 /* SwiftUI */,
@@ -703,10 +675,8 @@
 			files = (
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
-				1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */,
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
-				1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */,
@@ -729,8 +699,6 @@
 				A2C11F4D2B12AF120062AFDE /* Image+.swift in Sources */,
 				A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
-				1D6E25532B338CD0001083CB /* Signals.swift in Sources */,
-				1D6E25552B338E30001083CB /* Signals.swift in Sources */,
 				A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
@@ -1038,7 +1006,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = RPH4S2457V;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1077,7 +1045,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = RPH4S2457V;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
