@@ -34,12 +34,16 @@ extension MainView {
         HStack(spacing: 0) {
             VStack(spacing: 0 ) {
                 TabButton(tab: .quests, selectedTab: $model.selectedTab)
+                
                 TabButton(tab: .characteristics, selectedTab: $model.selectedTab)
+                
                 TabButton(tab: .history, selectedTab: $model.selectedTab)
+                
                 TabButton(tab: .settings, selectedTab: $model.selectedTab)
                 
                 Spacer()
             }
+            .id(MainViewTab.quests.rawValue.localized) //fix refresh issues on locale change
             .backgroundGaussianBlur(type:.behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.1))
             .frame(width:120)
             
@@ -74,10 +78,6 @@ enum MainViewTab: String {
 }
 
 extension MainViewTab {
-    var title: String {
-        self.rawValue.localized
-    }
-    
     var icon: String {
         switch self {
         case .quests:           return "list.bullet.clipboard"

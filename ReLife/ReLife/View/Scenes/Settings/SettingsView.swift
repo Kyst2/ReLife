@@ -23,6 +23,7 @@ extension SettingsView {
             
             ConfigTabView(tab: $model.tab, curr: .characteristics)
         }
+        .id(SettingsTab.general.rawValue.localized) //fix refresh issues on locale change
     }
     
     @ViewBuilder
@@ -58,6 +59,7 @@ struct ConfigTabView: View {
             Text(curr.rawValue.localized)
                 .myFont(size: 18, textColor: .blue)
                 .menuBttonModifier(tab: tab, curr: curr)
+                .id(curr.rawValue.localized)
         }
         .buttonStyle(.plain)
     }

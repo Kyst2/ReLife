@@ -31,6 +31,7 @@ struct TabButton: View {
             Divider()
         }
         .backgroundGaussianBlur(type: .behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.17))
+        
     }
 }
 
@@ -42,7 +43,7 @@ fileprivate extension TabButton {
     }
     
     func TabTitle() -> some View {
-        Text(tab.title )
+        Text(tab.rawValue.localized )
             .myFont(size: 13, textColor: .blue)
             .fontWeight(.semibold)
     }

@@ -10,6 +10,9 @@ class SettingsViewModel: ObservableObject {
     
     private init() {
         refresh()
+        
+        MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
+            .onUpdate { _ in self.objectWillChange.send() }
     }
     
     func refresh() {

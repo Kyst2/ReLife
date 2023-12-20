@@ -27,20 +27,6 @@ class MainViewModel: ObservableObject {
         let quest = Quest(name: "AlmostEachDayQuest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]))
         
         realmController.add(quest: quest)
-        
-        MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
-            .onUpdate { _ in
-                self.objectWillChange.send()
-            }
-            .onSuccess { _ in
-                self.objectWillChange.send()
-            }
-            .onFailure {
-                print( $0.localizedDescription )
-            }
-            .onEvent{ _ in
-                self.objectWillChange.send()
-            }
     }
     
     init() {
@@ -48,6 +34,9 @@ class MainViewModel: ObservableObject {
 //        initFakeData()
         
         refreshData()
+        
+        MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
+            .onUpdate { _ in self.objectWillChange.send() }
     }
     
     func refreshData(forceRefresh: Bool = false) {
