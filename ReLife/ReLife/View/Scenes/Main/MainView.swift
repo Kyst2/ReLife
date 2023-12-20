@@ -9,8 +9,7 @@ struct MainView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             VerticalTabs()
-           
-            //TODO: Fix UI in case of all quests are empty +++
+            
             ContentPanel()
                 .fillParent()
                 .frame(minWidth: 600)
@@ -34,10 +33,10 @@ extension MainView {
     func VerticalTabs() -> some View {
         HStack(spacing: 0) {
             VStack(spacing: 0 ) {
-                TabButton(tab: .Quests, selectedTab: $model.selectedTab)
-                TabButton(tab: .Characteristics, selectedTab: $model.selectedTab)
-                TabButton(tab: .History, selectedTab: $model.selectedTab)
-                TabButton(tab: .Settings, selectedTab: $model.selectedTab)
+                TabButton(tab: .quests, selectedTab: $model.selectedTab)
+                TabButton(tab: .characteristics, selectedTab: $model.selectedTab)
+                TabButton(tab: .history, selectedTab: $model.selectedTab)
+                TabButton(tab: .settings, selectedTab: $model.selectedTab)
                 
                 Spacer()
             }
@@ -51,13 +50,13 @@ extension MainView {
     @ViewBuilder
     func ContentPanel() -> some View {
         switch(model.selectedTab){
-        case .Quests : 
+        case .quests : 
             QuestsView(model: model)
-        case .Characteristics :
+        case .characteristics :
             CharacteristicsView(model: model)
-        case .History :
+        case .history :
             HistoryView()
-        case .Settings: 
+        case .settings: 
             SettingsView()
         }
     }
@@ -68,10 +67,10 @@ extension MainView {
 //////////////////////
 
 enum MainViewTab: String {
-    case Quests
-    case Characteristics
-    case History
-    case Settings
+    case quests
+    case characteristics
+    case history
+    case settings
 }
 
 extension MainViewTab {
@@ -81,10 +80,10 @@ extension MainViewTab {
     
     var icon: String {
         switch self {
-        case .Quests:           return "list.bullet.clipboard"
-        case .Characteristics:  return "medal"
-        case .History:          return "book"
-        case .Settings:         return "gearshape"
+        case .quests:           return "list.bullet.clipboard"
+        case .characteristics:  return "medal"
+        case .history:          return "book"
+        case .settings:         return "gearshape"
         }
     }
 }

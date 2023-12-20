@@ -4,7 +4,7 @@ import Essentials
 class MainViewModel: ObservableObject {
     let realmController = RealmController.shared
     
-    @Published var selectedTab: MainViewTab = .Quests
+    @Published var selectedTab: MainViewTab = .quests
     
     @Published var questToday: [QuestWrapper] = []
     @Published var questTomorrow: [QuestWrapper] = []
