@@ -1,1 +1,53 @@
 // Ukrainian
+
+////////////////////
+//MAIN MENU
+////////////////////
+"key.quests" = "Квести";
+"key.characteristics" = "Характеристики";
+"key.history" = "Історія";
+"key.settings" = "Налаштування";
+
+////////////////////
+//other
+////////////////////
+"key.other.enabled" = "Увімкнено";
+"key.other.day.1" = "Понеділок";
+"key.other.day.7" = "Неділя";
+"key.other.lang.system" = "Системна";
+// do not translate
+//   "key.other.lang.eng"    = "Engilsh";
+//   "key.other.lang.german" = "Deutsch";
+//   "key.other.lang.urk"    = "Українська";
+// do not translate
+
+
+////////////////////
+//Main.Quests
+////////////////////
+"key.main.quests.today" = "Квести на сьогодні";
+"key.main.quests.tomorrow" = "Квести на завтра";
+"key.main.quests.long-term" = "Довгі дистанції квестів";
+"key.main.quests.you-can-create-quest" = "Ви можете створити квест ";
+"key.main.quests.HERE" = "ТУТ";
+
+////////////////////
+// Sheets
+////////////////////
+"key.complete-quest?" = "Завершити квест?";
+
+////////////////////
+// Settings
+////////////////////
+"key.settings.tab.general" = "Загальна"; // other tabs in "other"
+"key.settings.db" = "База даних";
+"key.settings.db.export" = "Експорт";
+"key.settings.db.import" = "Імпорт";
+"key.settings.db.1st-weekday" = "Перший день тижня";
+"key.settings.db.lang" = "Мова";
+"key.settings.db.danger" = "Небезпечно";
+"key.settings.db.danger.clear-charach" = "Очистити Характеристики";
+"key.settings.db.danger.clear-quests" = "Очистити Квести";
+"key.settings.db.danger.clear-history" = "Очиситити Історію";
+"key.settings.db.sound-stngs" = "Налаштування звуку";
+"key.settings.db.support-email" = "Написати до тех.підтримки";
