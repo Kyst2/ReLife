@@ -1,3 +1,6 @@
 [submodule "KystEssentials"]
 	path = KystEssentials
 	url = git@github.com:Kyst2/KystEssentials.git
+[submodule "AsyncNinja"]
+	path = AsyncNinja
+	url = git@github.com:serg-vinnie/AsyncNinja.git
