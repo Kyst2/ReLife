@@ -1,4 +1,5 @@
 import Foundation
+import MoreSwiftUI
 
 class SettingsViewModel: ObservableObject {
     static let shared = SettingsViewModel()
@@ -8,8 +9,14 @@ class SettingsViewModel: ObservableObject {
     @Published var allQuests: [Quest] = []
     @Published var allCharacteristics: [Characteristic] = []
     
+    @Published(key: "firstWeekDay") var firstWeeckDay: FirstWeekDay = .monday
+    @Published(key: "currLang") var currLang: Language = .system
+    @Published(key: "sound") var sound = false
+    
     private init() {
         refresh()
+        
+        forceCurrentLocale = currLang.asLocaleName()
         
         MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
             .onUpdate { _ in self.objectWillChange.send() }

@@ -4,14 +4,9 @@ import MoreSwiftUI
 struct ConfigGeneralView: View {
     @ObservedObject var model: SettingsViewModel
     
-    @State var firstWickDay: FirstWeekDay = .monday
-    @State var currLang: Language = .english
-    @State var sound = false
-    
     @State var enableDangerZone: Bool = false
     
     let columns = [ GridItem(.fixed(200)), GridItem(.fixed(200)), GridItem(.fixed(200)) ]
-    
     
     var body: some View {
         ScrollView {
@@ -55,7 +50,7 @@ extension ConfigGeneralView {
     
     func PickerFirstWeekDay() -> some View {
         MyGroupBox(header: "key.settings.db.1st-weekday".localized) {
-            Picker("", selection: $firstWickDay) {
+            Picker("", selection: $model.firstWeeckDay) {
                 ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
                     Text(day.rawValue.localized ).tag(day)
                 }
@@ -68,7 +63,7 @@ extension ConfigGeneralView {
     
     func PickerLanguage() -> some View {
         MyGroupBox(header: "key.settings.db.lang".localized) {
-            Picker("", selection: $currLang) {
+            Picker("", selection: $model.currLang) {
                 ForEach(Language.allCases, id: \.rawValue) { language in
                     Text(language.rawValue.localized ).tag(language)
                 }
@@ -76,7 +71,7 @@ extension ConfigGeneralView {
             .pickerStyle(.menu)
             .frame(width: 130)
             .frame(minWidth: 180, minHeight: 40)
-            .onChange(of: currLang, perform: {
+            .onChange(of: model.currLang, perform: {
                 forceCurrentLocale = $0.asLocaleName()
                 MyApp.signals.send(signal: RLSignal.LanguageChaned() )
             })
@@ -115,7 +110,7 @@ extension ConfigGeneralView {
         MyGroupBox(header: "key.settings.db.sound-stngs".localized) {
             HStack{
                 Text("\("key.other.enabled".localized):")
-                Toggle(isOn: $sound){ }
+                Toggle(isOn: $model.sound){ }
                     .toggleStyle( .nolblIosStyle )
             }
             .frame(minWidth: 180, minHeight: 40)
