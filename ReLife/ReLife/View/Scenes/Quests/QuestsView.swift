@@ -73,8 +73,12 @@ struct QuestAccordeonView: View {
     let repetsCount: Int
     let quest:Quest
     let action:() -> Void
-
+    
     @State var isComplete = false
+    
+    var isExpandable: Bool {
+        !quest.descript.isEmpty
+    }
     
     
     var body: some View {
@@ -100,26 +104,37 @@ struct QuestAccordeonView: View {
                     .myFont(size: 15, textColor: .white)
                     .id("repeatCount_\(quest.name)_\(repetsCount)")
             }
+            
             Spacer()
             
-            Button(action: {
-                withAnimation(.easeIn(duration: 0.2 )){
-                    isExpanded.toggle()}
-            }) {
-                Text.sfSymbol(isExpanded ? "chevron.up" : "chevron.right")
-                    .foregroundStyle(.black)
-                    .frame(width: 25, height: 25)
-                    .background{
-                        Circle()
-                    }
+            if isExpandable {
+                Button(action: {
+                    withAnimation(.easeIn(duration: 0.2 )) {
+                        isExpanded.toggle()}
+                }) {
+                    Text.sfSymbol("chevron.right")
+                        .rotationEffect(isExpanded ? .degrees(-90) : .degrees(0))
+                        .foregroundStyle(.black)
+                        .frame(width: 25, height: 25)
+                        .background {
+                            expandBtnBkgrnd()
+                        }
+                }
+                .padding(.trailing,20)
+                .buttonStyle(BtnUksStyle.default)
             }
-            .padding(.trailing,20)
-            .buttonStyle(BtnUksStyle.default)
-            .disableButton(questDescript: quest.descript)
-            
         }.padding(10)
     }
-
+    
+    @ViewBuilder
+    func expandBtnBkgrnd() -> some View {
+        if isExpanded {
+            RoundedRectangle(cornerRadius: 9)
+        } else {
+            Circle()
+        }
+    }
+    
     @ViewBuilder
     func DecrView() -> some View {
         if isExpanded {
@@ -163,14 +178,6 @@ fileprivate extension View {
             .background { background1 }
             .padding(3)
             .onTapGesture(count: 2) { tapReaction() }
-    }
-    @ViewBuilder
-    func disableButton(questDescript: String) -> some View {
-        if questDescript == "" {
-            self.disabled(true)
-        }else {
-            self
-        }
     }
 }
 

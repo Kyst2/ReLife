@@ -90,5 +90,4 @@ class MainViewModel: ObservableObject {
     func getCharacteriscticsAndPoints() -> [CharacteristicsAndPoints]{
         realmController.getAllCharacteristicPoints()
     }
-    
 }
