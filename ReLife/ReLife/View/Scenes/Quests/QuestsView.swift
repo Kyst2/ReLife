@@ -146,11 +146,9 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            let sheet = AnyView(SheetConfirmationView(text: "key.complete-quest?".localized ) {
+            GlobalDialog.shared.confirmDialogYesNo(withText: "key.complete-quest?") {
                 action()
-            })
-            
-            GlobalDialog.shared.dialog = .view(view: sheet )
+            }
         }
     }
 }

@@ -4,7 +4,11 @@ import Essentials
 
 struct SheetConfirmationView: View {
     let text: String
+    
+    var successAlertText: String? = nil
+    
     let action: () -> Void
+    
     var body: some View {
         VStack {
             Text(text)
@@ -19,18 +23,7 @@ struct SheetConfirmationView: View {
         }
         .padding(30)
         .backgroundGaussianBlur(type: .withinWindow , material: .m1_hudWindow)
-        .keyboardReaction { evnt in
-            switch evnt.keyCode {
-            case KeyCode.returnKey:
-                funcYes()
-            case KeyCode.escape:
-                funcNo()
-            default:
-                return evnt
-            }
-            
-            return nil
-        }
+        .keyboardReaction { hotkeys($0) }
     }
 }
 
@@ -41,7 +34,12 @@ extension SheetConfirmationView {
     
     func funcYes() {
         action()
-        GlobalDialog.shared.dialog = .none
+        
+        if let successAlertText {
+            GlobalDialog.shared.showAlert(withText: successAlertText)
+        } else {
+            GlobalDialog.shared.dialog = .none
+        }
     }
 }
 
@@ -49,3 +47,24 @@ extension SheetConfirmationView {
 ///HELPERS
 /////////////////
 
+extension SheetConfirmationView {
+    func hotkeys(_ evnt: NSEvent) -> NSEvent? {
+        switch evnt.keyCode {
+        case KeyCode.space:
+            fallthrough
+        case KeyCode.enter:
+            fallthrough
+        case KeyCode.keypadEnter:
+            fallthrough
+        case KeyCode.returnKey:
+            funcYes()
+            
+        case KeyCode.escape:
+            funcNo()
+        default:
+            return evnt
+        }
+        
+        return nil
+    }
+}

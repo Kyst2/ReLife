@@ -16,21 +16,7 @@ struct SheetAlertView: View {
         }
         .padding(30)
         .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
-        .keyboardReaction { evnt in
-            switch evnt.keyCode {
-            case KeyCode.space:
-                fallthrough
-            case KeyCode.returnKey:
-                fallthrough
-            case KeyCode.escape:
-                funcOK()
-                return nil
-            default:
-                break
-            }
-            
-            return evnt
-        }
+        .keyboardReaction { hotkeys($0) }
     }
 }
 
@@ -44,3 +30,24 @@ extension SheetAlertView {
 ///HELPERS
 /////////////////
 
+extension SheetAlertView {
+    func hotkeys(_ evnt: NSEvent) -> NSEvent? {
+        switch evnt.keyCode {
+        case KeyCode.space:
+            fallthrough
+        case KeyCode.enter:
+            fallthrough
+        case KeyCode.keypadEnter:
+            fallthrough
+        case KeyCode.returnKey:
+            fallthrough
+        case KeyCode.escape:
+            funcOK()
+            return nil
+        default:
+            break
+        }
+        
+        return evnt
+    }
+}

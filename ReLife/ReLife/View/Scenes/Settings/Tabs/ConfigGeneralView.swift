@@ -88,25 +88,39 @@ extension ConfigGeneralView {
             }
         } _: {
             VStack {
+                let successAlert = "key.sheet.success".localized
+                
                 Button("key.settings.db.danger.clear-charach".localized) {
-                    RealmController.shared.deleteAllOf(type: Characteristic.self)
-                    MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    let dialogText = "\("key.settings.db.danger.clear-charach".localized)?"
                     
-                    GlobalDialog.shared.showAlert(withText: "key.sheet.success".localized)
+                    GlobalDialog.shared
+                        .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+                    {
+                        RealmController.shared.deleteAllOf(type: Characteristic.self)
+                        MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    }
                 }
                 
                 Button("key.settings.db.danger.clear-quests".localized) {
-                    RealmController.shared.deleteAllOf(type: Quest.self)
-                    MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    let dialogText = "\("key.settings.db.danger.clear-quests".localized)?"
                     
-                    GlobalDialog.shared.showAlert(withText: "key.sheet.success".localized)
+                    GlobalDialog.shared
+                        .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+                    {
+                        RealmController.shared.deleteAllOf(type: Quest.self)
+                        MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    }
                 }
                 
                 Button("key.settings.db.danger.clear-history".localized) {
-                    RealmController.shared.deleteAllOf(type: History.self)
-                    MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    let dialogText = "\("key.settings.db.danger.clear-history".localized)?"
                     
-                    GlobalDialog.shared.showAlert(withText: "key.sheet.success".localized)
+                    GlobalDialog.shared
+                        .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+                    {
+                        RealmController.shared.deleteAllOf(type: History.self)
+                        MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    }
                 }
             }
             .padding(.vertical, 10)
