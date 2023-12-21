@@ -30,7 +30,7 @@ public class RealmController {
         let r = try? Realm(configuration: config)
         
         
-        print("REALM: \(r!.configuration.fileURL)")
+//        print("REALM: \(r!.configuration.fileURL)")
         self.realm = r!
     }
    

@@ -68,6 +68,7 @@ extension SheetQuestEditorView {
             HStack {
                 Text("Title:")
                     .frame(width: titleWidth)
+                    
                 
                 TextField("Don't let me empty!", text: $name)
                     .applyFieldStyle()
@@ -319,7 +320,7 @@ struct QuestRepeatTypeView : View {
     @State var tmpSingleDay: Date = Date.now
     @State var tmpDayOfMonth = [1]
     @State var tmpEachWeek = [1]
-    @State var tmpRepeatEveryDays = 30
+    @State var tmpRepeatEveryDays = 1
     @State var tmpRepeatEveryStartFrom = Date.now.adding(days: 1)
   
     init(repeatType: QuestRepeatType? = nil) {
@@ -358,7 +359,9 @@ struct QuestRepeatTypeView : View {
                         }
                     } label: {
                         Text("")
-                    }.pickerStyle(.radioGroup)
+                    }
+                    .pickerStyle(.radioGroup)
+                    .horizontalRadioGroupLayout()
                 }
                 
                 switch repeatTypeCurr {
@@ -394,6 +397,7 @@ struct QuestRepeatTypeView : View {
     
     func RepeatEvery() -> some View {
         VStack{
+            Text("Select a date for quest:")
             DatePicker("Select a date", selection: $tmpRepeatEveryStartFrom, in: Date()...Date.distantFuture, displayedComponents: [.date])
                 .labelsHidden()
                 .onChange(of: tmpSingleDay, perform: { _ in
@@ -403,46 +407,49 @@ struct QuestRepeatTypeView : View {
             //        .onChange(of: tmpSingleDay, perform: { _ in
             ////                self.repeatType = .singleDayQuest(date: $0)
             //        })
-            NumurickUpDown()
-        }
+            Text("Repeat every ?(days):")
+            NumurickUpDown(value: $tmpRepeatEveryDays)
+        }.padding(10)
         //NumericUpDown
 //        EmptyView()
             
     }
     
     func SingleDay() -> some View {
-        DatePicker("Select a date", selection: $tmpSingleDay, in: Date()...Date.distantFuture, displayedComponents: [.date])
-            .labelsHidden()
-            .onChange(of: tmpSingleDay, perform: { _ in
-//                self.repeatType = .singleDayQuest(date: $0)
-            })
+        VStack{
+            Text("Select a date for quest:")
+            DatePicker("Select a date", selection: $tmpSingleDay, in: Date()...Date.distantFuture, displayedComponents: [.date])
+                .labelsHidden()
+                .onChange(of: tmpSingleDay, perform: { _ in
+                    //                self.repeatType = .singleDayQuest(date: $0)
+                })
+//                .padding()
+        }.padding(10)
     }
 }
 
 struct NumurickUpDown: View {
-    @State var value:Int = 0
+    @Binding var value:Int
     var body: some View {
         HStack {
-                   Button("-") {
-                       self.value -= 1
-                   }
-                   .padding()
-                   
-                   TextField("Enter value", value: $value, formatter: NumberFormatter())
-                       .textFieldStyle(RoundedBorderTextFieldStyle())
-                       .multilineTextAlignment(.center)
-//                       .keyboardType(.numberPad)
-                       .onChange(of: value) { newValue in
-                           self.value = min(max(newValue, 0), 7)
-                       }
-                       .frame(width: 50)
-
-                   Button("+") {
-                       self.value += 1
-                   }
-                   .padding()
-               }
-               .padding()
+            Button("-") {
+                self.value -= 1
+            }
+            .padding(5)
+            
+            TextField("Enter value", value: $value, formatter: NumberFormatter())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .multilineTextAlignment(.center)
+                .onChange(of: value) { newValue in
+                    self.value = min(max(newValue, 1), 700)
+                }
+                .frame(width: 50)
+            
+            Button("+") {
+                self.value += 1
+            }
+            .padding(5)
+        }
     }
 }
 
