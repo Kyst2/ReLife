@@ -10,14 +10,12 @@ public extension Font {
 }
 
 extension Text {
-    
-    func myFont(size: CGFloat, textColor: TextColor?) -> Text {
+    func myFont(size: CGFloat, textColor: TextColor? = nil) -> Text {
         if textColor == .blue {
             self.font(.custom("MontserratRoman-Regular", size: size))
                 .foregroundColor(Color("textColor"))
         } else {
             self.font(.custom("MontserratRoman-Regular", size: size))
-                .foregroundColor(Color("iconColor"))
         }
     }
     

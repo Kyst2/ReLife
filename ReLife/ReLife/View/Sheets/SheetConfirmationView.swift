@@ -10,15 +10,21 @@ struct SheetConfirmationView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack {
+        VStack(spacing: 15) {
             Text(text)
                 .myFont(size: 18, textColor: .white).bold()
                 .myColorWhite()
             
-            HStack {
-                Button("key.sheet.no".localized) { funcNo() }
+            HStack(spacing: 20) {
+                Button(action: funcNo) {
+                    Text("key.sheet.no".localized)
+                        .frame(width: 40)
+                }
                 
-                Button("key.sheet.yes".localized) { funcYes() }
+                Button(action: funcYes) {
+                    Text("key.sheet.yes".localized)
+                        .frame(width: 40)
+                }
             }
         }
         .padding(30)

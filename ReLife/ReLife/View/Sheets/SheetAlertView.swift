@@ -15,7 +15,7 @@ struct SheetAlertView: View {
             }
         }
         .padding(30)
-        .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
+        .backgroundGaussianBlur(type: .behindWindow, material: .m1_hudWindow)
         .keyboardReaction { hotkeys($0) }
     }
 }

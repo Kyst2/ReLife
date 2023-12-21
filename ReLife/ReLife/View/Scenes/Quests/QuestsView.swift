@@ -14,7 +14,7 @@ struct QuestsView:View {
             ScrollView {
                 Space(18)
                 
-                VStack(spacing: 15) {
+                VStack(spacing: 7) {
                     CustomSection(header: "key.main.quests.today".localized, isFinishable: true, quests: model.questToday)
                     
                     CustomSection(header: "key.main.quests.tomorrow".localized, isFinishable: false, quests: model.questTomorrow)
@@ -92,13 +92,15 @@ struct QuestAccordeonView: View {
     
     @ViewBuilder
     func TitleView() -> some View {
-        HStack{
-            Image(systemName: quest.icon.rawValue)
-                .myImageColor()
+        HStack {
+            Text.sfIcon2(quest.icon.rawValue, size: 25)
+                .foregroundColor( Color(nsColor: quest.colorHex.asNSColor()) )
                 .font(.largeTitle)
             
             Text(quest.name)
-                .myFont(size: 15, textColor: .blue)
+                .myFont(size: 15)
+                .foregroundColor( Color(nsColor: quest.colorHex.asNSColor()) )
+            
             if isFinishable {
                 Text("(\(repetsCount)/\(quest.repeatTimes))")
                     .myFont(size: 15, textColor: .white)
@@ -123,7 +125,7 @@ struct QuestAccordeonView: View {
                 .padding(.trailing,20)
                 .buttonStyle(BtnUksStyle.default)
             }
-        }.padding(10)
+        }.padding(6)
     }
     
     @ViewBuilder
@@ -161,7 +163,7 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            GlobalDialog.shared.confirmDialogYesNo(withText: "key.complete-quest?") {
+            GlobalDialog.shared.confirmDialogYesNo(withText: "key.complete-quest?".localized) {
                 action()
             }
         }

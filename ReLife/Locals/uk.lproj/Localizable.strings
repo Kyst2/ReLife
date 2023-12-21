@@ -25,9 +25,9 @@
 ////////////////////
 //Main.Quests
 ////////////////////
-"key.main.quests.today" = "Квести на сьогодні";
-"key.main.quests.tomorrow" = "Квести на завтра";
-"key.main.quests.long-term" = "Довгі дистанції квестів";
+"key.main.quests.today" = "Сьогодні";
+"key.main.quests.tomorrow" = "Завтра";
+"key.main.quests.long-term" = "Довгі дистанції";
 "key.main.quests.you-can-create-quest" = "Ви можете створити квест ";
 "key.main.quests.HERE" = "ТУТ";
 
