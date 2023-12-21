@@ -7,4 +7,10 @@ class GlobalDialog: ObservableObject {
     @Published var dialog: SheetDialogType = .none
     
     private init() {}
+    
+    func showAlert(withText: String) {
+        let alert = AnyView(SheetAlertView(text: withText))
+        
+        GlobalDialog.shared.dialog = .view(view: alert)
+    }
 }

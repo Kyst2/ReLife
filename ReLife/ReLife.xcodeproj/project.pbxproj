@@ -14,6 +14,7 @@
 		1D6E25532B338CD0001083CB /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254F2B338CD0001083CB /* Signals.swift */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
 		1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25562B33AD88001083CB /* AppDelegate.swift */; };
+		1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25582B33D463001083CB /* SheetAlertView.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -124,6 +125,7 @@
 		1D6E254F2B338CD0001083CB /* Signals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
 		1D6E25542B338E30001083CB /* RLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLSignal.swift; sourceTree = "<group>"; };
 		1D6E25562B33AD88001083CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D6E25582B33D463001083CB /* SheetAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertView.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				A21989942AE319370004A5D9 /* SheetConfirmation */,
 				A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */,
 				A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */,
+				1D6E25582B33D463001083CB /* SheetAlertView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
+				1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */,
 				A2A5A8442B291BD800FD844A /* HistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1042,7 +1046,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				DEVELOPMENT_TEAM = RPH4S2457V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1081,7 +1085,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				DEVELOPMENT_TEAM = RPH4S2457V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

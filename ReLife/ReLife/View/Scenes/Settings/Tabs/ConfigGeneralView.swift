@@ -90,14 +90,23 @@ extension ConfigGeneralView {
             VStack {
                 Button("key.settings.db.danger.clear-charach".localized) {
                     RealmController.shared.deleteAllOf(type: Characteristic.self)
+                    MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    
+                    GlobalDialog.shared.showAlert(withText: "key.sheet.success".localized)
                 }
                 
                 Button("key.settings.db.danger.clear-quests".localized) {
                     RealmController.shared.deleteAllOf(type: Quest.self)
+                    MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    
+                    GlobalDialog.shared.showAlert(withText: "key.sheet.success".localized)
                 }
                 
                 Button("key.settings.db.danger.clear-history".localized) {
                     RealmController.shared.deleteAllOf(type: History.self)
+                    MyApp.signals.send(signal: RLSignal.ReloadData() )
+                    
+                    GlobalDialog.shared.showAlert(withText: "key.sheet.success".localized)
                 }
             }
             .padding(.vertical, 10)

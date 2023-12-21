@@ -37,6 +37,9 @@ class MainViewModel: ObservableObject {
         
         MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
             .onUpdate { _ in self.objectWillChange.send() }
+        
+        MyApp.signals.subscribeFor( RLSignal.ReloadData.self )
+            .onUpdate { _ in self.refreshData(forceRefresh: true) }
     }
     
     func refreshData(forceRefresh: Bool = false) {

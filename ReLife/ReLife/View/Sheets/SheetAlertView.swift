@@ -2,9 +2,8 @@ import SwiftUI
 import MoreSwiftUI
 import Essentials
 
-struct SheetConfirmationView: View {
+struct SheetAlertView: View {
     let text: String
-    let action: () -> Void
     var body: some View {
         VStack {
             Text(text)
@@ -12,35 +11,31 @@ struct SheetConfirmationView: View {
                 .myColorWhite()
             
             HStack {
-                Button("key.sheet.no".localized) { funcNo() }
-                
-                Button("key.sheet.yes".localized) { funcYes() }
+                Button("key.sheet.ok".localized, role: .cancel) { funcOK() }
             }
         }
         .padding(30)
-        .backgroundGaussianBlur(type: .withinWindow , material: .m1_hudWindow)
+        .backgroundGaussianBlur(type: .behindWindow , material: .m1_hudWindow)
         .keyboardReaction { evnt in
             switch evnt.keyCode {
+            case KeyCode.space:
+                fallthrough
             case KeyCode.returnKey:
-                funcYes()
+                fallthrough
             case KeyCode.escape:
-                funcNo()
+                funcOK()
+                return nil
             default:
-                return evnt
+                break
             }
             
-            return nil
+            return evnt
         }
     }
 }
 
-extension SheetConfirmationView {
-    func funcNo() {
-        GlobalDialog.shared.dialog = .none
-    }
-    
-    func funcYes() {
-        action()
+extension SheetAlertView {
+    func funcOK() {
         GlobalDialog.shared.dialog = .none
     }
 }

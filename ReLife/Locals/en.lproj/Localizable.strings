@@ -15,6 +15,7 @@
 "key.other.day.1" = "Monday";
 "key.other.day.7" = "Sunday";
 "key.other.lang.system" = "System";
+
 // do not translate
    "key.other.lang.eng"    = "Engilsh";
    "key.other.lang.german" = "Deutsch";
@@ -34,6 +35,10 @@
 ////////////////////
 // Sheets
 ////////////////////
+"key.sheet.yes" = "Yes";
+"key.sheet.no" = "No";
+"key.sheet.ok" = "OK";
+"key.sheet.success" = "Success!";
 "key.complete-quest?" = "Do you want to complete the quest?";
 
 ////////////////////
