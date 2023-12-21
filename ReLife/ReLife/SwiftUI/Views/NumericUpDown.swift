@@ -5,7 +5,7 @@ struct NumericUpDown: View {
     @Binding var value: Int
     
     var body: some View {
-        HStack(spacing: 1) {
+        HStack(spacing: 2) {
             TextField("", value: $value, formatter: NumberFormatter())
                 .multilineTextAlignment(.center)
                 .onChange(of: value) { newValue in
