@@ -349,21 +349,24 @@ struct QuestRepeatTypeView : View {
     
     
     var body: some View {
-        GroupBox {
-            VStack{
-                HStack {
-                    // Radiobuttons or dropdown here
-                    Picker(selection: $repeatTypeCurr) {
-                        ForEach(CurrentTab.allCases, id: \.self) { current in
-                            Text(current.rawValue.capitalized).tag(current)
-                        }
-                    } label: {
-                        Text("")
+        VStack {
+            HStack {
+                Picker(selection: $repeatTypeCurr) {
+                    ForEach(CurrentTab.allCases, id: \.self) { current in
+                        Text(current.rawValue.localized.capitalized ).tag(current)
                     }
-                    .pickerStyle(.radioGroup)
-                    .horizontalRadioGroupLayout()
+                } label: {
+                    Text("")
                 }
+                .pickerStyle(.radioGroup)
+                .horizontalRadioGroupLayout()
                 
+                Spacer()
+            }
+            
+            Space(10)
+            
+            GroupBox {
                 switch repeatTypeCurr {
                 case .DayOfMonth:
                     DayOfMonth()
@@ -396,9 +399,18 @@ struct QuestRepeatTypeView : View {
     }
     
     func RepeatEvery() -> some View {
-        VStack{
-            Text("Select a date for quest:")
-            DatePicker("Select a date", selection: $tmpRepeatEveryStartFrom, in: Date()...Date.distantFuture, displayedComponents: [.date])
+        HStack {
+            Spacer()
+            
+            Text("Repeat every")
+            
+            NumericUpDown(value: $tmpRepeatEveryDays)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: 60)
+            
+            Text("up from")
+            
+            DatePicker("", selection: $tmpRepeatEveryStartFrom, in: Date()...Date.distantFuture, displayedComponents: [.date])
                 .labelsHidden()
                 .onChange(of: tmpSingleDay, perform: { _ in
                     //                self.repeatType = .singleDayQuest(date: $0)
@@ -407,58 +419,36 @@ struct QuestRepeatTypeView : View {
             //        .onChange(of: tmpSingleDay, perform: { _ in
             ////                self.repeatType = .singleDayQuest(date: $0)
             //        })
-            Text("Repeat every ?(days):")
-            NumurickUpDown(value: $tmpRepeatEveryDays)
-        }.padding(10)
-        //NumericUpDown
-//        EmptyView()
             
+            Spacer()
+        }
     }
     
     func SingleDay() -> some View {
-        VStack{
-            Text("Select a date for quest:")
-            DatePicker("Select a date", selection: $tmpSingleDay, in: Date()...Date.distantFuture, displayedComponents: [.date])
-                .labelsHidden()
-                .onChange(of: tmpSingleDay, perform: { _ in
-                    //                self.repeatType = .singleDayQuest(date: $0)
-                })
-//                .padding()
-        }.padding(10)
-    }
-}
-
-struct NumurickUpDown: View {
-    @Binding var value:Int
-    var body: some View {
         HStack {
-            Button("-") {
-                self.value -= 1
-            }
-            .padding(5)
+            Spacer()
             
-            TextField("Enter value", value: $value, formatter: NumberFormatter())
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .multilineTextAlignment(.center)
-                .onChange(of: value) { newValue in
-                    self.value = min(max(newValue, 1), 700)
-                }
-                .frame(width: 50)
+            Text("\("key.other.date".localized ):")
             
-            Button("+") {
-                self.value += 1
+            VStack {
+                DatePicker("", selection: $tmpSingleDay, in: Date()...Date.distantFuture, displayedComponents: [.date])
+                    .labelsHidden()
+                    .onChange(of: tmpSingleDay, perform: { _ in
+                        //                self.repeatType = .singleDayQuest(date: $0)
+                    })
             }
-            .padding(5)
+            
+            Spacer()
         }
     }
 }
 
 extension QuestRepeatTypeView {
     enum CurrentTab: String, CaseIterable {
-        case DayOfMonth,
-        DayOfWeek,
-        RepeatEvery,
-        SingleDay
+        case DayOfMonth = "key.sheet.repeatType.month-day"
+        case DayOfWeek = "key.sheet.repeatType.week-day"
+        case RepeatEvery = "key.sheet.repeatType.repeat-every"
+        case SingleDay = "key.sheet.repeatType.single-day"
     }
 }
 

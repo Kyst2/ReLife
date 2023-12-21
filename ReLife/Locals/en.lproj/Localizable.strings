@@ -15,6 +15,7 @@
 "key.other.day.1" = "Monday";
 "key.other.day.7" = "Sunday";
 "key.other.lang.system" = "System";
+"key.other.date" = "Date";
 
 // do not translate
    "key.other.lang.eng"    = "Engilsh";
@@ -36,10 +37,15 @@
 // Sheets
 ////////////////////
 "key.sheet.yes" = "Yes";
-"key.sheet.no" = "No";
-"key.sheet.ok" = "OK";
+"key.sheet.no"  = "No";
+"key.sheet.ok"  = "OK";
 "key.sheet.success" = "Success!";
 "key.complete-quest?" = "Do you want to complete the quest?";
+
+"key.sheet.repeatType.month-day"    = "Day of month";
+"key.sheet.repeatType.week-day"     = "Week day";
+"key.sheet.repeatType.repeat-every" = "Repeat every";
+"key.sheet.repeatType.single-day"   = "Single time";
 
 ////////////////////
 // Settings

@@ -15,6 +15,7 @@
 "key.other.day.1" = "Понеділок";
 "key.other.day.7" = "Неділя";
 "key.other.lang.system" = "Системна";
+"key.other.date" = "Дата";
 // do not translate
 //   "key.other.lang.eng"    = "Engilsh";
 //   "key.other.lang.german" = "Deutsch";
@@ -35,10 +36,14 @@
 // Sheets
 ////////////////////
 "key.sheet.yes" = "Так";
-"key.sheet.no" = "Ні";
-"key.sheet.ok" = "OK";
+"key.sheet.no"  = "Ні";
+"key.sheet.ok"  = "OK";
 "key.sheet.success" = "Успіх!";
 "key.complete-quest?" = "Завершити квест?";
+"key.sheet.repeatType.month-day"    = "Дні місяця";
+"key.sheet.repeatType.week-day"     = "Дні тижня";
+"key.sheet.repeatType.repeat-every" = "Повторювати кожних";
+"key.sheet.repeatType.single-day"   = "Одноразовий";
 
 ////////////////////
 // Settings

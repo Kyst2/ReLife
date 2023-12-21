@@ -15,6 +15,7 @@
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
 		1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25562B33AD88001083CB /* AppDelegate.swift */; };
 		1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25582B33D463001083CB /* SheetAlertView.swift */; };
+		1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255B2B344CCD001083CB /* NumericUpDown.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -126,6 +127,7 @@
 		1D6E25542B338E30001083CB /* RLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLSignal.swift; sourceTree = "<group>"; };
 		1D6E25562B33AD88001083CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6E25582B33D463001083CB /* SheetAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertView.swift; sourceTree = "<group>"; };
+		1D6E255B2B344CCD001083CB /* NumericUpDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericUpDown.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				A2C11F482B126AE40062AFDE /* SettingButton.swift */,
 				A27286852B03B799005EE9B8 /* ItemEdit.swift */,
 				1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */,
+				1D6E255B2B344CCD001083CB /* NumericUpDown.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,
+				1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,
 				A2A5A8462B292B7E00FD844A /* SettingsViewModel.swift in Sources */,
