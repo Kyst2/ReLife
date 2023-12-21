@@ -34,6 +34,10 @@
 ////////////////////
 // Sheets
 ////////////////////
+"key.sheet.yes" = "Так";
+"key.sheet.no" = "Ні";
+"key.sheet.ok" = "OK";
+"key.sheet.success" = "Успіх!";
 "key.complete-quest?" = "Завершити квест?";
 
 ////////////////////
