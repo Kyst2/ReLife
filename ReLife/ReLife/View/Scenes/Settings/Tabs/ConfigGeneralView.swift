@@ -12,11 +12,17 @@ struct ConfigGeneralView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
                 DbButtons()
+                    .opacity(0.6)
+                    .disabled(true)
                 PickerFirstWeekDay()
+                    .opacity(0.6)
+                    .disabled(true)
                 PickerLanguage()
                 
                 Spacer()
                 SoundSettings()
+                    .opacity(0.6)
+                    .disabled(true)
                 Spacer()
                 
                 Spacer()
