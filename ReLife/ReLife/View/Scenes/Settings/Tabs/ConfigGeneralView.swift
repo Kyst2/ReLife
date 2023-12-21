@@ -142,8 +142,13 @@ extension ConfigGeneralView {
     }
     
     func LinkSupport() -> some View {
-        Link("key.settings.db.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
-            .padding(.bottom, 20)
+        VStack {
+            Button("About") { }
+                .buttonStyle(.link)
+            
+            Link("key.settings.db.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
+                .padding(.bottom, 20)
+        }
     }
 }
 
