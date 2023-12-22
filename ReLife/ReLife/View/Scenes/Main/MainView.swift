@@ -23,6 +23,7 @@ struct MainView: View {
         .background( BackgroundView().opacity(0.3) )
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
+        .wndAccessor{ $0?.title = "" }
     }
 }
 

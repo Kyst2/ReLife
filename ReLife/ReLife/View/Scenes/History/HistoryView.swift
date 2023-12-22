@@ -1,19 +1,20 @@
 import SwiftUI
+import MoreSwiftUI
 import Essentials
 
 struct HistoryView: View {
     @ObservedObject var model = HistoryViewModel()
     var body: some View {
         ScrollView {
-            HistoryPanel(history: model.history)
-        }
-    }
-}
-
-extension HistoryView {
-    func HistoryPanel(history:[History]) -> some View {
-        ForEach(history) { his in
-            HistoryItem(quest: his.quest!, date: his.dateCompleted)
+            VStack(spacing: 6) {
+                ForEach(model.history) { his in
+                    HistoryItem(quest: his.quest!, date: his.dateCompleted)
+                }
+                
+                Space(500)
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)
         }
     }
 }
@@ -23,30 +24,40 @@ extension HistoryView {
 ////////////////
 
 struct HistoryItem: View {
-    let quest:Quest
-    let date:Date
+    let quest: Quest
+    let date: Date
+    
+    @State var isHovering = false
     
     var body: some View {
-        HStack{
-            Image(systemName: quest.icon.rawValue)
-                .myImageColor()
-                .font(.largeTitle)
-                .padding(10)
+        VStack(spacing: 0) {
+            HStack {
+                Text.sfIcon2(quest.icon.rawValue, size: 20)
+                    .foregroundColor(Color(nsColor: quest.colorHex.asNSColor()))
+                    .padding(6)
+                
+                Text(quest.name)
+                    .myFont(size: 17)
+                    .foregroundColor(Color(nsColor: quest.colorHex.asNSColor()))
+                
+                Spacer()
+                
+                Text("\(date.asString())") // "y-M-dd HH:mm" ?????
+                    .myFont(size: 13, textColor: .white)
+                    .padding(10)
+            }
             
-            Text(quest.name)
-                .myFont(size: 17, textColor: .blue)
-            
-            Spacer()
-            
-            Text("\(date.asString())") // "y-M-dd HH:mm" ?????
-                .myFont(size: 13, textColor: .white)
-                .padding(10)
+            Divider()
+                .padding(.horizontal, 3)
+                .opacity(isHovering ? 0 : 1)
         }
-        .overlay{
-            RoundedRectangle(cornerRadius: 0)
-                .stroke(Color.primary, lineWidth: 0.1)
-        }
-        .padding(7)
+        .background { baackground() }
+        .onHover { hvr in withAnimation { isHovering = hvr } }
+    }
+    
+    func baackground() -> some View {
+        RoundedRectangle(cornerRadius: 5)
+            .fill(isHovering ? Color.orange.opacity(0.05): Color.clear)
     }
 }
 

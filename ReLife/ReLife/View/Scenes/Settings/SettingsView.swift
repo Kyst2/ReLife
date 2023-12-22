@@ -10,6 +10,7 @@ struct SettingsView: View {
             TabsPanel()
             
             TabsBody()
+                .transition(AnyTransition.move(edge: .trailing))
         }
     }
 }

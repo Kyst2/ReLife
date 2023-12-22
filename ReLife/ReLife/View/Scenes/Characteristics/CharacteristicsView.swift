@@ -5,11 +5,17 @@ struct CharacteristicsView: View {
     
     var body: some View {
         ZStack {
-            Image("AppIconNoGlow")
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: 300)
-                .opacity(0.8)
+            HStack{
+                Spacer()
+                
+                Image("AppIconNoGlow")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 300)
+                    .shadow(color: .white, radius: 4)
+                    .opacity(0.8)
+                    .padding(.trailing, 50)
+            }
             
             ScrollView {
                 LazyCharacteristics(characteristics: model.characteristicsAndPoints)
