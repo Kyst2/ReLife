@@ -55,7 +55,7 @@ extension ConfigGeneralView {
     }
     
     func PickerFirstWeekDay() -> some View {
-        MyGroupBox(header: "key.settings.db.1st-weekday".localized) {
+        MyGroupBox(header: "key.settings.1st-weekday".localized) {
             Picker("", selection: $model.firstWeeckDay) {
                 ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
                     Text(day.rawValue.localized ).tag(day)
@@ -68,7 +68,7 @@ extension ConfigGeneralView {
     }
     
     func PickerLanguage() -> some View {
-        MyGroupBox(header: "key.settings.db.lang".localized) {
+        MyGroupBox(header: "key.settings.lang".localized) {
             Picker("", selection: $model.currLang) {
                 ForEach(Language.allCases, id: \.rawValue) { language in
                     Text(language.rawValue.localized ).tag(language)
@@ -90,14 +90,14 @@ extension ConfigGeneralView {
                 Toggle("", isOn: $enableDangerZone)
                     .toggleStyle( .nolblIosStyle )
                 
-                Text("key.settings.db.danger".localized)
+                Text("key.settings.danger".localized)
             }
         } _: {
             VStack {
                 let successAlert = "key.sheet.success".localized
                 
-                Button("key.settings.db.danger.clear-charach".localized) {
-                    let dialogText = "\("key.settings.db.danger.clear-charach".localized)?"
+                Button("key.settings.danger.clear-charach".localized) {
+                    let dialogText = "\("key.settings.danger.clear-charach".localized)?"
                     
                     GlobalDialog.shared
                         .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
@@ -107,8 +107,8 @@ extension ConfigGeneralView {
                     }
                 }
                 
-                Button("key.settings.db.danger.clear-quests".localized) {
-                    let dialogText = "\("key.settings.db.danger.clear-quests".localized)?"
+                Button("key.settings.danger.clear-quests".localized) {
+                    let dialogText = "\("key.settings.danger.clear-quests".localized)?"
                     
                     GlobalDialog.shared
                         .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
@@ -118,8 +118,8 @@ extension ConfigGeneralView {
                     }
                 }
                 
-                Button("key.settings.db.danger.clear-history".localized) {
-                    let dialogText = "\("key.settings.db.danger.clear-history".localized)?"
+                Button("key.settings.danger.clear-history".localized) {
+                    let dialogText = "\("key.settings.danger.clear-history".localized)?"
                     
                     GlobalDialog.shared
                         .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
@@ -136,7 +136,7 @@ extension ConfigGeneralView {
     }
     
     func SoundSettings() -> some View {
-        MyGroupBox(header: "key.settings.db.sound-stngs".localized) {
+        MyGroupBox(header: "key.settings.sound-stngs".localized) {
             HStack{
                 Text("\("key.other.enabled".localized):")
                 Toggle(isOn: $model.sound){ }
@@ -149,10 +149,10 @@ extension ConfigGeneralView {
     
     func LinkSupport() -> some View {
         VStack {
-            Button("About") { }
+            Button("key.settings.about".localized("ReLife") ) { }
                 .buttonStyle(.link)
             
-            Link("key.settings.db.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
+            Link("key.settings.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
                 .padding(.bottom, 20)
         }
     }
