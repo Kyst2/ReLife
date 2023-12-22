@@ -4,21 +4,7 @@ import MoreSwiftUI
 
 
 
-extension Text {
-    func applyTextStyle() -> some View {
-        self
-            .foregroundColor(Color("textColor"))
-            .font(.custom("MontserratRoman-Regular", size: 13)).italic()
-    }
-}
 
-extension TextField {
-    func applyFieldStyle() -> some View {
-        self
-            .textFieldStyle(.roundedBorder)
-            .font(.custom("MontserratRoman-Regular", size: 15))
-    }
-}
 
 extension NSTextField {
     open override var focusRingType: NSFocusRingType {
