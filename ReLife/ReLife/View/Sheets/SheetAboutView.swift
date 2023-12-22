@@ -12,7 +12,7 @@ struct SheetAbout: View {
                     .frame(width: 160)
                 
                 VStack(alignment: .leading) {
-                    HStack(alignment: .bottom) {
+                    HStack(alignment: .bottom, spacing: 15) {
                         ZStack {
                             Text("🇺🇦")
                                 .rotationEffect(.degrees(-15))
@@ -28,12 +28,22 @@ struct SheetAbout: View {
                         Spacer()
                     }
                     
+                    Text("Rebuild your life in a playful way")
+                        .font(.custom("SF Pro", size: 15))
+                        .foregroundColor(Color(hex:0xdfc5a8))
+                    
+                    Space(15)
+                    
                     Text(madeByText)
                         .multilineTextAlignment(.leading)
+                        .font(.custom("SF Pro", size: 12))
+                        .monospaced()
                 }
             }
             .fixedSize()
             .padding(.trailing, 25)
+            
+            Space(10)
             
             VStack {
                 HStack(spacing: 50){
