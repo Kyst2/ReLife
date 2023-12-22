@@ -6,6 +6,11 @@ struct MainView: View {
     @ObservedObject var model = MainViewModel()
     @ObservedObject var dialogModel = GlobalDialog.shared
     
+    let transition = [
+        AnyTransition.move(edge: .trailing),
+        AnyTransition.push(from: .trailing)
+    ].shuffled().first!
+    
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             VerticalTabs()
@@ -13,6 +18,7 @@ struct MainView: View {
             ContentPanel()
                 .fillParent()
                 .frame(minWidth: 600)
+                .transition(transition)
         }
         .background( BackgroundView().opacity(0.3) )
         .preferredColorScheme(.dark)

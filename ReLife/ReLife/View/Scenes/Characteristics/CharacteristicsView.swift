@@ -4,8 +4,16 @@ struct CharacteristicsView: View {
     @ObservedObject var model : MainViewModel
     
     var body: some View {
-        ScrollView {
-            LazyCharacteristics(characteristics: model.characteristicsAndPoints)
+        ZStack {
+            Image("AppIconNoGlow")
+                .resizable()
+                .scaledToFit()
+                .frame(maxHeight: 300)
+                .opacity(0.8)
+            
+            ScrollView {
+                LazyCharacteristics(characteristics: model.characteristicsAndPoints)
+            }
         }
     }
 }
