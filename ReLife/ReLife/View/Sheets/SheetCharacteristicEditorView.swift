@@ -70,9 +70,6 @@ extension SheetCharacteristicEditorView {
                 .applyFieldStyle()
             
             if type == .questCreator || type == .questEditor {
-                CharacteristicsList()
-            }
-            if type == .questCreator || type == .questEditor {
                 Text("Enter \(type.asEnterName()) deteils")
                     .applyTextStyle()
                 
@@ -92,12 +89,6 @@ extension SheetCharacteristicEditorView {
                     Text.sfIcon(image, size: 15)
                 }
             }.frame(width: 70)
-    }
-    
-    func CharacteristicsList() -> some View {
-            ForEach(char, id: \.self) { char in
-                CharacteristicsAndPointList(name: char.name)
-            }
     }
     
     func Buttons() -> some View {

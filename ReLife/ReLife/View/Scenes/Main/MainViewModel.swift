@@ -41,7 +41,7 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-//        initFakeData()
+        reInitFakeData()
         
         refreshData()
         

@@ -15,14 +15,23 @@ struct CharacteristicsView: View {
                     .frame(maxHeight: 300)
                     .shadow(color: .white, radius: 4)
                     .opacity(0.8)
-                    .padding(.trailing, 50)
+                    .padding(.trailing, 25)
             }
             
             if model.allCharacCount == 0 {
                 NoCharacteristicView()
             } else {
                 ScrollView {
-                    LazyCharacteristics(characteristics: model.characteristicsAndPoints)
+                    HStack{
+                        VStack {
+                            ForEach(model.characteristicsAndPoints) { wrapper in
+                                Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
+                            }
+                        }
+                        .frame(maxWidth: 300)
+                        
+                        Space(min:300)
+                    }
                 }
             }
         }
@@ -52,15 +61,6 @@ extension CharacteristicsView {
     }
 }
 
-extension CharacteristicsView {
-    func LazyCharacteristics(characteristics: [CharacteristicsAndPoints]) -> some View {
-        LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
-            ForEach(characteristics) { wrapper in
-                Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
-            }
-        }
-    }
-}
 /////////////////
 ///HELPERS
 /////////////////
@@ -81,7 +81,6 @@ struct Charact: View {
             PointsPanel()
         }
         .charactModifire()
-        
     }
     
     func ImagePanel() -> some View {
@@ -102,7 +101,6 @@ struct Charact: View {
             .myFont(size: 17, textColor: .white).italic()
             .padding(.trailing,20)
     }
-    
 }
 
 fileprivate extension View {
@@ -113,34 +111,5 @@ fileprivate extension View {
             }
         .padding(.top,5)
         .padding(.horizontal,10)
-    }
-}
-
-//// ///////////////
-/// TEMP
-////////////////////
-////
-class Characteristics1: Hashable {
-    @Published var name: String
-    @Published var icon:String
-    @Published var points: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(icon)
-        hasher.combine(points)
-    }
-    
-    init(name: String, icon: String, points: Int) {
-        self.name = name
-        self.icon = icon
-        self.points = points
-    }
-}
-
-var char = [Characteristics1(name: "Health", icon: "heart.fill", points: 15),Characteristics1(name: "Strength", icon: "heart.fill", points: 50),Characteristics1(name: "Cleaner", icon: "heart.fill", points: 30)]
-extension Characteristics1: Equatable {
-    static func == (lhs: Characteristics1, rhs: Characteristics1) -> Bool {
-        return lhs.name == rhs.name
     }
 }
