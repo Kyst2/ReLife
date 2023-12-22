@@ -12,10 +12,6 @@ struct QuestsView:View {
             NoQuestsView()
         } else {
             ScrollView {
-                Button("add defaults") {
-                    GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
-                }
-                
                 Space(18)
                 
                 VStack(spacing: 7) {

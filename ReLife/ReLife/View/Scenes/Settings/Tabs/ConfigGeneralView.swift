@@ -96,6 +96,12 @@ extension ConfigGeneralView {
             VStack {
                 let successAlert = "key.sheet.success".localized
                 
+                Button("Add default Quests") {
+                    GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
+                }
+                
+                Divider()
+                
                 Button("key.settings.danger.clear-charach".localized) {
                     let dialogText = "\("key.settings.danger.clear-charach".localized)?"
                     
