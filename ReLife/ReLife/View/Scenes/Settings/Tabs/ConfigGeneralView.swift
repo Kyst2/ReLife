@@ -149,8 +149,11 @@ extension ConfigGeneralView {
     
     func LinkSupport() -> some View {
         VStack {
-            Button("key.settings.about".localized("ReLife") ) { }
-                .buttonStyle(.link)
+            Button("key.settings.about".localized("ReLife") ) {
+                let view = AnyView( SheetAbout() )
+                GlobalDialog.shared.dialog = .view(view: view)
+            }
+            .buttonStyle(.link)
             
             Link("key.settings.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
                 .padding(.bottom, 20)

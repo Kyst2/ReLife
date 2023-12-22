@@ -17,6 +17,7 @@
 		1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25582B33D463001083CB /* SheetAlertView.swift */; };
 		1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255B2B344CCD001083CB /* NumericUpDown.swift */; };
 		1D6E255E2B346142001083CB /* SheetAddStandardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255D2B346142001083CB /* SheetAddStandardData.swift */; };
+		1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255F2B3500DA001083CB /* SheetAboutView.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -130,6 +131,7 @@
 		1D6E25582B33D463001083CB /* SheetAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertView.swift; sourceTree = "<group>"; };
 		1D6E255B2B344CCD001083CB /* NumericUpDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericUpDown.swift; sourceTree = "<group>"; };
 		1D6E255D2B346142001083CB /* SheetAddStandardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAddStandardData.swift; sourceTree = "<group>"; };
+		1D6E255F2B3500DA001083CB /* SheetAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAboutView.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */,
 				A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */,
 				1D6E255D2B346142001083CB /* SheetAddStandardData.swift */,
+				1D6E255F2B3500DA001083CB /* SheetAboutView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
+				1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
