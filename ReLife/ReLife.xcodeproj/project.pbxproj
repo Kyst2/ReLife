@@ -18,6 +18,8 @@
 		1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255B2B344CCD001083CB /* NumericUpDown.swift */; };
 		1D6E255E2B346142001083CB /* SheetAddStandardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255D2B346142001083CB /* SheetAddStandardData.swift */; };
 		1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255F2B3500DA001083CB /* SheetAboutView.swift */; };
+		1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25612B362F01001083CB /* BtnOpenSettings.swift */; };
+		1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -137,6 +139,8 @@
 		1D6E255B2B344CCD001083CB /* NumericUpDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericUpDown.swift; sourceTree = "<group>"; };
 		1D6E255D2B346142001083CB /* SheetAddStandardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAddStandardData.swift; sourceTree = "<group>"; };
 		1D6E255F2B3500DA001083CB /* SheetAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAboutView.swift; sourceTree = "<group>"; };
+		1D6E25612B362F01001083CB /* BtnOpenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenSettings.swift; sourceTree = "<group>"; };
+		1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenTemplatesSheet.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 				1D6E255B2B344CCD001083CB /* NumericUpDown.swift */,
 				A27116732B35056200306F99 /* IconPicker.swift */,
 				A27116752B3507CD00306F99 /* NumUpDown.swift */,
+				1D6E25612B362F01001083CB /* BtnOpenSettings.swift */,
+				1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -767,10 +773,12 @@
 				1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
+				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
 				A27116742B35056200306F99 /* IconPicker.swift in Sources */,
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,
+				1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */,
 				1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,

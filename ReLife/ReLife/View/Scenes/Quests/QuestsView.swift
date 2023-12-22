@@ -26,7 +26,7 @@ struct QuestsView:View {
     }
     
     func NoQuestsView() -> some View {
-        VStack{
+        VStack {
             HStack(spacing: 0) {
                 Text("key.main.quests.you-can-create-quest".localized)
                 BtnOpenSettings(settingsTab: .quests)
@@ -34,41 +34,16 @@ struct QuestsView:View {
             
             HStack(spacing: 0) {
                 Text("key.main.quests.create-using".localized)
-                BtnOpenTemplates()
+                BtnOpenTemplatesSheet()
             }
         }
+        .font(.custom("SF Pro", size: 15))
     }
 }
 
 ///////////////////////
 ///HELPERS
 ///////////////////////
-///
-struct BtnOpenTemplates: View {
-    var body: some View {
-        Button {
-            GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
-        } label: {
-            Text("key.main.quests.create-using-templates".localized)
-        }
-        .buttonStyle(.link)
-    }
-}
-
-struct BtnOpenSettings: View {
-    let settingsTab: SettingsTab
-    
-    var body: some View {
-        Button {
-            MyApp.signals.send(signal: RLSignal.SwitchTab(tab: .settings))
-            SettingsViewModel.shared.tab = settingsTab
-        } label: {
-            Text("key.main.quests.HERE".localized)
-        }
-        .buttonStyle(.link)
-    }
-}
-
 fileprivate extension QuestsView {
     @ViewBuilder
     func CustomSection(header:String, isFinishable: Bool, quests: [QuestWrapper] ) -> some View {

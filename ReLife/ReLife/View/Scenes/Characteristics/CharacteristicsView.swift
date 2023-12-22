@@ -40,7 +40,7 @@ extension CharacteristicsView {
                 
                 HStack(spacing: 0) {
                     Text("key.main.quests.create-using".localized)
-                    BtnOpenTemplates()
+                    BtnOpenTemplatesSheet()
                 }
             }
             .padding(20)
