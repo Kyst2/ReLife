@@ -37,6 +37,7 @@ extension MainView {
         ParallaxLayer(image: Image("Stars3"), speed: 10).fillParent()
     }
     
+    @ViewBuilder
     func VerticalTabs() -> some View {
         HStack(spacing: 0) {
             VStack(spacing: 0 ) {
@@ -44,7 +45,9 @@ extension MainView {
                 
                 TabButton(tab: .characteristics, selectedTab: $model.selectedTab)
                 
-                TabButton(tab: .history, selectedTab: $model.selectedTab)
+                if model.allHistoryCount > 0 {
+                    TabButton(tab: .history, selectedTab: $model.selectedTab)
+                }
                 
                 TabButton(tab: .settings, selectedTab: $model.selectedTab)
                 
