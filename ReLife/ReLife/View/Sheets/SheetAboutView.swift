@@ -12,7 +12,7 @@ struct SheetAbout: View {
                     .frame(width: 160)
                 
                 VStack(alignment: .leading) {
-                    HStack(alignment: .bottom, spacing: 15) {
+                    HStack(alignment: .bottom) {
                         ZStack {
                             Text("🇺🇦")
                                 .rotationEffect(.degrees(-15))
@@ -22,8 +22,9 @@ struct SheetAbout: View {
                                 .font(.custom("SF Pro Display Bold", size: 36))
                         }
                         
-                        Text("Ver: \(Bundle.main.appVersionLong)(\(Bundle.main.appBuild))")
+                        Text(" \(Bundle.main.appVersionLong)(\(Bundle.main.appBuild))")
                             .padding(.bottom, 8)
+                            .textSelection(.enabled)
                         
                         Spacer()
                     }
@@ -31,6 +32,7 @@ struct SheetAbout: View {
                     Text("Rebuild your life in a playful way")
                         .font(.custom("SF Pro", size: 15))
                         .foregroundColor(Color(hex:0xdfc5a8))
+                        .textSelection(.enabled)
                     
                     Space(15)
                     
@@ -38,6 +40,7 @@ struct SheetAbout: View {
                         .multilineTextAlignment(.leading)
                         .font(.custom("SF Pro", size: 12))
                         .monospaced()
+                        .textSelection(.enabled)
                 }
             }
             .fixedSize()
