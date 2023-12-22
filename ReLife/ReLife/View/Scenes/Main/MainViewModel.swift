@@ -12,6 +12,9 @@ class MainViewModel: ObservableObject {
     
     @Published var characteristicsAndPoints: [CharacteristicsAndPoints] = []
     
+    @Published var allQuestsCount: Int = 0
+    @Published var allCharacCount: Int = 0
+    
     func initFakeData() {
 //        let c1 = Characteristic(name: "Health")
 //        let c2 = Characteristic(name: "Level")
@@ -40,6 +43,9 @@ class MainViewModel: ObservableObject {
         
         MyApp.signals.subscribeFor( RLSignal.ReloadData.self )
             .onUpdate { _ in self.refreshData(forceRefresh: true) }
+        
+        MyApp.signals.subscribeFor(RLSignal.SwitchTab.self )
+            .onUpdate { self.selectedTab = $0.tab }
     }
     
     func refreshData(forceRefresh: Bool = false) {
@@ -70,6 +76,8 @@ class MainViewModel: ObservableObject {
             self.characteristicsAndPoints = newCharacteristicsAndPoints
         }
         
+        allQuestsCount = realmController.realm.objects(Quest.self).count
+        allCharacCount = realmController.realm.objects(Characteristic.self).count
     }
     
     func addQuest(quest:Quest) {

@@ -30,8 +30,11 @@
 "key.main.quests.today" = "Today";
 "key.main.quests.tomorrow" = "Tomorrow";
 "key.main.quests.long-term" = "Long-term";
-"key.main.quests.you-can-create-quest" = "You can create quest ";
+"key.main.quests.you-can-create-quest" = "You can create your first quest ";
+"key.main.quests.you-can-create-charac" = "You can create your first characteristic ";
 "key.main.quests.HERE" = "HERE";
+"key.main.quests.create-using" = "Also you can create some from ";
+"key.main.quests.create-using-templates" = "TEMPLATES";
 
 ////////////////////
 // Sheets

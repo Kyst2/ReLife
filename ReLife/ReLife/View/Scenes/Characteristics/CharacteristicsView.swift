@@ -1,4 +1,5 @@
 import SwiftUI
+import MoreSwiftUI
 
 struct CharacteristicsView: View {
     @ObservedObject var model : MainViewModel
@@ -17,13 +18,39 @@ struct CharacteristicsView: View {
                     .padding(.trailing, 50)
             }
             
-            ScrollView {
-                LazyCharacteristics(characteristics: model.characteristicsAndPoints)
+            if model.allCharacCount == 0 {
+                NoCharacteristicView()
+            } else {
+                ScrollView {
+                    LazyCharacteristics(characteristics: model.characteristicsAndPoints)
+                }
             }
         }
     }
 }
 
+extension CharacteristicsView {
+    func NoCharacteristicView() -> some View {
+        HStack{
+            VStack(alignment: .leading) {
+                HStack(spacing: 0) {
+                    Text("key.main.quests.you-can-create-charac".localized)
+                    BtnOpenSettings(settingsTab: .characteristics)
+                }
+                
+                HStack(spacing: 0) {
+                    Text("key.main.quests.create-using".localized)
+                    BtnOpenTemplates()
+                }
+            }
+            .padding(20)
+            .fixedSize()
+            
+            Space(min: 300)
+        }
+        .font(.custom("SF Pro", size: 15))
+    }
+}
 
 extension CharacteristicsView {
     func LazyCharacteristics(characteristics: [CharacteristicsAndPoints]) -> some View {
