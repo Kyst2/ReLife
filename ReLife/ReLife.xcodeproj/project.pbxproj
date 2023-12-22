@@ -35,6 +35,11 @@
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
 		A25272142A8E3E4100DD4B75 /* CharacteristicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */; };
+		A27116702B34F27900306F99 /* SheetsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271166F2B34F27900306F99 /* SheetsButton.swift */; };
+		A27116722B35045E00306F99 /* QuestRepeatTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116712B35045E00306F99 /* QuestRepeatTypeView.swift */; };
+		A27116742B35056200306F99 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116732B35056200306F99 /* IconPicker.swift */; };
+		A27116762B3507CD00306F99 /* NumUpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116752B3507CD00306F99 /* NumUpDown.swift */; };
+		A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
 		A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */; };
 		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
@@ -149,6 +154,11 @@
 		A252720B2A8D3AF700DD4B75 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
+		A271166F2B34F27900306F99 /* SheetsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsButton.swift; sourceTree = "<group>"; };
+		A27116712B35045E00306F99 /* QuestRepeatTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestRepeatTypeView.swift; sourceTree = "<group>"; };
+		A27116732B35056200306F99 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
+		A27116752B3507CD00306F99 /* NumUpDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumUpDown.swift; sourceTree = "<group>"; };
+		A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsAndPointsListView.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetQuestEditorView.swift; sourceTree = "<group>"; };
 		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
@@ -247,6 +257,8 @@
 		1D6E255A2B3442F0001083CB /* ---------- */ = {
 			isa = PBXGroup;
 			children = (
+				A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */,
+				A271166E2B34F25000306F99 /* SheetQuestViewAllElements */,
 			);
 			path = "----------";
 			sourceTree = "<group>";
@@ -285,7 +297,6 @@
 				A21989952AE319560004A5D9 /* SheetConfirmationView.swift */,
 				1D6E25582B33D463001083CB /* SheetAlertView.swift */,
 				1D6E255A2B3442F0001083CB /* ---------- */,
-				A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */,
 				A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */,
 				1D6E255D2B346142001083CB /* SheetAddStandardData.swift */,
 				1D6E255F2B3500DA001083CB /* SheetAboutView.swift */,
@@ -317,6 +328,15 @@
 				A25272112A8E3C8400DD4B75 /* History.swift */,
 			);
 			path = ObjectsRealm;
+			sourceTree = "<group>";
+		};
+		A271166E2B34F25000306F99 /* SheetQuestViewAllElements */ = {
+			isa = PBXGroup;
+			children = (
+				A27116712B35045E00306F99 /* QuestRepeatTypeView.swift */,
+				A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */,
+			);
+			path = SheetQuestViewAllElements;
 			sourceTree = "<group>";
 		};
 		A27286712AF55CE9005EE9B8 /* Settings */ = {
@@ -353,9 +373,12 @@
 			children = (
 				A27286832AFBEEA4005EE9B8 /* AddButton.swift */,
 				A2C11F482B126AE40062AFDE /* SettingButton.swift */,
+				A271166F2B34F27900306F99 /* SheetsButton.swift */,
 				A27286852B03B799005EE9B8 /* ItemEdit.swift */,
 				1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */,
 				1D6E255B2B344CCD001083CB /* NumericUpDown.swift */,
+				A27116732B35056200306F99 /* IconPicker.swift */,
+				A27116752B3507CD00306F99 /* NumUpDown.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -732,6 +755,7 @@
 				1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
+				A27116722B35045E00306F99 /* QuestRepeatTypeView.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */,
 				1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
@@ -742,8 +766,10 @@
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
 				1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
+				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
+				A27116742B35056200306F99 /* IconPicker.swift in Sources */,
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,
 				1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
@@ -762,9 +788,11 @@
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
+				A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
 				1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */,
 				A2A5A8442B291BD800FD844A /* HistoryViewModel.swift in Sources */,
+				A27116762B3507CD00306F99 /* NumUpDown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,7 +1094,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = RPH4S2457V;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1105,7 +1133,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = RPH4S2457V;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
