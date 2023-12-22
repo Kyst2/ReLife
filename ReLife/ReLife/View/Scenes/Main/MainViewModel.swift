@@ -15,25 +15,32 @@ class MainViewModel: ObservableObject {
     @Published var allQuestsCount: Int = 0
     @Published var allCharacCount: Int = 0
     
-    func initFakeData() {
-//        let c1 = Characteristic(name: "Health")
-//        let c2 = Characteristic(name: "Level")
-//        realmController.add(characteristic: c1)
-//        realmController.add(characteristic: c2)
+    func reInitFakeData() {
+        realmController.deleteAllOf(type: Quest.self)
+        realmController.deleteAllOf(type: Characteristic.self)
+        realmController.deleteAllOf(type: History.self)
+        
+        let c1 = Characteristic(name: "Health")
+        let c2 = Characteristic(name: "Level")
+        realmController.add(characteristic: c1)
+        realmController.add(characteristic: c2)
         
         var charachSet = [Characteristic : Int]()
         
         realmController.characteristicsAll.forEach{
-            charachSet[$0] = 15
+            charachSet[$0] = Array(15...50).randomElement()
         }
         
-        let quest = Quest(name: "AlmostEachDayQuest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]))
+        let quest = Quest(name: "AlmostEachDayQuest", icon: .backpack, color: .orange, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]))
+        let quest2 = Quest(name: "AlmostEachDayQuest2", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]))
+        let quest3 = Quest(name: "AlmostEachDayQuest3", icon: .backpack, color: .white, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]))
         
         realmController.add(quest: quest)
+        realmController.add(quest: quest2)
+        realmController.add(quest: quest3)
     }
     
     init() {
-//        realmController.deleteAllOf(type: History.self)
 //        initFakeData()
         
         refreshData()
