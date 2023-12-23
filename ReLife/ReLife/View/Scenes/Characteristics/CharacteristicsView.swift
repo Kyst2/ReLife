@@ -67,6 +67,7 @@ extension CharacteristicsView {
                 
                 Space(min:300)
             }
+            .padding(.leading, 20)
         }
     }
 }
@@ -77,39 +78,29 @@ extension CharacteristicsView {
 
 struct Charact: View {
     var name: String
-    var icon:String
-    var points:Int
+    var icon: String
+    var points: Int
     
     var body: some View {
-        HStack {
-            ImagePanel()
+        HStack(spacing: 20) {
+            Icon()
                 
-            NamePanel()
+            Text(name)
             
             Spacer()
             
-            PointsPanel()
+            Text("\(points)")
         }
+        .font(.custom("SF Pro", size: 17).weight(.bold) )
+        .foregroundColor(Color(hex: 0xc0baaf))
+        .padding(.vertical, 2)
     }
     
-    func ImagePanel() -> some View {
-        Image(systemName: icon)
-            .myImageColor()
-            .font(.largeTitle)
-            .padding(10)
-    }
-    
-    func NamePanel() -> some View {
-        Text(name)
-            .font(.custom("SF Pro", size: 17).weight(.bold) )
-//            .foregroundColor()
-//            .myFont(size: 17, textColor: .blue)
-            .padding(10)
-    }
-    
-    func PointsPanel() -> some View {
-        Text("\(points)")
-            .myFont(size: 17, textColor: .white).italic()
-            .padding(.trailing,20)
+    func Icon() -> some View {
+        HStack {
+            Image(systemName: icon)
+                .foregroundColor(Color(hex: 0xae8b63))
+                .font(.largeTitle)
+        }.frame(width: 20)
     }
 }

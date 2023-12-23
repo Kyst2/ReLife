@@ -18,9 +18,10 @@ public class Characteristic: Object {
         self.points = 0
     }
     
-    convenience init(name: String) {
+    convenience init(name: String, icon: String) {
         self.init()
         self.name = name
+        self.icon = icon
         self.key = name
         self.points = 0
     }

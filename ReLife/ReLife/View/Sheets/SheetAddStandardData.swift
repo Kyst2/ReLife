@@ -71,9 +71,10 @@ struct SheetAddStandardData: View {
 /////////////////////////
 
 let characs: [Characteristic] = [
-    Characteristic(name: "Health"),
-    Characteristic(name: "Tidiness"),
-    Characteristic(name: "Mind")
+    Characteristic(name: "Health", icon: "figure.mind.and.body"),
+    Characteristic(name: "Tidiness", icon: "laurel.trailing"), //Охайність
+    Characteristic(name: "Athleticism", icon: "figure.cooldown"),
+    Characteristic(name: "Mind", icon: "brain")
 ]
 
 let quests: [String] = [

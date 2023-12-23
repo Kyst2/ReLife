@@ -20,10 +20,14 @@ class MainViewModel: ObservableObject {
         realmController.deleteAllOf(type: Characteristic.self)
         realmController.deleteAllOf(type: History.self)
         
-        let c1 = Characteristic(name: "Health")
-        let c2 = Characteristic(name: "Level")
+        let c1 = Characteristic(name: "Health", icon: "figure.mind.and.body")
+        let c2 = Characteristic(name: "Tidiness", icon: "laurel.trailing")
+        let c3 = Characteristic(name: "Athleticism", icon: "figure.cooldown")
+        let c4 = Characteristic(name: "Mind", icon: "brain")
         realmController.add(characteristic: c1)
         realmController.add(characteristic: c2)
+        realmController.add(characteristic: c3)
+        realmController.add(characteristic: c4)
         
         var charachSet = [Characteristic : Int]()
         
