@@ -14,16 +14,10 @@ struct ConfigGeneralView: View {
                 DbButtons()
                     .opacity(0.6)
                     .disabled(true)
-                PickerFirstWeekDay()
-                    .opacity(0.6)
-                    .disabled(true)
-                PickerLanguage()
-                
-                Spacer()
                 SoundSettings()
                     .opacity(0.6)
                     .disabled(true)
-                Spacer()
+                PickerLanguage()
                 
                 Spacer()
                 DangerButtons()

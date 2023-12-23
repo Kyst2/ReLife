@@ -11,7 +11,7 @@ struct HistoryView: View {
                     HistoryItem(quest: his.quest!, date: his.dateCompleted)
                 }
                 
-                Space(500)
+                Spacer()
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 20)

@@ -6,33 +6,12 @@ struct CharacteristicsView: View {
     
     var body: some View {
         ZStack {
-            HStack{
-                Spacer()
-                
-                Image("AppIconNoGlow")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 300)
-                    .shadow(color: .white, radius: 4)
-                    .opacity(0.8)
-                    .padding(.trailing, 25)
-            }
+            BackgroundView()
             
             if model.allCharacCount == 0 {
                 NoCharacteristicView()
             } else {
-                ScrollView {
-                    HStack{
-                        VStack {
-                            ForEach(model.characteristicsAndPoints) { wrapper in
-                                Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
-                            }
-                        }
-                        .frame(maxWidth: 300)
-                        
-                        Space(min:300)
-                    }
-                }
+                CharacteristicsList()
             }
         }
     }
@@ -40,7 +19,7 @@ struct CharacteristicsView: View {
 
 extension CharacteristicsView {
     func NoCharacteristicView() -> some View {
-        HStack{
+        HStack {
             VStack(alignment: .leading) {
                 HStack(spacing: 0) {
                     Text("key.main.quests.you-can-create-charac".localized)
@@ -55,9 +34,40 @@ extension CharacteristicsView {
             .padding(20)
             .fixedSize()
             
-            Space(min: 300)
+            Spacer()
         }
         .font(.custom("SF Pro", size: 15))
+    }
+    
+    func BackgroundView() -> some View {
+        HStack{
+            Spacer()
+            
+            Image("AppIconNoGlow")
+                .resizable()
+                .scaledToFit()
+                .frame(maxHeight: 300)
+                .shadow(color: .white, radius: 4)
+                .opacity(0.8)
+                .padding(.trailing, 25)
+        }
+    }
+    
+    @ViewBuilder
+    func CharacteristicsList() -> some View {
+        ScrollView {
+            HStack {
+                VStack {
+                    ForEach(model.characteristicsAndPoints) { wrapper in
+                        Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
+                    }
+                }
+                .frame(maxWidth: 300)
+                .padding(.top, 40)
+                
+                Space(min:300)
+            }
+        }
     }
 }
 
@@ -71,7 +81,7 @@ struct Charact: View {
     var points:Int
     
     var body: some View {
-        HStack{
+        HStack {
             ImagePanel()
                 
             NamePanel()
@@ -80,7 +90,6 @@ struct Charact: View {
             
             PointsPanel()
         }
-        .charactModifire()
     }
     
     func ImagePanel() -> some View {
@@ -92,7 +101,9 @@ struct Charact: View {
     
     func NamePanel() -> some View {
         Text(name)
-            .myFont(size: 17, textColor: .blue)
+            .font(.custom("SF Pro", size: 17).weight(.bold) )
+//            .foregroundColor()
+//            .myFont(size: 17, textColor: .blue)
             .padding(10)
     }
     
@@ -100,16 +111,5 @@ struct Charact: View {
         Text("\(points)")
             .myFont(size: 17, textColor: .white).italic()
             .padding(.trailing,20)
-    }
-}
-
-fileprivate extension View {
-    func charactModifire() -> some View {
-        self.overlay {
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color.primary, lineWidth: 0.1)
-            }
-        .padding(.top,5)
-        .padding(.horizontal,10)
     }
 }
