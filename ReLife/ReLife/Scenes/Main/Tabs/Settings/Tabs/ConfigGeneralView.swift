@@ -158,6 +158,7 @@ extension ConfigGeneralView {
             Link("key.settings.support-email".localized, destination: URL(string: "mailto:deradus@ukr.net")!)
                 .padding(.bottom, 20)
         }
+        .foregroundColor(RLColors.brown)
     }
 }
 
