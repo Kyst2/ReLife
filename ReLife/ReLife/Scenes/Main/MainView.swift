@@ -46,6 +46,11 @@ extension MainView {
                 
                 TabButton(tab: .characteristics, selectedTab: $model.selectedTab)
                 
+                #if DEBUG
+                TabButton(tab: .achivements, selectedTab: $model.selectedTab)
+                    .opacity(0.5)
+                #endif
+                
                 TabButton(tab: .settings, selectedTab: $model.selectedTab)
                 
                 Spacer()
@@ -65,7 +70,9 @@ extension MainView {
             QuestsView(model: model)
         case .characteristics :
             CharacteristicsView(model: model)
-        case .settings: 
+        case .achivements:
+            AchievementListView()
+        case .settings:
             SettingsView()
         }
     }
@@ -78,6 +85,7 @@ extension MainView {
 enum MainViewTab: String {
     case quests = "key.quests"
     case characteristics = "key.characteristics"
+    case achivements = "key.achievements"
     case settings = "key.settings"
 }
 
@@ -85,7 +93,8 @@ extension MainViewTab {
     var icon: String {
         switch self {
         case .quests:           return "list.bullet.clipboard"
-        case .characteristics:  return "medal"
+        case .characteristics:  return "person"
+        case .achivements:      return "medal"
         case .settings:         return "gearshape"
         }
     }

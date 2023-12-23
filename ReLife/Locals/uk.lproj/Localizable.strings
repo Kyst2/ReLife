@@ -5,6 +5,7 @@
 ////////////////////
 "key.quests" = "Квести";
 "key.characteristics" = "Характеристики";
+"key.achievements" = "Досягнення";
 "key.history" = "Історія";
 "key.settings" = "Налаштування";
 "key.settings.tab.general" = "Загальні"; 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C02B371D74009DD522 /* AchievementView.swift */; };
+		1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C22B372656009DD522 /* AchievementListView.swift */; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */; };
@@ -113,6 +115,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D5C49C02B371D74009DD522 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		1D5C49C22B372656009DD522 /* AchievementListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementListView.swift; sourceTree = "<group>"; };
 		1D6E252C2B33696A001083CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E252D2B33696A001083CB /* zh-hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1D6E252E2B33696A001083CB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -244,9 +248,19 @@
 			children = (
 				A2C11F532B1649300062AFDE /* Quests */,
 				A2C11F542B16494C0062AFDE /* Characteristics */,
+				1D5C49BD2B371C40009DD522 /* Achivements */,
 				A27286712AF55CE9005EE9B8 /* Settings */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		1D5C49BD2B371C40009DD522 /* Achivements */ = {
+			isa = PBXGroup;
+			children = (
+				1D5C49C22B372656009DD522 /* AchievementListView.swift */,
+				1D5C49C02B371D74009DD522 /* AchievementView.swift */,
+			);
+			path = Achivements;
 			sourceTree = "<group>";
 		};
 		1D6E252A2B33696A001083CB /* Locals */ = {
@@ -789,12 +803,14 @@
 				1D6E255E2B346142001083CB /* SheetAddStandardData.swift in Sources */,
 				A2C11F4F2B13C1C00062AFDE /* HistoryView.swift in Sources */,
 				A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */,
+				1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
 				1D6E25532B338CD0001083CB /* Signals.swift in Sources */,
 				1D6E25552B338E30001083CB /* RLSignal.swift in Sources */,
 				A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
+				1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
 				A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
