@@ -13,6 +13,8 @@ class SettingsViewModel: ObservableObject {
     @Published(key: "currLang") var currLang: Language = .system
     @Published var sound = false
     
+    @Published var allHistoryCount: Int = 0
+    
     private init() {
         refresh()
         
@@ -24,13 +26,18 @@ class SettingsViewModel: ObservableObject {
     
     func refresh() {
         let newAllQuests = realmController.questsAll.sorted{$0.name < $1.name}
+        
         let newAllCharacteristics = realmController.characteristicsAll
+        
         if self.allQuests != newAllQuests {
             self.allQuests = newAllQuests
         }
+        
         if self.allCharacteristics != newAllCharacteristics {
             self.allCharacteristics = newAllCharacteristics
         }
+        
+        allHistoryCount = realmController.realm.objects(History.self).count
     }
     func addQuest(quest:Quest) {
         realmController.add(quest: quest)
@@ -51,4 +58,5 @@ enum SettingsTab: String {
     case general = "key.settings.tab.general"
     case quests = "key.quests"
     case characteristics = "key.characteristics"
+    case history = "key.history"
 }

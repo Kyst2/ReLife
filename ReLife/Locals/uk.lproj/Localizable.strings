@@ -1,12 +1,14 @@
 // Ukrainian
 
 ////////////////////
-//MAIN MENU
+//Tabs
 ////////////////////
 "key.quests" = "Квести";
 "key.characteristics" = "Характеристики";
 "key.history" = "Історія";
 "key.settings" = "Налаштування";
+"key.settings.tab.general" = "Загальні"; 
+// other tabs in "other"
 
 ////////////////////
 //other
@@ -51,7 +53,6 @@
 ////////////////////
 // Settings
 ////////////////////
-"key.settings.tab.general" = "Загальна"; // other tabs in "other"
 "key.settings.db" = "База даних";
 "key.settings.db.export" = "Експорт";
 "key.settings.db.import" = "Імпорт";

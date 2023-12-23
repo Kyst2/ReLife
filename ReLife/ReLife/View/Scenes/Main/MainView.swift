@@ -45,10 +45,6 @@ extension MainView {
                 
                 TabButton(tab: .characteristics, selectedTab: $model.selectedTab)
                 
-                if model.allHistoryCount > 0 {
-                    TabButton(tab: .history, selectedTab: $model.selectedTab)
-                }
-                
                 TabButton(tab: .settings, selectedTab: $model.selectedTab)
                 
                 Spacer()
@@ -68,8 +64,6 @@ extension MainView {
             QuestsView(model: model)
         case .characteristics :
             CharacteristicsView(model: model)
-        case .history :
-            HistoryView()
         case .settings: 
             SettingsView()
         }
@@ -83,7 +77,6 @@ extension MainView {
 enum MainViewTab: String {
     case quests = "key.quests"
     case characteristics = "key.characteristics"
-    case history = "key.history"
     case settings = "key.settings"
 }
 
@@ -92,7 +85,6 @@ extension MainViewTab {
         switch self {
         case .quests:           return "list.bullet.clipboard"
         case .characteristics:  return "medal"
-        case .history:          return "book"
         case .settings:         return "gearshape"
         }
     }

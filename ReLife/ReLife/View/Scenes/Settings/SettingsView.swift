@@ -6,7 +6,7 @@ struct SettingsView: View {
     @ObservedObject var model = SettingsViewModel.shared
     
     var body: some View {
-        VStack(spacing: 0){
+        VStack(spacing: 0) {
             TabsPanel()
             
             TabsBody()
@@ -23,6 +23,8 @@ extension SettingsView {
             ConfigTabView(tab: $model.tab, curr: .quests)
             
             ConfigTabView(tab: $model.tab, curr: .characteristics)
+            
+            ConfigTabView(tab: $model.tab, curr: .history)
         }
         .id(SettingsTab.general.rawValue.localized) //fix refresh issues on locale change
     }
@@ -36,6 +38,8 @@ extension SettingsView {
             ConfigQuestView(model: model)
         case .characteristics:
             ConfigCharacteristicsView(model: model)
+        case .history :
+            HistoryView()
         }
     }
 }
@@ -58,7 +62,7 @@ struct ConfigTabView: View {
             }
         }) {
             Text(curr.rawValue.localized)
-                .myFont(size: 18, textColor: .blue)
+                .myFont(size: 17, textColor: .blue)
                 .menuBttonModifier(tab: tab, curr: curr)
                 .id(curr.rawValue.localized)
         }
@@ -69,7 +73,7 @@ struct ConfigTabView: View {
 fileprivate extension View {
     func menuBttonModifier(tab: SettingsTab,curr:SettingsTab) -> some View{
         self.frame(height: 40)
-            .frame(minWidth: 200,maxWidth: .infinity)
+            .frame(minWidth: 150, maxWidth: .infinity)
             .contentShape(Rectangle())
             .background {
                 tab == curr ? Color.gray.opacity(0.5) : Color.clear

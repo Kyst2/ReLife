@@ -359,6 +359,7 @@
 				A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */,
 				A27286752AF55D36005EE9B8 /* ConfigQuestView.swift */,
 				A27286772AF55D48005EE9B8 /* ConfigCharacteristicsView.swift */,
+				A2C11F552B16495C0062AFDE /* History */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -464,7 +465,6 @@
 				A2C11F502B16486B0062AFDE /* Main */,
 				A2C11F532B1649300062AFDE /* Quests */,
 				A2C11F542B16494C0062AFDE /* Characteristics */,
-				A2C11F552B16495C0062AFDE /* History */,
 				A27286712AF55CE9005EE9B8 /* Settings */,
 			);
 			path = Scenes;

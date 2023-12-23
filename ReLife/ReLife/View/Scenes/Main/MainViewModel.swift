@@ -14,7 +14,6 @@ class MainViewModel: ObservableObject {
     
     @Published var allQuestsCount: Int = 0
     @Published var allCharacCount: Int = 0
-    @Published var allHistoryCount: Int = 0
     
     func reInitFakeData() {
         realmController.deleteAllOf(type: Quest.self)
@@ -86,7 +85,6 @@ class MainViewModel: ObservableObject {
         
         allQuestsCount  = realmController.realm.objects(Quest.self).count
         allCharacCount  = realmController.realm.objects(Characteristic.self).count
-        allHistoryCount = realmController.realm.objects(History.self).count
     }
     
     func addQuest(quest:Quest) {
