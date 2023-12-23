@@ -91,8 +91,7 @@ struct Charact: View {
             
             Text("\(points)")
         }
-        .font(.custom("SF Pro", size: 17).weight(.bold) )
-        .foregroundColor( RLColors.brownLight )
+        .font(.custom("SF Pro", size: 17).weight(.bold))
         .padding(.vertical, 2)
     }
     

@@ -28,17 +28,17 @@ struct ItemEdit: View {
                 action()
             }
     }
+    
     func ItemPanel() -> some View {
         HStack{
             Space(5)
             
             Image(systemName: icon.rawValue)
-                .myImageColor()
                 .font(.largeTitle)
                 .padding(10)
             
             Text(name)
-                .myFont(size: 15, textColor: .blue)
+                .myFont(size: 15)
             
             Spacer()
         }

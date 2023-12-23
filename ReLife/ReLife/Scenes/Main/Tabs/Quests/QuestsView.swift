@@ -103,7 +103,7 @@ struct QuestAccordeonView: View {
             
             if isFinishable {
                 Text("(\(repetsCount)/\(quest.repeatTimes))")
-                    .myFont(size: 15, textColor: .white)
+                    .myFont(size: 15)
                     .id("repeatCount_\(quest.name)_\(repetsCount)")
             }
             
@@ -141,7 +141,7 @@ struct QuestAccordeonView: View {
     func DecrView() -> some View {
         if isExpanded {
             Text(quest.descript)
-               .myFont(size: 14, textColor: .blue).italic()
+               .myFont(size: 14).italic()
                 .padding(20)
         }
     }
@@ -186,7 +186,7 @@ fileprivate extension View {
 fileprivate extension Text {
     var titleStyle: some View {
         self
-            .myFont(size: 17, textColor: .blue).bold()
+            .myFont(size: 17).bold()
     }
 }
 

@@ -51,7 +51,7 @@ struct SheetCharacteristicEditorView: View {
 extension SheetCharacteristicEditorView {
     func Title() -> some View {
         Text(type.asTitle())
-            .myFont(size: 17, textColor: .blue)
+            .myFont(size: 17)
             .padding()
     }
     

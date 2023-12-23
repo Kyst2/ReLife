@@ -20,6 +20,7 @@ struct MainView: View {
                 .frame(minWidth: 600)
                 .transition(transition)
         }
+        .foregroundColor(RLColors.brownLight)
         .background( BackgroundView().opacity(0.3) )
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)

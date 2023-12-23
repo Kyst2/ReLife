@@ -12,7 +12,7 @@ struct SheetConfirmationView: View {
     var body: some View {
         VStack(spacing: 15) {
             Text(text)
-                .myFont(size: 18, textColor: .white).bold()
+                .myFont(size: 18).bold()
                 .myColorWhite()
             
             HStack(spacing: 20) {

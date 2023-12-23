@@ -38,19 +38,17 @@ struct TabButton: View {
 fileprivate extension TabButton {
     func TabIcon() -> some View {
         Image(systemName: tab.icon)
-            .myImageColor()
             .font(.system(size: 25))
     }
     
     func TabTitle() -> some View {
         Text(tab.rawValue.localized )
-            .myFont(size: 13, textColor: .blue)
+            .myFont(size: 13)
             .fontWeight(.semibold)
     }
     
     func SelectionLine() -> some View {
         Rectangle()
-            .fill(Color("iconColor"))
             .frame(height: 6)
             .offset(x: selectedTab == tab ? 0 : -400 )
     }

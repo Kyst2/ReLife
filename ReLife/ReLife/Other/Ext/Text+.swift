@@ -2,10 +2,6 @@ import Foundation
 import SwiftUI
 import MoreSwiftUI
 
-
-
-
-
 extension NSTextField {
     open override var focusRingType: NSFocusRingType {
         get { .none }
@@ -30,13 +26,8 @@ public extension Font {
 }
 
 extension Text {
-    func myFont(size: CGFloat, textColor: TextColor? = nil) -> Text {
-        if textColor == .blue {
-            self.font(.custom("MontserratRoman-Regular", size: size))
-                .foregroundColor(Color("textColor"))
-        } else {
-            self.font(.custom("MontserratRoman-Regular", size: size))
-        }
+    func myFont(size: CGFloat) -> Text {
+        self.font(.custom("MontserratRoman-Regular", size: size))
     }
     
     func myColorBlue() -> Text {
@@ -45,10 +36,4 @@ extension Text {
     func myColorWhite() -> Text {
         self.foregroundColor(Color("iconColor"))
     }
-}
-
-
-enum TextColor {
-    case blue
-    case white
 }
