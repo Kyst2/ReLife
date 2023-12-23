@@ -11,7 +11,7 @@ struct AchievementListView: View {
             
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(Array(0...100), id: \.self) { _ in
-                    AchievementView(achived: Bool.random() )
+                    AchievementView(model: Achievement(achived: Bool.random()) )
                 }
             }
             
