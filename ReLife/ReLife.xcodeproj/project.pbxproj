@@ -241,20 +241,19 @@
 			path = "--------------";
 			sourceTree = "<group>";
 		};
+		1D5C49BB2B3708B6009DD522 /* ===Tests & Garbage=== */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "===Tests & Garbage===";
+			sourceTree = "<group>";
+		};
 		1D6E252A2B33696A001083CB /* Locals */ = {
 			isa = PBXGroup;
 			children = (
 				1D6E252B2B33696A001083CB /* Localizable.strings */,
 			);
 			path = Locals;
-			sourceTree = "<group>";
-		};
-		1D6E254A2B338C3D001083CB /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				1D6E254B2B338CD0001083CB /* SignalsService */,
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		1D6E254B2B338CD0001083CB /* SignalsService */ = {
@@ -286,12 +285,18 @@
 			path = QuestsTests;
 			sourceTree = "<group>";
 		};
-		A211B1602A7A8075004680E8 /* Back */ = {
+		A211B1602A7A8075004680E8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A21989972AE3E7990004A5D9 /* Font */,
+				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
+				A2C55E842B2D0D5F001E67FB /* Wrappers */,
+				A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */,
+				1D6E254B2B338CD0001083CB /* SignalsService */,
+				A2AEDCCB2AAA271100128B3C /* Ext */,
 				A200BD3C2AA6064200DCEBD9 /* Json.swift */,
 			);
-			path = Back;
+			path = Other;
 			sourceTree = "<group>";
 		};
 		A211B1732A7B6F7C004680E8 /* ReLifeTests */ = {
@@ -484,10 +489,9 @@
 		A2DD8E592A58A90C00315995 = {
 			isa = PBXGroup;
 			children = (
-				A21989972AE3E7990004A5D9 /* Font */,
 				A2DD8E642A58A90C00315995 /* ReLife */,
-				1D6E254A2B338C3D001083CB /* Other */,
 				1D6E252A2B33696A001083CB /* Locals */,
+				1D5C49BB2B3708B6009DD522 /* ===Tests & Garbage=== */,
 				A211B1732A7B6F7C004680E8 /* ReLifeTests */,
 				A210862A2A813A1A00EB7A89 /* QuestsTests */,
 				A2DD8E632A58A90C00315995 /* Products */,
@@ -515,12 +519,8 @@
 				1D6E25542B338E30001083CB /* RLSignal.swift */,
 				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
 				1D6E25652B3701D6001083CB /* RLColors.swift */,
-				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
-				A2C55E842B2D0D5F001E67FB /* Wrappers */,
-				A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */,
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
-				A211B1602A7A8075004680E8 /* Back */,
-				A2AEDCCB2AAA271100128B3C /* Ext */,
+				A211B1602A7A8075004680E8 /* Other */,
 				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
 				A2DD8E6B2A58A90D00315995 /* ReLife.entitlements */,
 				A2DD8E6C2A58A90D00315995 /* Preview Content */,
