@@ -234,6 +234,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D5C49BA2B37080E009DD522 /* -------------- */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "--------------";
+			sourceTree = "<group>";
+		};
 		1D6E252A2B33696A001083CB /* Locals */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +475,8 @@
 				A2C11F532B1649300062AFDE /* Quests */,
 				A2C11F542B16494C0062AFDE /* Characteristics */,
 				A27286712AF55CE9005EE9B8 /* Settings */,
+				1D5C49BA2B37080E009DD522 /* -------------- */,
+				A21989932AE3192A0004A5D9 /* Sheets */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -509,7 +518,7 @@
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				A2C55E842B2D0D5F001E67FB /* Wrappers */,
 				A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */,
-				A2DD8E742A58AB5000315995 /* View */,
+				A2CCA02D2AD4974A006A3A7F /* Scenes */,
 				A211B1602A7A8075004680E8 /* Back */,
 				A2AEDCCB2AAA271100128B3C /* Ext */,
 				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
@@ -525,15 +534,6 @@
 				A2DD8E6D2A58A90D00315995 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A2DD8E742A58AB5000315995 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A2CCA02D2AD4974A006A3A7F /* Scenes */,
-				A21989932AE3192A0004A5D9 /* Sheets */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
