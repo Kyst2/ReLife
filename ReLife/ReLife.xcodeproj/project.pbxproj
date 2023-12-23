@@ -234,18 +234,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D5C49BA2B37080E009DD522 /* -------------- */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "--------------";
-			sourceTree = "<group>";
-		};
 		1D5C49BB2B3708B6009DD522 /* ===Tests & Garbage=== */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "===Tests & Garbage===";
+			sourceTree = "<group>";
+		};
+		1D5C49BC2B370987009DD522 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A2C11F532B1649300062AFDE /* Quests */,
+				A2C11F542B16494C0062AFDE /* Characteristics */,
+				A27286712AF55CE9005EE9B8 /* Settings */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		1D6E252A2B33696A001083CB /* Locals */ = {
@@ -288,6 +291,8 @@
 		A211B1602A7A8075004680E8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				1D6E25652B3701D6001083CB /* RLColors.swift */,
+				1D6E25542B338E30001083CB /* RLSignal.swift */,
 				A21989972AE3E7990004A5D9 /* Font */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				A2C55E842B2D0D5F001E67FB /* Wrappers */,
@@ -428,6 +433,7 @@
 				A2DD8E672A58A90C00315995 /* MainView.swift */,
 				A2C11F512B1648880062AFDE /* TabButton.swift */,
 				A2BBB2682B19BE9F00348BC5 /* MainViewModel.swift */,
+				1D5C49BC2B370987009DD522 /* Tabs */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -477,10 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				A2C11F502B16486B0062AFDE /* Main */,
-				A2C11F532B1649300062AFDE /* Quests */,
-				A2C11F542B16494C0062AFDE /* Characteristics */,
-				A27286712AF55CE9005EE9B8 /* Settings */,
-				1D5C49BA2B37080E009DD522 /* -------------- */,
 				A21989932AE3192A0004A5D9 /* Sheets */,
 			);
 			path = Scenes;
@@ -516,9 +518,7 @@
 				A219899C2AE47BBB0004A5D9 /* Info.plist */,
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
-				1D6E25542B338E30001083CB /* RLSignal.swift */,
 				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
-				1D6E25652B3701D6001083CB /* RLColors.swift */,
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
 				A211B1602A7A8075004680E8 /* Other */,
 				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
