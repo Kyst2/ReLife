@@ -20,6 +20,7 @@
 		1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E255F2B3500DA001083CB /* SheetAboutView.swift */; };
 		1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25612B362F01001083CB /* BtnOpenSettings.swift */; };
 		1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */; };
+		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
@@ -141,6 +142,7 @@
 		1D6E255F2B3500DA001083CB /* SheetAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAboutView.swift; sourceTree = "<group>"; };
 		1D6E25612B362F01001083CB /* BtnOpenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenSettings.swift; sourceTree = "<group>"; };
 		1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenTemplatesSheet.swift; sourceTree = "<group>"; };
+		1D6E25652B3701D6001083CB /* RLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLColors.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
@@ -364,13 +366,13 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		A272867F2AFBEE71005EE9B8 /* SwiftUI */ = {
+		A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */ = {
 			isa = PBXGroup;
 			children = (
 				A27286822AFBEE8C005EE9B8 /* Styles */,
 				A27286812AFBEE85005EE9B8 /* Views */,
 			);
-			path = SwiftUI;
+			path = SwiftUI_custom;
 			sourceTree = "<group>";
 		};
 		A27286812AFBEE85005EE9B8 /* Views */ = {
@@ -503,9 +505,10 @@
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				1D6E25542B338E30001083CB /* RLSignal.swift */,
 				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
+				1D6E25652B3701D6001083CB /* RLColors.swift */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				A2C55E842B2D0D5F001E67FB /* Wrappers */,
-				A272867F2AFBEE71005EE9B8 /* SwiftUI */,
+				A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */,
 				A2DD8E742A58AB5000315995 /* View */,
 				A211B1602A7A8075004680E8 /* Back */,
 				A2AEDCCB2AAA271100128B3C /* Ext */,
@@ -774,6 +777,7 @@
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
+				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
 				A27116742B35056200306F99 /* IconPicker.swift in Sources */,

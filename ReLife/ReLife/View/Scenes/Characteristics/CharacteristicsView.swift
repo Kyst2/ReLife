@@ -92,15 +92,16 @@ struct Charact: View {
             Text("\(points)")
         }
         .font(.custom("SF Pro", size: 17).weight(.bold) )
-        .foregroundColor(Color(hex: 0xc0baaf))
+        .foregroundColor( RLColors.brownLight )
         .padding(.vertical, 2)
     }
     
     func Icon() -> some View {
         HStack {
             Image(systemName: icon)
-                .foregroundColor(Color(hex: 0xae8b63))
+                .foregroundColor(RLColors.brown)
                 .font(.largeTitle)
         }.frame(width: 20)
     }
 }
+
