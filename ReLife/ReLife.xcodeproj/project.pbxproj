@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C02B371D74009DD522 /* AchievementView.swift */; };
 		1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C22B372656009DD522 /* AchievementListView.swift */; };
+		1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C42B379673009DD522 /* Achievements_TODO.swift */; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */; };
@@ -117,6 +118,7 @@
 /* Begin PBXFileReference section */
 		1D5C49C02B371D74009DD522 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		1D5C49C22B372656009DD522 /* AchievementListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementListView.swift; sourceTree = "<group>"; };
+		1D5C49C42B379673009DD522 /* Achievements_TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements_TODO.swift; sourceTree = "<group>"; };
 		1D6E252C2B33696A001083CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E252D2B33696A001083CB /* zh-hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1D6E252E2B33696A001083CB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		1D5C49BD2B371C40009DD522 /* Achivements */ = {
 			isa = PBXGroup;
 			children = (
+				1D5C49C42B379673009DD522 /* Achievements_TODO.swift */,
 				1D5C49C22B372656009DD522 /* AchievementListView.swift */,
 				1D5C49C02B371D74009DD522 /* AchievementView.swift */,
 			);
@@ -789,6 +792,7 @@
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
 				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,
+				1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
 				A2C11F4B2B12AC770062AFDE /* Text+.swift in Sources */,
 				A27116742B35056200306F99 /* IconPicker.swift in Sources */,
