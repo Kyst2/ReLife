@@ -6,26 +6,26 @@ struct ConfigGeneralView: View {
     
     @State var enableDangerZone: Bool = false
     
-    let columns = [ GridItem(.fixed(200)), GridItem(.fixed(200)), GridItem(.fixed(200)) ]
-    
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                DbButtons()
-                    .opacity(0.6)
-                    .disabled(true)
-                SoundSettings()
-                    .opacity(0.6)
-                    .disabled(true)
-                PickerLanguage()
+            HStack(alignment: .top) {
+                VStack {
+                    PickerLanguage()
+                    
+                    DbButtons()
+                        .opacity(0.6)
+                        .disabled(true)
+                    
+                    SoundSettings()
+                        .opacity(0.6)
+                        .disabled(true)
+                }
                 
-                Spacer()
-                DangerButtons()
-                Spacer()
-                
-                Spacer()
-                LinkSupport()
-                Spacer()
+                VStack {
+                    DangerButtons()
+                    
+                    LinkSupport()
+                }
             }
         }
         .padding(20)
@@ -36,6 +36,8 @@ extension ConfigGeneralView {
     func DbButtons() -> some View {
         MyGroupBox(header: "key.settings.db".localized) {
             HStack {
+                Space(20)
+                
                 Button("key.settings.db.export".localized) {
                     
                 }
@@ -43,6 +45,8 @@ extension ConfigGeneralView {
                 Button("key.settings.db.import".localized) {
                     
                 }
+                
+                Spacer()
             }
             .frame(minWidth: 180, minHeight: 40)
         }
@@ -63,18 +67,23 @@ extension ConfigGeneralView {
     
     func PickerLanguage() -> some View {
         MyGroupBox(header: "key.settings.lang".localized) {
-            Picker("", selection: $model.currLang) {
-                ForEach(Language.allCases, id: \.rawValue) { language in
-                    Text(language.rawValue.localized ).tag(language)
+            HStack {
+                Space(20)
+                
+                Picker("", selection: $model.currLang) {
+                    ForEach(Language.allCases, id: \.rawValue) { language in
+                        Text(language.rawValue.localized ).tag(language)
+                    }
                 }
+                .pickerStyle(.menu)
+                .frame(maxWidth: 180, minHeight: 40)
+                .onChange(of: model.currLang, perform: {
+                    forceCurrentLocale = $0.asLocaleName()
+                    MyApp.signals.send(signal: RLSignal.LanguageChaned() )
+                })
+                
+                Spacer()
             }
-            .pickerStyle(.menu)
-            .frame(width: 130)
-            .frame(minWidth: 180, minHeight: 40)
-            .onChange(of: model.currLang, perform: {
-                forceCurrentLocale = $0.asLocaleName()
-                MyApp.signals.send(signal: RLSignal.LanguageChaned() )
-            })
         }
     }
     
@@ -87,64 +96,43 @@ extension ConfigGeneralView {
                 Text("key.settings.danger".localized)
             }
         } _: {
-            VStack {
-                let successAlert = "key.sheet.success".localized
+            VStack(alignment: .leading) {
+                BtnAddDefaultQuests()
                 
-                Button("Add default Quests") {
-                    GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
-                }
-                
-                Divider()
-                
-                Button("key.settings.danger.clear-charach".localized) {
-                    let dialogText = "\("key.settings.danger.clear-charach".localized)?"
-                    
-                    GlobalDialog.shared
-                        .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
-                    {
-                        RealmController.shared.deleteAllOf(type: Characteristic.self)
-                        MyApp.signals.send(signal: RLSignal.ReloadData() )
+                HStack {
+                    VStack {
+                        Divider()
                     }
+                    .frame(width: 220)
+                    
+                    Spacer()
                 }
                 
-                Button("key.settings.danger.clear-quests".localized) {
-                    let dialogText = "\("key.settings.danger.clear-quests".localized)?"
-                    
-                    GlobalDialog.shared
-                        .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
-                    {
-                        RealmController.shared.deleteAllOf(type: Quest.self)
-                        MyApp.signals.send(signal: RLSignal.ReloadData() )
-                    }
-                }
+                BtnCleanCharacts()
                 
-                Button("key.settings.danger.clear-history".localized) {
-                    let dialogText = "\("key.settings.danger.clear-history".localized)?"
-                    
-                    GlobalDialog.shared
-                        .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
-                    {
-                        RealmController.shared.deleteAllOf(type: History.self)
-                        MyApp.signals.send(signal: RLSignal.ReloadData() )
-                    }
-                }
+                BtnCleanQuests()
+                
+                BtnCleanHistory()
             }
             .padding(.vertical, 10)
-            .frame(minWidth: 180, minHeight: 40)
+            .padding(.leading, 20)
             .disabled(!enableDangerZone)
         }
     }
     
     func SoundSettings() -> some View {
         MyGroupBox(header: "key.settings.sound-stngs".localized) {
-            HStack{
+            HStack {
+                Space(20)
+                
                 Text("\("key.other.enabled".localized):")
                 Toggle(isOn: $model.sound){ }
                     .toggleStyle( .nolblIosStyle )
+                
+                Spacer()
             }
             .frame(minWidth: 180, minHeight: 40)
         }
-        
     }
     
     func LinkSupport() -> some View {
@@ -202,6 +190,77 @@ extension Language {
             return "ge"
         case .system:
             return nil
+        }
+    }
+}
+
+fileprivate struct BtnAddDefaultQuests: View {
+    var body: some View {
+        Button {
+            GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
+        } label: {
+            Text("Add default Quests")
+                .frame(width: 200)
+        }
+    }
+}
+
+fileprivate struct BtnCleanCharacts: View {
+    var body: some View {
+        let successAlert = "key.sheet.success".localized
+        
+        Button {
+            let dialogText = "\("key.settings.danger.clear-charach".localized)?"
+            
+            GlobalDialog.shared
+                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            {
+                RealmController.shared.deleteAllOf(type: Characteristic.self)
+                MyApp.signals.send(signal: RLSignal.ReloadData() )
+            }
+        } label: {
+            Text("key.settings.danger.clear-charach".localized)
+                .frame(width: 200)
+        }
+    }
+}
+
+fileprivate struct BtnCleanQuests: View {
+    var body: some View {
+        let successAlert = "key.sheet.success".localized
+        
+        Button {
+            let dialogText = "\("key.settings.danger.clear-quests".localized)?"
+            
+            GlobalDialog.shared
+                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            {
+                RealmController.shared.deleteAllOf(type: Quest.self)
+                MyApp.signals.send(signal: RLSignal.ReloadData() )
+            }
+        } label: {
+            Text("key.settings.danger.clear-quests".localized)
+                .frame(width: 200)
+        }
+    }
+}
+
+fileprivate struct BtnCleanHistory: View {
+    var body: some View {
+        let successAlert = "key.sheet.success".localized
+        
+        Button {
+            let dialogText = "\("key.settings.danger.clear-history".localized)?"
+            
+            GlobalDialog.shared
+                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            {
+                RealmController.shared.deleteAllOf(type: History.self)
+                MyApp.signals.send(signal: RLSignal.ReloadData() )
+            }
+        } label: {
+            Text("key.settings.danger.clear-history".localized)
+                .frame(width: 200)
         }
     }
 }
