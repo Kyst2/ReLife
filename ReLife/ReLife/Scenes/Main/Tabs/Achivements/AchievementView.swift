@@ -34,8 +34,8 @@ struct AchievementView: View {
             Spacer()
         }
         .frame(minHeight: 100)
-        .background{
-            RoundedRectangle(cornerRadius: 5)
+        .background {
+            RoundedRectangle(cornerRadius: 8)
                 .fill(Color(hex: 0x222222))
         }
         .opacity(model.finished ? 1 : 0.4)
@@ -85,14 +85,27 @@ fileprivate struct GlowModifier: ViewModifier {
             content
         case .silver:
             ZStack {
-                ShiningView(raysCount: 15)
+                Circle()
+                    .fill(.black)
+                    .blur(radius: 10)
+                    .frame(width: 60, height: 60)
+                    .padding(-20)
                     .opacity(0.7)
+                    
+                ShiningView(raysCount: 15, min: 10, max: 20, offset: 25)
+                    .opacity(0.9)
                 
                 content
             }
         case .gold:
             ZStack {
-                ShiningView(raysCount: 40)
+                Circle()
+                    .fill(.black)
+                    .blur(radius: 10)
+                    .frame(width: 60, height: 60)
+                    .padding(-20)
+                
+                ShiningView(raysCount: 35, min: 5, max: 15, offset: 30)
                 
                 content
             }
@@ -103,9 +116,17 @@ fileprivate struct GlowModifier: ViewModifier {
 
 fileprivate struct ShiningView: View {
     let rays: [Angle]
+    let offset: CGFloat
+    let min: CGFloat
+    let max: CGFloat
+    
     @State var flag = false
     
-    init(raysCount: Int) {
+    init(raysCount: Int, min: CGFloat, max: CGFloat, offset: CGFloat) {
+        self.min = min
+        self.max = max
+        self.offset = offset
+        
         let angleTmp = Double(360)/Double(raysCount)
         
         self.rays = Array(0..<raysCount).map{ Angle.degrees( (Double($0) * angleTmp) + 30 ) }
@@ -114,8 +135,8 @@ fileprivate struct ShiningView: View {
     var body: some View {
         ZStack {
             ForEach(rays, id: \.self) { rayAngle in
-                YellowLine(min: 5, max: 15)
-                    .offset(x: 30)
+                YellowLine(min: min, max: max)
+                    .offset(x: offset)
                     .rotationEffect(rayAngle)
             }
         }
