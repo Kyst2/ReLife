@@ -8,36 +8,33 @@ struct AchievementView: View {
     var model: Achievement
     
     var body: some View {
-        HStack {
-            if model.finished {
-                Icon()
-                    .padding(25)
+        HStack(alignment: .top) {
+            Icon()
+                .padding(35)
+                .padding(.trailing, 10)
+            
+            VStack(alignment: .leading) {
+                Text(model.title)
+                    .font(.custom("SF Pro", size: 17))
                 
-                VStack(alignment: .leading) {
-                    Text(model.title)
-                        .font(.custom("SF Pro", size: 17))
-                    
-                    Text(model.descr)
-                        .multilineTextAlignment(.leading)
-                        .font(.custom("SF Pro", size: 12))
-                        .opacity(0.7)
-                        .fixedSize(horizontal: false, vertical: true)
-                    
-                    Spacer()
-                    
-                    DateFinished()
-                }
-                .padding(.vertical, 12)
+                Space(5)
+                
+                Text(model.descr)
+                    .multilineTextAlignment(.leading)
+                    .font(.custom("SF Pro", size: 12))
+                    .opacity(0.7)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
-            } else {
-                Text("?")
-                    .font(.custom("SF Pro", size: 35))
+                
+                DateFinished()
             }
+            .padding(.top, 20)
+            
+            Spacer()
         }
-        .frame(width: 320, height: 80)
+        .frame(minHeight: 100)
         .background(model.finished ? Color(hex: 0x222222) : Color.white.opacity(0.1))
-        .paddingAlt([.left,.right], value: 8)
         .opacity(model.finished ? 1 : 0.5)
     }
     
@@ -56,6 +53,7 @@ struct AchievementView: View {
                 .font(.custom("SF Pro", size: 9))
                 .monospaced()
                 .opacity(0.7)
+                .padding(5)
         }
     }
 }

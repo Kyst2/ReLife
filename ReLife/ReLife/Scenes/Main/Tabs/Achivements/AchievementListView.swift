@@ -3,17 +3,15 @@ import SwiftUI
 import MoreSwiftUI
 
 struct AchievementListView: View {
-    let columns = [ GridItem(), GridItem()]
-    
     var body: some View {
         ScrollView {
             Space(20)
             
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVStack(spacing: 20) {
                 ForEach(allAchievements, id: \.self) { item in
                     AchievementView(model: item )
                 }
-            }
+            }.padding(.horizontal, 20)
             
             Space(20)
         }
