@@ -117,7 +117,7 @@ extension AchievementEnum {
             type = .silver
         case .mommysCleaner3:
             icon = "sparkles" // 􀆿
-            title = "Нагорода \"Як в операційній\""
+            title = "Нагорода \"Неначе в операційній\""
             descr = """
                     Прибирання раз на день не менше ніж 365 днів підряд
                     """
@@ -146,7 +146,7 @@ extension AchievementEnum {
             type = .silver
         case .vagina3:
             icon  = "magnifyingglass" // 􀊫
-            title = "Найдоглянутіша вагіна на дикому заході"
+            title = "Найдоглянутіша проміжність на дикому заході"
             descr = """
                     Ходиш до гінеколога 3 роки підряд не менше ніж раз на пів року
                     """
@@ -154,7 +154,7 @@ extension AchievementEnum {
             
         case .vagina4:
             icon  = "brain" // 􀯐
-            title = "Богиня чистотоплотності та інтимного здоров'я"
+            title = "Богиня інтимної охайності та здоров'я"
             descr = """
                     Сходила до гінеколога 6 років підряд не менше ніж раз на пів року
                     """
