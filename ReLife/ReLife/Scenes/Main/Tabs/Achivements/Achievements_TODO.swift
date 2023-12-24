@@ -1,14 +1,11 @@
 /*
- 􀑹 - arrow.up.and.down
- Я не пальцем роблений!
- * Починаючи з 30 років ходити до проктолога раз на рік (перший похід витримав!)
 
  */
 
 import Foundation
 
 struct Achievement: Hashable {
-    let icon: String
+    let icon: String?
     let title: String
     let descr: String
     let type: AchievementType
@@ -24,11 +21,13 @@ enum AchievementEnum: CaseIterable {
     case bestSleeper1, bestSleeper3, bestSleeper4//, bestSleeper2
     case mommysCleaner1, mommysCleaner2, mommysCleaner3, mommysCleaner4
     case vagina1, vagina2, vagina3, vagina4
+    case proctolog1, proctolog2
 }
+
 
 extension AchievementEnum {
     func asAchievement() -> Achievement {
-        var icon: String  = ""
+        var icon: String?
         var title: String = ""
         var descr: String = ""
         var type: AchievementType = .wood
@@ -139,14 +138,14 @@ extension AchievementEnum {
                     """
         case .vagina2:
             icon  = "sunglasses" // 􁻈
-            title = "Вмію за собою слідкувати"
+            title = "Догляд за інтимним здоров'ям"
             descr = """
                     2 рази сходити на планове обстеження до гінеколога
                     """
             type = .silver
         case .vagina3:
             icon  = "magnifyingglass" // 􀊫
-            title = "Найдоглянутіша проміжність на дикому заході"
+            title = "Найдоглянутіша піхва на дикому заході"
             descr = """
                     Ходиш до гінеколога 3 роки підряд не менше ніж раз на пів року
                     """
@@ -159,8 +158,27 @@ extension AchievementEnum {
                     Сходила до гінеколога 6 років підряд не менше ніж раз на пів року
                     """
             type = .gold
+            
+        case .proctolog1:
+            icon  = nil
+            title = "Я не пальцем роблений!"
+            descr = """
+                    * Чоловік
+                    * Старше 30 років
+                    * Перший плановий похід до проктолога
+                    """
+            type = .silver
+        case .proctolog2:
+            icon  = nil
+            title = "Нагорода \"Спелеолог десятиліття\" за найретельніше дослідження печери"
+            descr = """
+                    * Чоловік
+                    * Старше 30 років
+                    * Відбулись 4 планових походи до проктолога
+                    """
+            type = .gold
         }
         
-        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: Bool.random() )
+        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: true )
     }
 }

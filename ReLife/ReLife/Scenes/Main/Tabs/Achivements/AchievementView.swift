@@ -44,9 +44,15 @@ struct AchievementView: View {
     @ViewBuilder
     func Icon() -> some View {
         if model.finished {
-            Text.sfIcon2(model.icon, size: 26)
-                .if( model.type != .wood) { $0.glow(type: model.type) }
-                .foregroundColor(model.type.asColor())
+            if let icon = model.icon {
+                Text.sfIcon2(icon, size: 26)
+                    .if( model.type != .wood) { $0.glow(type: model.type) }
+                    .foregroundColor(model.type.asColor())
+            } else {
+                Space(10)
+                    .if( model.type != .wood) { $0.glow(type: model.type) }
+                    .foregroundColor(model.type.asColor())
+            }
         } else {
             Text("?")
                 .font(.custom("SF Pro", size: 26))
@@ -54,15 +60,18 @@ struct AchievementView: View {
         }
     }
     
+    @ViewBuilder
     func DateFinished() -> some View {
-        HStack {
-            Spacer()
-            
-            Text(model.date.string(withFormat: "YYYY.MM.dd") )
-                .font(.custom("SF Pro", size: 9))
-                .monospaced()
-                .opacity(0.7)
-                .padding(5)
+        if model.finished {
+            HStack {
+                Spacer()
+                
+                Text(model.date.string(withFormat: "YYYY.MM.dd") )
+                    .font(.custom("SF Pro", size: 9))
+                    .monospaced()
+                    .opacity(0.7)
+                    .padding(5)
+            }
         }
     }
 }
