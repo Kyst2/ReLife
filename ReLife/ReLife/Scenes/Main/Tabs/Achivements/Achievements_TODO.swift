@@ -20,7 +20,7 @@ enum AchievementEnum: CaseIterable {
     case cleanTooth1, cleanTooth2, cleanTooth3, cleanTooth4
     case bestSleeper1, bestSleeper3, bestSleeper4//, bestSleeper2
     case mommysCleaner1, mommysCleaner2, mommysCleaner3, mommysCleaner4
-    case vagina1, vagina2, vagina3
+    case vagina1, vagina2, vagina3, vagina4
 }
 
 extension AchievementEnum {
@@ -87,14 +87,14 @@ extension AchievementEnum {
             icon = "zzz" // 􀖃
             title = "За межами людських можливостей!"
             descr = """
-                    квест "Йду спати вчасно" виконаний 365 днів підряд
+                    Квест "Йду спати вчасно" виконаний 365 днів підряд
                     """
             type = .gold
         case .bestSleeper4:
             icon = "moon.zzz" // 􀆽
             title = "Я єсьм бог сну!"
             descr = """
-                    квест "Йду спати вчасно" виконаний 730 днів підряд
+                    Квест "Йду спати вчасно" виконаний 730 днів підряд
                     """
             type = .gold
             
@@ -138,14 +138,24 @@ extension AchievementEnum {
             icon  = "sunglasses" // 􁻈
             title = "Вмію за собою слідкувати"
             descr = """
-                    2 раз сходити на планове обстеження до гінеколога
+                    2 рази сходити на планове обстеження до гінеколога
                     """
+            type = .silver
         case .vagina3:
             icon  = "magnifyingglass" // 􀊫
             title = "Найдоглянутіша вагіна на дикому заході"
             descr = """
                     Ходиш до гінеколога 3 роки підряд не менше ніж раз на пів року
                     """
+            type = .gold
+            
+        case .vagina4:
+            icon  = "brain" // 􀯐
+            title = "Богиня чистотоплотності та інтимного здоров'я"
+            descr = """
+                    Сходила до гінеколога 6 років підряд не менше ніж раз на пів року
+                    """
+            type = .gold
         }
         
         return Achievement(icon: icon, title: title, descr: descr, type: type, finished: true)
