@@ -2,23 +2,14 @@ import Foundation
 import SwiftUI
 import MoreSwiftUI
 
-struct Achievement {
-    let achived: Bool
-    let date = Date.now
-    let type: AchievementType = AchievementType.allCases.randomElement()!
-    let title = "Премія \"Чисті ікла\" року"
-    let descr = "За рік не пропустити жодної чистки зубів"
-    
-    
-    
-}
+
 
 struct AchievementView: View {
     var model: Achievement
     
     var body: some View {
         HStack {
-            if model.achived {
+            if model.finished {
                 Icon()
                     .padding(25)
                 
@@ -45,14 +36,14 @@ struct AchievementView: View {
             }
         }
         .frame(width: 320, height: 80)
-        .background(model.achived ? Color(hex: 0x222222) : Color.white.opacity(0.1))
+        .background(model.finished ? Color(hex: 0x222222) : Color.white.opacity(0.1))
         .paddingAlt([.left,.right], value: 8)
-        .opacity(model.achived ? 1 : 0.5)
+        .opacity(model.finished ? 1 : 0.5)
     }
     
     @ViewBuilder
     func Icon() -> some View {
-        Text.sfIcon2("bookmark", size: 26)
+        Text.sfIcon2(model.icon, size: 26)
             .if( model.type != .wood) { $0.glow(type: model.type) }
             .foregroundColor(model.type.asColor())
     }

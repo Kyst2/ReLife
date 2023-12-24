@@ -10,8 +10,8 @@ struct AchievementListView: View {
             Space(20)
             
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(Array(0...100), id: \.self) { _ in
-                    AchievementView(model: Achievement(achived: Bool.random()) )
+                ForEach(allAchievements, id: \.self) { item in
+                    AchievementView(model: item )
                 }
             }
             
@@ -20,3 +20,5 @@ struct AchievementListView: View {
         .frame(minWidth: 690)
     }
 }
+
+let allAchievements = AchievementEnum.allCases.map{ $0.asAchievement() }

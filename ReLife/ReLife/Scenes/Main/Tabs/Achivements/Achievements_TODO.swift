@@ -1,93 +1,153 @@
 /*
-////////////////
-БРОНЗА
-////////////////
- 
- 􀑔 - studentdesk
- * Новачок
- |-- Виконав всі квести призначені на 1 день
- 
- 
- 􁏛 - figure.walk.departure
- * Першопроходець
- |-- Створив свій перший одноразовий квест
- 
- 
- 􀵮 - figure.fall
- * Стресостікість
- |-- Пережити похід до стоматолога
- |-- Не забув нагородити себе чимось смачненьким!
- 
- 
- 􀇦 - wind.snow
- * Свіже дихання
- |-- Виконав квест "чистить зуби" 30 днів підряд
 
- 
- 
- 􁏋 - medal
- * Медаль з картоплі "Мамина чистюля"
- |-- прибирання раз на день по 5 хв не менше ніж 2 тижні підряд
- 
- 
- 􀙩 - bed.double
- * Це лише початок гарного режиму сну!
- |-- квест "Йду спати вчасно" виконаний 14 днів підряд
- 
- 
- 
-////////////////
-СРІБЛО
-////////////////
- 
- 􀆿 - sparkles
- * Премія "Ліпші ікла на районі"
- |-- Чистиш зуби 180 днів підряд
- |-- 1 рази навідався до стоматолога за останні 200 днів
- 
- 
- 􀫸 - sparkle
- * Так чисто в квартирі ще не було!
- |-- прибирання раз на день по 5 хв не менше ніж 2 місяці підряд
- 
- 
- 􀙪 - bed.double.fill
- * Справді гарний режим сну!
- |-- квест "Йду спати вчасно" виконаний 60 днів підряд
- 
- 
- 
-////////////////
-ЗОЛОТО:
-////////////////
- 
- * Премія "Золоті ікла року"
- |-- Чистиш зуби 365 днів підряд
- |-- 2 рази навідався до стоматолога за 365 днів
- 
- 􀖃 - zzz
- * За межами людських можливостей!
- |-- квест "Йду спати вчасно" виконаний 365 днів підряд
-
- 
- 􀆽 - moon.zzz
- * Я єсьм бог сну!
- |-- квест "Йду спати вчасно" виконаний 730 днів підряд
- 
- 􀇧 - tornado
- * Вертів я того стоматолога!
- |-- Чистиш зуби 730 днів підряд
- |-- 4 рази навідався до стоматолога за 800 днів
- 
- 􀆿 - sparkles
- * Премія "Як в операційній"
- |-- прибирання раз на день по 5 хв не менше ніж 365 днів підряд
- 
- 
- 􀊫 - magnifyingglass
- * Найдоглянутіша вагіна на дикому заході
- |-- ходиш до гінеколога 3 роки підряд не менше ніж раз на пів року
- 
- 
- 
  */
+
+import Foundation
+
+struct Achievement: Hashable {
+    let icon: String
+    let title: String
+    let descr: String
+    let type: AchievementType
+    
+    let finished: Bool
+    let date = Date.now
+}
+
+enum AchievementEnum: CaseIterable {
+    case newbie
+    case stressFighter
+    case cleanTooth1, cleanTooth2, cleanTooth3, cleanTooth4
+    case bestSleeper1, bestSleeper3, bestSleeper4//, bestSleeper2
+    case mommysCleaner1, mommysCleaner2, mommysCleaner3, mommysCleaner4
+    case vagina1, vagina2, vagina3
+}
+
+extension AchievementEnum {
+    func asAchievement() -> Achievement {
+        var icon: String  = ""
+        var title: String = ""
+        var descr: String = ""
+        var type: AchievementType = .wood
+        
+        switch self {
+        case .newbie:
+            icon = "studentdesk" // 􀑔
+            title = "Новачок"
+            descr = "Виконав всі квести призначені на 1 день"
+        
+            
+        case .stressFighter:
+            icon = "figure.fall" // 􀵮
+            title = "Стресостікість"
+            descr = """
+                    * Пережити похід до стоматолога
+                    * Не забув нагородити себе чимось смачненьким!
+                    """
+            
+            
+        case .cleanTooth1:
+            icon = "wind.snow" // 􀇦
+            title = "Свіже дихання"
+            descr = "Виконав квест \"чистить зуби\" 30 днів підряд"
+        case .cleanTooth2:
+            icon = "sparkles" // 􀆿
+            title = "Нагорода \"Ліпші ікла на районі\""
+            descr = """
+                    * Чистиш зуби 180 днів підряд
+                    * 1 рази навідався до стоматолога за останні 200 днів
+                    """
+            type = .silver
+        case .cleanTooth3:
+            icon = "sparkles" // 􀆿
+            title = "Нагорода \"Золоті ікла року\""
+            descr = """
+                    * Чистиш зуби 365 днів підряд
+                    * 2 рази навідався до стоматолога за 365 днів
+                    """
+            type = .gold
+        case .cleanTooth4:
+            icon = "tornado" // 􀇧
+            title = "Вертів я того стоматолога!"
+            descr = """
+                    * Чистиш зуби 730 днів підряд
+                    * 4 рази навідався до стоматолога за 800 днів
+                    """
+            type = .gold
+            
+            
+        case .bestSleeper1:
+            icon = "bed.double" // 􀙩
+            title = "Це лише початок шляху до режиму сну!"
+            descr = """
+                    Квест "Йду спати вчасно" виконаний 14 днів підряд
+                    """
+//        case .bestSleeper2: // not implemented
+        case .bestSleeper3:
+            icon = "zzz" // 􀖃
+            title = "За межами людських можливостей!"
+            descr = """
+                    квест "Йду спати вчасно" виконаний 365 днів підряд
+                    """
+            type = .gold
+        case .bestSleeper4:
+            icon = "moon.zzz" // 􀆽
+            title = "Я єсьм бог сну!"
+            descr = """
+                    квест "Йду спати вчасно" виконаний 730 днів підряд
+                    """
+            type = .gold
+            
+            
+        case .mommysCleaner1:
+            icon = "medal" // 􁏋
+            title = "Медаль з картоплі \"Мамина чистюля\""
+            descr = """
+                    Прибирання раз на день не менше ніж 2 тижні підряд
+                    """
+        case .mommysCleaner2:
+            icon = "sparkle" // 􀫸
+            title = "Так чисто в квартирі ще не було!"
+            descr = """
+                    Прибирання раз на день не менше ніж 8 тижнів підряд
+                    """
+            type = .silver
+        case .mommysCleaner3:
+            icon = "sparkles" // 􀆿
+            title = "Нагорода \"Як в операційній\""
+            descr = """
+                    Прибирання раз на день не менше ніж 365 днів підряд
+                    """
+            type = .gold
+        case .mommysCleaner4:
+            icon = "brain" // 􀯐
+            title = "Бог чистоплотності"
+            descr = """
+                    Прибирання раз на день не менше ніж 730 днів підряд
+                    """
+            type = .gold
+        
+            
+        case .vagina1:
+            icon = "arrowshape.right" // 􁉂
+            title = "Я у мами розумничка!"
+            descr = """
+                    1 раз сходити на планове обстеження до гінеколога
+                    """
+        case .vagina2:
+            icon  = "sunglasses" // 􁻈
+            title = "Вмію за собою слідкувати"
+            descr = """
+                    2 раз сходити на планове обстеження до гінеколога
+                    """
+        case .vagina3:
+            icon  = "magnifyingglass" // 􀊫
+            title = "Найдоглянутіша вагіна на дикому заході"
+            descr = """
+                    Ходиш до гінеколога 3 роки підряд не менше ніж раз на пів року
+                    """
+        }
+        
+        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: true)
+    }
+}
