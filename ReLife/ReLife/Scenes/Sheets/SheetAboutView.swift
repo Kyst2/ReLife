@@ -89,10 +89,10 @@ extension Bundle {
 
 fileprivate let madeByText: String =
 """
-Development:
+Backend development:
      Andrii Kuzmich, Andrii Vynnychenko
-Design:
+Frontend development / Design:
      Andrii Vynnychenko, Andrii Kuzmich
-Idea: 
+Idea/Technical assignment: 
      Andrii Vynnychenko
 """
