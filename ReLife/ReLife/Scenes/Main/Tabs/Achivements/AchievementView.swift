@@ -34,15 +34,24 @@ struct AchievementView: View {
             Spacer()
         }
         .frame(minHeight: 100)
-        .background(model.finished ? Color(hex: 0x222222) : Color.white.opacity(0.1))
-        .opacity(model.finished ? 1 : 0.5)
+        .background{
+            RoundedRectangle(cornerRadius: 5)
+                .fill(Color(hex: 0x222222))
+        }
+        .opacity(model.finished ? 1 : 0.4)
     }
     
     @ViewBuilder
     func Icon() -> some View {
-        Text.sfIcon2(model.icon, size: 26)
-            .if( model.type != .wood) { $0.glow(type: model.type) }
-            .foregroundColor(model.type.asColor())
+        if model.finished {
+            Text.sfIcon2(model.icon, size: 26)
+                .if( model.type != .wood) { $0.glow(type: model.type) }
+                .foregroundColor(model.type.asColor())
+        } else {
+            Text("?")
+                .font(.custom("SF Pro", size: 26))
+                .foregroundColor(model.type.asColor())
+        }
     }
     
     func DateFinished() -> some View {
@@ -143,8 +152,8 @@ fileprivate struct YellowLine: View {
     }
 }
 
-enum AchievementType: CaseIterable {
-    case wood
+enum AchievementType: Int, CaseIterable {
+    case wood 
     case silver
     case gold
 }

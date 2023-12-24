@@ -161,6 +161,6 @@ extension AchievementEnum {
             type = .gold
         }
         
-        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: true)
+        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: Bool.random() )
     }
 }
