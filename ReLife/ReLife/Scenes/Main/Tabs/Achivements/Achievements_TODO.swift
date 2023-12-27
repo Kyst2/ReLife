@@ -93,15 +93,15 @@ extension AchievementEnum {
                     """
             type = .gold
         case .bestSleeper4:
-            icon = "moon.zzz" // 􀆽
-            title = "Я єсьм бог сну!"
+            icon = "bolt" // 􀋥
+            title = "Гроза підкроватних монстрів"
             descr = """
                     Квест "Йду спати вчасно" виконаний 730 днів підряд
                     """
             type = .gold
         case .bestSleeper5:
-            icon = "bolt" // 􀋥
-            title = "Гроза підкроватних монстрів"
+            icon = "moon.zzz" // 􀆽
+            title = "Я єсьм бог сну!"
             descr = """
                     Квест "Йду спати вчасно" виконаний 1460 днів підряд
                     """
