@@ -18,10 +18,11 @@ enum AchievementEnum: CaseIterable {
     case newbie
     case stressFighter
     case cleanTooth1, cleanTooth2, cleanTooth3, cleanTooth4
-    case bestSleeper1, bestSleeper3, bestSleeper4//, bestSleeper2
+    case bestSleeper1, bestSleeper3, bestSleeper4, bestSleeper5//, bestSleeper2
     case mommysCleaner1, mommysCleaner2, mommysCleaner3, mommysCleaner4
     case vagina1, vagina2, vagina3, vagina4
     case proctolog1, proctolog2
+    case healthCatcher1, healthCatcher2, healthCatcher3, healthCatcher4
 }
 
 
@@ -46,7 +47,6 @@ extension AchievementEnum {
                     * Пережити похід до стоматолога
                     * Треба не забути нагородити себе нямкою!
                     """
-            
             
         case .cleanTooth1:
             icon = "wind.snow" // 􀇦
@@ -99,6 +99,13 @@ extension AchievementEnum {
                     Квест "Йду спати вчасно" виконаний 730 днів підряд
                     """
             type = .gold
+        case .bestSleeper5:
+            icon = "bolt" // 􀋥
+            title = "Гроза підкроватних монстрів"
+            descr = """
+                    Квест "Йду спати вчасно" виконаний 1460 днів підряд
+                    """
+            type = .gold
             
             
         case .mommysCleaner1:
@@ -134,20 +141,20 @@ extension AchievementEnum {
             icon = "arrowshape.right" // 􁉂
             title = "Я у мами розумничка!"
             descr = """
-                    1 раз сходити на планове обстеження до гінеколога
+                    1 плановий візит до гінеколога
                     """
         case .vagina2:
             icon  = "sunglasses" // 􁻈
             title = "Догляд за інтимним здоров'ям"
             descr = """
-                    2 рази сходити на планове обстеження до гінеколога
+                    2 планових візитів до гінеколога(раз на пів року)
                     """
             type = .silver
         case .vagina3:
             icon  = "magnifyingglass" // 􀊫
             title = "Найдоглянутіша піхва на дикому заході"
             descr = """
-                    Ходиш до гінеколога 3 роки підряд не менше ніж раз на пів року
+                    6 планових візитів до гінеколога(раз на пів року)
                     """
             type = .gold
             
@@ -155,7 +162,7 @@ extension AchievementEnum {
             icon  = "brain" // 􀯐
             title = "Богиня інтимної охайності та здоров'я"
             descr = """
-                    Сходила до гінеколога 6 років підряд не менше ніж раз на пів року
+                    12 планових візитів до гінеколога(раз на пів року)
                     """
             type = .gold
             
@@ -175,6 +182,35 @@ extension AchievementEnum {
                     * Чоловік
                     * Старше 30 років
                     * Відбулись 4 планових походи до проктолога
+                    """
+            type = .gold
+            
+        case .healthCatcher1:
+            icon  = "plus"
+            title = "Бронзовий збирач здоров'я"
+            descr = """
+                    * Здобув 500 очок характеристики "здоров'я"
+                    """
+            type = .wood
+        case .healthCatcher2:
+            icon  = "plus"
+            title = "Срібний збирач здоров'я"
+            descr = """
+                    * Здобув 3_000 очок характеристики "здоров'я"
+                    """
+            type = .silver
+        case .healthCatcher3:
+            icon  = "plus"
+            title = "Золотий збирач здоров'я"
+            descr = """
+                    * Здобув 6_000 очок характеристики "здоров'я"
+                    """
+            type = .gold
+        case .healthCatcher4:
+            icon  = "sparkles"
+            title = "Я що, житиму вічно?"
+            descr = """
+                    * Здобув 20_000 очок характеристики "здоров'я"
                     """
             type = .gold
         }

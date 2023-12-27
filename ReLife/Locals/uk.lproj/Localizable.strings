@@ -63,6 +63,7 @@
 "key.settings.danger.clear-charach" = "Очистити Характеристики";
 "key.settings.danger.clear-quests" = "Очистити Квести";
 "key.settings.danger.clear-history" = "Очиситити Історію";
+"key.settings.danger.clear-achievement" = "Очистити Досягнення";
 "key.settings.sound-stngs" = "Налаштування звуку";
 "key.settings.support-email" = "Написати до тех.підтримки";
 "key.settings.about" = "Про %@";

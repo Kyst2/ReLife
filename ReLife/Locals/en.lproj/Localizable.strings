@@ -64,6 +64,7 @@
 "key.settings.danger.clear-charach" = "Clear Characteristics";
 "key.settings.danger.clear-quests" = "Clear Quests";
 "key.settings.danger.clear-history" = "Clear History";
+"key.settings.danger.clear-achievement" = "Clear Achievements";
 "key.settings.sound-stngs" = "Sound Settings";
 "key.settings.support-email" = "Support Email";
 "key.settings.about" = "About %@";

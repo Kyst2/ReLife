@@ -113,6 +113,8 @@ extension ConfigGeneralView {
                 BtnCleanQuests()
                 
                 BtnCleanHistory()
+                
+                BtnCleanAchievements()
             }
             .padding(.vertical, 10)
             .padding(.leading, 20)
@@ -260,6 +262,25 @@ fileprivate struct BtnCleanHistory: View {
             }
         } label: {
             Text("key.settings.danger.clear-history".localized)
+                .frame(width: 200)
+        }
+    }
+}
+
+fileprivate struct BtnCleanAchievements: View {
+    var body: some View {
+        let successAlert = "key.sheet.success".localized
+        
+        Button {
+            let dialogText = "\("key.settings.danger.clear-achievement".localized)?"
+            
+            GlobalDialog.shared
+                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            {
+                
+            }
+        } label: {
+            Text("key.settings.danger.clear-achievement".localized)
                 .frame(width: 200)
         }
     }

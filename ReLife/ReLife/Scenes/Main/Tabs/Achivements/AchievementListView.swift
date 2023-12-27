@@ -3,7 +3,7 @@ import SwiftUI
 import MoreSwiftUI
 
 struct AchievementListView: View {
-    let myAchievements = allAchievements.mySorted()
+    let myAchievements = allAchievements//.mySorted()
     
     var body: some View {
         ScrollView {

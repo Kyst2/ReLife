@@ -25,7 +25,7 @@ struct AchievementView: View {
                     .opacity(0.7)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Spacer()
+                Space(min: 0)
                 
                 DateFinished()
             }
@@ -33,7 +33,7 @@ struct AchievementView: View {
             
             Spacer()
         }
-        .frame(minHeight: 100)
+        .frame( minHeight: 100 )
         .background {
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color(hex: 0x222222))
