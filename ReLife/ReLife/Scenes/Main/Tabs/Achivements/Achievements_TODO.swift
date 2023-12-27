@@ -79,14 +79,14 @@ extension AchievementEnum {
             
             
         case .bestSleeper1:
-            icon = "bed.double" // 􀙩
+            icon = "zzz" // 􀖃
             title = "Це лише початок шляху до режиму сну!"
             descr = """
                     Квест "Йду спати вчасно" виконаний 14 днів підряд
                     """
 //        case .bestSleeper2: // not implemented
         case .bestSleeper3:
-            icon = "zzz" // 􀖃
+            icon = "moon.zzz" // 􀆽
             title = "За межами людських можливостей!"
             descr = """
                     Квест "Йду спати вчасно" виконаний 365 днів підряд
@@ -96,14 +96,14 @@ extension AchievementEnum {
             icon = "bolt" // 􀋥
             title = "Гроза підкроватних монстрів"
             descr = """
-                    Квест "Йду спати вчасно" виконаний 730 днів підряд
+                    Квест "Йду спати вчасно" виконаний 500 днів підряд
                     """
             type = .gold
         case .bestSleeper5:
-            icon = "moon.zzz" // 􀆽
-            title = "Я єсьм бог сну!"
+            icon = "lizard.fill" // 􁗜
+            title = "Я в ліжку - монстр!"
             descr = """
-                    Квест "Йду спати вчасно" виконаний 1460 днів підряд
+                    Квест "Йду спати вчасно" виконаний 730 днів підряд
                     """
             type = .gold
             
@@ -186,28 +186,28 @@ extension AchievementEnum {
             type = .gold
             
         case .healthCatcher1:
-            icon  = "plus"
+            icon  = "cross" //􀣜
             title = "Бронзовий збирач здоров'я"
             descr = """
                     * Здобув 500 очок характеристики "здоров'я"
                     """
             type = .wood
         case .healthCatcher2:
-            icon  = "plus"
+            icon  = "cross.fill" //􀣝
             title = "Срібний збирач здоров'я"
             descr = """
                     * Здобув 3_000 очок характеристики "здоров'я"
                     """
             type = .silver
         case .healthCatcher3:
-            icon  = "plus"
+            icon  = "staroflife" //􀑆
             title = "Золотий збирач здоров'я"
             descr = """
                     * Здобув 6_000 очок характеристики "здоров'я"
                     """
             type = .gold
         case .healthCatcher4:
-            icon  = "sparkles"
+            icon  = "staroflife.fill" //􀑇
             title = "Я що, житиму вічно?"
             descr = """
                     * Здобув 20_000 очок характеристики "здоров'я"
