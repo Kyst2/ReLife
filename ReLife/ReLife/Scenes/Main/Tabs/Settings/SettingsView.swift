@@ -8,7 +8,7 @@ struct SettingsView: View {
     var body: some View {
         HStack(spacing: 0) {
             TabsPanel()
-                .backgroundGaussianBlur(type: .behindWindow, material: .m1_hudWindow, color: .black.opacity(0.2))
+                .backgroundGaussianBlur(type: .behindWindow, material: .m2_menu, color: .black.opacity(0.2))
                 .transition( .move(edge: .leading) )
             
             TabContent()

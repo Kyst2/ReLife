@@ -21,17 +21,13 @@ struct TabButton: View {
             TabIcon()
             
             Space(8)
-                
-            TabTitle()
-            
-            Space(8)
             
             SelectionLine()
             
             Divider()
         }
         .backgroundGaussianBlur(type: .behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.17))
-        
+        .help(tab.rawValue.localized)
     }
 }
 
@@ -39,12 +35,6 @@ fileprivate extension TabButton {
     func TabIcon() -> some View {
         Image(systemName: tab.icon)
             .font(.system(size: 25))
-    }
-    
-    func TabTitle() -> some View {
-        Text(tab.rawValue.localized )
-            .myFont(size: 13)
-            .fontWeight(.semibold)
     }
     
     func SelectionLine() -> some View {

@@ -14,10 +14,11 @@ struct MainView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             VerticalTabs()
+                .frame(width: 70)
             
             ContentPanel()
                 .fillParent()
-                .frame(minWidth: 600)
+                .frame(minWidth: 700)
         }
         .foregroundColor(RLColors.brownLight)
         .background( BackgroundView().opacity(0.3) )
@@ -56,7 +57,6 @@ extension MainView {
             }
             .id(MainViewTab.quests.rawValue.localized) //fix refresh issues on locale change
             .backgroundGaussianBlur(type:.behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.1))
-            .frame(width:120)
             
             Divider()
         }

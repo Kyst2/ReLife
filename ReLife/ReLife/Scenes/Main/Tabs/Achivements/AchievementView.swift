@@ -2,8 +2,6 @@ import Foundation
 import SwiftUI
 import MoreSwiftUI
 
-
-
 struct AchievementView: View {
     var model: Achievement
     
@@ -30,8 +28,6 @@ struct AchievementView: View {
                 DateFinished()
             }
             .padding(.top, 20)
-            
-            Spacer()
         }
         .frame( minHeight: 100 )
         .background {
@@ -64,7 +60,7 @@ struct AchievementView: View {
     func DateFinished() -> some View {
         if model.finished {
             HStack {
-                Spacer()
+                Space(min: 0)
                 
                 Text(model.date.string(withFormat: "YYYY.MM.dd") )
                     .font(.custom("SF Pro", size: 9))
