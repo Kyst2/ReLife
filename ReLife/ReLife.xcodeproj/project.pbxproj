@@ -26,6 +26,7 @@
 		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
+		1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A32B3D238900118F5F /* UksTabView.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -150,6 +151,7 @@
 		1D6E25652B3701D6001083CB /* RLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLColors.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
+		1DCF86A32B3D238900118F5F /* UksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UksTabView.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		A200BD3C2AA6064200DCEBD9 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		A21086212A8026F900EB7A89 /* RealmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				A27116752B3507CD00306F99 /* NumUpDown.swift */,
 				1D6E25612B362F01001083CB /* BtnOpenSettings.swift */,
 				1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */,
+				1DCF86A32B3D238900118F5F /* UksTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
 				1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
+				1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */,
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
 				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,

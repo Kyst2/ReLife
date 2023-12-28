@@ -5,16 +5,22 @@ import Essentials
 struct HistoryView: View {
     @ObservedObject var model = HistoryViewModel()
     var body: some View {
-        ScrollView {
-            VStack(spacing: 6) {
-                ForEach(model.history) { his in
-                    HistoryItem(quest: his.quest!, date: his.dateCompleted)
+        if model.history.count == 0 {
+            Text("There are no history records at the moment")
+                .fillParent()
+        } else {
+            ScrollView {
+                VStack(spacing: 6) {
+                    ForEach(model.history) { his in
+                        HistoryItem(quest: his.quest!, date: his.dateCompleted)
+                    }
+                    
+                    Spacer()
+                    
                 }
-                
-                Spacer()
+                .padding(.horizontal, 20)
+                .padding(.vertical, 20)
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 20)
         }
     }
 }

@@ -53,10 +53,3 @@ class SettingsViewModel: ObservableObject {
     }
 }
 
-
-enum SettingsTab: String {
-    case general = "key.settings.tab.general"
-    case quests = "key.quests"
-    case characteristics = "key.characteristics"
-    case history = "key.history"
-}
