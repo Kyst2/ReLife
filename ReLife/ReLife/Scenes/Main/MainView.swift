@@ -18,7 +18,6 @@ struct MainView: View {
             ContentPanel()
                 .fillParent()
                 .frame(minWidth: 600)
-                .transition(transition)
         }
         .foregroundColor(RLColors.brownLight)
         .background( BackgroundView().opacity(0.3) )
@@ -68,10 +67,13 @@ extension MainView {
         switch(model.selectedTab){
         case .quests : 
             QuestsView(model: model)
+                .transition(transition)
         case .characteristics :
             CharacteristicsView(model: model)
+                .transition(transition)
         case .achivements:
             AchievementListView()
+                .transition(transition)
         case .settings:
             SettingsView()
         }

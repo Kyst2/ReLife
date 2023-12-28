@@ -56,11 +56,6 @@
 ////////////////////
 "key.settings.tab.general" = "General"; // other tabs in "other"
 "key.settings.db" = "Database";
-"key.settings.db.export" = "Export";
-"key.settings.db.import" = "Import";
-"key.settings.1st-weekday" = "First Day of week";
-"key.settings.lang" = "Language";
-"key.settings.danger" = "Danger zone";
 "key.settings.danger.clear-charach" = "Clear Characteristics";
 "key.settings.danger.clear-quests" = "Clear Quests";
 "key.settings.danger.clear-history" = "Clear History";

@@ -9,7 +9,6 @@ class SettingsViewModel: ObservableObject {
     @Published var allQuests: [Quest] = []
     @Published var allCharacteristics: [Characteristic] = []
     
-    @Published var firstWeeckDay: FirstWeekDay = .monday
     @Published(key: "currLang") var currLang: Language = .system
     @Published var sound = false
     

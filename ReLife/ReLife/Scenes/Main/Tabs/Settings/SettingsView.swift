@@ -6,8 +6,10 @@ struct SettingsView: View {
     @ObservedObject var model = SettingsViewModel.shared
     
     var body: some View {
-        VStack(spacing: 0) {
+        HStack(spacing: 0) {
             TabsPanel()
+                .backgroundGaussianBlur(type: .behindWindow, material: .m1_hudWindow, color: .black.opacity(0.2))
+                .transition( .move(edge: .leading) )
             
             TabContent()
                 .transition(AnyTransition.move(edge: .trailing))
@@ -17,7 +19,7 @@ struct SettingsView: View {
 
 extension SettingsView {
     func TabsPanel() -> some View {
-        HStack(spacing: 0) {
+        VStack(spacing: 0) {
             SingleTab(.general)
             
             SingleTab(.quests)
@@ -25,6 +27,8 @@ extension SettingsView {
             SingleTab(.characteristics)
             
             SingleTab(.history)
+            
+            Spacer()
         }
     }
     
@@ -53,12 +57,28 @@ enum SettingsTab: String {
     case history = "key.history"
 }
 
+extension SettingsTab {
+    func asIcon() -> String {
+        switch self {
+        case .general:
+            return "gear.badge.checkmark"
+        case .quests:
+            return "list.bullet.clipboard"
+        case .characteristics:
+            return "person"
+        case .history:
+            return "book"
+        }
+    }
+}
+
+
+
+
 extension SettingsView {
     func SingleTab(_ curr: SettingsTab) -> some View {
-        Text(curr.rawValue.localized)
-            .myFont(size: 17)
-            .frame(height: 40)
-            .frame(minWidth: 150, maxWidth: .infinity)
+        Text.sfIcon2(curr.asIcon(), size: 30)
+            .padding(10)
             .makeFullyIntaractable()
             .overlay {
                 Rectangle()
@@ -74,14 +94,14 @@ extension SettingsView {
                                 .fill(RLColors.brownLight)
                                 .frame(height: 3)
                                 .id("SettingTabSelection")
-                                .transition(.scale.combined(with: .opacity))
+                                .transition(.move(edge: .leading).combined(with: .opacity))
                         }
                     }
                 }
-                .animation(.easeInOut, value: model.tab)
+                .animation(.easeInOut(duration: 0.1), value: model.tab)
             }
             .onTapGesture {
-                withAnimation(.easeIn(duration: 0.2 )){
+                withAnimation(.easeIn(duration: 0.3 )){
                     model.tab = curr
                 }
             }

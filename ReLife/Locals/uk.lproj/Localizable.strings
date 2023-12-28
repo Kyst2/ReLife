@@ -55,11 +55,6 @@
 // Settings
 ////////////////////
 "key.settings.db" = "База даних";
-"key.settings.db.export" = "Експорт";
-"key.settings.db.import" = "Імпорт";
-"key.settings.1st-weekday" = "Перший день тижня";
-"key.settings.lang" = "Мова";
-"key.settings.danger" = "Небезпечно";
 "key.settings.danger.clear-charach" = "Очистити Характеристики";
 "key.settings.danger.clear-quests" = "Очистити Квести";
 "key.settings.danger.clear-history" = "Очиситити Історію";

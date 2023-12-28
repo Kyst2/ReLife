@@ -38,37 +38,31 @@ extension ConfigGeneralView {
             HStack {
                 Space(20)
                 
-                Button("key.settings.db.export".localized) {
-                    
+                //EXPORT
+                Button(action: { }) {
+                    Text.sfIcon2("tray.and.arrow.up", size: 30)
+                        .padding(3)
                 }
                 
-                Button("key.settings.db.import".localized) {
-                    
+                // Import
+                Button(action: { }) {
+                    Text.sfIcon2("tray.and.arrow.down", size: 30)
+                        .padding(3)
                 }
                 
                 Spacer()
             }
-            .frame(minWidth: 180, minHeight: 40)
-        }
-    }
-    
-    func PickerFirstWeekDay() -> some View {
-        MyGroupBox(header: "key.settings.1st-weekday".localized) {
-            Picker("", selection: $model.firstWeeckDay) {
-                ForEach(FirstWeekDay.allCases, id: \.rawValue) { day in
-                    Text(day.rawValue.localized ).tag(day)
-                }
-            }
-            .pickerStyle(.menu)
-            .frame(width: 130)
+            .padding(4)
             .frame(minWidth: 180, minHeight: 40)
         }
     }
     
     func PickerLanguage() -> some View {
-        MyGroupBox(header: "key.settings.lang".localized) {
+        MyGroupBox2(headerView: { EmptyView() } ) {
             HStack {
                 Space(20)
+                
+                Text.sfIcon2("globe", size: 20)
                 
                 Picker("", selection: $model.currLang) {
                     ForEach(Language.allCases, id: \.rawValue) { language in
@@ -93,7 +87,15 @@ extension ConfigGeneralView {
                 Toggle("", isOn: $enableDangerZone)
                     .toggleStyle( .nolblIosStyle )
                 
-                Text("key.settings.danger".localized)
+                HStack(spacing: 0) {
+                    Text.sfIcon2("bolt.fill", size: 20)
+                        .padding(.horizontal, -2)
+                    Text.sfIcon2("bolt.fill", size: 20)
+                        .padding(.horizontal, -2)
+                    Text.sfIcon2("bolt.fill", size: 20)
+                        .padding(.horizontal, -2)
+                }
+                .foregroundColor(.yellow)
             }
         } _: {
             VStack(alignment: .leading) {
@@ -123,14 +125,15 @@ extension ConfigGeneralView {
     }
     
     func SoundSettings() -> some View {
-        MyGroupBox(header: "key.settings.sound-stngs".localized) {
+        MyGroupBox2 {
             HStack {
-                Space(20)
-                
-                Text("\("key.other.enabled".localized):")
                 Toggle(isOn: $model.sound){ }
                     .toggleStyle( .nolblIosStyle )
                 
+                Text.sfIcon2("music.note", size: 15)
+            }
+        } _: {
+            HStack {
                 Spacer()
             }
             .frame(minWidth: 180, minHeight: 40)
@@ -169,10 +172,6 @@ struct TitleText: View {
     }
 }
 
-enum FirstWeekDay: String, CaseIterable {
-    case sunday = "key.other.day.7"
-    case monday = "key.other.day.1"
-}
 
 enum Language: String, CaseIterable {
     case system  = "key.other.lang.system"
