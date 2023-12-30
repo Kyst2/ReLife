@@ -12,9 +12,6 @@
 		1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C42B379673009DD522 /* Achievements_TODO.swift */; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
-		1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */; };
-		1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254E2B338CD0001083CB /* SignalsService.swift */; };
-		1D6E25532B338CD0001083CB /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254F2B338CD0001083CB /* Signals.swift */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
 		1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25562B33AD88001083CB /* AppDelegate.swift */; };
 		1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25582B33D463001083CB /* SheetAlertView.swift */; };
@@ -24,6 +21,7 @@
 		1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25612B362F01001083CB /* BtnOpenSettings.swift */; };
 		1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */; };
 		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
+		1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83310F2B40DD380047FADA /* PreludeP4View.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A32B3D238900118F5F /* UksTabView.swift */; };
@@ -77,8 +75,6 @@
 		A2C11F522B1648880062AFDE /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C11F512B1648880062AFDE /* TabButton.swift */; };
 		A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C55E852B2D0D71001E67FB /* CharacteristicsAndPoints.swift */; };
 		A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C55E872B2D0D8E001E67FB /* QuestWrapper.swift */; };
-		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
-		A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */; };
 		A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */; };
 		A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */; };
@@ -119,7 +115,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,9 +142,6 @@
 		1D6E253A2B33696A001083CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E253B2B33696A001083CB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E253C2B33696A001083CB /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalDispatcher.swift; sourceTree = "<group>"; };
-		1D6E254E2B338CD0001083CB /* SignalsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalsService.swift; sourceTree = "<group>"; };
-		1D6E254F2B338CD0001083CB /* Signals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
 		1D6E25542B338E30001083CB /* RLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLSignal.swift; sourceTree = "<group>"; };
 		1D6E25562B33AD88001083CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6E25582B33D463001083CB /* SheetAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertView.swift; sourceTree = "<group>"; };
@@ -159,6 +151,8 @@
 		1D6E25612B362F01001083CB /* BtnOpenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenSettings.swift; sourceTree = "<group>"; };
 		1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenTemplatesSheet.swift; sourceTree = "<group>"; };
 		1D6E25652B3701D6001083CB /* RLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLColors.swift; sourceTree = "<group>"; };
+		1D83310C2B40D9670047FADA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../KystEssentials/Package.swift; sourceTree = "<group>"; };
+		1D83310F2B40DD380047FADA /* PreludeP4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP4View.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		1DCF86A32B3D238900118F5F /* UksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UksTabView.swift; sourceTree = "<group>"; };
@@ -252,7 +246,6 @@
 				1DCF86C82B40C77600118F5F /* AppCoreLight in Frameworks */,
 				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
-				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,16 +289,6 @@
 			path = Locals;
 			sourceTree = "<group>";
 		};
-		1D6E254B2B338CD0001083CB /* SignalsService */ = {
-			isa = PBXGroup;
-			children = (
-				1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */,
-				1D6E254E2B338CD0001083CB /* SignalsService.swift */,
-				1D6E254F2B338CD0001083CB /* Signals.swift */,
-			);
-			path = SignalsService;
-			sourceTree = "<group>";
-		};
 		1D6E255A2B3442F0001083CB /* ---------- */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +305,7 @@
 				1DCF86A82B40712900118F5F /* PreludeP1View.swift */,
 				1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */,
 				1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */,
+				1D83310F2B40DD380047FADA /* PreludeP4View.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
@@ -330,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
-				1D6E254B2B338CD0001083CB /* SignalsService */,
 			);
 			path = BackendCore;
 			sourceTree = "<group>";
@@ -535,6 +518,7 @@
 		A2CCA0282ACF0739006A3A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D83310C2B40D9670047FADA /* Package.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -672,7 +656,6 @@
 			packageProductDependencies = (
 				A211B17F2A7D012D004680E8 /* Realm */,
 				A211B1812A7D012D004680E8 /* RealmSwift */,
-				A2CCA0292ACF0739006A3A7F /* KystEssentials */,
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 				A21989912AE138400004A5D9 /* KystParallax */,
 				1D6E25482B338BD4001083CB /* AsyncNinja */,
@@ -821,10 +804,9 @@
 			files = (
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
-				1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */,
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
-				1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */,
+				1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */,
 				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
@@ -867,7 +849,6 @@
 				A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */,
 				1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
-				1D6E25532B338CD0001083CB /* Signals.swift in Sources */,
 				1D6E25552B338E30001083CB /* RLSignal.swift in Sources */,
 				A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
@@ -1181,7 +1162,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				DEVELOPMENT_TEAM = RPH4S2457V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1220,7 +1201,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				DEVELOPMENT_TEAM = RPH4S2457V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1350,10 +1331,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */;
 			productName = KystParallax;
-		};
-		A2CCA0292ACF0739006A3A7F /* KystEssentials */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = KystEssentials;
 		};
 		A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

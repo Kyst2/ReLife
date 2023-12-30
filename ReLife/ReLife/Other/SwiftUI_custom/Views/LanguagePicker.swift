@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import MoreSwiftUI
+import AppCoreLight
 
 struct LanguagePicker: View {
     @Binding var currLang: Language

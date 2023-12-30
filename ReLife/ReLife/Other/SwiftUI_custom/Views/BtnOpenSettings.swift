@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import AppCoreLight
 
 struct BtnOpenSettings: View {
     let settingsTab: SettingsTab
