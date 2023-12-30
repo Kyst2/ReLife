@@ -67,6 +67,7 @@ extension AchievementListView {
         if model.future.count == 0 {
             Text("key.achievment.all_gotten".localized)
                 .myFont(size: 17)
+                .lineSpacing(10)
                 .multilineTextAlignment(.center)
                 .fillParent()
         } else {
