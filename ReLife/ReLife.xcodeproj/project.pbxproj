@@ -35,6 +35,7 @@
 		1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */; };
 		1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */; };
 		1DCF86C62B40C06500118F5F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86C52B40C06500118F5F /* Config.swift */; };
+		1DCF86C82B40C77600118F5F /* AppCoreLight in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCF86C72B40C77600118F5F /* AppCoreLight */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -248,6 +249,7 @@
 			files = (
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
+				1DCF86C82B40C77600118F5F /* AppCoreLight in Frameworks */,
 				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
 				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
@@ -674,6 +676,7 @@
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 				A21989912AE138400004A5D9 /* KystParallax */,
 				1D6E25482B338BD4001083CB /* AsyncNinja */,
+				1DCF86C72B40C77600118F5F /* AppCoreLight */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -1328,6 +1331,10 @@
 		1D6E25482B338BD4001083CB /* AsyncNinja */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AsyncNinja;
+		};
+		1DCF86C72B40C77600118F5F /* AppCoreLight */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppCoreLight;
 		};
 		A211B17F2A7D012D004680E8 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

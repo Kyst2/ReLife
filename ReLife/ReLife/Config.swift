@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import AsyncNinja
 import Essentials
+import AppCoreLight
 
 class Config : NinjaContext.Main  {
     static let shared: Config = initSharedConfig()
