@@ -16,6 +16,8 @@ struct PreludeView: View {
                 PreludeP2View()
             case .p3:
                 PreludeP3View()
+            case .p4:
+                PreludeP4View()
             }
             
             Spacer()
@@ -40,12 +42,16 @@ fileprivate extension PreludeView {
         case .p2:
             page = .p3
         case .p3:
+            page = .p4
+        case .p4:
             GlobalDialog.close()
         }
     }
     
     func prev() {
         switch page {
+        case .p4:
+            page = .p3
         case .p3:
             page = .p2
         case .p2:
@@ -79,7 +85,7 @@ fileprivate extension PreludeView {
                     }
                 }
             
-            OneCircle(filled: self.page == .p2 || self.page == .p3)
+            OneCircle(filled: self.page != .p1)
                 .makeFullyIntaractable()
                 .onTapGesture {
                     withAnimation{
@@ -87,11 +93,19 @@ fileprivate extension PreludeView {
                     }
                 }
             
-            OneCircle(filled: self.page == .p3)
+            OneCircle(filled: self.page == .p4 || self.page == .p3)
                 .makeFullyIntaractable()
                 .onTapGesture {
                     withAnimation {
                         self.page = .p3
+                    }
+                }
+            
+            OneCircle(filled: self.page == .p4)
+                .makeFullyIntaractable()
+                .onTapGesture {
+                    withAnimation {
+                        self.page = .p4
                     }
                 }
         }
@@ -116,5 +130,5 @@ fileprivate struct OneCircle: View {
 }
 
 enum PreludePage {
-    case p1, p2, p3
+    case p1, p2, p3, p4
 }

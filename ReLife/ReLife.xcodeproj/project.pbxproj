@@ -21,6 +21,7 @@
 		1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25612B362F01001083CB /* BtnOpenSettings.swift */; };
 		1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */; };
 		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
+		1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83310F2B40DD380047FADA /* PreludeP4View.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A32B3D238900118F5F /* UksTabView.swift */; };
@@ -151,6 +152,7 @@
 		1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenTemplatesSheet.swift; sourceTree = "<group>"; };
 		1D6E25652B3701D6001083CB /* RLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLColors.swift; sourceTree = "<group>"; };
 		1D83310C2B40D9670047FADA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../KystEssentials/Package.swift; sourceTree = "<group>"; };
+		1D83310F2B40DD380047FADA /* PreludeP4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP4View.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		1DCF86A32B3D238900118F5F /* UksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UksTabView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				1DCF86A82B40712900118F5F /* PreludeP1View.swift */,
 				1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */,
 				1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */,
+				1D83310F2B40DD380047FADA /* PreludeP4View.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
+				1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */,
 				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
