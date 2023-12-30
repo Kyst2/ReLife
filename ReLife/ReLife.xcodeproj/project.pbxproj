@@ -34,6 +34,7 @@
 		1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */; };
 		1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */; };
 		1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */; };
+		1DCF86C62B40C06500118F5F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86C52B40C06500118F5F /* Config.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -166,6 +167,7 @@
 		1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
 		1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP2View.swift; sourceTree = "<group>"; };
 		1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP3View.swift; sourceTree = "<group>"; };
+		1DCF86C52B40C06500118F5F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		A200BD3C2AA6064200DCEBD9 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		A21086212A8026F900EB7A89 /* RealmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -320,19 +322,11 @@
 			path = Prelude;
 			sourceTree = "<group>";
 		};
-		1DCF86B52B40BE4300118F5F /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		1DCF86B62B40BE5B00118F5F /* BackendCore */ = {
 			isa = PBXGroup;
 			children = (
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				1D6E254B2B338CD0001083CB /* SignalsService */,
-				1DCF86B52B40BE4300118F5F /* Config */,
 			);
 			path = BackendCore;
 			sourceTree = "<group>";
@@ -580,6 +574,7 @@
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
+				1DCF86C52B40C06500118F5F /* Config.swift */,
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
 				1DCF86B62B40BE5B00118F5F /* BackendCore */,
 				A211B1602A7A8075004680E8 /* Other */,
@@ -871,6 +866,7 @@
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */,
+				1DCF86C62B40C06500118F5F /* Config.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
 				A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
