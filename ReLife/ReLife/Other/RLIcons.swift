@@ -18,6 +18,8 @@ struct RLIcons {
     
     static let gender = "figure.dress.line.vertical.figure"
     
+    static let ok = "checkmark"
+    static let back = "arrowshape.turn.up.left"
     
     fileprivate init() { }
 }

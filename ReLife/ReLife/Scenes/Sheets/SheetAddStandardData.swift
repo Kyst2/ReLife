@@ -17,13 +17,13 @@ struct SheetAddStandardData: View {
             ScrollView{
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Characteristics")
+                        Text("key.characteristics".localized)
                             .font(.title)
                             .centredHoriz()
                          
                         CharachCheckboxes()
                         
-                        Text("Quests")
+                        Text("key.quests".localized)
                             .font(.title)
                             .centredHoriz()
                         
@@ -37,14 +37,26 @@ struct SheetAddStandardData: View {
             
             HStack(spacing: 40) {
                 Button(action: funcCancel ) {
-                    Text.sfIcon2("arrowshape.turn.up.left", size: 30)
+                    Text.sfIcon2(RLIcons.back, size: 21)
+                        .frame(width: 40, height: 40)
                         .foregroundColor(.red)
+                        .background{
+                            Circle()
+                                .fill(NSColor.controlColor.color)
+                                .shadow(color: .black, radius: 2)
+                        }
                 }
                 .buttonStyle(BtnUksStyle.default)
                 
                 Button(action: funcOk ) {
-                    Text.sfIcon2("checkmark", size: 30)
+                    Text.sfIcon2(RLIcons.ok, size: 19)
+                        .frame(width: 40, height: 40)
                         .foregroundColor(.green)
+                        .background{
+                            Circle()
+                                .fill(NSColor.controlColor.color)
+                                .shadow(color: .black, radius: 2)
+                        }
                 }
                 .buttonStyle(BtnUksStyle.default)
             }

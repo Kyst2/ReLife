@@ -22,7 +22,7 @@ public class Characteristic: Object {
         self.init()
         self.name = name
         self.icon = icon
-        self.key = name
+        self.key = name.lowercased()
         self.points = 0
     }
     
