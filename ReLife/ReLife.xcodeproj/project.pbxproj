@@ -48,6 +48,7 @@
 		A27116742B35056200306F99 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116732B35056200306F99 /* IconPicker.swift */; };
 		A27116762B3507CD00306F99 /* NumUpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116752B3507CD00306F99 /* NumUpDown.swift */; };
 		A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */; };
+		A271167A2B40AA0400306F99 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116792B40AA0400306F99 /* ColorPicker.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
 		A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */; };
 		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
@@ -174,6 +175,7 @@
 		A27116732B35056200306F99 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
 		A27116752B3507CD00306F99 /* NumUpDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumUpDown.swift; sourceTree = "<group>"; };
 		A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsAndPointsListView.swift; sourceTree = "<group>"; };
+		A27116792B40AA0400306F99 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetQuestEditorView.swift; sourceTree = "<group>"; };
 		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				1D6E25612B362F01001083CB /* BtnOpenSettings.swift */,
 				1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */,
 				1DCF86A32B3D238900118F5F /* UksTabView.swift */,
+				A27116792B40AA0400306F99 /* ColorPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				1DCF86A62B40402200118F5F /* RLIcons.swift in Sources */,
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
+				A271167A2B40AA0400306F99 /* ColorPicker.swift in Sources */,
 				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,
 				1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
@@ -1130,7 +1134,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = 2XXXQK2Z3H;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1169,7 +1173,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = 2XXXQK2Z3H;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
