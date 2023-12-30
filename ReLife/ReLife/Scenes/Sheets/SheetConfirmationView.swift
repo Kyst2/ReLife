@@ -42,9 +42,9 @@ extension SheetConfirmationView {
         action()
         
         if let successAlertText {
-            GlobalDialog.shared.showAlert(withText: successAlertText)
+            GlobalDialog.showAlert(withText: successAlertText)
         } else {
-            GlobalDialog.shared.dialog = .none
+            GlobalDialog.close()
         }
     }
 }

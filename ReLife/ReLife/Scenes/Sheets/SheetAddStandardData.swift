@@ -36,29 +36,9 @@ struct SheetAddStandardData: View {
             .frame(minWidth: 400, idealWidth: 400, minHeight: 300, idealHeight: 300)
             
             HStack(spacing: 40) {
-                Button(action: funcCancel ) {
-                    Text.sfIcon2(RLIcons.back, size: 21)
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.red)
-                        .background{
-                            Circle()
-                                .fill(NSColor.controlColor.color)
-                                .shadow(color: .black, radius: 2)
-                        }
-                }
-                .buttonStyle(BtnUksStyle.default)
+                CircleButton(icon: RLIcons.back, iconSize: 21, iconColor: NSColor.red.color, action: funcCancel)
                 
-                Button(action: funcOk ) {
-                    Text.sfIcon2(RLIcons.ok, size: 19)
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.green)
-                        .background{
-                            Circle()
-                                .fill(NSColor.controlColor.color)
-                                .shadow(color: .black, radius: 2)
-                        }
-                }
-                .buttonStyle(BtnUksStyle.default)
+                CircleButton(icon: RLIcons.ok, iconSize: 19, iconColor: .green, action: funcOk)
             }
         }
         .padding(20)

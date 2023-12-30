@@ -270,8 +270,7 @@ fileprivate struct BtnCleanCharacts: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-charach".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 RealmController.shared.deleteAllOf(type: Characteristic.self)
                 MyApp.signals.send(signal: RLSignal.ReloadData() )
@@ -290,8 +289,7 @@ fileprivate struct BtnCleanQuests: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-quests".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 RealmController.shared.deleteAllOf(type: Quest.self)
                 MyApp.signals.send(signal: RLSignal.ReloadData() )
@@ -310,8 +308,7 @@ fileprivate struct BtnCleanHistory: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-history".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 RealmController.shared.deleteAllOf(type: History.self)
                 MyApp.signals.send(signal: RLSignal.ReloadData() )
@@ -330,8 +327,7 @@ fileprivate struct BtnCleanAchievements: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-achievement".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 
             }
