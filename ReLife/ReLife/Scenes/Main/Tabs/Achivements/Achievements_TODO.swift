@@ -9,6 +9,7 @@ struct Achievement: Hashable {
     let title: String
     let descr: String
     let type: AchievementType
+    let isEvil: Bool
     
     let finished: Bool
     let date = Date.now
@@ -32,6 +33,7 @@ extension AchievementEnum {
         var title: String = ""
         var descr: String = ""
         var type: AchievementType = .wood
+        var isEvil: Bool = false
         
         switch self {
         case .newbie:
@@ -75,6 +77,7 @@ extension AchievementEnum {
                     * Чистиш зуби 730 днів підряд
                     * 4 рази навідався до стоматолога за 800 днів
                     """
+            isEvil = true
             type = .gold
             
             
@@ -106,7 +109,7 @@ extension AchievementEnum {
                     Квест "Йду спати вчасно" виконаний 730 днів підряд
                     """
             type = .gold
-            
+            isEvil = true
             
         case .mommysCleaner1:
             icon = "medal" // 􁏋
@@ -157,6 +160,7 @@ extension AchievementEnum {
                     6 планових візитів до гінеколога(раз на пів року)
                     """
             type = .gold
+            isEvil = true
             
         case .vagina4:
             icon  = "brain" // 􀯐
@@ -175,6 +179,7 @@ extension AchievementEnum {
                     * Перший плановий похід до проктолога
                     """
             type = .silver
+            isEvil = true
         case .proctolog2:
             icon  = nil
             title = "Нагорода \"Спелеолог десятиліття\" за найретельніше дослідження печери"
@@ -184,6 +189,7 @@ extension AchievementEnum {
                     * Відбулись 4 планових походи до проктолога
                     """
             type = .gold
+            isEvil = true
             
         case .healthCatcher1:
             icon  = "cross" //􀣜
@@ -215,6 +221,6 @@ extension AchievementEnum {
             type = .gold
         }
         
-        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: true )
+        return Achievement(icon: icon, title: title, descr: descr, type: type, isEvil: isEvil, finished: true )
     }
 }

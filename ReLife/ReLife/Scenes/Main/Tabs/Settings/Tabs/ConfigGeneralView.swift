@@ -12,6 +12,10 @@ struct ConfigGeneralView: View {
                 VStack {
                     PickerLanguage()
                     
+                    #if DEBUG
+                    AchievementSettings()
+                    #endif
+                    
                     DbButtons()
                         .opacity(0.6)
                         .disabled(true)
@@ -19,8 +23,6 @@ struct ConfigGeneralView: View {
                     SoundSettings()
                         .opacity(0.6)
                         .disabled(true)
-                    
-                    AchievementSettings()
                 }
                 
                 VStack {
@@ -129,26 +131,60 @@ extension ConfigGeneralView {
     func SoundSettings() -> some View {
         MyGroupBox2 {
             HStack {
-                Toggle(isOn: $model.sound){ }
+                Toggle(isOn: $model.soundEnabled){ }
                     .toggleStyle( .nolblIosStyle )
                 
                 Text.sfIcon2(RLIcons.sound, size: 15)
             }
         } _: {
             HStack {
-                Spacer()
+                Space()
             }
+            .padding(.leading, 20)
             .frame(minWidth: 180, minHeight: 40)
         }
     }
     
     func AchievementSettings() -> some View {
         MyGroupBox2 {
-            Text.sfIcon2(RLIcons.achievementEmpty, size: 15)
+            HStack {
+                Toggle(isOn: $model.achievementEnabled){ }
+                    .toggleStyle( .nolblIosStyle )
+                
+                Text.sfIcon2(RLIcons.achievementEmpty, size: 15)
+            }
+            
         } _: {
             HStack {
-                Spacer()
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Birthday* ")
+                        
+                        DatePicker("", selection: $model.birthDay, displayedComponents: [.date])
+                    }
+                    .help("Some predefined quests is relative to your birthday. Some Achievements is related to such quests.")
+                    
+                    HStack {
+                        Toggle(isOn: .constant(true)){ }
+                            .toggleStyle( .nolblIosStyle )
+                        
+                        Text("I'm male")
+                    }
+                    
+                    HStack {
+                        Toggle(isOn: .constant(true)){ }
+                            .toggleStyle( .nolblIosStyle )
+                        
+                        Text("😈 achievements")
+                    }
+                }
+                .disabled(!model.achievementEnabled)
+                .opacity(model.achievementEnabled ? 1 : 0.6)
+                
+                Space()
             }
+            .padding(.leading, 20)
+            .padding(.vertical, 10)
             .frame(minWidth: 180, minHeight: 40)
         }
     }
