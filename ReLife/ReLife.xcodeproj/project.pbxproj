@@ -77,8 +77,6 @@
 		A2C11F522B1648880062AFDE /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C11F512B1648880062AFDE /* TabButton.swift */; };
 		A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C55E852B2D0D71001E67FB /* CharacteristicsAndPoints.swift */; };
 		A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C55E872B2D0D8E001E67FB /* QuestWrapper.swift */; };
-		A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; };
-		A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0292ACF0739006A3A7F /* KystEssentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA02E2AD497DB006A3A7F /* CharacteristicsView.swift */; };
 		A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCA0322AD5EA73006A3A7F /* QuestsView.swift */; };
 		A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */; };
@@ -119,7 +117,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A2CCA02B2ACF0739006A3A7F /* KystEssentials in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +156,7 @@
 		1D6E25612B362F01001083CB /* BtnOpenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenSettings.swift; sourceTree = "<group>"; };
 		1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenTemplatesSheet.swift; sourceTree = "<group>"; };
 		1D6E25652B3701D6001083CB /* RLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLColors.swift; sourceTree = "<group>"; };
+		1D83310C2B40D9670047FADA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../KystEssentials/Package.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		1DCF86A32B3D238900118F5F /* UksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UksTabView.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 				1DCF86C82B40C77600118F5F /* AppCoreLight in Frameworks */,
 				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
-				A2CCA02A2ACF0739006A3A7F /* KystEssentials in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +532,7 @@
 		A2CCA0282ACF0739006A3A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D83310C2B40D9670047FADA /* Package.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -672,7 +670,6 @@
 			packageProductDependencies = (
 				A211B17F2A7D012D004680E8 /* Realm */,
 				A211B1812A7D012D004680E8 /* RealmSwift */,
-				A2CCA0292ACF0739006A3A7F /* KystEssentials */,
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 				A21989912AE138400004A5D9 /* KystParallax */,
 				1D6E25482B338BD4001083CB /* AsyncNinja */,
@@ -1181,7 +1178,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				DEVELOPMENT_TEAM = RPH4S2457V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1220,7 +1217,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = QZKQ74LNRY;
+				DEVELOPMENT_TEAM = RPH4S2457V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1350,10 +1347,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */;
 			productName = KystParallax;
-		};
-		A2CCA0292ACF0739006A3A7F /* KystEssentials */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = KystEssentials;
 		};
 		A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

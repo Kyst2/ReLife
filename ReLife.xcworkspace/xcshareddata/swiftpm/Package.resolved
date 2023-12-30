@@ -15,7 +15,7 @@
         "repositoryURL": "https://gitlab.com/UKS/moreswiftui.git",
         "state": {
           "branch": "main",
-          "revision": "5f5c0eec144b06144606dd2dd324af10a906f92d",
+          "revision": "35994cafc2d6efb7e2f7fcd5a90d11b72da7cc64",
           "version": null
         }
       },
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/realm/realm-swift.git",
         "state": {
           "branch": "master",
-          "revision": "569c656a8494ad03d790fd1075338c1da92d495a",
+          "revision": "72a0e6a09c6f355eb760cfdaeebacf612c3ac211",
           "version": null
         }
       }
