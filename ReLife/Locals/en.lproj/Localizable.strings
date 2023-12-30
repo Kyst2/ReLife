@@ -52,6 +52,12 @@
 "key.sheet.repeatType.single-day"   = "Single time";
 
 ////////////////////
+// Achievment
+////////////////////
+"key.achievment.all_gotten"  = "All achievements were obtained. \nYou're absolutely awesome!";
+"key.achievment.nothing_yet" = "You don't have any achievements. Yet)";
+
+////////////////////
 // Settings
 ////////////////////
 "key.settings.tab.general" = "General"; // other tabs in "other"

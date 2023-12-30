@@ -65,7 +65,7 @@ extension AchievementListView {
     @ViewBuilder
     func TabContentFuture() -> some View {
         if model.future.count == 0 {
-            Text("All achievements were obtained. \nYou're absolutely awesome!")
+            Text("key.achievment.all_gotten".localized)
                 .multilineTextAlignment(.center)
                 .fillParent()
         } else {
@@ -78,7 +78,7 @@ extension AchievementListView {
     @ViewBuilder
     func TabContentGotten() -> some View {
         if model.gotten.count == 0 {
-            Text("You don't have any achievements yet!")
+            Text("key.achievment.nothing_yet".localized)
                 .multilineTextAlignment(.center)
                 .fillParent()
         } else {
@@ -109,10 +109,6 @@ extension AchievementTab {
 fileprivate extension Array where Element == Achievement {
     func mySorted() -> [Achievement] {
         self.sorted {
-            if $0.finished.int != $1.finished.int {
-                return $0.finished.int > $1.finished.int
-            }
-            
             if $0.type.rawValue != $1.type.rawValue {
                 return $0.type.rawValue < $1.type.rawValue
             }
@@ -122,11 +118,11 @@ fileprivate extension Array where Element == Achievement {
     }
 }
 
-fileprivate extension Bool {
-    var int: Int {
-        self == true ? 1 : 0
-    }
-}
+//fileprivate extension Bool {
+//    var int: Int {
+//        self == true ? 1 : 0
+//    }
+//}
 
 fileprivate extension AchievementListView {
     func SingleTab(_ curr: AchievementTab) -> some View {

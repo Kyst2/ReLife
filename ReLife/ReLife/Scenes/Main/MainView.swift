@@ -73,7 +73,6 @@ extension MainView {
                 .transition(transition)
         case .achivements:
             AchievementListView()
-                .transition(transition)
         case .settings:
             SettingsView()
         }

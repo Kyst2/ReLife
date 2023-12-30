@@ -52,6 +52,12 @@
 "key.sheet.repeatType.single-day"   = "Одноразовий";
 
 ////////////////////
+// Achievment
+////////////////////
+"key.achievment.all_gotten"  = "Всі досягнення отримані. \nТи, дідько, просто НЕЙМОВІРНИЙ!";
+"key.achievment.nothing_yet" = "Ви не маєте досягнень. Покищо)";
+
+////////////////////
 // Settings
 ////////////////////
 "key.settings.db" = "База даних";

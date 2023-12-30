@@ -99,7 +99,7 @@ struct QuestAccordeonView: View {
             
             Text(quest.name)
                 .myFont(size: 15)
-                .foregroundColor( Color(nsColor: quest.colorHex.asNSColor()) )
+                .foregroundColor( RLColors.brownLight )
             
             if isFinishable {
                 Text("(\(repetsCount)/\(quest.repeatTimes))")
