@@ -4,6 +4,3 @@
 [submodule "AsyncNinja"]
 	path = AsyncNinja
 	url = git@github.com:serg-vinnie/AsyncNinja.git
-[submodule "appcorelight"]
-	path = appcorelight
-	url = git@gitlab.com:UKS/appcorelight.git
