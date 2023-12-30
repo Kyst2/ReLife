@@ -1,6 +1,6 @@
 struct RLIcons {
     static let achievementEmpty = "medal"
-    static let achievementFill = ""
+    static let achievementFill = "medal.fill"
     
     static let sound = "music.note"
     static let quest = "list.bullet.clipboard"

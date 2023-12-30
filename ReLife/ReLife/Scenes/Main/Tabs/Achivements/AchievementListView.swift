@@ -101,9 +101,9 @@ extension AchievementTab {
     func asIcon() -> String {
         switch self{
         case .future:
-            return "medal"
+            return RLIcons.achievementEmpty
         case .gotten:
-            return "medal.fill"
+            return RLIcons.achievementFill
         }
     }
 }
