@@ -10,9 +10,13 @@ class SettingsViewModel: ObservableObject {
     @Published var allCharacteristics: [Characteristic] = []
     
     @Published(key: "currLang") var currLang: Language = .system
-    @Published var sound = false
+    @Published var soundEnabled = false
+    @Published var achievementEnabled = false
     
     @Published var allHistoryCount: Int = 0
+    
+    @Published var birthDay: Date = Date.now
+    @Published var isMale: Bool = true
     
     private init() {
         refresh()

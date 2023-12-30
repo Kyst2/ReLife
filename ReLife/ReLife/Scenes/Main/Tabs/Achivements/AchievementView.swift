@@ -7,9 +7,25 @@ struct AchievementView: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            Icon()
-                .padding(35)
-                .padding(.trailing, 10)
+            ZStack {
+                if model.isEvil {
+                    VStack {
+                        HStack {
+                            Text("😈")
+                                .padding(12)
+                                .opacity(0.6)
+                            
+                            Spacer()
+                        }
+                        
+                        Spacer()
+                    }
+                }
+                
+                Icon()
+            }
+            .frame(width: 110, height: 110)
+            
             
             VStack(alignment: .leading) {
                 Text(model.title)

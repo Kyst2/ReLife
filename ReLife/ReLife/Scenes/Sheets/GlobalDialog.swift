@@ -8,15 +8,19 @@ class GlobalDialog: ObservableObject {
     
     private init() {}
     
-    func showAlert(withText: String) {
+    static func showAlert(withText: String) {
         let alert = AnyView(SheetAlertView(text: withText))
         
         GlobalDialog.shared.dialog = .view(view: alert)
     }
     
-    func confirmDialogYesNo(withText: String, successAlertText: String? = nil, action: @escaping () -> ()) {
+    static func confirmDialogYesNo(withText: String, successAlertText: String? = nil, action: @escaping () -> ()) {
         let alert = AnyView(SheetConfirmationView(text: withText, successAlertText: successAlertText, action: action))
         
         GlobalDialog.shared.dialog = .view(view: alert)
+    }
+    
+    static func close() {
+        GlobalDialog.shared.dialog = .none
     }
 }

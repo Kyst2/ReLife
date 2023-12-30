@@ -9,6 +9,8 @@ struct Achievement: Hashable {
     let title: String
     let descr: String
     let type: AchievementType
+    let gender: Gender
+    let isEvil: Bool
     
     let finished: Bool
     let date = Date.now
@@ -32,6 +34,8 @@ extension AchievementEnum {
         var title: String = ""
         var descr: String = ""
         var type: AchievementType = .wood
+        var isEvil: Bool = false
+        var gender: Gender = .any
         
         switch self {
         case .newbie:
@@ -75,6 +79,7 @@ extension AchievementEnum {
                     * Чистиш зуби 730 днів підряд
                     * 4 рази навідався до стоматолога за 800 днів
                     """
+            isEvil = true
             type = .gold
             
             
@@ -106,7 +111,7 @@ extension AchievementEnum {
                     Квест "Йду спати вчасно" виконаний 730 днів підряд
                     """
             type = .gold
-            
+            isEvil = true
             
         case .mommysCleaner1:
             icon = "medal" // 􁏋
@@ -143,12 +148,14 @@ extension AchievementEnum {
             descr = """
                     1 плановий візит до гінеколога
                     """
+            gender = .female
         case .vagina2:
             icon  = "sunglasses" // 􁻈
             title = "Догляд за інтимним здоров'ям"
             descr = """
                     2 планових візитів до гінеколога(раз на пів року)
                     """
+            gender = .female
             type = .silver
         case .vagina3:
             icon  = "magnifyingglass" // 􀊫
@@ -156,7 +163,9 @@ extension AchievementEnum {
             descr = """
                     6 планових візитів до гінеколога(раз на пів року)
                     """
+            gender = .female
             type = .gold
+            isEvil = true
             
         case .vagina4:
             icon  = "brain" // 􀯐
@@ -164,6 +173,7 @@ extension AchievementEnum {
             descr = """
                     12 планових візитів до гінеколога(раз на пів року)
                     """
+            gender = .female
             type = .gold
             
         case .proctolog1:
@@ -174,7 +184,9 @@ extension AchievementEnum {
                     * Старше 30 років
                     * Перший плановий похід до проктолога
                     """
+            gender = .male
             type = .silver
+            isEvil = true
         case .proctolog2:
             icon  = nil
             title = "Нагорода \"Спелеолог десятиліття\" за найретельніше дослідження печери"
@@ -183,38 +195,47 @@ extension AchievementEnum {
                     * Старше 30 років
                     * Відбулись 4 планових походи до проктолога
                     """
+            gender = .male
             type = .gold
+            isEvil = true
             
         case .healthCatcher1:
             icon  = "cross" //􀣜
             title = "Бронзовий збирач здоров'я"
             descr = """
-                    * Здобув 500 очок характеристики "здоров'я"
+                    * Здобуто 500 очок характеристики "здоров'я"
                     """
             type = .wood
         case .healthCatcher2:
             icon  = "cross.fill" //􀣝
             title = "Срібний збирач здоров'я"
             descr = """
-                    * Здобув 3_000 очок характеристики "здоров'я"
+                    * Здобуто 3_000 очок характеристики "здоров'я"
                     """
             type = .silver
         case .healthCatcher3:
             icon  = "staroflife" //􀑆
             title = "Золотий збирач здоров'я"
             descr = """
-                    * Здобув 6_000 очок характеристики "здоров'я"
+                    * Здобуто 6_000 очок характеристики "здоров'я"
                     """
             type = .gold
         case .healthCatcher4:
             icon  = "staroflife.fill" //􀑇
             title = "Я що, житиму вічно?"
             descr = """
-                    * Здобув 20_000 очок характеристики "здоров'я"
+                    * Здобуто 20_000 очок характеристики "здоров'я"
                     """
             type = .gold
         }
         
-        return Achievement(icon: icon, title: title, descr: descr, type: type, finished: true )
+        return Achievement(icon: icon, title: title, descr: descr, type: type, gender: gender, isEvil: isEvil, finished: true )
     }
+}
+
+
+enum Gender {
+    case male
+    case female
+    case any
 }

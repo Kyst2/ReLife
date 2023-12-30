@@ -12,18 +12,20 @@ struct ConfigGeneralView: View {
                 VStack {
                     PickerLanguage()
                     
-                    DbButtons()
-                        .opacity(0.6)
-                        .disabled(true)
+                    #if DEBUG
+                    AchievementSettings()
+                    #endif
                     
                     SoundSettings()
                         .opacity(0.6)
                         .disabled(true)
-                    
-                    AchievementSettings()
                 }
                 
                 VStack {
+                    DbButtons()
+                        .opacity(0.6)
+                        .disabled(true)
+                    
                     DangerButtons()
                     
                     LinkSupport()
@@ -37,20 +39,14 @@ struct ConfigGeneralView: View {
 extension ConfigGeneralView {
     func DbButtons() -> some View {
         MyGroupBox(header: "key.settings.db".localized) {
-            HStack {
-                Space(20)
+            HStack(spacing: 20) {
+                Space(0)
                 
                 //EXPORT
-                Button(action: { }) {
-                    Text.sfIcon2("tray.and.arrow.up", size: 30)
-                        .padding(3)
-                }
+                CircleButton(icon: RLIcons.dbExport, iconSize: 19, iconColor: NSColor.controlTextColor.color, action: {})
                 
                 // Import
-                Button(action: { }) {
-                    Text.sfIcon2("tray.and.arrow.down", size: 30)
-                        .padding(3)
-                }
+                CircleButton(icon: RLIcons.dbImport, iconSize: 19, iconColor: NSColor.controlTextColor.color, action: {})
                 
                 Spacer()
             }
@@ -66,17 +62,7 @@ extension ConfigGeneralView {
                 
                 Text.sfIcon2(RLIcons.language, size: 20)
                 
-                Picker("", selection: $model.currLang) {
-                    ForEach(Language.allCases, id: \.rawValue) { language in
-                        Text(language.rawValue.localized ).tag(language)
-                    }
-                }
-                .pickerStyle(.menu)
-                .frame(maxWidth: 180, minHeight: 40)
-                .onChange(of: model.currLang, perform: {
-                    forceCurrentLocale = $0.asLocaleName()
-                    MyApp.signals.send(signal: RLSignal.LanguageChaned() )
-                })
+                LanguagePicker(currLang: $model.currLang)
                 
                 Spacer()
             }
@@ -129,26 +115,68 @@ extension ConfigGeneralView {
     func SoundSettings() -> some View {
         MyGroupBox2 {
             HStack {
-                Toggle(isOn: $model.sound){ }
+                Toggle(isOn: $model.soundEnabled){ }
                     .toggleStyle( .nolblIosStyle )
                 
                 Text.sfIcon2(RLIcons.sound, size: 15)
             }
         } _: {
             HStack {
-                Spacer()
+                Space()
             }
+            .padding(.leading, 20)
             .frame(minWidth: 180, minHeight: 40)
         }
     }
     
     func AchievementSettings() -> some View {
         MyGroupBox2 {
-            Text.sfIcon2(RLIcons.achievementEmpty, size: 15)
+            HStack {
+                Toggle(isOn: $model.achievementEnabled){ }
+                    .toggleStyle( .nolblIosStyle )
+                
+                Text.sfIcon2(RLIcons.achievementEmpty, size: 15)
+            }
+            
         } _: {
             HStack {
-                Spacer()
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Birthday* ")
+                        
+                        DatePicker("", selection: $model.birthDay, displayedComponents: [.date])
+                    }
+                    .help("Some predefined quests is relative to your birthday. Some Achievements is related to such quests.")
+                    
+                    HStack {
+                        Toggle(isOn: $model.isMale){ }
+                            .toggleStyle( .nolblIosStyle )
+                        
+                        Text.sfSymbol(RLIcons.gender)
+                            .font(.custom("SF Pro", size: 25))
+                            .padding(
+                                model.isMale ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :
+                                               EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
+                            )
+                            .mask(Rectangle().fill(.black))
+                            .allowsHitTesting(false)
+                            .padding(.leading, model.isMale ? 2 : 0)
+                    }
+                    
+                    HStack {
+                        Toggle(isOn: .constant(true)){ }
+                            .toggleStyle( .nolblIosStyle )
+                        
+                        Text("😈 achievements")
+                    }
+                }
+                .disabled(!model.achievementEnabled)
+                .opacity(model.achievementEnabled ? 1 : 0.6)
+                
+                Space()
             }
+            .padding(.leading, 20)
+            .padding(.vertical, 10)
             .frame(minWidth: 180, minHeight: 40)
         }
     }
@@ -171,7 +199,6 @@ extension ConfigGeneralView {
 /////////////////
 ///HELPERS
 /////////////////
-
 struct TitleText: View {
     let txt: String
     
@@ -226,8 +253,7 @@ fileprivate struct BtnCleanCharacts: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-charach".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 RealmController.shared.deleteAllOf(type: Characteristic.self)
                 MyApp.signals.send(signal: RLSignal.ReloadData() )
@@ -246,8 +272,7 @@ fileprivate struct BtnCleanQuests: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-quests".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 RealmController.shared.deleteAllOf(type: Quest.self)
                 MyApp.signals.send(signal: RLSignal.ReloadData() )
@@ -266,8 +291,7 @@ fileprivate struct BtnCleanHistory: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-history".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 RealmController.shared.deleteAllOf(type: History.self)
                 MyApp.signals.send(signal: RLSignal.ReloadData() )
@@ -286,8 +310,7 @@ fileprivate struct BtnCleanAchievements: View {
         Button {
             let dialogText = "\("key.settings.danger.clear-achievement".localized)?"
             
-            GlobalDialog.shared
-                .confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
+            GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert)
             {
                 
             }

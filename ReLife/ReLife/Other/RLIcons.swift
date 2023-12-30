@@ -13,6 +13,13 @@ struct RLIcons {
     static let language = "globe"
     static let danger = "bolt.fill"
     
+    static let dbImport = "tray.and.arrow.up"
+    static let dbExport = "tray.and.arrow.down"
+    
+    static let gender = "figure.dress.line.vertical.figure"
+    
+    static let ok = "checkmark"
+    static let back = "arrowshape.turn.up.left"
     
     fileprivate init() { }
 }

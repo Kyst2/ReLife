@@ -163,7 +163,7 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            GlobalDialog.shared.confirmDialogYesNo(withText: "key.complete-quest?".localized) {
+            GlobalDialog.confirmDialogYesNo(withText: "key.complete-quest?".localized) {
                 action()
             }
         }

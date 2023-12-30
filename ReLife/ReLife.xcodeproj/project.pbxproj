@@ -28,6 +28,13 @@
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A32B3D238900118F5F /* UksTabView.swift */; };
 		1DCF86A62B40402200118F5F /* RLIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A52B40402200118F5F /* RLIcons.swift */; };
+		1DCF86A92B40712900118F5F /* PreludeP1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A82B40712900118F5F /* PreludeP1View.swift */; };
+		1DCF86AC2B40716000118F5F /* PreludeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AB2B40716000118F5F /* PreludeView.swift */; };
+		1DCF86AE2B40A63100118F5F /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AD2B40A63100118F5F /* CircleButton.swift */; };
+		1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */; };
+		1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */; };
+		1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */; };
+		1DCF86C62B40C06500118F5F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86C52B40C06500118F5F /* Config.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -48,7 +55,7 @@
 		A27116742B35056200306F99 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116732B35056200306F99 /* IconPicker.swift */; };
 		A27116762B3507CD00306F99 /* NumUpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116752B3507CD00306F99 /* NumUpDown.swift */; };
 		A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */; };
-		A271167A2B40AA0400306F99 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27116792B40AA0400306F99 /* ColorPicker.swift */; };
+		A271167C2B40C9AF00306F99 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271167B2B40C9AF00306F99 /* ColorPicker.swift */; };
 		A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866D2AEFD44F005EE9B8 /* SettingsView.swift */; };
 		A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */; };
 		A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */; };
@@ -155,6 +162,13 @@
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		1DCF86A32B3D238900118F5F /* UksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UksTabView.swift; sourceTree = "<group>"; };
 		1DCF86A52B40402200118F5F /* RLIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLIcons.swift; sourceTree = "<group>"; };
+		1DCF86A82B40712900118F5F /* PreludeP1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP1View.swift; sourceTree = "<group>"; };
+		1DCF86AB2B40716000118F5F /* PreludeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeView.swift; sourceTree = "<group>"; };
+		1DCF86AD2B40A63100118F5F /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+		1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP2View.swift; sourceTree = "<group>"; };
+		1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP3View.swift; sourceTree = "<group>"; };
+		1DCF86C52B40C06500118F5F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		A200BD3C2AA6064200DCEBD9 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		A21086212A8026F900EB7A89 /* RealmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -175,7 +189,7 @@
 		A27116732B35056200306F99 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
 		A27116752B3507CD00306F99 /* NumUpDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumUpDown.swift; sourceTree = "<group>"; };
 		A27116772B35088300306F99 /* CharacteristicsAndPointsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsAndPointsListView.swift; sourceTree = "<group>"; };
-		A27116792B40AA0400306F99 /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		A271167B2B40C9AF00306F99 /* ColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		A272866D2AEFD44F005EE9B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A272866F2AF537F3005EE9B8 /* SheetQuestEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetQuestEditorView.swift; sourceTree = "<group>"; };
 		A27286732AF55D27005EE9B8 /* ConfigGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigGeneralView.swift; sourceTree = "<group>"; };
@@ -299,6 +313,26 @@
 			path = "----------";
 			sourceTree = "<group>";
 		};
+		1DCF86A72B40710F00118F5F /* Prelude */ = {
+			isa = PBXGroup;
+			children = (
+				1DCF86AB2B40716000118F5F /* PreludeView.swift */,
+				1DCF86A82B40712900118F5F /* PreludeP1View.swift */,
+				1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */,
+				1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */,
+			);
+			path = Prelude;
+			sourceTree = "<group>";
+		};
+		1DCF86B62B40BE5B00118F5F /* BackendCore */ = {
+			isa = PBXGroup;
+			children = (
+				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
+				1D6E254B2B338CD0001083CB /* SignalsService */,
+			);
+			path = BackendCore;
+			sourceTree = "<group>";
+		};
 		A210862A2A813A1A00EB7A89 /* QuestsTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,10 +350,8 @@
 				1D6E25652B3701D6001083CB /* RLColors.swift */,
 				1D6E25542B338E30001083CB /* RLSignal.swift */,
 				A21989972AE3E7990004A5D9 /* Font */,
-				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 				A2C55E842B2D0D5F001E67FB /* Wrappers */,
 				A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */,
-				1D6E254B2B338CD0001083CB /* SignalsService */,
 				A2AEDCCB2AAA271100128B3C /* Ext */,
 				A200BD3C2AA6064200DCEBD9 /* Json.swift */,
 			);
@@ -345,6 +377,7 @@
 				A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */,
 				1D6E255D2B346142001083CB /* SheetAddStandardData.swift */,
 				1D6E255F2B3500DA001083CB /* SheetAboutView.swift */,
+				1DCF86A72B40710F00118F5F /* Prelude */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -417,6 +450,7 @@
 		A27286812AFBEE85005EE9B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A271167B2B40C9AF00306F99 /* ColorPicker.swift */,
 				A27286832AFBEEA4005EE9B8 /* AddButton.swift */,
 				A2C11F482B126AE40062AFDE /* SettingButton.swift */,
 				A271166F2B34F27900306F99 /* SheetsButton.swift */,
@@ -428,7 +462,8 @@
 				1D6E25612B362F01001083CB /* BtnOpenSettings.swift */,
 				1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */,
 				1DCF86A32B3D238900118F5F /* UksTabView.swift */,
-				A27116792B40AA0400306F99 /* ColorPicker.swift */,
+				1DCF86AD2B40A63100118F5F /* CircleButton.swift */,
+				1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -542,7 +577,9 @@
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
 				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
+				1DCF86C52B40C06500118F5F /* Config.swift */,
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
+				1DCF86B62B40BE5B00118F5F /* BackendCore */,
 				A211B1602A7A8075004680E8 /* Other */,
 				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
 				A2DD8E6B2A58A90D00315995 /* ReLife.entitlements */,
@@ -785,6 +822,7 @@
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
 				1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */,
+				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
 				A27116722B35045E00306F99 /* QuestRepeatTypeView.swift in Sources */,
@@ -792,17 +830,21 @@
 				1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */,
+				1DCF86A92B40712900118F5F /* PreludeP1View.swift in Sources */,
+				A271167C2B40C9AF00306F99 /* ColorPicker.swift in Sources */,
 				A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */,
 				1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */,
+				1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
+				1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */,
 				1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
 				1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */,
 				1DCF86A62B40402200118F5F /* RLIcons.swift in Sources */,
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
-				A271167A2B40AA0400306F99 /* ColorPicker.swift in Sources */,
+				1DCF86AC2B40716000118F5F /* PreludeView.swift in Sources */,
 				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,
 				1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
@@ -813,6 +855,7 @@
 				1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,
+				1DCF86AE2B40A63100118F5F /* CircleButton.swift in Sources */,
 				A2A5A8462B292B7E00FD844A /* SettingsViewModel.swift in Sources */,
 				A25272122A8E3C8400DD4B75 /* History.swift in Sources */,
 				A2DD8E662A58A90C00315995 /* ReLifeApp.swift in Sources */,
@@ -827,6 +870,7 @@
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
 				1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */,
+				1DCF86C62B40C06500118F5F /* Config.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,
 				A27116782B35088300306F99 /* CharacteristicsAndPointsListView.swift in Sources */,
 				A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */,
