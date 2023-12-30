@@ -1,5 +1,6 @@
 import SwiftUI
 import MoreSwiftUI
+import AppCoreLight
 
 struct ConfigGeneralView: View {
     @ObservedObject var model: SettingsViewModel

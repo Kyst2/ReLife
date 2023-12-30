@@ -1,5 +1,6 @@
 import Foundation
 import Essentials
+import AppCoreLight
 
 class MainViewModel: ObservableObject {
     let realmController = RealmController.shared

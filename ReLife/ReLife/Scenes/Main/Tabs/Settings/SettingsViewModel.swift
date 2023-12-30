@@ -1,5 +1,6 @@
 import Foundation
 import MoreSwiftUI
+import AppCoreLight
 
 class SettingsViewModel: ObservableObject {
     static let shared = SettingsViewModel()

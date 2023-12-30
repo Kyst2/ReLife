@@ -12,9 +12,6 @@
 		1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C42B379673009DD522 /* Achievements_TODO.swift */; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
-		1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */; };
-		1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254E2B338CD0001083CB /* SignalsService.swift */; };
-		1D6E25532B338CD0001083CB /* Signals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E254F2B338CD0001083CB /* Signals.swift */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
 		1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25562B33AD88001083CB /* AppDelegate.swift */; };
 		1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25582B33D463001083CB /* SheetAlertView.swift */; };
@@ -144,9 +141,6 @@
 		1D6E253A2B33696A001083CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E253B2B33696A001083CB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E253C2B33696A001083CB /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalDispatcher.swift; sourceTree = "<group>"; };
-		1D6E254E2B338CD0001083CB /* SignalsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalsService.swift; sourceTree = "<group>"; };
-		1D6E254F2B338CD0001083CB /* Signals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signals.swift; sourceTree = "<group>"; };
 		1D6E25542B338E30001083CB /* RLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLSignal.swift; sourceTree = "<group>"; };
 		1D6E25562B33AD88001083CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6E25582B33D463001083CB /* SheetAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAlertView.swift; sourceTree = "<group>"; };
@@ -293,16 +287,6 @@
 			path = Locals;
 			sourceTree = "<group>";
 		};
-		1D6E254B2B338CD0001083CB /* SignalsService */ = {
-			isa = PBXGroup;
-			children = (
-				1D6E254D2B338CD0001083CB /* SignalDispatcher.swift */,
-				1D6E254E2B338CD0001083CB /* SignalsService.swift */,
-				1D6E254F2B338CD0001083CB /* Signals.swift */,
-			);
-			path = SignalsService;
-			sourceTree = "<group>";
-		};
 		1D6E255A2B3442F0001083CB /* ---------- */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
-				1D6E254B2B338CD0001083CB /* SignalsService */,
 			);
 			path = BackendCore;
 			sourceTree = "<group>";
@@ -818,10 +801,8 @@
 			files = (
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
-				1D6E25522B338CD0001083CB /* SignalsService.swift in Sources */,
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
-				1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */,
 				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
@@ -864,7 +845,6 @@
 				A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */,
 				1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */,
 				A211B17C2A7B7397004680E8 /* Characteristic.swift in Sources */,
-				1D6E25532B338CD0001083CB /* Signals.swift in Sources */,
 				1D6E25552B338E30001083CB /* RLSignal.swift in Sources */,
 				A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
