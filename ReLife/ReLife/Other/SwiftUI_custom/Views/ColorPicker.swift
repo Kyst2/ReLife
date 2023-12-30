@@ -6,7 +6,7 @@ struct ColorPicker: View {
     @State private var colorPickerShown = false
     
 //    let allIcons = MyIcon.allCases.map{ $0.rawValue }
-    let allColor = MyColor.allCases.map{$0.rawValue}
+    let allColor = pickerColors
     
     let columns = (1...10).map { _ in GridItem(.fixed(35)) }
     
@@ -44,24 +44,24 @@ struct ColorPicker: View {
     }
 }
 
-
-enum MyColor: UInt32, RawRepresentable, CaseIterable {
-    case a = 0x204729
-    case b = 0xe17346
-    case c = 0xf3c3b8
-    case d = 0x2c5658
-    case e = 0xd74857
-    case f = 0x6a9872
-    case g = 0xf1bd78
-    case q = 0xeacacf
-    case r = 0xa2b5da
-    case t = 0xad4438
-    case y = 0xd24972
-    case u = 0xbda1e0
-    case i = 0xddb13c
-    case o = 0x121f61
-    case p = 0x7bbaa3
-    case s = 0xe6b2bc
-    case w = 0xebc445
-    case z = 0xa7ccd9
-}
+private let pickerColors: [UInt32] =
+[
+    0x204729,
+    0xe17346,
+    0xf3c3b8,
+    0x2c5658,
+    0xd74857,
+    0x6a9872,
+    0xf1bd78,
+    0xeacacf,
+    0xa2b5da,
+    0xad4438,
+    0xd24972,
+    0xbda1e0,
+    0xddb13c,
+    0x121f61,
+    0x7bbaa3,
+    0xe6b2bc,
+    0xebc445,
+    0xa7ccd9
+]
