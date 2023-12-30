@@ -18,7 +18,7 @@ struct MainView: View {
             
             ContentPanel()
                 .fillParent()
-                .frame(minWidth: 700)
+                .frame(minWidth: 650)
         }
         .foregroundColor(RLColors.brownLight)
         .background( BackgroundView().opacity(0.3) )

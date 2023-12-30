@@ -23,7 +23,7 @@ struct AchievementView: View {
                     .opacity(0.7)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Space(min: 0)
+                Space()
                 
                 DateFinished()
             }

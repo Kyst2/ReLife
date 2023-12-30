@@ -60,7 +60,6 @@ extension AchievementListView {
             
             Space(20)
         }
-        .frame(minWidth: 690)
     }
     
     @ViewBuilder
@@ -68,6 +67,7 @@ extension AchievementListView {
         if model.future.count == 0 {
             Text("All achievements were obtained. \nYou're absolutely awesome!")
                 .multilineTextAlignment(.center)
+                .fillParent()
         } else {
             ForEach(model.future, id: \.self) { item in
                 AchievementView(model: item )
@@ -80,6 +80,7 @@ extension AchievementListView {
         if model.gotten.count == 0 {
             Text("You don't have any achievements yet!")
                 .multilineTextAlignment(.center)
+                .fillParent()
         } else {
             ForEach(model.gotten, id: \.self) { item in
                 AchievementView(model: item )
