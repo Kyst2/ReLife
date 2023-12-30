@@ -168,7 +168,7 @@ extension ConfigGeneralView {
                         Toggle(isOn: $model.isMale){ }
                             .toggleStyle( .nolblIosStyle )
                         
-                        Text.sfSymbol("figure.dress.line.vertical.figure")
+                        Text.sfSymbol(RLIcons.gender)
                             .font(.custom("SF Pro", size: 25))
                             .padding(
                                 model.isMale ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :

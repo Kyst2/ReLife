@@ -16,6 +16,8 @@ struct RLIcons {
     static let dbImport = "tray.and.arrow.up"
     static let dbExport = "tray.and.arrow.down"
     
+    static let gender = "figure.dress.line.vertical.figure"
+    
     
     fileprivate init() { }
 }
