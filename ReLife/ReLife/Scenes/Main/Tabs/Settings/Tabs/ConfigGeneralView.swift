@@ -19,6 +19,8 @@ struct ConfigGeneralView: View {
                     SoundSettings()
                         .opacity(0.6)
                         .disabled(true)
+                    
+                    AchievementSettings()
                 }
                 
                 VStack {
@@ -62,7 +64,7 @@ extension ConfigGeneralView {
             HStack {
                 Space(20)
                 
-                Text.sfIcon2("globe", size: 20)
+                Text.sfIcon2(RLIcons.language, size: 20)
                 
                 Picker("", selection: $model.currLang) {
                     ForEach(Language.allCases, id: \.rawValue) { language in
@@ -88,11 +90,11 @@ extension ConfigGeneralView {
                     .toggleStyle( .nolblIosStyle )
                 
                 HStack(spacing: 0) {
-                    Text.sfIcon2("bolt.fill", size: 20)
+                    Text.sfIcon2(RLIcons.danger, size: 20)
                         .padding(.horizontal, -2)
-                    Text.sfIcon2("bolt.fill", size: 20)
+                    Text.sfIcon2(RLIcons.danger, size: 20)
                         .padding(.horizontal, -2)
-                    Text.sfIcon2("bolt.fill", size: 20)
+                    Text.sfIcon2(RLIcons.danger, size: 20)
                         .padding(.horizontal, -2)
                 }
                 .foregroundColor(.yellow)
@@ -130,8 +132,19 @@ extension ConfigGeneralView {
                 Toggle(isOn: $model.sound){ }
                     .toggleStyle( .nolblIosStyle )
                 
-                Text.sfIcon2("music.note", size: 15)
+                Text.sfIcon2(RLIcons.sound, size: 15)
             }
+        } _: {
+            HStack {
+                Spacer()
+            }
+            .frame(minWidth: 180, minHeight: 40)
+        }
+    }
+    
+    func AchievementSettings() -> some View {
+        MyGroupBox2 {
+            Text.sfIcon2(RLIcons.achievementEmpty, size: 15)
         } _: {
             HStack {
                 Spacer()
@@ -200,7 +213,7 @@ fileprivate struct BtnAddDefaultQuests: View {
         Button {
             GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
         } label: {
-            Text("Add default Quests")
+            Text("Add default Quests")// TODO translate me!
                 .frame(width: 200)
         }
     }

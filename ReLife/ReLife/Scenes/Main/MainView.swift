@@ -93,10 +93,10 @@ enum MainViewTab: String {
 extension MainViewTab {
     var icon: String {
         switch self {
-        case .quests:           return "list.bullet.clipboard"
-        case .characteristics:  return "person"
-        case .achivements:      return "medal"
-        case .settings:         return "gearshape"
+        case .quests:           return RLIcons.quest
+        case .characteristics:  return RLIcons.characteristics
+        case .achivements:      return RLIcons.achievementEmpty
+        case .settings:         return RLIcons.settings1
         }
     }
 }

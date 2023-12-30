@@ -62,13 +62,13 @@ extension SettingsTab {
     func asIcon() -> String {
         switch self {
         case .general:
-            return "gear.badge.checkmark"
+            return RLIcons.settings2
         case .quests:
-            return "list.bullet.clipboard"
+            return RLIcons.quest
         case .characteristics:
-            return "person"
+            return RLIcons.characteristics
         case .history:
-            return "book"
+            return RLIcons.history
         }
     }
 }
