@@ -5,7 +5,7 @@
 ////////////////////
 "key.quests" = "Quests";
 "key.characteristics" = "Characteristics";
-"key.achievements" = "achievement";
+"key.achievements" = "Achievements";
 "key.history" = "History";
 "key.settings" = "Settings";
 
@@ -13,8 +13,6 @@
 //other
 ////////////////////
 "key.other.enabled" = "Enabled";
-"key.other.day.1" = "Monday";
-"key.other.day.7" = "Sunday";
 "key.other.lang.system" = "System";
 "key.other.date" = "Date";
 

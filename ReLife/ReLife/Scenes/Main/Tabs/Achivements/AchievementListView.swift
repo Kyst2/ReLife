@@ -66,6 +66,7 @@ extension AchievementListView {
     func TabContentFuture() -> some View {
         if model.future.count == 0 {
             Text("key.achievment.all_gotten".localized)
+                .myFont(size: 17)
                 .multilineTextAlignment(.center)
                 .fillParent()
         } else {
@@ -79,6 +80,7 @@ extension AchievementListView {
     func TabContentGotten() -> some View {
         if model.gotten.count == 0 {
             Text("key.achievment.nothing_yet".localized)
+                .myFont(size: 17)
                 .multilineTextAlignment(.center)
                 .fillParent()
         } else {
