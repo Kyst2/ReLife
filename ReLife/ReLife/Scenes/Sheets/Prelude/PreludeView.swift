@@ -23,7 +23,7 @@ struct PreludeView: View {
             Buttons()
         }
         .padding(20)
-        .frame(width: 350, height: 500)
+        .frame(width: 450, height: 500)
         .foregroundColor(RLColors.brownLight)
     }
 }
