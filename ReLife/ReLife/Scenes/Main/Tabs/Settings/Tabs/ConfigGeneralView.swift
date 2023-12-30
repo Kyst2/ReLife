@@ -16,16 +16,16 @@ struct ConfigGeneralView: View {
                     AchievementSettings()
                     #endif
                     
-                    DbButtons()
-                        .opacity(0.6)
-                        .disabled(true)
-                    
                     SoundSettings()
                         .opacity(0.6)
                         .disabled(true)
                 }
                 
                 VStack {
+                    DbButtons()
+                        .opacity(0.6)
+                        .disabled(true)
+                    
                     DangerButtons()
                     
                     LinkSupport()
@@ -39,20 +39,14 @@ struct ConfigGeneralView: View {
 extension ConfigGeneralView {
     func DbButtons() -> some View {
         MyGroupBox(header: "key.settings.db".localized) {
-            HStack {
-                Space(20)
+            HStack(spacing: 20) {
+                Space(0)
                 
                 //EXPORT
-                Button(action: { }) {
-                    Text.sfIcon2(RLIcons.dbExport, size: 30)
-                        .padding(3)
-                }
+                CircleButton(icon: RLIcons.dbExport, iconSize: 19, iconColor: NSColor.controlTextColor.color, action: {})
                 
                 // Import
-                Button(action: { }) {
-                    Text.sfIcon2(RLIcons.dbImport, size: 30)
-                        .padding(3)
-                }
+                CircleButton(icon: RLIcons.dbImport, iconSize: 19, iconColor: NSColor.controlTextColor.color, action: {})
                 
                 Spacer()
             }
@@ -68,17 +62,7 @@ extension ConfigGeneralView {
                 
                 Text.sfIcon2(RLIcons.language, size: 20)
                 
-                Picker("", selection: $model.currLang) {
-                    ForEach(Language.allCases, id: \.rawValue) { language in
-                        Text(language.rawValue.localized ).tag(language)
-                    }
-                }
-                .pickerStyle(.menu)
-                .frame(maxWidth: 180, minHeight: 40)
-                .onChange(of: model.currLang, perform: {
-                    forceCurrentLocale = $0.asLocaleName()
-                    MyApp.signals.send(signal: RLSignal.LanguageChaned() )
-                })
+                LanguagePicker(currLang: $model.currLang)
                 
                 Spacer()
             }
@@ -215,7 +199,6 @@ extension ConfigGeneralView {
 /////////////////
 ///HELPERS
 /////////////////
-
 struct TitleText: View {
     let txt: String
     

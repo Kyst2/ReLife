@@ -31,6 +31,9 @@
 		1DCF86A92B40712900118F5F /* PreludeP1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A82B40712900118F5F /* PreludeP1View.swift */; };
 		1DCF86AC2B40716000118F5F /* PreludeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AB2B40716000118F5F /* PreludeView.swift */; };
 		1DCF86AE2B40A63100118F5F /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AD2B40A63100118F5F /* CircleButton.swift */; };
+		1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */; };
+		1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */; };
+		1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -160,6 +163,9 @@
 		1DCF86A82B40712900118F5F /* PreludeP1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP1View.swift; sourceTree = "<group>"; };
 		1DCF86AB2B40716000118F5F /* PreludeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeView.swift; sourceTree = "<group>"; };
 		1DCF86AD2B40A63100118F5F /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+		1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP2View.swift; sourceTree = "<group>"; };
+		1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP3View.swift; sourceTree = "<group>"; };
 		A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		A200BD3C2AA6064200DCEBD9 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		A21086212A8026F900EB7A89 /* RealmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
@@ -308,6 +314,8 @@
 			children = (
 				1DCF86AB2B40716000118F5F /* PreludeView.swift */,
 				1DCF86A82B40712900118F5F /* PreludeP1View.swift */,
+				1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */,
+				1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */,
 			);
 			path = Prelude;
 			sourceTree = "<group>";
@@ -443,6 +451,7 @@
 				1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */,
 				1DCF86A32B3D238900118F5F /* UksTabView.swift */,
 				1DCF86AD2B40A63100118F5F /* CircleButton.swift */,
+				1DCF86AF2B40AD2400118F5F /* LanguagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -799,6 +808,7 @@
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
 				1D6E25512B338CD0001083CB /* SignalDispatcher.swift in Sources */,
+				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
 				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
 				A27116722B35045E00306F99 /* QuestRepeatTypeView.swift in Sources */,
@@ -809,8 +819,10 @@
 				1DCF86A92B40712900118F5F /* PreludeP1View.swift in Sources */,
 				A27286702AF537F3005EE9B8 /* SheetQuestEditorView.swift in Sources */,
 				1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */,
+				1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */,
 				A27286782AF55D48005EE9B8 /* ConfigCharacteristicsView.swift in Sources */,
 				A2C11F522B1648880062AFDE /* TabButton.swift in Sources */,
+				1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */,
 				1D6E25602B3500DA001083CB /* SheetAboutView.swift in Sources */,
 				A2C55E882B2D0D8E001E67FB /* QuestWrapper.swift in Sources */,
 				1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */,

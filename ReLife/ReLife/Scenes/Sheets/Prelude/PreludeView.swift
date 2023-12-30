@@ -7,22 +7,25 @@ struct PreludeView: View {
     
     var body: some View {
         VStack {
+            Space(20)
+            
             switch page {
             case.p1:
                 PreludeP1View()
             case .p2:
-                PreludeP1View()
+                PreludeP2View()
             case .p3:
-                PreludeP1View()
+                PreludeP3View()
             }
             
             Spacer()
             
             Buttons()
         }
-        .frame(width: 400, height: 600)
+        .padding(20)
+        .frame(width: 350, height: 500)
+        .foregroundColor(RLColors.brownLight)
     }
-    
 }
 
 //////////////////////////
@@ -64,7 +67,6 @@ fileprivate extension PreludeView {
             
             CircleButton(icon: "arrowtriangle.right", iconSize: 19, iconColor: NSColor.controlTextColor.color, action: next)
         }
-        .padding(15)
     }
     
     func Circles() -> some View {
