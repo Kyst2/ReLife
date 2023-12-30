@@ -11,7 +11,7 @@ struct SheetQuestEditorView: View {
     @State var name: String
     @State var deteils: String
     @State var characsAndPoints: [CharacteristicsAndPoints]
-    @State var questColor: Color = Color.white
+    @State var questColor: UInt32 = 0x204729
     
     @State private var icon: String = MyIcon.batteryFull.rawValue
     
@@ -70,14 +70,16 @@ extension SheetQuestEditorView {
                 
                 TextField("Don't let me empty!", text: $name)
                     .applyFieldStyle()
-                    .foregroundColor(questColor)
+                    .foregroundColor(Color(hex: questColor))
                 
                 IconPicker(icon: $icon)
-                    .foregroundColor(questColor)
+                    .foregroundColor(Color(hex: questColor))
                 
-                //заміни на власний пікер аналогічний ікон пікера з тим набором кольорів який я просив
-                UksColorPicker(color: $questColor)
+                ColorPicker(color: $questColor)
                     .frame(width: 20, height: 20)
+                //заміни на власний пікер аналогічний ікон пікера з тим набором кольорів який я просив
+//                UksColorPicker(color: $questColor)
+//                    .frame(width: 20, height: 20)
             }
             
             if type == .questCreator || type == .questEditor {
