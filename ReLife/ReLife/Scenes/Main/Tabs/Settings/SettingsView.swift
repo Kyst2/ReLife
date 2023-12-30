@@ -50,6 +50,7 @@ extension SettingsView {
 //////////////////////////////
 ///HELPERS
 //////////////////////////////
+
 enum SettingsTab: String {
     case general = "key.settings.tab.general"
     case quests = "key.quests"
@@ -77,8 +78,8 @@ extension SettingsTab {
 
 extension SettingsView {
     func SingleTab(_ curr: SettingsTab) -> some View {
-        Text.sfIcon2(curr.asIcon(), size: 30)
-            .padding(10)
+        Text.sfIcon2(curr.asIcon(), size: 25)
+            .padding(12)
             .makeFullyIntaractable()
             .overlay {
                 Rectangle()

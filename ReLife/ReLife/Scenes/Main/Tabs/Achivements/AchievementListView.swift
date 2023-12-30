@@ -3,15 +3,58 @@ import SwiftUI
 import MoreSwiftUI
 
 struct AchievementListView: View {
-    let myAchievements = allAchievements//.mySorted()
+    @ObservedObject var model = AchievementListViewModel()
     
     var body: some View {
+        HStack(spacing: 0) {
+            TabsPanel()
+                .backgroundGaussianBlur(type: .behindWindow, material: .m2_menu, color: .black.opacity(0.2))
+                .transition( .move(edge: .leading) )
+            
+            TabContent()
+                .transition(AnyTransition.move(edge: .trailing))
+        }
+    }
+}
+
+class AchievementListViewModel: ObservableObject {
+    @Published fileprivate var tab: AchievementTab = .gotten
+    @Published var gotten: [Achievement] = []
+    @Published var future: [Achievement] = []
+    
+    let allAchievements = AchievementEnum.allCases.map{ $0.asAchievement() }//.mySorted()
+    
+    init() {
+        gotten = allAchievements.filter { $0.finished }
+        future = allAchievements.filter { !$0.finished }
+    }
+}
+
+/////////////////////////
+///HELPERS
+/////////////////////////
+
+
+extension AchievementListView {
+    func TabsPanel() -> some View {
+        VStack(spacing: 0) {
+            SingleTab(.gotten)
+            SingleTab(.future)
+            
+            Space()
+        }
+    }
+    
+    func TabContent() -> some View {
         ScrollView {
             Space(20)
             
             LazyVStack(spacing: 20) {
-                ForEach(myAchievements, id: \.self) { item in
-                    AchievementView(model: item )
+                switch model.tab {
+                case .gotten:
+                    TabContentGotten()
+                case .future:
+                    TabContentFuture()
                 }
             }.padding(.horizontal, 20)
             
@@ -19,13 +62,48 @@ struct AchievementListView: View {
         }
         .frame(minWidth: 690)
     }
+    
+    @ViewBuilder
+    func TabContentFuture() -> some View {
+        if model.future.count == 0 {
+            Text("All achievements were obtained. \nYou're absolutely awesome!")
+                .multilineTextAlignment(.center)
+        } else {
+            ForEach(model.future, id: \.self) { item in
+                AchievementView(model: item )
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func TabContentGotten() -> some View {
+        if model.gotten.count == 0 {
+            Text("You don't have any achievements yet!")
+                .multilineTextAlignment(.center)
+        } else {
+            ForEach(model.gotten, id: \.self) { item in
+                AchievementView(model: item )
+            }
+        }
+    }
 }
 
-let allAchievements = AchievementEnum.allCases.map{ $0.asAchievement() }
+fileprivate enum AchievementTab {
+    case gotten
+    case future
+}
 
-/////////////////////////
-///HELPERS
-/////////////////////////
+extension AchievementTab {
+    func asIcon() -> String {
+        switch self{
+        case .future:
+            return "medal"
+        case .gotten:
+            return "medal.fill"
+        }
+    }
+}
+
 
 fileprivate extension Array where Element == Achievement {
     func mySorted() -> [Achievement] {
@@ -46,5 +124,38 @@ fileprivate extension Array where Element == Achievement {
 fileprivate extension Bool {
     var int: Int {
         self == true ? 1 : 0
+    }
+}
+
+fileprivate extension AchievementListView {
+    func SingleTab(_ curr: AchievementTab) -> some View {
+        Text.sfIcon2(curr.asIcon(), size: 25)
+            .padding(12)
+            .makeFullyIntaractable()
+            .overlay {
+                Rectangle()
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+            .overlay {
+                VStack {
+                    VStack{
+                        Spacer()
+                        
+                        if model.tab == curr {
+                            RoundedRectangle(cornerRadius: 0)
+                                .fill(RLColors.brownLight)
+                                .frame(height: 3)
+                                .id("SettingTabSelection")
+                                .transition(.move(edge: .leading).combined(with: .opacity))
+                        }
+                    }
+                }
+                .animation(.easeInOut(duration: 0.1), value: model.tab)
+            }
+            .onTapGesture {
+                withAnimation(.easeIn(duration: 0.3 )){
+                    model.tab = curr
+                }
+            }
     }
 }
