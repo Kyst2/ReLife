@@ -165,10 +165,18 @@ extension ConfigGeneralView {
                     .help("Some predefined quests is relative to your birthday. Some Achievements is related to such quests.")
                     
                     HStack {
-                        Toggle(isOn: .constant(true)){ }
+                        Toggle(isOn: $model.isMale){ }
                             .toggleStyle( .nolblIosStyle )
                         
-                        Text("I'm male")
+                        Text.sfSymbol("figure.dress.line.vertical.figure")
+                            .font(.custom("SF Pro", size: 25))
+                            .padding(
+                                model.isMale ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :
+                                               EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
+                            )
+                            .mask(Rectangle().fill(.black))
+                            .allowsHitTesting(false)
+                            .padding(.leading, model.isMale ? 2 : 0)
                     }
                     
                     HStack {

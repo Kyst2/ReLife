@@ -16,6 +16,7 @@ class SettingsViewModel: ObservableObject {
     @Published var allHistoryCount: Int = 0
     
     @Published var birthDay: Date = Date.now
+    @Published var isMale: Bool = true
     
     private init() {
         refresh()
