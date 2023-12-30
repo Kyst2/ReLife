@@ -13,6 +13,9 @@ struct RLIcons {
     static let language = "globe"
     static let danger = "bolt.fill"
     
+    static let dbImport = "tray.and.arrow.up"
+    static let dbExport = "tray.and.arrow.down"
+    
     
     fileprivate init() { }
 }

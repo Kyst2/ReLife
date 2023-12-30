@@ -42,13 +42,13 @@ extension ConfigGeneralView {
                 
                 //EXPORT
                 Button(action: { }) {
-                    Text.sfIcon2("tray.and.arrow.up", size: 30)
+                    Text.sfIcon2(RLIcons.dbExport, size: 30)
                         .padding(3)
                 }
                 
                 // Import
                 Button(action: { }) {
-                    Text.sfIcon2("tray.and.arrow.down", size: 30)
+                    Text.sfIcon2(RLIcons.dbImport, size: 30)
                         .padding(3)
                 }
                 
