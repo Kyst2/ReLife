@@ -204,6 +204,15 @@ extension ConfigGeneralView {
                             .toggleStyle( .nolblIosStyle )
                         
                         Text("😈")
+                            .frame(width: 20)
+                            .opacity(achievementEvilEnabledCp.value ? 1 : 0.7)
+                            .overlay {
+                                Text(achievementEvilEnabledCp.value ? " " : "/")
+                                    .foregroundColor(.red)
+                                    .myFont(size: 22)
+                                    .offset(y: 2)
+                            }
+                            .animation(.easeInOut, value: achievementEvilEnabledCp.value)
                             .onTapGesture { achievementEvilEnabledCp.asBinding.wrappedValue.toggle() }
                         
                         HelpBtn {
