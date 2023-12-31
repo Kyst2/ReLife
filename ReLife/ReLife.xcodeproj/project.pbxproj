@@ -315,6 +315,9 @@
 		1DCF86B62B40BE5B00118F5F /* BackendCore */ = {
 			isa = PBXGroup;
 			children = (
+				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
+				1DCF86C52B40C06500118F5F /* Config.swift */,
+				A21086212A8026F900EB7A89 /* RealmController.swift */,
 				A25272102A8E3C5700DD4B75 /* ObjectsRealm */,
 			);
 			path = BackendCore;
@@ -564,9 +567,6 @@
 			children = (
 				A219899C2AE47BBB0004A5D9 /* Info.plist */,
 				A2DD8E652A58A90C00315995 /* ReLifeApp.swift */,
-				A21086212A8026F900EB7A89 /* RealmController.swift */,
-				1D6E25562B33AD88001083CB /* AppDelegate.swift */,
-				1DCF86C52B40C06500118F5F /* Config.swift */,
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
 				1DCF86B62B40BE5B00118F5F /* BackendCore */,
 				A211B1602A7A8075004680E8 /* Other */,
