@@ -162,24 +162,40 @@ extension ConfigGeneralView {
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("Birthday* ")
+                        Text("Birthday")
                         DatePicker("", selection: birthDayCp.asBinding, displayedComponents: [.date])
+                        
+                        HelpBtn {
+                            Text("help")
+                                .padding()
+                        }
                     }
                     .help("Some predefined quests is relative to your birthday. Some Achievements is related to such quests.")
                     
                     HStack {
-                        Toggle(isOn: isMaleCp.asBinding){ }
-                            .toggleStyle( .nolblIosStyle )
+                        HStack{
+                            Toggle(isOn: isMaleCp.asBinding){ }
+                                .toggleStyle( .nolblIosStyle )
+                            
+                            Text.sfSymbol(RLIcons.gender)
+                                .font(.custom("SF Pro", size: 25))
+                                .padding(
+                                    isMaleCp.value ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :
+                                        EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
+                                )
+                                .mask(Rectangle().fill(.black))
+                                .padding(.leading, isMaleCp.value ? 2 : 0)
+                                .padding(.trailing, isMaleCp.value ? 1 : 0)
+                        }
+                        .makeFullyIntaractable()
+                        .onTapGesture {
+                            isMaleCp.asBinding.wrappedValue.toggle()
+                        }
                         
-                        Text.sfSymbol(RLIcons.gender)
-                            .font(.custom("SF Pro", size: 25))
-                            .padding(
-                                isMaleCp.value ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :
-                                               EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
-                            )
-                            .mask(Rectangle().fill(.black))
-                            .allowsHitTesting(false)
-                            .padding(.leading, isMaleCp.value ? 2 : 0)
+                        HelpBtn {
+                            Text("help")
+                                .padding()
+                        }
                     }
                     
                     HStack {
@@ -187,6 +203,12 @@ extension ConfigGeneralView {
                             .toggleStyle( .nolblIosStyle )
                         
                         Text("😈")
+                            .onTapGesture { achievementEvilEnabledCp.asBinding.wrappedValue.toggle() }
+                        
+                        HelpBtn {
+                            Text("help")
+                                .padding()
+                        }
                     }
                 }
                 .disabled(!achievementEnabledCp.value)
