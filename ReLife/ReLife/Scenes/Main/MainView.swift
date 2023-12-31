@@ -71,6 +71,7 @@ extension MainView {
             }
             .id(MainViewTab.quests.rawValue.localized) //fix refresh issues on locale change
             .backgroundGaussianBlur(type:.behindWindow, material: .m5_sidebar, color: Color.black.opacity(0.1))
+            .animation(.easeInOut, value: achievementEnabledCp.value)
             
             Divider()
         }

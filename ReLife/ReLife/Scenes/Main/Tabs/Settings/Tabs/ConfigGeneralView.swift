@@ -186,6 +186,7 @@ extension ConfigGeneralView {
                                 .mask(Rectangle().fill(.black))
                                 .padding(.leading, isMaleCp.value ? 2 : 0)
                                 .padding(.trailing, isMaleCp.value ? 1 : 0)
+                                .animation(.easeInOut, value: isMaleCp.value)
                         }
                         .makeFullyIntaractable()
                         .onTapGesture {
