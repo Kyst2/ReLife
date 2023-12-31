@@ -22,6 +22,8 @@ struct ReplaceMenus: Commands {
     var body: some Commands {
         CommandGroup(replacing: .newItem) { }
         
+        CommandGroup(replacing: .help) { }
+        
         CommandGroup(replacing: CommandGroupPlacement.appInfo) {
             Button("key.settings.about".localized(Bundle.main.appName)) {
                 let view = AnyView( SheetAbout() )
@@ -33,5 +35,6 @@ struct ReplaceMenus: Commands {
             }
             .keyboardShortcut(",", modifiers: [.command])
         }
+        
     }
 }
