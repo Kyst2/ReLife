@@ -234,7 +234,7 @@ extension ConfigGeneralView {
     
     func LinkSupport() -> some View {
         VStack {
-            Button("key.settings.about".localized("ReLife") ) {
+            Button("key.settings.about".localized(Bundle.main.appName) ) {
                 let view = AnyView( SheetAbout() )
                 GlobalDialog.shared.dialog = .view(view: view)
             }

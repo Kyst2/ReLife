@@ -1,6 +1,7 @@
 import Foundation
 import Essentials
 import AppCoreLight
+import SwiftUI
 
 class MainViewModel: ObservableObject {
     let realmController = RealmController.shared
@@ -57,7 +58,11 @@ class MainViewModel: ObservableObject {
             .onUpdate { _ in self.refreshData(forceRefresh: true) }
         
         MyApp.signals.subscribeFor(RLSignal.SwitchTab.self )
-            .onUpdate { self.selectedTab = $0.tab }
+            .onUpdate { tab in
+                withAnimation {
+                    self.selectedTab = tab.tab
+                }
+            }
     }
     
     func refreshData(forceRefresh: Bool = false) {
