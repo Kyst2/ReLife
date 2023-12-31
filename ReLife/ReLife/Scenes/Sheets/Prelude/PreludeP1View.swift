@@ -14,9 +14,15 @@ struct PreludeP1View: View {
                 .scaledToFit()
                 .frame(maxHeight: 300)
             
-            Text(Bundle.main.appName)
-                .font(.custom("SF Pro", size: 37))
-                .foregroundColor(RLColors.brown)
+            HStack(spacing: 0) {
+                Text("Re")
+                    .foregroundColor(RLColors.brown)
+                    .font(.custom("SF Pro", size: 37).weight(.heavy) )
+                
+                Text("Life")
+                    .foregroundColor(RLColors.brownLight)
+                    .font(.custom("SF Pro", size: 37).weight(.bold))
+            }
             
             HStack {
                 Text.sfIcon2(RLIcons.language, size: 20)
