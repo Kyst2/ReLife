@@ -121,6 +121,10 @@ extension ConfigGeneralView {
                 BtnCleanHistory()
                 
                 BtnCleanAchievements()
+                
+                #if DEBUG
+                BtnShowPrelude()
+                #endif
             }
             .padding(.vertical, 10)
             .padding(.leading, 20)
@@ -331,6 +335,17 @@ fileprivate struct BtnCleanAchievements: View {
             }
         } label: {
             Text("key.settings.danger.clear-achievement".localized)
+                .frame(width: 200)
+        }
+    }
+}
+
+fileprivate struct BtnShowPrelude: View {
+    var body: some View {
+        Button {
+            GlobalDialog.shared.dialog = .view(view: AnyView( PreludeView() ) )
+        } label: {
+            Text("DBG: Show prelude")
                 .frame(width: 200)
         }
     }
