@@ -1,20 +1,26 @@
 import SwiftUI
 import MoreSwiftUI
 import KystParallax
+import AppCoreLight
 
 struct MainView: View {
     @ObservedObject var model = MainViewModel()
     @ObservedObject var dialogModel = GlobalDialog.shared
+    
+    @ObservedObject var achievementEnabledCp: ConfigProperty<Bool>
     
     let transition = [
         AnyTransition.move(edge: .trailing),
         AnyTransition.push(from: .trailing)
     ].shuffled().first!
     
+    
     init() {
         if Config.shared.preludePassed.value == false {
             GlobalDialog.shared.dialog = .view(view: AnyView( PreludeView() ) )
         }
+        
+        achievementEnabledCp = Config.shared.achievementsEnabled
     }
     
     var body: some View {
@@ -53,8 +59,10 @@ extension MainView {
                 TabButton(tab: .characteristics, selectedTab: $model.selectedTab)
                 
                 #if DEBUG
-                TabButton(tab: .achivements, selectedTab: $model.selectedTab)
-                    .opacity(0.5)
+                if achievementEnabledCp.value {
+                    TabButton(tab: .achivements, selectedTab: $model.selectedTab)
+                        .opacity(0.5)
+                }
                 #endif
                 
                 TabButton(tab: .settings, selectedTab: $model.selectedTab)
