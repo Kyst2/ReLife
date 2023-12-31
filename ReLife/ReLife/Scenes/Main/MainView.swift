@@ -24,13 +24,13 @@ struct MainView: View {
             
             ContentPanel()
                 .fillParent()
-                .frame(minWidth: 650)
         }
         .foregroundColor(RLColors.brownLight)
         .background( BackgroundView().opacity(0.3) )
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
         .wndAccessor{ $0?.title = "" }
+        .frame(minWidth: 700, minHeight: 400)
     }
 }
 
