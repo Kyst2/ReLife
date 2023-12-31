@@ -11,9 +11,11 @@ struct MainView: View {
         AnyTransition.push(from: .trailing)
     ].shuffled().first!
     
-//    init() {
-//        GlobalDialog.shared.dialog = .view(view: AnyView( PreludeView() ) )
-//    }
+    init() {
+        if Config.shared.preludePassed.value == false {
+            GlobalDialog.shared.dialog = .view(view: AnyView( PreludeView() ) )
+        }
+    }
     
     var body: some View {
         HStack(alignment: .top, spacing: 0) {

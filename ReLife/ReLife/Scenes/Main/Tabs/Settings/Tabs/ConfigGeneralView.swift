@@ -7,6 +7,23 @@ struct ConfigGeneralView: View {
     
     @State var enableDangerZone: Bool = false
     
+    @ObservedObject var achievementEnabledCp: ConfigProperty<Bool>
+    @ObservedObject var achievementEvilEnabledCp: ConfigProperty<Bool>
+    @ObservedObject var birthDayCp: ConfigProperty<Date>
+    @ObservedObject var isMaleCp: ConfigProperty<Bool>
+    
+    @ObservedObject var soundEnabledCp: ConfigProperty<Bool>
+    
+    init(model: SettingsViewModel) {
+        self.model = model
+        
+        achievementEnabledCp = Config.shared.achievementsEnabled
+        achievementEvilEnabledCp = Config.shared.achievementsEvilEnabled
+        soundEnabledCp = Config.shared.soundEnabled
+        isMaleCp = Config.shared.isMale
+        birthDayCp = Config.shared.birthDay
+    }
+    
     var body: some View {
         ScrollView {
             HStack(alignment: .top) {
@@ -18,8 +35,6 @@ struct ConfigGeneralView: View {
                     #endif
                     
                     SoundSettings()
-                        .opacity(0.6)
-                        .disabled(true)
                 }
                 
                 VStack {
@@ -116,7 +131,7 @@ extension ConfigGeneralView {
     func SoundSettings() -> some View {
         MyGroupBox2 {
             HStack {
-                Toggle(isOn: $model.soundEnabled){ }
+                Toggle(isOn: soundEnabledCp.asBinding){ }
                     .toggleStyle( .nolblIosStyle )
                 
                 Text.sfIcon2(RLIcons.sound, size: 15)
@@ -133,7 +148,7 @@ extension ConfigGeneralView {
     func AchievementSettings() -> some View {
         MyGroupBox2 {
             HStack {
-                Toggle(isOn: $model.achievementEnabled){ }
+                Toggle(isOn: achievementEnabledCp.asBinding){ }
                     .toggleStyle( .nolblIosStyle )
                 
                 Text.sfIcon2(RLIcons.achievementEmpty, size: 15)
@@ -144,35 +159,34 @@ extension ConfigGeneralView {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("Birthday* ")
-                        
-                        DatePicker("", selection: $model.birthDay, displayedComponents: [.date])
+                        DatePicker("", selection: birthDayCp.asBinding, displayedComponents: [.date])
                     }
                     .help("Some predefined quests is relative to your birthday. Some Achievements is related to such quests.")
                     
                     HStack {
-                        Toggle(isOn: $model.isMale){ }
+                        Toggle(isOn: isMaleCp.asBinding){ }
                             .toggleStyle( .nolblIosStyle )
                         
                         Text.sfSymbol(RLIcons.gender)
                             .font(.custom("SF Pro", size: 25))
                             .padding(
-                                model.isMale ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :
+                                isMaleCp.value ? EdgeInsets(top: 0, leading: -23, bottom: 0, trailing: 0) :
                                                EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
                             )
                             .mask(Rectangle().fill(.black))
                             .allowsHitTesting(false)
-                            .padding(.leading, model.isMale ? 2 : 0)
+                            .padding(.leading, isMaleCp.value ? 2 : 0)
                     }
                     
                     HStack {
-                        Toggle(isOn: .constant(true)){ }
+                        Toggle(isOn: achievementEvilEnabledCp.asBinding ){ }
                             .toggleStyle( .nolblIosStyle )
                         
-                        Text("😈 achievements")
+                        Text("😈")
                     }
                 }
-                .disabled(!model.achievementEnabled)
-                .opacity(model.achievementEnabled ? 1 : 0.6)
+                .disabled(!achievementEnabledCp.value)
+                .opacity(achievementEnabledCp.value ? 1 : 0.6)
                 
                 Space()
             }

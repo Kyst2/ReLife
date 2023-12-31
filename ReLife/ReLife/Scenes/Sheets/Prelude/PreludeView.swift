@@ -44,6 +44,7 @@ fileprivate extension PreludeView {
         case .p3:
             page = .p4
         case .p4:
+            Config.shared.preludePassed.value = true
             GlobalDialog.close()
         }
     }
@@ -88,7 +89,7 @@ fileprivate extension PreludeView {
             OneCircle(filled: self.page != .p1)
                 .makeFullyIntaractable()
                 .onTapGesture {
-                    withAnimation{
+                    withAnimation {
                         self.page = .p2
                     }
                 }
