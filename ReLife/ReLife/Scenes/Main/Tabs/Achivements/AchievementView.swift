@@ -47,9 +47,13 @@ struct AchievementView: View {
         }
         .frame( minHeight: 100 )
         .background {
-            AuroraClouds(blur: 10)
-                .mask { RoundedRectangle(cornerRadius: 8) }
-                .opacity(0.2)
+            ZStack{
+                AuroraClouds(blur: 10, theme: AuroraTheme.reLifeAchievement)
+                    .mask { RoundedRectangle(cornerRadius: 8) }
+                
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.gray, lineWidth: 0.2)
+            }
         }
         .opacity(model.finished ? 1 : 0.4)
     }

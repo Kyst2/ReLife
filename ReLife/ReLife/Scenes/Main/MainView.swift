@@ -32,7 +32,7 @@ struct MainView: View {
                 .fillParent()
         }
         .foregroundColor(RLColors.brownLight)
-        .background { AuroraClouds().opacity(0.2) }
+        .background { AuroraClouds(blur: 60, theme: AuroraTheme.reLifeMain) }
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
         .wndAccessor{ $0?.title = "" }
@@ -113,5 +113,25 @@ extension MainViewTab {
         case .achivements:      return RLIcons.achievementEmpty
         case .settings:         return RLIcons.settings1
         }
+    }
+}
+
+public extension AuroraTheme {
+    static var reLifeMain: AuroraTheme {
+        AuroraTheme(bg: Color.clear,
+                    ellipsesTopLeading:     Color(light: .white,  dark: RLColors.gray.opacity(0.1) ),
+                    ellipsesTopTrailing:    Color(light: .blue,   dark: RLColors.grayLight.opacity(0.1) ),
+                    ellipsesBottomTrailing: Color(light: .green,  dark: RLColors.brown.opacity(0.3) ),
+                    ellipsesBottomLeading:  Color(light: .yellow, dark: RLColors.brownLight.opacity(0.1) )
+        )
+    }
+    
+    static var reLifeAchievement: AuroraTheme {
+        AuroraTheme(bg: Color(nsColor: NSColor.windowBackgroundColor ),
+                    ellipsesTopLeading:     Color(light: .white,  dark: RLColors.gray.opacity(0.1) ),
+                    ellipsesTopTrailing:    Color(light: .blue,   dark: RLColors.grayLight.opacity(0.1) ),
+                    ellipsesBottomTrailing: Color(light: .green,  dark: RLColors.brown.opacity(0.1) ),
+                    ellipsesBottomLeading:  Color(light: .yellow, dark: RLColors.brownLight.opacity(0.1) )
+        )
     }
 }
