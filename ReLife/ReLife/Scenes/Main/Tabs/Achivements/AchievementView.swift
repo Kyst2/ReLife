@@ -47,8 +47,9 @@ struct AchievementView: View {
         }
         .frame( minHeight: 100 )
         .background {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color(hex: 0x222222))
+            AuroraClouds(blur: 10)
+                .mask { RoundedRectangle(cornerRadius: 8) }
+                .opacity(0.2)
         }
         .opacity(model.finished ? 1 : 0.4)
     }

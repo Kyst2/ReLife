@@ -32,7 +32,7 @@ struct MainView: View {
                 .fillParent()
         }
         .foregroundColor(RLColors.brownLight)
-        .background( BackgroundView().opacity(0.3) )
+        .background { AuroraClouds().opacity(0.2) }
         .preferredColorScheme(.dark)
         .sheet(sheet: dialogModel.dialog)
         .wndAccessor{ $0?.title = "" }
@@ -41,14 +41,14 @@ struct MainView: View {
 }
 
 extension MainView {
-    @ViewBuilder
-    func BackgroundView() -> some View {
-        ParallaxLayer(image: Image("Stars1"), speed: 2).fillParent()
-        
-        ParallaxLayer(image: Image("Stars2"), speed: 7).fillParent()
-        
-        ParallaxLayer(image: Image("Stars3"), speed: 10).fillParent()
-    }
+//    @ViewBuilder
+//    func BackgroundView() -> some View {
+//        ParallaxLayer(image: Image("Stars1"), speed: 2).fillParent()
+//        
+//        ParallaxLayer(image: Image("Stars2"), speed: 7).fillParent()
+//        
+//        ParallaxLayer(image: Image("Stars3"), speed: 10).fillParent()
+//    }
     
     @ViewBuilder
     func VerticalTabs() -> some View {
