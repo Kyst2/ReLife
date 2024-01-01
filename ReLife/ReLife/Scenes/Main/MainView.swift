@@ -119,10 +119,10 @@ extension MainViewTab {
 public extension AuroraTheme {
     static var reLifeMain: AuroraTheme {
         AuroraTheme(bg: Color.clear,
-                    ellipsesTopLeading:     Color(light: .white,  dark: RLColors.gray.opacity(0.1) ),
-                    ellipsesTopTrailing:    Color(light: .blue,   dark: RLColors.grayLight.opacity(0.1) ),
-                    ellipsesBottomTrailing: Color(light: .green,  dark: RLColors.brown.opacity(0.3) ),
-                    ellipsesBottomLeading:  Color(light: .yellow, dark: RLColors.brownLight.opacity(0.1) )
+                    ellipsesTopLeading:     Color(light: .white,  dark: Color(rgbaHex: 0xf0a04007) ),
+                    ellipsesTopTrailing:    Color(light: .blue,   dark: Color(rgbaHex: 0xf0a0a007) ),
+                    ellipsesBottomTrailing: Color(light: .green,  dark: RLColors.brown.opacity(0.15) ),
+                    ellipsesBottomLeading:  Color(light: .yellow, dark: RLColors.brownLight.opacity(0.15) )
         )
     }
     
