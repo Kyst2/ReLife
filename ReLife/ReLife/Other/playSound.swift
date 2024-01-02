@@ -18,3 +18,7 @@ func playSound(file:String = "FF5_fanfare", ext:String = "mp3", volume: Float = 
         print(error.localizedDescription)
     }
 }
+
+func stopSound() {
+    player?.stop()
+}

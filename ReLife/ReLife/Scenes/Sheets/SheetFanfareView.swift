@@ -37,6 +37,8 @@ struct SheetFanfareView: View {
                 if !model.charsAndPoints.isEqual(to: model.charsAndPointsGoal) {
                     model.charsAndPoints = model.charsAndPointsGoal
                 } else {
+                    stopSound()
+                    
                     GlobalDialog.close()
                 }
             }
