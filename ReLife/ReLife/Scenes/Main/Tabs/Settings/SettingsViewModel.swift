@@ -2,7 +2,7 @@ import Foundation
 import MoreSwiftUI
 import AppCoreLight
 
-class SettingsViewModel: ObservableObject {
+class SettingsViewModel: NinjaContext.Main , ObservableObject {
     static let shared = SettingsViewModel()
     
     let realmController = RealmController.shared
@@ -14,13 +14,20 @@ class SettingsViewModel: ObservableObject {
     
     @Published var allHistoryCount: Int = 0
     
-    private init() {
+    private override init() {
+        super.init()
+        
         refresh()
         
         forceCurrentLocale = currLang.asLocaleName()
         
         AppCore.signals.subscribeFor( RLSignal.LanguageChaned.self )
             .onUpdate { _ in self.objectWillChange.send() }
+        
+        $tab.asyncNinja
+            .onUpdate { _ in
+                AudioPlayer.shared.stopSound()
+            }
     }
     
     func refresh() {

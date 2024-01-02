@@ -154,23 +154,22 @@ extension ConfigGeneralView {
                     Text( String(format: "%.2f", soundVolumeCp.value) )
                     
                     Button(action: { AudioPlayer.shared.stopSound(); model.objectWillChange.send() }) {
-                        HStack{
-                            if ( AudioPlayer.shared.isPlaying ) {
+                        HStack {
+                            if AudioPlayer.shared.isPlaying {
                                 Text.sfSymbol("speaker.zzz.fill")
                             } else {
                                 Spacer()
                             }
-                        }.frame(width: 20)
+                        }
+                        .frame(width: 20)
                     }
                     .buttonStyle(BtnUksStyle.default)
                 }
-                .onChange(of: soundVolumeCp.value) { _ in
-                    AudioPlayer.shared.playSound()
-                }
             }
-            
             .padding(.leading, 20)
             .frame(minWidth: 180, minHeight: 40)
+            .onChange(of: soundVolumeCp.value) { _ in AudioPlayer.shared.playSound() }
+            .onChange(of: soundEnabledCp.value) { _ in AudioPlayer.shared.stopSound() }
         }
     }
     
