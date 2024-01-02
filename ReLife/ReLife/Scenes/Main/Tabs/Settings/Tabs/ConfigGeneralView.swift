@@ -168,7 +168,13 @@ extension ConfigGeneralView {
             }
             .padding(.leading, 20)
             .frame(minWidth: 180, minHeight: 40)
-            .onChange(of: soundVolumeCp.value) { _ in AudioPlayer.shared.playSound() }
+            .onChange(of: soundVolumeCp.value) { volume in
+                if !AudioPlayer.shared.isPlaying {
+                    AudioPlayer.shared.playSound()
+                } else {
+                    AudioPlayer.shared.volume = volume
+                }
+            }
             .onChange(of: soundEnabledCp.value) { _ in AudioPlayer.shared.stopSound() }
         }
     }

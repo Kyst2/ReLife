@@ -7,6 +7,11 @@ class AudioPlayer {
     
     var isPlaying: Bool { player?.isPlaying ?? false }
     
+    var volume: Float {
+        get { player?.volume ?? 0 }
+        set { player?.volume = newValue }
+    }
+    
     private init() { 
         guard let url = Bundle.main.url(forResource: "FF5_fanfare", withExtension: "mp3")
         else { return }
