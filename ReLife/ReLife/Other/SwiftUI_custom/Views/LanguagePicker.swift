@@ -17,7 +17,7 @@ struct LanguagePicker: View {
         .frame(maxWidth: 180, minHeight: 40)
         .onChange(of: currLang, perform: {
             forceCurrentLocale = $0.asLocaleName()
-            MyApp.signals.send(signal: RLSignal.LanguageChaned() )
+            AppCore.signals.send(signal: RLSignal.LanguageChaned() )
         })
     }
 }

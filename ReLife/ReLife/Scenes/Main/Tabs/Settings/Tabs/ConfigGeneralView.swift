@@ -332,7 +332,7 @@ fileprivate struct BtnCleanCharacts: View {
             GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert, doNotCloseOnOk: false)
             {
                 RealmController.shared.deleteAllOf(type: Characteristic.self)
-                MyApp.signals.send(signal: RLSignal.ReloadData() )
+                AppCore.signals.send(signal: RLSignal.ReloadData() )
             }
         } label: {
             Text("key.settings.danger.clear-charach".localized)
@@ -351,7 +351,7 @@ fileprivate struct BtnCleanQuests: View {
             GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert, doNotCloseOnOk: false)
             {
                 RealmController.shared.deleteAllOf(type: Quest.self)
-                MyApp.signals.send(signal: RLSignal.ReloadData() )
+                AppCore.signals.send(signal: RLSignal.ReloadData() )
             }
         } label: {
             Text("key.settings.danger.clear-quests".localized)
@@ -370,7 +370,7 @@ fileprivate struct BtnCleanHistory: View {
             GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert, doNotCloseOnOk: false)
             {
                 RealmController.shared.deleteAllOf(type: History.self)
-                MyApp.signals.send(signal: RLSignal.ReloadData() )
+                AppCore.signals.send(signal: RLSignal.ReloadData() )
             }
         } label: {
             Text("key.settings.danger.clear-history".localized)

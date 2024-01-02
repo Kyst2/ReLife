@@ -54,13 +54,13 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
         
         refreshData()
         
-        MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
+        AppCore.signals.subscribeFor( RLSignal.LanguageChaned.self )
             .onUpdate { _ in self.objectWillChange.send() }
         
-        MyApp.signals.subscribeFor( RLSignal.ReloadData.self )
+        AppCore.signals.subscribeFor( RLSignal.ReloadData.self )
             .onUpdate { _ in self.refreshData(forceRefresh: true) }
         
-        MyApp.signals.subscribeFor(RLSignal.SwitchTab.self )
+        AppCore.signals.subscribeFor(RLSignal.SwitchTab.self )
             .onUpdate { tab in
                 withAnimation {
                     self.selectedTab = tab.tab

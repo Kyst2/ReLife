@@ -19,7 +19,7 @@ class SettingsViewModel: ObservableObject {
         
         forceCurrentLocale = currLang.asLocaleName()
         
-        MyApp.signals.subscribeFor( RLSignal.LanguageChaned.self )
+        AppCore.signals.subscribeFor( RLSignal.LanguageChaned.self )
             .onUpdate { _ in self.objectWillChange.send() }
     }
     

@@ -31,7 +31,7 @@ struct ReplaceMenus: Commands {
             }
             
             Button("key.settings".localized) {
-                MyApp.signals.send(signal: RLSignal.SwitchTab(tab: .settings))
+                AppCore.signals.send(signal: RLSignal.SwitchTab(tab: .settings))
             }
             .keyboardShortcut(",", modifiers: [.command])
         }
