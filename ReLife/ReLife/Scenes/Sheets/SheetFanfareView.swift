@@ -37,14 +37,14 @@ struct SheetFanfareView: View {
                 if !model.charsAndPoints.isEqual(to: model.charsAndPointsGoal) {
                     model.charsAndPoints = model.charsAndPointsGoal
                 } else {
-                    stopSound()
+                    AudioPlayer.shared.stopSound()
                     
                     GlobalDialog.close()
                 }
             }
             .onAppear() {
                 if Config.shared.soundEnabled.value {
-                    playSound()
+                    AudioPlayer.shared.playSound()
                 }
             }
     }

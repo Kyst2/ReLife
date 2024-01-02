@@ -12,7 +12,7 @@
 		1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C42B379673009DD522 /* Achievements_TODO.swift */; };
 		1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */; };
 		1D6A6B332B4406E500CD9E69 /* FF5_fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A6B322B4406E500CD9E69 /* FF5_fanfare.mp3 */; };
-		1D6A6B352B44082A00CD9E69 /* playSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A6B342B44082A00CD9E69 /* playSound.swift */; };
+		1D6A6B352B44082A00CD9E69 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A6B342B44082A00CD9E69 /* AudioPlayer.swift */; };
 		1D6A6B372B44160600CD9E69 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B362B44160600CD9E69 /* AsyncNinja */; };
 		1D6A6B392B44160600CD9E69 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B382B44160600CD9E69 /* NinjaMacros */; };
 		1D6A6B3A2B441AB200CD9E69 /* AppCoreLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; };
@@ -135,7 +135,7 @@
 		1D5C49C42B379673009DD522 /* Achievements_TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements_TODO.swift; sourceTree = "<group>"; };
 		1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCoreLight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6A6B322B4406E500CD9E69 /* FF5_fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FF5_fanfare.mp3; sourceTree = "<group>"; };
-		1D6A6B342B44082A00CD9E69 /* playSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playSound.swift; sourceTree = "<group>"; };
+		1D6A6B342B44082A00CD9E69 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		1D6E252C2B33696A001083CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E252D2B33696A001083CB /* zh-hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1D6E252E2B33696A001083CB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 				A272867F2AFBEE71005EE9B8 /* SwiftUI_custom */,
 				A2AEDCCB2AAA271100128B3C /* Ext */,
 				A200BD3C2AA6064200DCEBD9 /* Json.swift */,
-				1D6A6B342B44082A00CD9E69 /* playSound.swift */,
+				1D6A6B342B44082A00CD9E69 /* AudioPlayer.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -886,7 +886,7 @@
 				A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */,
 				A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */,
 				A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */,
-				1D6A6B352B44082A00CD9E69 /* playSound.swift in Sources */,
+				1D6A6B352B44082A00CD9E69 /* AudioPlayer.swift in Sources */,
 				1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */,
 				1DCF86C62B40C06500118F5F /* Config.swift in Sources */,
 				A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */,

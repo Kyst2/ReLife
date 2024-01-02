@@ -153,9 +153,9 @@ extension ConfigGeneralView {
                     
                     Text( String(format: "%.2f", soundVolumeCp.value) )
                     
-                    Button(action: { stopSound(); model.objectWillChange.send() }) {
+                    Button(action: { AudioPlayer.shared.stopSound(); model.objectWillChange.send() }) {
                         HStack{
-                            if ( player?.isPlaying ?? false) {
+                            if ( AudioPlayer.shared.isPlaying ) {
                                 Text.sfSymbol("speaker.zzz.fill")
                             } else {
                                 Spacer()
@@ -165,7 +165,7 @@ extension ConfigGeneralView {
                     .buttonStyle(BtnUksStyle.default)
                 }
                 .onChange(of: soundVolumeCp.value) { _ in
-                    playSound()
+                    AudioPlayer.shared.playSound()
                 }
             }
             

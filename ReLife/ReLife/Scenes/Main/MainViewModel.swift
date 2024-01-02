@@ -69,7 +69,7 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
         
         $selectedTab.asyncNinja
             .onUpdate { _ in
-                stopSound()
+                AudioPlayer.shared.stopSound()
             }
     }
     
