@@ -15,6 +15,7 @@ class Config : NinjaContext.Main  {
     var achievementsEvilEnabled     : ConfigProperty<Bool>
     
     let soundEnabled                : ConfigProperty<Bool>
+    let soundVolume                : ConfigProperty<Float>
     
     init(store: ConfigBackend) {
 //        store.clear()
@@ -26,6 +27,7 @@ class Config : NinjaContext.Main  {
         birthDay                = store.property(key: "achievementsBirthDay", defaultValue: Date.now )
         
         soundEnabled            = store.property(key: "soundEnabled", defaultValue: true )
+        soundVolume             = store.property(key: "soundVolume", defaultValue: 0.6 )
     }
 }
 

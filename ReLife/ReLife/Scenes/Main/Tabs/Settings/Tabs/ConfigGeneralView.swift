@@ -13,6 +13,7 @@ struct ConfigGeneralView: View {
     @ObservedObject var isMaleCp: ConfigProperty<Bool>
     
     @ObservedObject var soundEnabledCp: ConfigProperty<Bool>
+    @ObservedObject var soundVolumeCp: ConfigProperty<Float>
     
     init(model: SettingsViewModel) {
         self.model = model
@@ -20,6 +21,7 @@ struct ConfigGeneralView: View {
         achievementEnabledCp = Config.shared.achievementsEnabled
         achievementEvilEnabledCp = Config.shared.achievementsEvilEnabled
         soundEnabledCp = Config.shared.soundEnabled
+        soundVolumeCp = Config.shared.soundVolume
         isMaleCp = Config.shared.isMale
         birthDayCp = Config.shared.birthDay
     }
@@ -141,9 +143,28 @@ extension ConfigGeneralView {
                 Text.sfIcon2(RLIcons.sound, size: 15)
             }
         } _: {
-            HStack {
-                Space()
+            VStack {
+                HStack {
+                    Text.sfSymbol("speaker.wave.1")
+                    
+                    Slider(value: soundVolumeCp.asBinding, in: 0.05...1, step: 0.05)
+                    
+                    Text.sfSymbol("speaker.wave.3")
+                    
+                    Text( String(format: "%.2f", soundVolumeCp.value) )
+                    
+                    Button(action: { stopSound()}) {
+                        Text.sfSymbol("speaker.zzz.fill")
+                    }
+                    .buttonStyle(BtnUksStyle.default)
+                    .opacity(!( player?.isPlaying ?? false) ? 0.5 : 1)
+                    .disabled(!( player?.isPlaying ?? false))
+                }
+                .onChange(of: soundVolumeCp.value) { _ in
+                    playSound()
+                }
             }
+            
             .padding(.leading, 20)
             .frame(minWidth: 180, minHeight: 40)
         }
