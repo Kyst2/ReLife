@@ -40,6 +40,9 @@ struct SheetFanfareView: View {
                     GlobalDialog.close()
                 }
             }
+            .onAppear() {
+                playSound()
+            }
     }
 }
 
