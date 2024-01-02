@@ -43,7 +43,9 @@ struct SheetFanfareView: View {
                 }
             }
             .onAppear() {
-                playSound()
+                if Config.shared.soundEnabled.value {
+                    playSound()
+                }
             }
     }
 }

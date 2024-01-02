@@ -153,12 +153,16 @@ extension ConfigGeneralView {
                     
                     Text( String(format: "%.2f", soundVolumeCp.value) )
                     
-                    Button(action: { stopSound()}) {
-                        Text.sfSymbol("speaker.zzz.fill")
+                    Button(action: { stopSound(); model.objectWillChange.send() }) {
+                        HStack{
+                            if ( player?.isPlaying ?? false) {
+                                Text.sfSymbol("speaker.zzz.fill")
+                            } else {
+                                Spacer()
+                            }
+                        }.frame(width: 20)
                     }
                     .buttonStyle(BtnUksStyle.default)
-                    .opacity(!( player?.isPlaying ?? false) ? 0.5 : 1)
-                    .disabled(!( player?.isPlaying ?? false))
                 }
                 .onChange(of: soundVolumeCp.value) { _ in
                     playSound()
