@@ -14,6 +14,7 @@
 		1D6A6B152B43EFC100CD9E69 /* AppCoreLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; };
 		1D6A6B162B43EFC100CD9E69 /* AppCoreLight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */; };
+		1D6A6B332B4406E500CD9E69 /* FF5_fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A6B322B4406E500CD9E69 /* FF5_fanfare.mp3 */; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
@@ -132,6 +133,7 @@
 		1D5C49C22B372656009DD522 /* AchievementListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementListView.swift; sourceTree = "<group>"; };
 		1D5C49C42B379673009DD522 /* Achievements_TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements_TODO.swift; sourceTree = "<group>"; };
 		1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCoreLight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6A6B322B4406E500CD9E69 /* FF5_fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FF5_fanfare.mp3; sourceTree = "<group>"; };
 		1D6E252C2B33696A001083CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E252D2B33696A001083CB /* zh-hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1D6E252E2B33696A001083CB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -290,6 +292,15 @@
 				1D5C49C02B371D74009DD522 /* AchievementView.swift */,
 			);
 			path = Achivements;
+			sourceTree = "<group>";
+		};
+		1D6A6B312B4406CD00CD9E69 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A6B322B4406E500CD9E69 /* FF5_fanfare.mp3 */,
+				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1D6E252A2B33696A001083CB /* Locals */ = {
@@ -581,7 +592,7 @@
 				A2CCA02D2AD4974A006A3A7F /* Scenes */,
 				1DCF86B62B40BE5B00118F5F /* BackendCore */,
 				A211B1602A7A8075004680E8 /* Other */,
-				A2DD8E692A58A90D00315995 /* Assets.xcassets */,
+				1D6A6B312B4406CD00CD9E69 /* Resources */,
 				A2DD8E6B2A58A90D00315995 /* ReLife.entitlements */,
 				A2DD8E6C2A58A90D00315995 /* Preview Content */,
 			);
@@ -779,6 +790,7 @@
 			files = (
 				1D6E253D2B33696A001083CB /* Localizable.strings in Resources */,
 				1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
+				1D6A6B332B4406E500CD9E69 /* FF5_fanfare.mp3 in Resources */,
 				A219899E2AE47F050004A5D9 /* Montserrat.ttf in Resources */,
 				A2DD8E6E2A58A90D00315995 /* Preview Assets.xcassets in Resources */,
 				A2DD8E6A2A58A90D00315995 /* Assets.xcassets in Resources */,
