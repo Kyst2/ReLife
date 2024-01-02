@@ -11,7 +11,7 @@ struct CharacteristicsView: View {
             if model.allCharacCount == 0 {
                 NoCharacteristicView()
             } else {
-                CharacteristicsList()
+                CharacteristicsList(charsAndPoints: $model.characteristicsAndPoints, spacings: true)
             }
         }
     }
@@ -53,21 +53,30 @@ extension CharacteristicsView {
         }
     }
     
-    @ViewBuilder
-    func CharacteristicsList() -> some View {
+}
+
+struct CharacteristicsList: View {
+    @Binding var charsAndPoints: [CharacteristicsAndPoints]
+    var spacings: Bool
+    
+    var body: some View {
         ScrollView {
             HStack {
                 VStack {
-                    ForEach(model.characteristicsAndPoints) { wrapper in
+                    ForEach(charsAndPoints) { wrapper in
                         Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
                     }
                 }
                 .frame(maxWidth: 300)
                 .padding(.top, 40)
                 
-                Space(min:300)
+                if spacings {
+                    Space(min:300)
+                }
             }
-            .padding(.leading, 20)
+            .if(spacings) {
+                $0.padding(.leading, 20)
+            }
         }
     }
 }

@@ -58,7 +58,11 @@ fileprivate extension QuestsView {
         ForEach(quests) { wrapper in
             
             //TODO: якщо немає опису нєфіг розгортати +++
-            QuestAccordeonView(isFinishable: isFinishable, repetsCount: wrapper.finishedTimes, quest: wrapper.quest){
+            QuestAccordeonView(isFinishable: isFinishable, repetsCount: wrapper.finishedTimes, quest: wrapper.quest) {
+                
+                let fanfare = SheetFanfareView.init(quest: wrapper.quest)
+                GlobalDialog.shared.dialog = .view(view: AnyView(fanfare) )
+                
                 model.addToHistory(quest: wrapper.quest)
             }
         }
@@ -163,7 +167,7 @@ struct QuestAccordeonView: View {
     
     func tapReaction() {
         if isFinishable {
-            GlobalDialog.confirmDialogYesNo(withText: "key.complete-quest?".localized) {
+            GlobalDialog.confirmDialogYesNo(withText: "key.complete-quest?".localized, doNotCloseOnOk: true) {
                 action()
             }
         }

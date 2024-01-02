@@ -6,6 +6,7 @@ struct SheetConfirmationView: View {
     let text: String
     
     var successAlertText: String? = nil
+    let doNotDisableOnOk: Bool
     
     let action: () -> Void
     
@@ -43,6 +44,8 @@ extension SheetConfirmationView {
         
         if let successAlertText {
             GlobalDialog.showAlert(withText: successAlertText)
+        } else if doNotDisableOnOk {
+            
         } else {
             GlobalDialog.close()
         }

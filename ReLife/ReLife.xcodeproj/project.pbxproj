@@ -10,6 +10,9 @@
 		1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C02B371D74009DD522 /* AchievementView.swift */; };
 		1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C22B372656009DD522 /* AchievementListView.swift */; };
 		1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C42B379673009DD522 /* Achievements_TODO.swift */; };
+		1D6A6AF82B43EC4800CD9E69 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */; };
+		1D6A6B152B43EFC100CD9E69 /* AppCoreLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; };
+		1D6A6B162B43EFC100CD9E69 /* AppCoreLight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
@@ -23,6 +26,7 @@
 		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
 		1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83310F2B40DD380047FADA /* PreludeP4View.swift */; };
 		1D8331122B41C6450047FADA /* HelpBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8331112B41C6450047FADA /* HelpBtn.swift */; };
+		1D9375AC2B43E22E000E6A84 /* SheetFanfareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9375AB2B43E22E000E6A84 /* SheetFanfareView.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
 		1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A32B3D238900118F5F /* UksTabView.swift */; };
@@ -34,7 +38,6 @@
 		1DCF86B22B40AE0300118F5F /* PreludeP2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B12B40AE0300118F5F /* PreludeP2View.swift */; };
 		1DCF86B42B40AE1400118F5F /* PreludeP3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86B32B40AE1400118F5F /* PreludeP3View.swift */; };
 		1DCF86C62B40C06500118F5F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86C52B40C06500118F5F /* Config.swift */; };
-		1DCF86C82B40C77600118F5F /* AppCoreLight in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCF86C72B40C77600118F5F /* AppCoreLight */; };
 		A200BD3B2AA0BC7400DCEBD9 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3A2AA0BC7400DCEBD9 /* HistoryTests.swift */; };
 		A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200BD3C2AA6064200DCEBD9 /* Json.swift */; };
 		A210862C2A813A1A00EB7A89 /* QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210862B2A813A1A00EB7A89 /* QuestsTests.swift */; };
@@ -116,6 +119,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1D6A6B162B43EFC100CD9E69 /* AppCoreLight.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +130,7 @@
 		1D5C49C02B371D74009DD522 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		1D5C49C22B372656009DD522 /* AchievementListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementListView.swift; sourceTree = "<group>"; };
 		1D5C49C42B379673009DD522 /* Achievements_TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements_TODO.swift; sourceTree = "<group>"; };
+		1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCoreLight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6E252C2B33696A001083CB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D6E252D2B33696A001083CB /* zh-hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1D6E252E2B33696A001083CB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		1D83310C2B40D9670047FADA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../KystEssentials/Package.swift; sourceTree = "<group>"; };
 		1D83310F2B40DD380047FADA /* PreludeP4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP4View.swift; sourceTree = "<group>"; };
 		1D8331112B41C6450047FADA /* HelpBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpBtn.swift; sourceTree = "<group>"; };
+		1D9375AB2B43E22E000E6A84 /* SheetFanfareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetFanfareView.swift; sourceTree = "<group>"; };
 		1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupBox.swift; sourceTree = "<group>"; };
 		1DCF86A32B3D238900118F5F /* UksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UksTabView.swift; sourceTree = "<group>"; };
@@ -245,8 +251,9 @@
 			files = (
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
-				1DCF86C82B40C77600118F5F /* AppCoreLight in Frameworks */,
+				1D6A6B152B43EFC100CD9E69 /* AppCoreLight.framework in Frameworks */,
 				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
+				1D6A6AF82B43EC4800CD9E69 /* NinjaMacros in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
@@ -368,6 +375,7 @@
 				1D6E255D2B346142001083CB /* SheetAddStandardData.swift */,
 				1D6E255F2B3500DA001083CB /* SheetAboutView.swift */,
 				1DCF86A72B40710F00118F5F /* Prelude */,
+				1D9375AB2B43E22E000E6A84 /* SheetFanfareView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -524,6 +532,7 @@
 		A2CCA0282ACF0739006A3A7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */,
 				1D83310C2B40D9670047FADA /* Package.swift */,
 			);
 			name = Frameworks;
@@ -662,7 +671,7 @@
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 				A21989912AE138400004A5D9 /* KystParallax */,
 				1D6E25482B338BD4001083CB /* AsyncNinja */,
-				1DCF86C72B40C77600118F5F /* AppCoreLight */,
+				1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -833,6 +842,7 @@
 				A27116702B34F27900306F99 /* SheetsButton.swift in Sources */,
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
 				1DCF86AC2B40716000118F5F /* PreludeView.swift in Sources */,
+				1D9375AC2B43E22E000E6A84 /* SheetFanfareView.swift in Sources */,
 				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,
 				1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,
@@ -1184,7 +1194,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1223,7 +1233,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogaAndKopytaBugaiv.ReLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1313,13 +1323,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NinjaMacros;
+		};
 		1D6E25482B338BD4001083CB /* AsyncNinja */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AsyncNinja;
-		};
-		1DCF86C72B40C77600118F5F /* AppCoreLight */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AppCoreLight;
 		};
 		A211B17F2A7D012D004680E8 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

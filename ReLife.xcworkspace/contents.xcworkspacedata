@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AppCoreLight">
+      location = "group:AppCoreLight/AppCoreLight.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:AsyncNinja">

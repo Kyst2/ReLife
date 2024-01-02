@@ -20,7 +20,7 @@ struct NumUpDown: View {
                             .onTapGesture {
                                 guard let idx = allPairs.firstIndex(of: thisPair) else { return }
                                 
-                                allPairs[idx] = CharacteristicsAndPoints(id: thisPair.id, charac: thisPair.charac, points: currPoints)
+                                allPairs[idx].points = currPoints
                                 
                                 isEditing = false
                             }

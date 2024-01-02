@@ -14,8 +14,8 @@ class GlobalDialog: ObservableObject {
         GlobalDialog.shared.dialog = .view(view: alert)
     }
     
-    static func confirmDialogYesNo(withText: String, successAlertText: String? = nil, action: @escaping () -> ()) {
-        let alert = AnyView(SheetConfirmationView(text: withText, successAlertText: successAlertText, action: action))
+    static func confirmDialogYesNo(withText: String, successAlertText: String? = nil, doNotCloseOnOk: Bool, action: @escaping () -> ()) {
+        let alert = AnyView(SheetConfirmationView(text: withText, successAlertText: successAlertText, doNotDisableOnOk: doNotCloseOnOk, action: action))
         
         GlobalDialog.shared.dialog = .view(view: alert)
     }
