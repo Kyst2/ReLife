@@ -17,7 +17,7 @@ struct SheetFanfareView: View {
     
     var body: some View {
         CharacteristicsList(charsAndPoints: $model.charsAndPoints, spacings: false)
-            .paddingAlt([.all], value: 30)
+            .padding(.leading, -15)
             .frame(minWidth: 400, minHeight: 300)
             .background {
                 AuroraClouds(blur: 20, theme: AuroraTheme.reLifeAchievement)
@@ -32,7 +32,7 @@ struct SheetFanfareView: View {
             .onAppear() {
                 confettiePusher += 1
             }
-            .confettiCannon(counter: $confettiePusher, num: 50, openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200, repetitions: 3, repetitionInterval: 0.3)
+            .confettiCannon(counter: $confettiePusher, num: 50, openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200, repetitions: 3, repetitionInterval: 0.4)
             .onTapGesture {
                 if !model.charsAndPoints.isEqual(to: model.charsAndPointsGoal) {
                     model.charsAndPoints = model.charsAndPointsGoal

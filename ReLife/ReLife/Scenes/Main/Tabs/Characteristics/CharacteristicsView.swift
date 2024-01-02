@@ -74,9 +74,7 @@ struct CharacteristicsList: View {
                     Space(min:300)
                 }
             }
-            .if(spacings) {
-                $0.padding(.leading, 20)
-            }
+            .padding(.leading, 20)
         }
     }
 }
