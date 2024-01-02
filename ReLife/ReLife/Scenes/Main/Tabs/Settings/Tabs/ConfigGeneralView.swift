@@ -48,6 +48,7 @@ struct ConfigGeneralView: View {
                     
                     LinkSupport()
                 }
+                .frame(width: 290)
             }
         }
         .padding(20)
