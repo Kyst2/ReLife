@@ -2,11 +2,14 @@ import Foundation
 import SwiftUI
 import Essentials
 import MoreSwiftUI
+import ConfettiSwiftUI
 
 struct SheetFanfareView: View {
     @ObservedObject var model: SheetFanfareViewModel
     
-    let timer = TimerPublisher(every: 0.07)
+    let timer = TimerPublisher(every: 0.08)
+    
+    @State private var confettiePusher: Int = 0
     
     init(quest: Quest) {
         model = SheetFanfareViewModel(quest)
@@ -26,6 +29,10 @@ struct SheetFanfareView: View {
                     }
                 }
             }
+            .onAppear() {
+                confettiePusher += 1
+            }
+            .confettiCannon(counter: $confettiePusher, num: 50, openingAngle: Angle(degrees: 0), closingAngle: Angle(degrees: 360), radius: 200, repetitions: 3, repetitionInterval: 0.3)
             .onTapGesture {
                 if !model.charsAndPoints.isEqual(to: model.charsAndPointsGoal) {
                     model.charsAndPoints = model.charsAndPointsGoal

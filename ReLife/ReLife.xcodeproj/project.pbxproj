@@ -13,6 +13,7 @@
 		1D6A6AF82B43EC4800CD9E69 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */; };
 		1D6A6B152B43EFC100CD9E69 /* AppCoreLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; };
 		1D6A6B162B43EFC100CD9E69 /* AppCoreLight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
 		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
@@ -255,6 +256,7 @@
 				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
 				1D6A6AF82B43EC4800CD9E69 /* NinjaMacros in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
+				1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +674,7 @@
 				A21989912AE138400004A5D9 /* KystParallax */,
 				1D6E25482B338BD4001083CB /* AsyncNinja */,
 				1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */,
+				1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -734,6 +737,7 @@
 				A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */,
 				A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */,
+				1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = A2DD8E632A58A90C00315995 /* Products */;
 			projectDirPath = "";
@@ -1296,6 +1300,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1326,6 +1338,11 @@
 		1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NinjaMacros;
+		};
+		1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 		1D6E25482B338BD4001083CB /* AsyncNinja */ = {
 			isa = XCSwiftPackageProductDependency;
