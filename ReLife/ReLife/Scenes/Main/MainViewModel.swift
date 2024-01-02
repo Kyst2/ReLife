@@ -2,8 +2,9 @@ import Foundation
 import Essentials
 import AppCoreLight
 import SwiftUI
+import AsyncNinja
 
-class MainViewModel: ObservableObject {
+class MainViewModel: NinjaContext.Main, ObservableObject {
     let realmController = RealmController.shared
     
     @Published var selectedTab: MainViewTab = .quests
@@ -46,7 +47,9 @@ class MainViewModel: ObservableObject {
         realmController.add(quest: quest3)
     }
     
-    init() {
+    override init() {
+        super.init()
+        
         reInitFakeData()
         
         refreshData()
@@ -62,6 +65,11 @@ class MainViewModel: ObservableObject {
                 withAnimation {
                     self.selectedTab = tab.tab
                 }
+            }
+        
+        $selectedTab.asyncNinja
+            .onUpdate { _ in
+                stopSound()
             }
     }
     

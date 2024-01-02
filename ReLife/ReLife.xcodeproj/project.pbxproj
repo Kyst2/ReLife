@@ -10,14 +10,14 @@
 		1D5C49C12B371D74009DD522 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C02B371D74009DD522 /* AchievementView.swift */; };
 		1D5C49C32B372656009DD522 /* AchievementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C22B372656009DD522 /* AchievementListView.swift */; };
 		1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5C49C42B379673009DD522 /* Achievements_TODO.swift */; };
-		1D6A6AF82B43EC4800CD9E69 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */; };
-		1D6A6B152B43EFC100CD9E69 /* AppCoreLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; };
-		1D6A6B162B43EFC100CD9E69 /* AppCoreLight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */; };
 		1D6A6B332B4406E500CD9E69 /* FF5_fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D6A6B322B4406E500CD9E69 /* FF5_fanfare.mp3 */; };
 		1D6A6B352B44082A00CD9E69 /* playSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A6B342B44082A00CD9E69 /* playSound.swift */; };
+		1D6A6B372B44160600CD9E69 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B362B44160600CD9E69 /* AsyncNinja */; };
+		1D6A6B392B44160600CD9E69 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6A6B382B44160600CD9E69 /* NinjaMacros */; };
+		1D6A6B3A2B441AB200CD9E69 /* AppCoreLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; };
+		1D6A6B3B2B441AB200CD9E69 /* AppCoreLight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6A6B142B43EFC100CD9E69 /* AppCoreLight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D6E253D2B33696A001083CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D6E252B2B33696A001083CB /* Localizable.strings */; };
-		1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E25482B338BD4001083CB /* AsyncNinja */; };
 		1D6E25552B338E30001083CB /* RLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25542B338E30001083CB /* RLSignal.swift */; };
 		1D6E25572B33AD88001083CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25562B33AD88001083CB /* AppDelegate.swift */; };
 		1D6E25592B33D463001083CB /* SheetAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25582B33D463001083CB /* SheetAlertView.swift */; };
@@ -116,13 +116,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A2CCA02C2ACF0739006A3A7F /* Embed Frameworks */ = {
+		1D6A6B3C2B441AB200CD9E69 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D6A6B162B43EFC100CD9E69 /* AppCoreLight.framework in Embed Frameworks */,
+				1D6A6B3B2B441AB200CD9E69 /* AppCoreLight.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,11 +254,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6A6B392B44160600CD9E69 /* NinjaMacros in Frameworks */,
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
-				1D6A6B152B43EFC100CD9E69 /* AppCoreLight.framework in Frameworks */,
-				1D6E25492B338BD4001083CB /* AsyncNinja in Frameworks */,
-				1D6A6AF82B43EC4800CD9E69 /* NinjaMacros in Frameworks */,
+				1D6A6B372B44160600CD9E69 /* AsyncNinja in Frameworks */,
+				1D6A6B3A2B441AB200CD9E69 /* AppCoreLight.framework in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
 				1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
@@ -674,7 +674,7 @@
 				A2DD8E5E2A58A90C00315995 /* Sources */,
 				A2DD8E5F2A58A90C00315995 /* Frameworks */,
 				A2DD8E602A58A90C00315995 /* Resources */,
-				A2CCA02C2ACF0739006A3A7F /* Embed Frameworks */,
+				1D6A6B3C2B441AB200CD9E69 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -686,9 +686,9 @@
 				A211B1812A7D012D004680E8 /* RealmSwift */,
 				A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */,
 				A21989912AE138400004A5D9 /* KystParallax */,
-				1D6E25482B338BD4001083CB /* AsyncNinja */,
-				1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */,
 				1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */,
+				1D6A6B362B44160600CD9E69 /* AsyncNinja */,
+				1D6A6B382B44160600CD9E69 /* NinjaMacros */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -1351,18 +1351,18 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D6A6AF72B43EC4800CD9E69 /* NinjaMacros */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NinjaMacros;
-		};
 		1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
-		1D6E25482B338BD4001083CB /* AsyncNinja */ = {
+		1D6A6B362B44160600CD9E69 /* AsyncNinja */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AsyncNinja;
+		};
+		1D6A6B382B44160600CD9E69 /* NinjaMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NinjaMacros;
 		};
 		A211B17F2A7D012D004680E8 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
