@@ -3,8 +3,8 @@ import SwiftUI
 import MoreSwiftUI
 
 struct SheetAddStandardData: View {
-    @State private var charachModels = characs.map{ CharachToggleModel($0) }
-    @State private var questModels = quests.map{ QuestToggleModel($0) }
+    @State private var charachModels = characs.map{ ToggleModel($0) }
+    @State private var questModels   = quests.map { ToggleModel($0) }
     
     var body: some View {
         VStack {
@@ -109,23 +109,5 @@ extension SheetAddStandardData {
             .overlay(Color.clickableAlpha)
             .onTapGesture { self.questModels[idx].checked.toggle() }
         }
-    }
-}
-
-fileprivate struct CharachToggleModel {
-    let item: Characteristic
-    var checked: Bool = true
-    
-    init(_ item: Characteristic) {
-        self.item = item
-    }
-}
-
-fileprivate struct QuestToggleModel {
-    let item: String
-    var checked: Bool = true
-    
-    init(_ item: String) {
-        self.item = item
     }
 }
