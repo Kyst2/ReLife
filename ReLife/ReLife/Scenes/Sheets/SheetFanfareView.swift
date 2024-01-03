@@ -26,6 +26,7 @@ struct SheetFanfareView: View {
                 model.charsAndPoints.indices.forEach { idx in
                     if model.charsAndPoints[idx].points < model.charsAndPointsGoal[idx].points {
                         model.charsAndPoints[idx].points += 1
+                        HapticMacOs.vibrate()
                     }
                 }
             }
