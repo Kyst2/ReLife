@@ -33,6 +33,7 @@
 		1D970E7E2B45472400A7CD35 /* HapticMacOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D970E7D2B45472400A7CD35 /* HapticMacOs.swift */; };
 		1DA6B8EC2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6B8EB2B2E864F00E09880 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */; };
+		1DC851632B4688D200E71055 /* AppReview in Frameworks */ = {isa = PBXBuildFile; productRef = 1DC851622B4688D200E71055 /* AppReview */; };
 		1DCF86A42B3D238900118F5F /* UksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A32B3D238900118F5F /* UksTabView.swift */; };
 		1DCF86A62B40402200118F5F /* RLIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A52B40402200118F5F /* RLIcons.swift */; };
 		1DCF86A92B40712900118F5F /* PreludeP1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCF86A82B40712900118F5F /* PreludeP1View.swift */; };
@@ -256,6 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DC851632B4688D200E71055 /* AppReview in Frameworks */,
 				1D6A6B392B44160600CD9E69 /* NinjaMacros in Frameworks */,
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
@@ -692,6 +694,7 @@
 				1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */,
 				1D6A6B362B44160600CD9E69 /* AsyncNinja */,
 				1D6A6B382B44160600CD9E69 /* NinjaMacros */,
+				1DC851622B4688D200E71055 /* AppReview */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -755,6 +758,7 @@
 				A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */,
 				A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */,
 				1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				1DC851612B4688D200E71055 /* XCRemoteSwiftPackageReference "AppReview" */,
 			);
 			productRefGroup = A2DD8E632A58A90C00315995 /* Products */;
 			projectDirPath = "";
@@ -1328,6 +1332,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		1DC851612B4688D200E71055 /* XCRemoteSwiftPackageReference "AppReview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mezhevikin/AppReview";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
 		A211B17E2A7D012D004680E8 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1367,6 +1379,11 @@
 		1D6A6B382B44160600CD9E69 /* NinjaMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NinjaMacros;
+		};
+		1DC851622B4688D200E71055 /* AppReview */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DC851612B4688D200E71055 /* XCRemoteSwiftPackageReference "AppReview" */;
+			productName = AppReview;
 		};
 		A211B17F2A7D012D004680E8 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "appreview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mezhevikin/AppReview",
+      "state" : {
+        "revision" : "c9f027b808c5bc934ab741051e8fe1a0455aedd7",
+        "version" : "0.0.2"
+      }
+    },
+    {
       "identity" : "confettiswiftui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/simibac/ConfettiSwiftUI.git",
