@@ -119,19 +119,19 @@ extension MainViewTab {
 public extension AuroraTheme {
     static var reLifeMain: AuroraTheme {
         AuroraTheme(bg: Color.clear,
-                    ellipsesTopLeading:     Color(light: .white,  dark: Color(rgbaHex: 0xf0a04007) ),
-                    ellipsesTopTrailing:    Color(light: .blue,   dark: Color(rgbaHex: 0xf0a0a007) ),
-                    ellipsesBottomTrailing: Color(light: .green,  dark: RLColors.brown.opacity(0.15) ),
-                    ellipsesBottomLeading:  Color(light: .yellow, dark: RLColors.brownLight.opacity(0.15) )
+                    ellipsesTopLeading:     Color(rgbaHex: 0xf0a04007), //Color(light: .white,  dark: Color(rgbaHex: 0xf0a04007) ),
+                    ellipsesTopTrailing:    Color(rgbaHex: 0xf0a0a007), //Color(light: .blue,   dark: Color(rgbaHex: 0xf0a0a007) ),
+                    ellipsesBottomTrailing: RLColors.brown.opacity(0.15), //Color(light: .green,  dark: RLColors.brown.opacity(0.15) ),
+                    ellipsesBottomLeading:  RLColors.brownLight.opacity(0.15)// Color(light: .yellow, dark: RLColors.brownLight.opacity(0.15) )
         )
     }
     
     static var reLifeAchievement: AuroraTheme {
         AuroraTheme(bg: Color(nsColor: NSColor.windowBackgroundColor ),
-                    ellipsesTopLeading:     Color(light: .white,  dark: RLColors.gray.opacity(0.1) ),
-                    ellipsesTopTrailing:    Color(light: .blue,   dark: RLColors.grayLight.opacity(0.1) ),
-                    ellipsesBottomTrailing: Color(light: .green,  dark: RLColors.brown.opacity(0.1) ),
-                    ellipsesBottomLeading:  Color(light: .yellow, dark: RLColors.brownLight.opacity(0.1) )
+                    ellipsesTopLeading:     RLColors.gray.opacity(0.1) , //Color(light: .white,  dark: RLColors.gray.opacity(0.1) ),
+                    ellipsesTopTrailing:    RLColors.grayLight.opacity(0.1), //Color(light: .blue,   dark: RLColors.grayLight.opacity(0.1) ),
+    ellipsesBottomTrailing: RLColors.brown.opacity(0.1),//Color(light: .green,  dark: RLColors.brown.opacity(0.1) ),
+                    ellipsesBottomLeading:  RLColors.brownLight.opacity(0.1)//Color(light: .yellow, dark: RLColors.brownLight.opacity(0.1) )
         )
     }
 }
