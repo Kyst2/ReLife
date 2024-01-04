@@ -321,6 +321,7 @@ fileprivate struct BtnAddDefaultQuests: View {
     var body: some View {
         Button {
             GlobalDialog.shared.dialog = .view(view: AnyView(SheetAddStandardData() ))
+            
         } label: {
             Text("Add default Quests")// TODO translate me!
                 .frame(width: 200)
@@ -338,7 +339,7 @@ fileprivate struct BtnCleanCharacts: View {
             GlobalDialog.confirmDialogYesNo(withText: dialogText, successAlertText: successAlert, doNotCloseOnOk: false)
             {
                 RealmController.shared.deleteAllOf(type: Characteristic.self)
-                AppCore.signals.send(signal: RLSignal.ReloadData() )
+                AppCore.signals.send(signal: RLSignal.ReloadData())
             }
         } label: {
             Text("key.settings.danger.clear-charach".localized)

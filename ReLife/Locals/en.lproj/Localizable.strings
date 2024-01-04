@@ -67,3 +67,18 @@
 "key.settings.sound-stngs" = "Sound Settings";
 "key.settings.support-email" = "Support Email";
 "key.settings.about" = "About %@";
+
+
+/////////////////////
+//QUESTS
+/////////////////////
+"charach.health" = "Health";
+
+/////////////////////
+//QUESTS
+/////////////////////
+"quest.cleanTeeth" = "Clean teeth";
+"quest.cleanTeeth.descr" = "Clean teeth every day!";
+
+"quest.dantistVisit" = "Dantist visit";
+"quest.dantistVisit.descr" = "Dantist visit is important!";

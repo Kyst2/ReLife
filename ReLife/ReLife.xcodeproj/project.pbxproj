@@ -54,6 +54,7 @@
 		A21989922AE138400004A5D9 /* KystParallax in Frameworks */ = {isa = PBXBuildFile; productRef = A21989912AE138400004A5D9 /* KystParallax */; };
 		A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21989952AE319560004A5D9 /* SheetConfirmationView.swift */; };
 		A219899E2AE47F050004A5D9 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A219899D2AE47F050004A5D9 /* Montserrat.ttf */; };
+		A22976622B4775D700E6CF57 /* StandardQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22976612B4775D700E6CF57 /* StandardQuests.swift */; };
 		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
@@ -192,6 +193,7 @@
 		A21989952AE319560004A5D9 /* SheetConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetConfirmationView.swift; sourceTree = "<group>"; };
 		A219899C2AE47BBB0004A5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A219899D2AE47F050004A5D9 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
+		A22976612B4775D700E6CF57 /* StandardQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardQuests.swift; sourceTree = "<group>"; };
 		A252720B2A8D3AF700DD4B75 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
@@ -393,7 +395,7 @@
 				1D6E25582B33D463001083CB /* SheetAlertView.swift */,
 				1D6E255A2B3442F0001083CB /* ---------- */,
 				A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */,
-				1D6E255D2B346142001083CB /* SheetAddStandardData.swift */,
+				A22976602B4775BA00E6CF57 /* SheetAddStandardData */,
 				1D6E255F2B3500DA001083CB /* SheetAboutView.swift */,
 				1DCF86A72B40710F00118F5F /* Prelude */,
 				1D9375AB2B43E22E000E6A84 /* SheetFanfareView.swift */,
@@ -415,6 +417,15 @@
 				A219899D2AE47F050004A5D9 /* Montserrat.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		A22976602B4775BA00E6CF57 /* SheetAddStandardData */ = {
+			isa = PBXGroup;
+			children = (
+				1D6E255D2B346142001083CB /* SheetAddStandardData.swift */,
+				A22976612B4775D700E6CF57 /* StandardQuests.swift */,
+			);
+			path = SheetAddStandardData;
 			sourceTree = "<group>";
 		};
 		A25272102A8E3C5700DD4B75 /* ObjectsRealm */ = {
@@ -877,6 +888,7 @@
 				A27116742B35056200306F99 /* IconPicker.swift in Sources */,
 				A27286742AF55D27005EE9B8 /* ConfigGeneralView.swift in Sources */,
 				1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */,
+				A22976622B4775D700E6CF57 /* StandardQuests.swift in Sources */,
 				1D6E255C2B344CCE001083CB /* NumericUpDown.swift in Sources */,
 				A2CCA0332AD5EA73006A3A7F /* QuestsView.swift in Sources */,
 				A2AEDCCF2AAA4C5F00128B3C /* Collection+.swift in Sources */,

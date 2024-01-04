@@ -24,6 +24,7 @@ public class Quest: Object, Identifiable {
         self.iconStr = MyIcon.americanFootball.rawValue
     }
     
+    // questRepeatStr -> questRepeat
     convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType,repeatTimes: Int = 1, descript: String = "") {
         self.init()
         self.name = name

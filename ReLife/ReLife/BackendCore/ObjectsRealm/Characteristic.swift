@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-public class Characteristic: Object {
+public class Characteristic: Object, Identifiable {
     @Persisted(primaryKey: true) var key: String
     @Persisted private(set) var name: String
     @Persisted var icon: String
@@ -15,6 +15,14 @@ public class Characteristic: Object {
         super.init()
         self.key = UUID().uuidString
         self.name = ""
+        self.points = 0
+    }
+    
+    convenience init(key: String, name: String, icon: String) {
+        self.init()
+        self.name = name
+        self.icon = icon
+        self.key = key
         self.points = 0
     }
     
