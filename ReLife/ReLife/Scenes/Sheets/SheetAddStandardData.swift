@@ -4,7 +4,7 @@ import MoreSwiftUI
 
 struct SheetAddStandardData: View {
     @State private var charachModels = characs.map{ ToggleModel($0) }
-    @State private var questModels   = quests.map { ToggleModel($0) }
+    @State private var questModels   = q.map { ToggleModel($0) }
     
     var body: some View {
         VStack {
@@ -53,6 +53,10 @@ struct SheetAddStandardData: View {
             .filter { $0.checked }
             .map { $0.item }
             .forEach { RealmController.shared.add(characteristic: $0) }
+        questModels
+            .filter { $0.checked }
+            .map { $0.item }
+            .forEach{ RealmController.shared.add(quest: $0)}
         
         GlobalDialog.shared.dialog = .none
     }
@@ -81,6 +85,11 @@ let quests: [String] = [
     "Drink a water",
     "Wash my hair"
 ]
+let q: [Quest] = [
+    Quest(name: "Clean teeth", icon: .forkKnife, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: "")
+
+
+]
 
 /////////////////////////////
 ///HELPERS
@@ -104,7 +113,7 @@ extension SheetAddStandardData {
             HStack {
                 Toggle("", isOn: .constant(self.questModels[idx].checked))
                 
-                Text(self.questModels[idx].item)
+                Text(self.questModels[idx].item.name)
             }
             .overlay(Color.clickableAlpha)
             .onTapGesture { self.questModels[idx].checked.toggle() }

@@ -50,7 +50,7 @@ class MainViewModel: NinjaContext.Main, ObservableObject {
     override init() {
         super.init()
         
-        reInitFakeData()
+//        reInitFakeData()
         
         refreshData()
         
