@@ -82,13 +82,12 @@ extension StandardQuests {
 
 extension StandardQuests {
     func asQuest(characteristics: [Characteristic]) -> Quest {
-        let charachAndPoints: Dictionary<Characteristic, Int> = [:] // fill me
-        
-        return Quest(name: self.title,
+        return Quest(key: self.rawValue,
+                     name: self.title,
                      icon: self.icon,
                      color: RLColors.brown.nsColor,
                      charachPoints: self.genearateCharachPoints(from: characteristics),
-                     questRepeatStr: self.repeatType,
+                     repeatType: self.repeatType,
                      repeatTimes: self.repeatsPerDay,
                      descript: self.descr
                     )

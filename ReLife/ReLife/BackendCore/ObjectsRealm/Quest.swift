@@ -24,13 +24,25 @@ public class Quest: Object, Identifiable {
         self.iconStr = MyIcon.americanFootball.rawValue
     }
     
-    // questRepeatStr -> questRepeat
-    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>,questRepeatStr: QuestRepeatType,repeatTimes: Int = 1, descript: String = "") {
+    convenience init(key: String, name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descript: String = "") {
         self.init()
         self.name = name
         self.iconStr = icon.rawValue
         self.colorHex.append(objectsIn: color.hexValues)
-        self.questRepeatStr = questRepeatStr.toString()
+        self.questRepeatStr = repeatType.toString()
+        self.repeatTimes = repeatTimes
+        charachPoints.forEach {
+            self.charachPoints.setValue($0.value, forKey: $0.key.key)
+        }
+        self.descript = descript
+    }
+    
+    convenience init(name: String, icon: MyIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descript: String = "") {
+        self.init()
+        self.name = name
+        self.iconStr = icon.rawValue
+        self.colorHex.append(objectsIn: color.hexValues)
+        self.questRepeatStr = repeatType.toString()
         self.repeatTimes = repeatTimes
         charachPoints.forEach {
             self.charachPoints.setValue($0.value, forKey: $0.key.key)
