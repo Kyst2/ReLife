@@ -3,7 +3,7 @@ import MoreSwiftUI
 
 struct ItemEdit: View {
     @State var name: String
-    @State var icon: MyIcon
+    @State var icon: QuestIcon
     @State var deteils: String = ""
     @State var pointa: Int = 0
     

@@ -11,9 +11,9 @@ struct SheetCharacteristicEditorView: View {
 //    @State var characteristics:String = ""
 //    @State var points:Int = 0
     
-    let allIcons = MyIcon.allCases.map{ $0.rawValue }
+    let allIcons = QuestIcon.allCases.map{ $0.rawValue }
     
-    @State private var icon: String = MyIcon.batteryFull.rawValue
+    @State private var icon: String = QuestIcon.batteryFull.rawValue
     
     init(model: SettingsViewModel, type: WorkWithTestsType, quest: Quest?, action: @escaping () -> Void) {
         self.model = model
@@ -22,9 +22,9 @@ struct SheetCharacteristicEditorView: View {
         self.deteils = quest?.description ?? ""
         
         if let quest {
-            self.icon = type == .questEditor ? quest.icon.rawValue : MyIcon.batteryFull.rawValue
+            self.icon = type == .questEditor ? quest.icon.rawValue : QuestIcon.batteryFull.rawValue
         } else {
-            self.icon = MyIcon.batteryFull.rawValue
+            self.icon = QuestIcon.batteryFull.rawValue
         }
         
         

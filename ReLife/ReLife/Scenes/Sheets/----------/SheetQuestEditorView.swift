@@ -13,7 +13,7 @@ struct SheetQuestEditorView: View {
     @State var characsAndPoints: [CharacteristicsAndPoints]
     @State var questColor: UInt32 = 0x204729
     
-    @State private var icon: String = MyIcon.batteryFull.rawValue
+    @State private var icon: String = QuestIcon.batteryFull.rawValue
     
     init(model: SettingsViewModel, type: WorkWithTestsType, quest: Quest?, action: @escaping () -> Void) {
         self.model = model
@@ -22,9 +22,9 @@ struct SheetQuestEditorView: View {
         self.deteils = quest?.descript ?? ""
         
         if let quest {
-            self.icon = type == .questEditor ? quest.icon.rawValue : MyIcon.batteryFull.rawValue
+            self.icon = type == .questEditor ? quest.icon.rawValue : QuestIcon.batteryFull.rawValue
         } else {
-            self.icon = MyIcon.batteryFull.rawValue
+            self.icon = QuestIcon.batteryFull.rawValue
         }
         self.action = action
         

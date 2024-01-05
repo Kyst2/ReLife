@@ -27,7 +27,7 @@ extension StandardQuests {
         self.rawValue.localized
     }
     
-    var icon: MyIcon {
+    var icon: QuestIcon {
         switch self {
         case .cleanTeeth:
             return .forkKnife

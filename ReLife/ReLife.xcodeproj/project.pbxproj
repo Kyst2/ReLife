@@ -27,6 +27,8 @@
 		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
 		1D8009FA2B479F610058CCA0 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8009F92B479F610058CCA0 /* AsyncNinja */; };
 		1D8009FC2B479F610058CCA0 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8009FB2B479F610058CCA0 /* NinjaMacros */; };
+		1D8009FE2B47AB4B0058CCA0 /* QuestIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8009FD2B47AB4B0058CCA0 /* QuestIcon.swift */; };
+		1D800A012B47AB8C0058CCA0 /* CharachIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D800A002B47AB8C0058CCA0 /* CharachIcon.swift */; };
 		1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83310F2B40DD380047FADA /* PreludeP4View.swift */; };
 		1D8331122B41C6450047FADA /* HelpBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8331112B41C6450047FADA /* HelpBtn.swift */; };
 		1D9375AC2B43E22E000E6A84 /* SheetFanfareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9375AB2B43E22E000E6A84 /* SheetFanfareView.swift */; };
@@ -165,6 +167,8 @@
 		1D6E25612B362F01001083CB /* BtnOpenSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenSettings.swift; sourceTree = "<group>"; };
 		1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOpenTemplatesSheet.swift; sourceTree = "<group>"; };
 		1D6E25652B3701D6001083CB /* RLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLColors.swift; sourceTree = "<group>"; };
+		1D8009FD2B47AB4B0058CCA0 /* QuestIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestIcon.swift; sourceTree = "<group>"; };
+		1D800A002B47AB8C0058CCA0 /* CharachIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharachIcon.swift; sourceTree = "<group>"; };
 		1D83310C2B40D9670047FADA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../KystEssentials/Package.swift; sourceTree = "<group>"; };
 		1D83310F2B40DD380047FADA /* PreludeP4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreludeP4View.swift; sourceTree = "<group>"; };
 		1D8331112B41C6450047FADA /* HelpBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpBtn.swift; sourceTree = "<group>"; };
@@ -328,6 +332,16 @@
 			path = "----------";
 			sourceTree = "<group>";
 		};
+		1D8009FF2B47AB760058CCA0 /* IconsEnums */ = {
+			isa = PBXGroup;
+			children = (
+				1DCF86A52B40402200118F5F /* RLIcons.swift */,
+				1D8009FD2B47AB4B0058CCA0 /* QuestIcon.swift */,
+				1D800A002B47AB8C0058CCA0 /* CharachIcon.swift */,
+			);
+			path = IconsEnums;
+			sourceTree = "<group>";
+		};
 		1DCF86A72B40710F00118F5F /* Prelude */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +378,7 @@
 		A211B1602A7A8075004680E8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				1DCF86A52B40402200118F5F /* RLIcons.swift */,
+				1D8009FF2B47AB760058CCA0 /* IconsEnums */,
 				1D6E25652B3701D6001083CB /* RLColors.swift */,
 				1D6E25542B338E30001083CB /* RLSignal.swift */,
 				A21989972AE3E7990004A5D9 /* Font */,
@@ -855,6 +869,7 @@
 				A272866E2AEFD44F005EE9B8 /* SettingsView.swift in Sources */,
 				A27286762AF55D36005EE9B8 /* ConfigQuestView.swift in Sources */,
 				A2C11F492B126AE40062AFDE /* SettingButton.swift in Sources */,
+				1D8009FE2B47AB4B0058CCA0 /* QuestIcon.swift in Sources */,
 				A2C55E862B2D0D71001E67FB /* CharacteristicsAndPoints.swift in Sources */,
 				1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */,
 				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
@@ -863,6 +878,7 @@
 				A27116722B35045E00306F99 /* QuestRepeatTypeView.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */,
 				1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */,
+				1D800A012B47AB8C0058CCA0 /* CharachIcon.swift in Sources */,
 				A2CCA02F2AD497DB006A3A7F /* CharacteristicsView.swift in Sources */,
 				A2BBB2692B19BE9F00348BC5 /* MainViewModel.swift in Sources */,
 				1DCF86A92B40712900118F5F /* PreludeP1View.swift in Sources */,

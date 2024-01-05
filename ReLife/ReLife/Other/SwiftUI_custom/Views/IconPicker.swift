@@ -5,7 +5,7 @@ struct IconPicker: View {
     @Binding var icon: String
     @State private var iconPickerShown = false
     
-    let allIcons = MyIcon.allCases.map{ $0.rawValue }
+    let allIcons = QuestIcon.allCases.map{ $0.rawValue }
     
     let columns = (1...10).map { _ in GridItem(.fixed(35)) }
     
