@@ -26,15 +26,17 @@ struct QuestsView:View {
     }
     
     func NoQuestsView() -> some View {
-        VStack {
+        VStack(spacing: 30) {
             HStack(spacing: 0) {
-                Text("key.main.quests.you-can-create-quest".localized)
-                BtnOpenSettings(settingsTab: .quests)
+                Text("key.main.quests.create-using".localized)
+                    
+                BtnOpenTemplatesSheet()
             }
             
             HStack(spacing: 0) {
-                Text("key.main.quests.create-using".localized)
-                BtnOpenTemplatesSheet()
+                Text("key.main.quests.you-can-create-quest".localized)
+                
+                BtnOpenSettings(settingsTab: .quests)
             }
         }
         .font(.custom("SF Pro", size: 15))

@@ -20,15 +20,15 @@ struct CharacteristicsView: View {
 extension CharacteristicsView {
     func NoCharacteristicView() -> some View {
         HStack {
-            VStack(alignment: .leading) {
-                HStack(spacing: 0) {
-                    Text("key.main.quests.you-can-create-charac".localized)
-                    BtnOpenSettings(settingsTab: .characteristics)
-                }
-                
+            VStack(alignment: .leading, spacing: 30) {
                 HStack(spacing: 0) {
                     Text("key.main.quests.create-using".localized)
                     BtnOpenTemplatesSheet()
+                }
+                
+                HStack(spacing: 0) {
+                    Text("key.main.quests.you-can-create-charac".localized)
+                    BtnOpenSettings(settingsTab: .characteristics)
                 }
             }
             .padding(20)

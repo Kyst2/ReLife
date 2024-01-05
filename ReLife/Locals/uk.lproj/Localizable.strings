@@ -32,11 +32,11 @@
 "key.main.quests.today" = "Сьогодні";
 "key.main.quests.tomorrow" = "Завтра";
 "key.main.quests.long-term" = "Довгі дистанції";
-"key.main.quests.you-can-create-quest" = "Ви можете створити ваш перший квест ";
+"key.main.quests.you-can-create-quest" = "Ви можете створити ваш власний перший квест ";
 "key.main.quests.you-can-create-charac" = "Ви можете створити вашу першу характеристику ";
 "key.main.quests.HERE" = "ТУТ";
-"key.main.quests.create-using" = "Також ви можете створити з ";
-"key.main.quests.create-using-templates" = "ШАБЛОНУ";
+"key.main.quests.create-using" = "Ви можете створити Квести/Характеристики з ";
+"key.main.quests.create-using-templates" = "ШАБЛОННИХ";
 
 ////////////////////
 // Sheets
