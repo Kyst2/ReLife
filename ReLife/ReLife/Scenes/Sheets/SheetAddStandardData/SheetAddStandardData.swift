@@ -79,31 +79,6 @@ let characs: [Characteristic] = [
     Characteristic(key: StandardCharach.mind.rawValue,       name: "Mind", icon: "brain")
 ]
 
-//let quests: [String] = [
-//    "Clean teeth",
-//    "Dantist visit",
-//    "Clean my apartment",
-//    "Learn Swift programming language",
-//    "Play/Learn Guitar",
-//    "Push-ups",
-//    "Visit to a gynecologist",
-//    "Visit to a gynecologist for a detailed examination",
-//    "Drink a water",
-//    "Wash my hair"
-//]
-//let q: [Quest] = [
-//    Quest(name: "Clean teeth", icon: .forkKnife, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first? :15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Dantist visit", icon: .tray, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Clean my apartment", icon: .crossCase, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Learn Swift programming language", icon: .playstation, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Play/Learn Guitar", icon: .americanFootball, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Push-ups", icon: .bolt, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Visit to a gynecologist", icon: .charBook, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Visit to a gynecologist for a detailed examination", icon: .geraShape, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Drink a water", icon: .beachUmbrella, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: ""),
-//    Quest(name: "Wash my hair", icon: .partyPopper, color: .clear, charachPoints: [RealmController.shared.characteristicsAll.first!:15], questRepeatStr: .repeatEvery(days: 1, startingFrom: Date.now), repeatTimes: 2, descript: "")
-//]
-
 /////////////////////////////
 ///HELPERS
 ////////////////////////////

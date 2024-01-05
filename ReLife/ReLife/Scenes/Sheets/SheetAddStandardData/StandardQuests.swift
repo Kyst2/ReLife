@@ -10,7 +10,17 @@ enum StandardCharach: String {
 enum StandardQuests: String, CaseIterable {
     case cleanTeeth   = "quest.cleanTeeth"
     case dantistVisit = "quest.dantistVisit"
+//    case cleanApartment = "quest.cleanApartment"
+//    case learnSwift   = "quest.learnSwift"
+//    case playLearnGuitar   = "quest.learnGuitar"
+//    case doPushups   = "quest.pushups"
+//    case ginecolog = "quest.ginecolog"
+//    case ginecologDetailed = "quest.ginecologDetailed"
+//    case drinkWater = "quest.drinkWater"
+//    case washHair = "quest.washHair"
 }
+
+
 
 extension StandardQuests {
     var title: String {
