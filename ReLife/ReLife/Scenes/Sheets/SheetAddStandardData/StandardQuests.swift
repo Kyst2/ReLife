@@ -1,5 +1,12 @@
 import Foundation
 
+enum StandardCharach: String {
+    case health
+    case tideness
+    case atleticism
+    case mind
+}
+
 enum StandardQuests: String, CaseIterable {
     case cleanTeeth   = "quest.cleanTeeth"
     case dantistVisit = "quest.dantistVisit"
@@ -44,6 +51,33 @@ extension StandardQuests {
         
         return key == keyLocalized ? "" : keyLocalized
     }
+    
+    func genearateCharachPoints(from carhach: [Characteristic] ) -> Dictionary<Characteristic, Int> {
+        var charachAndPoints: Dictionary<Characteristic, Int> = [:]
+        
+        var data: [(StandardCharach, Int)]
+        
+        switch self {
+        case .cleanTeeth:
+            data = [
+                (StandardCharach.health, 15),
+                (StandardCharach.tideness, 5)
+            ]
+        case .dantistVisit:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        }
+        
+        data.forEach { pair in
+            if let charach = carhach.filter({ $0.key == pair.0.rawValue }).first {
+                charachAndPoints[charach] = pair.1
+            }
+        }
+        
+        return charachAndPoints
+    }
 }
 
 extension StandardQuests {
@@ -51,12 +85,12 @@ extension StandardQuests {
         let charachAndPoints: Dictionary<Characteristic, Int> = [:] // fill me
         
         return Quest(name: self.title,
-                      icon: self.icon,
-                      color: RLColors.brown.nsColor,
-                      charachPoints: charachAndPoints,
-                      questRepeatStr: self.repeatType,
-                      repeatTimes: self.repeatsPerDay,
-                      descript: self.descr
+                     icon: self.icon,
+                     color: RLColors.brown.nsColor,
+                     charachPoints: self.genearateCharachPoints(from: characteristics),
+                     questRepeatStr: self.repeatType,
+                     repeatTimes: self.repeatsPerDay,
+                     descript: self.descr
                     )
     }
 }
