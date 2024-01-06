@@ -14,13 +14,14 @@ struct QuestsView:View {
             ScrollView {
                 Space(18)
                 
-                VStack(spacing: 7) {
+                VStack(spacing: 40) {
                     CustomSection(header: "key.main.quests.today".localized, isFinishable: true, quests: model.questToday)
                     
                     CustomSection(header: "key.main.quests.tomorrow".localized, isFinishable: false, quests: model.questTomorrow)
                     
                     CustomSection(header: "key.main.quests.long-term".localized, isFinishable: true, quests: model.questLongTerm)
                 }
+                .padding(.horizontal, 10)
             }.padding(10)
         }
     }
@@ -49,23 +50,26 @@ struct QuestsView:View {
 fileprivate extension QuestsView {
     @ViewBuilder
     func CustomSection(header:String, isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
-        if quests.count > 0 {
-            Section(header: Text(header).titleStyle ) {
-                SectionBody(isFinishable: isFinishable, quests: quests)
+        VStack {
+            if quests.count > 0 {
+                Section(header: Text(header).titleStyle ) {
+                    SectionBody(isFinishable: isFinishable, quests: quests)
+                }
             }
         }
     }
     
     func SectionBody(isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
-        ForEach(quests) { wrapper in
-            
-            //TODO: якщо немає опису нєфіг розгортати +++
-            QuestAccordeonView(isFinishable: isFinishable, repetsCount: wrapper.finishedTimes, quest: wrapper.quest) {
-                
-                let fanfare = SheetFanfareView.init(quest: wrapper.quest)
-                GlobalDialog.shared.dialog = .view(view: AnyView(fanfare) )
-                
-                model.addToHistory(quest: wrapper.quest)
+        VStack(spacing: 0) {
+            ForEach(quests) { wrapper in
+                //TODO: якщо немає опису нєфіг розгортати +++
+                QuestAccordeonView(isFinishable: isFinishable, repetsCount: wrapper.finishedTimes, quest: wrapper.quest) {
+                    
+                    let fanfare = SheetFanfareView.init(quest: wrapper.quest)
+                    GlobalDialog.shared.dialog = .view(view: AnyView(fanfare) )
+                    
+                    model.addToHistory(quest: wrapper.quest)
+                }
             }
         }
     }
@@ -92,7 +96,9 @@ struct QuestAccordeonView: View {
             TitleView()
             
             DecrView()
+                .transition(.move(edge: .top).combined(with: .opacity))
         }
+        .padding(.horizontal, 5)
         .questModifire(hoverEffect: $hoverEffect, background1: ViewBackground(), tapReaction: tapReaction)
     }
     
@@ -128,7 +134,6 @@ struct QuestAccordeonView: View {
                             expandBtnBkgrnd()
                         }
                 }
-                .padding(.trailing,20)
                 .buttonStyle(BtnUksStyle.default)
             }
         }.padding(6)
@@ -158,12 +163,9 @@ struct QuestAccordeonView: View {
             if quest.repeatTimes < repetsCount {
                 Color.clear
             } else {
-                isComplete ?
-                Color.gray.opacity(0.3) : Color.clear
+                RoundedRectangle(cornerRadius: 8)
+                    .fill( isComplete ? Color.gray.opacity(0.3) : Color.clear)
             }
-            
-            RoundedRectangle(cornerRadius: 0)
-                .stroke(Color.primary, lineWidth: 0.1)
         }
     }
     
@@ -177,22 +179,24 @@ struct QuestAccordeonView: View {
 }
 fileprivate extension View {
     func questModifire(hoverEffect: Binding<Bool>, background1: some View, tapReaction: @escaping () -> Void) -> some View {
-        self.background( hoverEffect.wrappedValue ? Color.gray.opacity(0.1) : Color.clear )
-            .onHover{ hover in
-                withAnimation(.easeOut(duration: 0.2 )){
-                    hoverEffect.wrappedValue = hover
-                }
+        self.background{
+            RoundedRectangle(cornerRadius: 8)
+                .fill( hoverEffect.wrappedValue ? Color.gray.opacity(0.1) : Color.clear)
+        }
+        .onHover { hover in
+            withAnimation(.easeOut(duration: 0.2 )) {
+                hoverEffect.wrappedValue = hover
             }
-            .background { background1 }
-            .padding(3)
-            .onTapGesture(count: 2) { tapReaction() }
+        }
+        .background { background1 }
+        .padding(3)
+        .onTapGesture(count: 2) { tapReaction() }
     }
 }
 
 fileprivate extension Text {
     var titleStyle: some View {
-        self
-            .myFont(size: 17).bold()
+        self.myFont(size: 21).bold()
     }
 }
 
