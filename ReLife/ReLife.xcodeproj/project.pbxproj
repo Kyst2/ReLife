@@ -25,8 +25,6 @@
 		1D6E25622B362F01001083CB /* BtnOpenSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25612B362F01001083CB /* BtnOpenSettings.swift */; };
 		1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25632B362F2F001083CB /* BtnOpenTemplatesSheet.swift */; };
 		1D6E25662B3701D6001083CB /* RLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E25652B3701D6001083CB /* RLColors.swift */; };
-		1D8009FA2B479F610058CCA0 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8009F92B479F610058CCA0 /* AsyncNinja */; };
-		1D8009FC2B479F610058CCA0 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8009FB2B479F610058CCA0 /* NinjaMacros */; };
 		1D8009FE2B47AB4B0058CCA0 /* QuestIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8009FD2B47AB4B0058CCA0 /* QuestIcon.swift */; };
 		1D800A012B47AB8C0058CCA0 /* CharachIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D800A002B47AB8C0058CCA0 /* CharachIcon.swift */; };
 		1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83310F2B40DD380047FADA /* PreludeP4View.swift */; };
@@ -57,6 +55,10 @@
 		A21989962AE319560004A5D9 /* SheetConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21989952AE319560004A5D9 /* SheetConfirmationView.swift */; };
 		A219899E2AE47F050004A5D9 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A219899D2AE47F050004A5D9 /* Montserrat.ttf */; };
 		A22976622B4775D700E6CF57 /* StandardQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22976612B4775D700E6CF57 /* StandardQuests.swift */; };
+		A22976642B49146A00E6CF57 /* AsyncNinja in Frameworks */ = {isa = PBXBuildFile; productRef = A22976632B49146A00E6CF57 /* AsyncNinja */; };
+		A22976662B49147300E6CF57 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = A22976652B49147300E6CF57 /* NinjaMacros */; };
+		A229766C2B49176F00E6CF57 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = A229766B2B49176F00E6CF57 /* Essentials */; };
+		A229766D2B4917CF00E6CF57 /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A229766B2B49176F00E6CF57 /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
@@ -127,6 +129,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A229766D2B4917CF00E6CF57 /* Essentials in Embed Frameworks */,
 				1D6A6B3B2B441AB200CD9E69 /* AppCoreLight.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -263,15 +266,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D8009FA2B479F610058CCA0 /* AsyncNinja in Frameworks */,
 				1DC851632B4688D200E71055 /* AppReview in Frameworks */,
 				A211B1822A7D012D004680E8 /* RealmSwift in Frameworks */,
-				1D8009FC2B479F610058CCA0 /* NinjaMacros in Frameworks */,
 				A2CCA0392ADACE3E006A3A7F /* MoreSwiftUI in Frameworks */,
+				A22976662B49147300E6CF57 /* NinjaMacros in Frameworks */,
 				1D6A6B3A2B441AB200CD9E69 /* AppCoreLight.framework in Frameworks */,
+				A229766C2B49176F00E6CF57 /* Essentials in Frameworks */,
 				A21989922AE138400004A5D9 /* KystParallax in Frameworks */,
 				1D6A6B302B43F81D00CD9E69 /* ConfettiSwiftUI in Frameworks */,
 				A211B1802A7D012D004680E8 /* Realm in Frameworks */,
+				A22976642B49146A00E6CF57 /* AsyncNinja in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,8 +722,9 @@
 				A21989912AE138400004A5D9 /* KystParallax */,
 				1D6A6B2F2B43F81D00CD9E69 /* ConfettiSwiftUI */,
 				1DC851622B4688D200E71055 /* AppReview */,
-				1D8009F92B479F610058CCA0 /* AsyncNinja */,
-				1D8009FB2B479F610058CCA0 /* NinjaMacros */,
+				A22976632B49146A00E6CF57 /* AsyncNinja */,
+				A22976652B49147300E6CF57 /* NinjaMacros */,
+				A229766B2B49176F00E6CF57 /* Essentials */,
 			);
 			productName = ReLife;
 			productReference = A2DD8E622A58A90C00315995 /* ReLife.app */;
@@ -784,6 +789,7 @@
 				A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */,
 				1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				1DC851612B4688D200E71055 /* XCRemoteSwiftPackageReference "AppReview" */,
+				A229766A2B49176F00E6CF57 /* XCRemoteSwiftPackageReference "essentials" */,
 			);
 			productRefGroup = A2DD8E632A58A90C00315995 /* Products */;
 			projectDirPath = "";
@@ -1232,11 +1238,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = RPH4S2457V;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReLife/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1271,11 +1278,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReLife/Preview Content\"";
-				DEVELOPMENT_TEAM = RPH4S2457V;
+				DEVELOPMENT_TEAM = QZKQ74LNRY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReLife/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1384,6 +1392,14 @@
 				kind = branch;
 			};
 		};
+		A229766A2B49176F00E6CF57 /* XCRemoteSwiftPackageReference "essentials" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/sergiy.vynnychenko/essentials.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A2CCA0372ADACE3E006A3A7F /* XCRemoteSwiftPackageReference "moreswiftui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.com/UKS/moreswiftui.git";
@@ -1399,14 +1415,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1D6A6B2E2B43F81D00CD9E69 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
-		};
-		1D8009F92B479F610058CCA0 /* AsyncNinja */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AsyncNinja;
-		};
-		1D8009FB2B479F610058CCA0 /* NinjaMacros */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NinjaMacros;
 		};
 		1DC851622B4688D200E71055 /* AppReview */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1427,6 +1435,19 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A21989902AE138400004A5D9 /* XCRemoteSwiftPackageReference "ParallaxPackage" */;
 			productName = KystParallax;
+		};
+		A22976632B49146A00E6CF57 /* AsyncNinja */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AsyncNinja;
+		};
+		A22976652B49147300E6CF57 /* NinjaMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NinjaMacros;
+		};
+		A229766B2B49176F00E6CF57 /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A229766A2B49176F00E6CF57 /* XCRemoteSwiftPackageReference "essentials" */;
+			productName = Essentials;
 		};
 		A2CCA0382ADACE3E006A3A7F /* MoreSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
