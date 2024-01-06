@@ -92,7 +92,7 @@ struct QuestAccordeonView: View {
     
     
     var body: some View {
-        VStack(alignment: .center){
+        VStack(alignment: .center, spacing: 0) {
             TitleView()
             
             DecrView()
@@ -151,9 +151,12 @@ struct QuestAccordeonView: View {
     @ViewBuilder
     func DecrView() -> some View {
         if isExpanded {
+            Divider()
+                .padding(.horizontal, 18)
+            
             Text(quest.descript)
                .myFont(size: 14).italic()
-                .padding(20)
+                .padding(15)
         }
     }
     
