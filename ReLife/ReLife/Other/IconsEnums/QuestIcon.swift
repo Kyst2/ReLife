@@ -122,4 +122,8 @@ enum QuestIcon: String, RawRepresentable, CaseIterable {
     case education = "graduationcap.fill"
     ///􀝑
     case sportscourt = "sportscourt.fill"
+    ///􁒌
+    case yoga = "figure.yoga"
+    ///􀎟
+    case house = "house.fill"
 }

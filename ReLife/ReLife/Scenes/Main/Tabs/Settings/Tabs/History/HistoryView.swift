@@ -13,7 +13,7 @@ struct HistoryView: View {
             ScrollView {
                 VStack(spacing: 6) {
                     ForEach(model.history) { his in
-                        HistoryItem(quest: his.quest!, date: his.dateCompleted)
+                        HistoryItem(quest: his.quest, date: his.dateCompleted)
                     }
                     
                     Spacer()
@@ -31,7 +31,7 @@ struct HistoryView: View {
 ////////////////
 
 struct HistoryItem: View {
-    let quest: Quest
+    let quest: Quest?
     let date: Date
     
     @State var isHovering = false
@@ -39,13 +39,12 @@ struct HistoryItem: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text.sfIcon2(quest.icon.rawValue, size: 20)
-                    .foregroundColor(Color(nsColor: quest.colorHex.asNSColor()))
+                Text.sfIcon2(quest?.icon.rawValue ?? QuestIcon.docFill.rawValue, size: 20)
+                    .foregroundColor(Color(nsColor: quest?.colorHex.asNSColor() ?? RLColors.brownLight.nsColor  ))
                     .padding(6)
                 
-                Text(quest.name)
+                Text(quest?.name ?? "Deleted quest finished")
                     .myFont(size: 17)
-                    .foregroundColor(Color(nsColor: quest.colorHex.asNSColor()))
                 
                 Spacer()
                 

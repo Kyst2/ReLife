@@ -30,11 +30,11 @@ extension StandardQuests {
     var icon: QuestIcon {
         switch self {
         case .cleanTeeth:
-            return .bathtub
+            return .paintBrush
         case .dantistVisit:
             return .stethoscope
         case .cleanApartment:
-            return .paintBrush
+            return .house
         case .learnSwift:
             return .book
         case .playLearnGuitar:
