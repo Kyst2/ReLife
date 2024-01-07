@@ -5,7 +5,6 @@ struct CharacteristicEdit: View {
     
     @State var name: String
     @State var icon: CharachIcon
-    @State var point: Int = 0
     
     let action: () -> Void
     

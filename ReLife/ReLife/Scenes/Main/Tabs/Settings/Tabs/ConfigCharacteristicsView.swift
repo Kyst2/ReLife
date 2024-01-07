@@ -36,26 +36,20 @@ fileprivate extension ConfigCharacteristicsView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
                 ForEach(characteristics) { char in
                     
-//                    CharacteristicEdit(name: char.name, icon: char.icon, point: char.points) {
-//                        
-//                    }
-//                    ItemEdit(name: char.name, icon: ){
-////                        let sheet = AnyView()
-//                        
-////                        GlobalDialog.shared.dialog = .view(view: sheet)
-//                    }.contextMenu{
-//                        Button {
-//                            
-//                        } label: {
-//                            Text("Delete")
-//                        }
-//                        
-//                    }
-                    //                }
+                    CharacteristicEdit(name: char.name, icon: char.icon) {
+                        
+                    }.contextMenu{
+                        Button {
+                            
+                        } label: {
+                            Text("Delete")
+                        }
+                    }
                 }
             }
         }
     }
+
     
     func ButtonsPanel() -> some View {
         AddButton {
