@@ -17,7 +17,6 @@ public class RealmController {
         
         let testDbUrl = URL.temporaryDirectory.appendingPathComponent("ReLife/realmTest.realm")
         
-        
         if test {
             try? FileManager.default.removeItem(atPath: testDbUrl.path)
             print("db: \(testDbUrl.path)")

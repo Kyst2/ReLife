@@ -30,25 +30,25 @@ extension StandardQuests {
     var icon: QuestIcon {
         switch self {
         case .cleanTeeth:
-            return .forkKnife
+            return .bathtub
         case .dantistVisit:
-            return .backpack
+            return .stethoscope
         case .cleanApartment:
-            return .bicycle
+            return .paintBrush
         case .learnSwift:
             return .book
         case .playLearnGuitar:
-            return .mic
+            return .guitars
         case .doPushups:
             return .dumbell
         case .ginecolog:
-            return .batteryFull
+            return .stethoscope
         case .ginecologDetailed:
-            return .archivebox
+            return .stethoscope
         case .drinkWater:
-            return .waveform
+            return .waterDrop
         case.washHair:
-            return .waterFitness
+            return .shower
         }
     }
     
@@ -60,21 +60,21 @@ extension StandardQuests {
             //first day of current year - fix me!!!!
             return QuestRepeatType.repeatEvery(days: 360/2, startingFrom: Date.now.adding(days: -Date.now.day))
         case .cleanApartment:
-            return QuestRepeatType.eachWeek(days: [7])
+            return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
         case .learnSwift:
             return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
         case .playLearnGuitar:
-            return QuestRepeatType.repeatEvery(days: 3, startingFrom: Date.now)
+            return QuestRepeatType.eachWeek(days: [1,3,5])
         case .doPushups:
             return QuestRepeatType.eachWeek(days: [1,3,5])
         case .ginecolog:
-            return QuestRepeatType.repeatEvery(days: 360/2, startingFrom: Date.now)
+            return QuestRepeatType.repeatEvery(days: 180, startingFrom: Date.now.adding(days: -1) )
         case .ginecologDetailed:
-            return QuestRepeatType.repeatEvery(days: 360, startingFrom: Date.now)
+            return QuestRepeatType.repeatEvery(days: 360 * 3, startingFrom: Date.now.adding(days: -1) )
         case .drinkWater:
             return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
         case .washHair:
-            return QuestRepeatType.repeatEvery(days: 2, startingFrom: Date.now)
+            return QuestRepeatType.eachWeek(days: [5])
         }
     }
     

@@ -14,10 +14,9 @@ public class Quest: Object, Identifiable {
     @Persisted var descript: String
     
     var questRepeat: QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
-    var icon: QuestIcon { get { QuestIcon(rawValue: self.iconStr)! } set { self.iconStr = newValue.rawValue } }
+    var icon: QuestIcon { get { QuestIcon(rawValue: self.iconStr) ?? QuestIcon.bathtub  } set { self.iconStr = newValue.rawValue } }
     
     @Persisted var repeatTimes: Int
-    
     
     override init() {
         super.init()
