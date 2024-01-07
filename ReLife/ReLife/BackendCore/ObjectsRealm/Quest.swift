@@ -20,12 +20,14 @@ public class Quest: Object, Identifiable {
     
     
     override init() {
+        super.init()
         self.name = ""
         self.iconStr = QuestIcon.americanFootball.rawValue
     }
     
     convenience init(key: String, name: String, icon: QuestIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descript: String = "") {
         self.init()
+        self.key = key
         self.name = name
         self.iconStr = icon.rawValue
         self.colorHex.append(objectsIn: color.hexValues)

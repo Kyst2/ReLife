@@ -27,6 +27,10 @@ public class RealmController {
         ? Realm.Configuration(fileURL: testDbUrl, inMemoryIdentifier: "testRealm", schemaVersion: 1)
         : Realm.Configuration(encryptionKey: nil, schemaVersion: 1)
         
+        if !test, let dbUrl = config.fileURL?.path {
+            print("db: \(dbUrl)")
+        }
+        
         let r = try? Realm(configuration: config)
         
         
@@ -38,8 +42,12 @@ public class RealmController {
 
 extension RealmController {
     func add(quest: Quest) {
-        try! realm.write {
-            realm.add(quest)
+        if let quest = realm.object(ofType: Quest.self, forPrimaryKey: quest.key) {
+            self.update(questKey: quest.key, withValues: quest)
+        } else {
+            try! realm.write {
+                realm.add(quest)
+            }
         }
     }
     
