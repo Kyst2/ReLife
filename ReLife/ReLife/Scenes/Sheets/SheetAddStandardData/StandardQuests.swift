@@ -10,14 +10,14 @@ enum StandardCharach: String {
 enum StandardQuests: String, CaseIterable {
     case cleanTeeth   = "quest.cleanTeeth"
     case dantistVisit = "quest.dantistVisit"
-//    case cleanApartment = "quest.cleanApartment"
-//    case learnSwift   = "quest.learnSwift"
-//    case playLearnGuitar   = "quest.learnGuitar"
-//    case doPushups   = "quest.pushups"
-//    case ginecolog = "quest.ginecolog"
-//    case ginecologDetailed = "quest.ginecologDetailed"
-//    case drinkWater = "quest.drinkWater"
-//    case washHair = "quest.washHair"
+    case cleanApartment = "quest.cleanApartment"
+    case learnSwift   = "quest.learnSwift"
+    case playLearnGuitar   = "quest.learnGuitar"
+    case doPushups   = "quest.pushups"
+    case ginecolog = "quest.ginecolog"
+    case ginecologDetailed = "quest.ginecologDetailed"
+    case drinkWater = "quest.drinkWater"
+    case washHair = "quest.washHair"
 }
 
 
@@ -33,6 +33,22 @@ extension StandardQuests {
             return .forkKnife
         case .dantistVisit:
             return .backpack
+        case .cleanApartment:
+            return .bicycle
+        case .learnSwift:
+            return .book
+        case .playLearnGuitar:
+            return .mic
+        case .doPushups:
+            return .dumbell
+        case .ginecolog:
+            return .batteryFull
+        case .ginecologDetailed:
+            return .archivebox
+        case .drinkWater:
+            return .waveform
+        case.washHair:
+            return .waterFitness
         }
     }
     
@@ -43,6 +59,22 @@ extension StandardQuests {
         case .dantistVisit:
             //first day of current year - fix me!!!!
             return QuestRepeatType.repeatEvery(days: 360/2, startingFrom: Date.now.adding(days: -Date.now.day))
+        case .cleanApartment:
+            return QuestRepeatType.eachWeek(days: [7])
+        case .learnSwift:
+            return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
+        case .playLearnGuitar:
+            return QuestRepeatType.repeatEvery(days: 3, startingFrom: Date.now)
+        case .doPushups:
+            return QuestRepeatType.eachWeek(days: [1,3,5])
+        case .ginecolog:
+            return QuestRepeatType.repeatEvery(days: 360/2, startingFrom: Date.now)
+        case .ginecologDetailed:
+            return QuestRepeatType.repeatEvery(days: 360, startingFrom: Date.now)
+        case .drinkWater:
+            return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
+        case .washHair:
+            return QuestRepeatType.repeatEvery(days: 2, startingFrom: Date.now)
         }
     }
     
@@ -51,6 +83,22 @@ extension StandardQuests {
         case .cleanTeeth:
             return 2
         case .dantistVisit:
+            return 1
+        case .cleanApartment:
+            return 1
+        case .learnSwift:
+            return 3
+        case .playLearnGuitar:
+            return 1
+        case .doPushups:
+            return 1
+        case .ginecolog:
+            return 1
+        case .ginecologDetailed:
+            return 1
+        case .drinkWater:
+            return 3
+        case .washHair:
             return 1
         }
     }
@@ -74,6 +122,46 @@ extension StandardQuests {
                 (StandardCharach.tideness, 5)
             ]
         case .dantistVisit:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .cleanApartment:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .learnSwift:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .playLearnGuitar:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .doPushups:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .ginecolog:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .ginecologDetailed:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .drinkWater:
+            data = [
+                (StandardCharach.health, 100),
+                (StandardCharach.tideness, 100)
+            ]
+        case .washHair:
             data = [
                 (StandardCharach.health, 100),
                 (StandardCharach.tideness, 100)
