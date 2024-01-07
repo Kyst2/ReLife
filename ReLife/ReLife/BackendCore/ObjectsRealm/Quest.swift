@@ -13,6 +13,10 @@ public class Quest: Object, Identifiable {
     @Persisted private var questRepeatStr: String
     @Persisted var descript: String
     
+    var isStandardQuest: Bool {
+        return StandardQuests(rawValue: self.key) != nil
+    }
+    
     var questRepeat: QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
     var icon: QuestIcon { get { QuestIcon(rawValue: self.iconStr) ?? QuestIcon.bathtub  } set { self.iconStr = newValue.rawValue } }
     
