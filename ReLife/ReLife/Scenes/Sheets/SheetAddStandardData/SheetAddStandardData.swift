@@ -73,10 +73,10 @@ struct SheetAddStandardData: View {
 /////////////////////////
 
 let characs: [Characteristic] = [
-    Characteristic(key: StandardCharach.health.rawValue,     name: "charach.health".localized, icon: "figure.mind.and.body"),
-    Characteristic(key: StandardCharach.tideness.rawValue,   name: "Tidiness", icon: "laurel.trailing"), //Охайність
-    Characteristic(key: StandardCharach.atleticism.rawValue, name: "Athleticism", icon: "figure.cooldown"),
-    Characteristic(key: StandardCharach.mind.rawValue,       name: "Mind", icon: "brain")
+    Characteristic(key: StandardCharach.health.rawValue,     name: "charach.health".localized, icon: .figureMind),
+    Characteristic(key: StandardCharach.tideness.rawValue,   name: "Tidiness", icon: .laurelR), //Охайність
+    Characteristic(key: StandardCharach.atleticism.rawValue, name: "Athleticism", icon: .figurC),
+    Characteristic(key: StandardCharach.mind.rawValue,       name: "Mind", icon: .brain)
 ]
 
 /////////////////////////////

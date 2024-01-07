@@ -59,6 +59,7 @@
 		A22976662B49147300E6CF57 /* NinjaMacros in Frameworks */ = {isa = PBXBuildFile; productRef = A22976652B49147300E6CF57 /* NinjaMacros */; };
 		A229766C2B49176F00E6CF57 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = A229766B2B49176F00E6CF57 /* Essentials */; };
 		A229766D2B4917CF00E6CF57 /* Essentials in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A229766B2B49176F00E6CF57 /* Essentials */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A24DCB5A2B4B651D00AACB59 /* CharacteristicEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24DCB592B4B651D00AACB59 /* CharacteristicEdit.swift */; };
 		A252720C2A8D3AF800DD4B75 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252720B2A8D3AF700DD4B75 /* Quest.swift */; };
 		A252720D2A8D3B8A00DD4B75 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21086212A8026F900EB7A89 /* RealmController.swift */; };
 		A25272122A8E3C8400DD4B75 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25272112A8E3C8400DD4B75 /* History.swift */; };
@@ -77,7 +78,7 @@
 		A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */; };
 		A272867E2AFBE251005EE9B8 /* GlobalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */; };
 		A27286842AFBEEA4005EE9B8 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286832AFBEEA4005EE9B8 /* AddButton.swift */; };
-		A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286852B03B799005EE9B8 /* ItemEdit.swift */; };
+		A27286862B03B799005EE9B8 /* QuestEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27286852B03B799005EE9B8 /* QuestEdit.swift */; };
 		A2A5A8442B291BD800FD844A /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5A8432B291BD800FD844A /* HistoryViewModel.swift */; };
 		A2A5A8462B292B7E00FD844A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5A8452B292B7E00FD844A /* SettingsViewModel.swift */; };
 		A2AEDCCD2AAA273400128B3C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEDCCC2AAA273400128B3C /* Date+.swift */; };
@@ -201,6 +202,7 @@
 		A219899C2AE47BBB0004A5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A219899D2AE47F050004A5D9 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		A22976612B4775D700E6CF57 /* StandardQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardQuests.swift; sourceTree = "<group>"; };
+		A24DCB592B4B651D00AACB59 /* CharacteristicEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicEdit.swift; sourceTree = "<group>"; };
 		A252720B2A8D3AF700DD4B75 /* Quest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		A25272112A8E3C8400DD4B75 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A25272132A8E3E4100DD4B75 /* CharacteristicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsTests.swift; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 		A27286792AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetCharacteristicEditorView.swift; sourceTree = "<group>"; };
 		A272867D2AFBE251005EE9B8 /* GlobalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDialog.swift; sourceTree = "<group>"; };
 		A27286832AFBEEA4005EE9B8 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
-		A27286852B03B799005EE9B8 /* ItemEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEdit.swift; sourceTree = "<group>"; };
+		A27286852B03B799005EE9B8 /* QuestEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestEdit.swift; sourceTree = "<group>"; };
 		A2A5A8432B291BD800FD844A /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		A2A5A8452B292B7E00FD844A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		A2AEDCCC2AAA273400128B3C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
@@ -502,7 +504,8 @@
 				A27286832AFBEEA4005EE9B8 /* AddButton.swift */,
 				A2C11F482B126AE40062AFDE /* SettingButton.swift */,
 				A271166F2B34F27900306F99 /* SheetsButton.swift */,
-				A27286852B03B799005EE9B8 /* ItemEdit.swift */,
+				A27286852B03B799005EE9B8 /* QuestEdit.swift */,
+				A24DCB592B4B651D00AACB59 /* CharacteristicEdit.swift */,
 				1DA6B8ED2B2E89A100E09880 /* MyGroupBox.swift */,
 				1D6E255B2B344CCD001083CB /* NumericUpDown.swift */,
 				A27116732B35056200306F99 /* IconPicker.swift */,
@@ -880,7 +883,7 @@
 				1D8331102B40DD380047FADA /* PreludeP4View.swift in Sources */,
 				1DCF86B02B40AD2400118F5F /* LanguagePicker.swift in Sources */,
 				A200BD3D2AA6064200DCEBD9 /* Json.swift in Sources */,
-				A27286862B03B799005EE9B8 /* ItemEdit.swift in Sources */,
+				A27286862B03B799005EE9B8 /* QuestEdit.swift in Sources */,
 				A27116722B35045E00306F99 /* QuestRepeatTypeView.swift in Sources */,
 				A272867A2AFA9FFB005EE9B8 /* SheetCharacteristicEditorView.swift in Sources */,
 				1DA6B8EE2B2E89A100E09880 /* MyGroupBox.swift in Sources */,
@@ -903,6 +906,7 @@
 				1D6E25642B362F2F001083CB /* BtnOpenTemplatesSheet.swift in Sources */,
 				1DCF86AC2B40716000118F5F /* PreludeView.swift in Sources */,
 				1D9375AC2B43E22E000E6A84 /* SheetFanfareView.swift in Sources */,
+				A24DCB5A2B4B651D00AACB59 /* CharacteristicEdit.swift in Sources */,
 				1D6E25662B3701D6001083CB /* RLColors.swift in Sources */,
 				1D5C49C52B379673009DD522 /* Achievements_TODO.swift in Sources */,
 				A2DD8E682A58A90C00315995 /* MainView.swift in Sources */,

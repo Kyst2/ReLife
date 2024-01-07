@@ -46,7 +46,7 @@ fileprivate extension ConfigQuestView {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
                 ForEach(quests) { quest in
-                    ItemEdit(name: quest.name, icon: quest.icon){
+                    QuestEdit(name: quest.name, icon: quest.icon,color: Color(nsColor: quest.colorHex.asNSColor())){
                         let sheet = AnyView(SheetQuestEditorView(model: model, type: .questEditor, quest: quest, action: {
                             
                         }))

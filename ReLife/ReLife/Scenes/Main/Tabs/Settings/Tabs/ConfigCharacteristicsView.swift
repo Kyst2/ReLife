@@ -35,6 +35,10 @@ fileprivate extension ConfigCharacteristicsView {
         ScrollView{
             LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
                 ForEach(characteristics) { char in
+                    
+//                    CharacteristicEdit(name: char.name, icon: char.icon, point: char.points) {
+//                        
+//                    }
 //                    ItemEdit(name: char.name, icon: ){
 ////                        let sheet = AnyView()
 //                        

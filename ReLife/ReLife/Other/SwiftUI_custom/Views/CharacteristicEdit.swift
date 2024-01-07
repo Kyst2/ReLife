@@ -1,11 +1,11 @@
 import SwiftUI
 import MoreSwiftUI
 
-struct ItemEdit: View {
+struct CharacteristicEdit: View {
+    
     @State var name: String
-    @State var icon: QuestIcon
-    @State var deteils: String = ""
-    @State var pointa: Int = 0
+    @State var icon: CharachIcon
+    @State var point: Int = 0
     
     let action: () -> Void
     
@@ -29,14 +29,15 @@ struct ItemEdit: View {
     
     func ItemPanel() -> some View {
         HStack{
-            Space(5)
+            Space(10)
             
             Text.sfIcon2(icon.rawValue, size: 25)
-//            Image(systemName: icon.rawValue)
-//                .font(.largeTitle)
+                .foregroundStyle( RLColors.brown )
+
             
             Text(name)
                 .myFont(size: 15)
+                .foregroundStyle( RLColors.brownLight )
             
             Spacer()
         }

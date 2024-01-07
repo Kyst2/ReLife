@@ -1,5 +1,9 @@
 
 enum CharachIcon: String, RawRepresentable, CaseIterable {
+    case figurC = "figure.cooldown"
+    case figureMind = "figure.mind.and.body"
+    
+    
     case books = "books.vertical"
     case graduationCap = "graduationcap.fill"
     case chessBoard = "rectangle.checkered"
