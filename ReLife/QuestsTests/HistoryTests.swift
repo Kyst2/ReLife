@@ -9,7 +9,7 @@ final class HistoryTests: XCTestCase {
         super.setUp()
         
         self.realmController = RealmController(test: true)
-        realmController.add(characteristic: Characteristic(name: "Health"))
+        realmController.add(characteristic: Characteristic(name: "Health", icon: "trash"))
         
         
     }
@@ -62,13 +62,13 @@ final class HistoryTests: XCTestCase {
         var charachSet = [Characteristic : Int]()
         
         
-        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
+        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
         realmController.add(quest: quest)
-        let a = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
+        let a = Quest(name: "quest_\(UUID().uuidString)", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
         realmController.add(quest: a)
-        let b = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
+        let b = Quest(name: "quest_\(UUID().uuidString)", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
         realmController.add(quest: b)
-        let c = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
+        let c = Quest(name: "quest_\(UUID().uuidString)", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .eachWeek(days: [1,2,3,4,5,6,7]),repeatTimes: 5)
         realmController.add(quest: c)
         
         XCTAssertEqual(realmController.questsAll.count , realmController.getActualQuestsToday().count)
@@ -90,7 +90,7 @@ fileprivate extension RealmController {
         var charachSet = [Characteristic : Int]()
         charachSet[self.characteristicsAll.first!] = 10
         
-        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .batteryFull, color: .green, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1,2]))
+        let quest = Quest(name: "quest_\(UUID().uuidString)", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .dayOfMonth(days: [1,2]))
         
         return quest
     }
