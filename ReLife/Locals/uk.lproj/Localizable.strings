@@ -29,8 +29,6 @@
 ////////////////////
 //Main.Quests
 ////////////////////
-"key.main.quests.today" = "Сьогодні";
-"key.main.quests.tomorrow" = "Завтра";
 "key.main.quests.long-term" = "Довгі дистанції";
 "key.main.quests.you-can-create-quest" = "Ви можете створити ваш власний перший квест ";
 "key.main.quests.you-can-create-charac" = "Ви можете створити вашу першу характеристику ";

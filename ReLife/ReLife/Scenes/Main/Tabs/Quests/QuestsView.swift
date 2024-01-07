@@ -75,13 +75,9 @@ extension QuestsView {
     
     @ViewBuilder
     func TodayView() -> some View {
-//        "key.main.quests.today".localized
         CustomSection(header: Date.now.string(withFormat: "YYYY.MM.dd"), isFinishable: true, quests: model.questToday)
         
-        //"key.main.quests.long-term".localized + " [" +
-        let longTerm = Date.now.string(withFormat: "YYYY.MM.dd") + " - " + Date.now.adding(days: 180).string(withFormat: "YYYY.MM.dd")
-        
-        CustomSection(header: longTerm, isFinishable: true, quests: model.questLongTerm)
+        CustomSection(header: "key.main.quests.long-term".localized, isFinishable: true, quests: model.questLongTerm)
     }
     
     func TomorrowView() -> some View {
