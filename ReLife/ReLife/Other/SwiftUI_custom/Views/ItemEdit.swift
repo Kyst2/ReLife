@@ -13,12 +13,10 @@ struct ItemEdit: View {
     
     var body: some View {
         ItemPanel()
-            .overlay {
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color.primary, lineWidth: 0.1)
+            .background{
+                RoundedRectangle(cornerRadius: 8)
+                    .fill( isHovering ? Color.gray.opacity(0.1) : Color.clear)
             }
-            .background( isHovering ? Color.gray.opacity(0.5) : Color.clear )
-            .padding(5)
             .onHover { hover in
                 withAnimation(.easeOut(duration: 0.2 )){
                     self.isHovering = hover
@@ -33,14 +31,15 @@ struct ItemEdit: View {
         HStack{
             Space(5)
             
-            Image(systemName: icon.rawValue)
-                .font(.largeTitle)
-                .padding(10)
+            Text.sfIcon2(icon.rawValue, size: 25)
+//            Image(systemName: icon.rawValue)
+//                .font(.largeTitle)
             
             Text(name)
                 .myFont(size: 15)
             
             Spacer()
         }
+        .frame(height: 40)
     }
 }
