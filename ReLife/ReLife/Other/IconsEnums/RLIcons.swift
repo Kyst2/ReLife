@@ -21,5 +21,8 @@ struct RLIcons {
     static let ok = "checkmark"
     static let back = "arrowshape.turn.up.left"
     
+    static let today = "flag.fill"
+    static let tomorrow = "calendar.badge.clock"
+    
     fileprivate init() { }
 }

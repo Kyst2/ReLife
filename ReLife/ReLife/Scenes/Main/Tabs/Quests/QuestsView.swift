@@ -1,9 +1,12 @@
 import Foundation
 import SwiftUI
 import MoreSwiftUI
+import Essentials
 
 struct QuestsView:View {
     @ObservedObject var model : MainViewModel
+    
+    @State var tab: QuestTab = .today
     
     var allQuestsIsEmpty: Bool { model.realmController.questsAll.count == 0 }
     
@@ -11,18 +14,13 @@ struct QuestsView:View {
         if allQuestsIsEmpty {
             NoQuestsView()
         } else {
-            ScrollView {
-                Space(18)
+            HStack {
+                TabsPanel()
+                    .backgroundGaussianBlur(type: .withinWindow, material: .m2_menu)
+                    .transition( .move(edge: .leading) )
                 
-                VStack(spacing: 40) {
-                    CustomSection(header: "key.main.quests.today".localized, isFinishable: true, quests: model.questToday)
-                    
-                    CustomSection(header: "key.main.quests.tomorrow".localized, isFinishable: false, quests: model.questTomorrow)
-                    
-                    CustomSection(header: "key.main.quests.long-term".localized, isFinishable: true, quests: model.questLongTerm)
-                }
-                .padding(.horizontal, 10)
-            }.padding(10)
+                ContentView()
+            }
         }
     }
     
@@ -47,14 +45,114 @@ struct QuestsView:View {
 ///////////////////////
 ///HELPERS
 ///////////////////////
+
+extension QuestsView {
+    func TabsPanel() -> some View {
+        VStack(spacing: 0) {
+            SingleTab(.today)
+            SingleTab(.tomorrow)
+            
+            Space()
+        }
+    }
+    
+    @ViewBuilder
+    func ContentView() -> some View {
+        ScrollView {
+            Space(18)
+            
+            VStack(spacing: 40) {
+                switch self.tab {
+                case .today:
+                    TodayView()
+                case .tomorrow:
+                    TomorrowView()
+                }
+            }
+            .padding(.horizontal, 10)
+        }.padding(10)
+    }
+    
+    @ViewBuilder
+    func TodayView() -> some View {
+//        "key.main.quests.today".localized
+        CustomSection(header: Date.now.string(withFormat: "YYYY.MM.dd"), isFinishable: true, quests: model.questToday)
+        
+        //"key.main.quests.long-term".localized + " [" +
+        let longTerm = Date.now.string(withFormat: "YYYY.MM.dd") + " - " + Date.now.adding(days: 180).string(withFormat: "YYYY.MM.dd")
+        
+        CustomSection(header: longTerm, isFinishable: true, quests: model.questLongTerm)
+    }
+    
+    func TomorrowView() -> some View {
+        CustomSection(header: Date.now.adding(days: 1).string(withFormat: "YYYY.MM.dd"), isFinishable: false, quests: model.questTomorrow)
+    }
+}
+
+enum QuestTab {
+    case today
+    case tomorrow
+}
+
+extension QuestTab {
+    func asIcon() -> String {
+        switch self {
+        case .today:
+            return RLIcons.today
+        case .tomorrow:
+            return RLIcons.tomorrow
+        }
+    }
+}
+
+extension QuestsView {
+    func SingleTab(_ curr: QuestTab) -> some View {
+        Text.sfIcon2(curr.asIcon(), size: 25)
+            .padding(12)
+            .makeFullyIntaractable()
+            .overlay {
+                Rectangle()
+                    .stroke(Color.primary, lineWidth: 0.1)
+            }
+            .overlay {
+                VStack {
+                    VStack{
+                        Spacer()
+                        
+                        if tab == curr {
+                            RoundedRectangle(cornerRadius: 0)
+                                .fill(RLColors.brownLight)
+                                .frame(height: 3)
+                                .id("QuestTabSelection")
+                                .transition(.move(edge: .leading).combined(with: .opacity))
+                        }
+                    }
+                }
+                .animation(.easeInOut(duration: 0.1), value: tab)
+            }
+            .onTapGesture {
+                withAnimation(.easeIn(duration: 0.3 )) {
+                    tab = curr
+                }
+            }
+    }
+}
+
+
+
+
 fileprivate extension QuestsView {
     @ViewBuilder
     func CustomSection(header:String, isFinishable: Bool, quests: [QuestWrapper] ) -> some View {
-        VStack {
-            if quests.count > 0 {
-                Section(header: Text(header).titleStyle ) {
-                    SectionBody(isFinishable: isFinishable, quests: quests)
-                }
+        VStack(alignment: .leading) {
+            Text(header).titleStyle
+                
+            if quests.count == 0 {
+                Text("Empty")
+                    .frame(maxWidth: .greatestFiniteMagnitude)
+                    .padding(.vertical, 10)
+            } else {
+                SectionBody(isFinishable: isFinishable, quests: quests)
             }
         }
     }
