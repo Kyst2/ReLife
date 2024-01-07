@@ -68,3 +68,5 @@
 "key.settings.sound-stngs" = "Налаштування звуку";
 "key.settings.support-email" = "Написати до тех.підтримки";
 "key.settings.about" = "Про %@";
+"key.settings.history.deletedQuest" = "----- Видалений квест -----";
+"key.settings.history.noHistory" = "Покищо немає виконаних квестів в історії";

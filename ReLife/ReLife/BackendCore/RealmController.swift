@@ -41,7 +41,7 @@ public class RealmController {
 
 extension RealmController {
     func add(quest: Quest) {
-        if let quest = realm.object(ofType: Quest.self, forPrimaryKey: quest.key) {
+        if let _ = realm.object(ofType: Quest.self, forPrimaryKey: quest.key) {
             self.update(questKey: quest.key, withValues: quest)
         } else {
             try! realm.write {

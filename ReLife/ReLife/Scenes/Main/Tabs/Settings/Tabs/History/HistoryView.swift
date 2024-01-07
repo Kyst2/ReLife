@@ -6,7 +6,7 @@ struct HistoryView: View {
     @ObservedObject var model = HistoryViewModel()
     var body: some View {
         if model.history.count == 0 {
-            Text("There are no history records at the moment")
+            Text("key.settings.history.noHistory".localized)
                 .myFont(size: 17)
                 .fillParent()
         } else {
@@ -43,7 +43,7 @@ struct HistoryItem: View {
                     .foregroundColor(Color(nsColor: quest?.colorHex.asNSColor() ?? RLColors.brownLight.nsColor  ))
                     .padding(6)
                 
-                Text(quest?.name ?? "Deleted quest finished")
+                Text(quest?.name ?? "key.settings.history.deletedQuest".localized)
                     .myFont(size: 17)
                 
                 Spacer()

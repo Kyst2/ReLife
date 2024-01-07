@@ -67,6 +67,8 @@
 "key.settings.sound-stngs" = "Sound Settings";
 "key.settings.support-email" = "Support Email";
 "key.settings.about" = "About %@";
+"key.settings.history.deletedQuest" = "----- Deleted quest-----";
+"key.settings.history.noHistory" = "There are no history records at the moment";
 
 
 /////////////////////
@@ -82,3 +84,27 @@
 
 "quest.dantistVisit" = "Dantist visit";
 "quest.dantistVisit.descr" = "Dantist visit is important!";
+
+"quest.cleanApartment" = "Clean my apartment";
+"quest.cleanApartment.descr" = "Clean my apartment descr";
+
+"quest.learnGuitar" = "Learn/Play guitar";
+"quest.learnGuitar.descr" = "Learn/Play guitar descr";
+
+"quest.sport" = "Sport/Pushups";
+"quest.sport.descr" = "Sport/Pushups make you healthier";
+
+"quest.ginecolog" = "Visit ginecologist";
+"quest.ginecolog.descr" = "Visit ginecologist";
+
+"quest.ginecologDetailed" = "Visit ginecologist for detailed lookup";
+"quest.ginecologDetailed.descr" = "Visit ginecologist 2";
+
+"quest.drinkWater" = "Drink a water";
+"quest.drinkWater.descr" = "Drink a water, motherfucker!";
+
+"quest.washHair" = "Wash my hair";
+"quest.washHair.descr" = "Wash my hair descr";
+
+"quest.learnSwift" = "Learn swift";
+"quest.learnSwift.descr" = "Learn swift descr";

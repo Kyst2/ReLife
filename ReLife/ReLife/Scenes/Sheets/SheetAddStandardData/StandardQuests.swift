@@ -13,7 +13,7 @@ enum StandardQuests: String, CaseIterable {
     case cleanApartment = "quest.cleanApartment"
     case learnSwift   = "quest.learnSwift"
     case playLearnGuitar   = "quest.learnGuitar"
-    case doPushups   = "quest.pushups"
+    case doPushups   = "quest.sport"
     case ginecolog = "quest.ginecolog"
     case ginecologDetailed = "quest.ginecologDetailed"
     case drinkWater = "quest.drinkWater"
