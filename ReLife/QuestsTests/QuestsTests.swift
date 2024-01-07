@@ -10,8 +10,8 @@ final class QuestsTests: XCTestCase {
         
         self.realmController = RealmController(test: true)
         
-        realmController.add(characteristic: Characteristic(name: "Health"))
-        realmController.add(characteristic: Characteristic(name: "Level"))
+        realmController.add(characteristic: Characteristic(name: "Health", icon: "trash"))
+        realmController.add(characteristic: Characteristic(name: "Level", icon: "trash"))
     }
     
     override func tearDown() {
@@ -29,7 +29,7 @@ final class QuestsTests: XCTestCase {
         var charachSet = [Characteristic : Int]()
         charachSet[charach] = 10
         
-        let quest = Quest(name: "Quest", icon: .backpack, color: .black, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [1,3,4]) )
+        let quest = Quest(name: "Quest", icon: .tray, color: .black, charachPoints: charachSet, repeatType: .eachWeek(days: [1,3,4]) )
         
         realmController.add(quest: quest)
         let fetchedQuest = realmController.questsAll.first
@@ -49,7 +49,7 @@ final class QuestsTests: XCTestCase {
     
     func testRemoveQuest() {
         let charachSet = [Characteristic : Int]()
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .dayOfMonth(days: [1,2]))
+        let quest = Quest(name: "Quest", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .dayOfMonth(days: [1,2]))
         realmController.add(quest: quest)
         
         realmController.remove(questKey: quest.key)
@@ -60,10 +60,10 @@ final class QuestsTests: XCTestCase {
     
     func testUPDQuest() {
         let charachSet = [Characteristic : Int]()
-        let quest = Quest(name: "Quest", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: .singleDayQuest(date: Date.now))
+        let quest = Quest(name: "Quest", icon: .tray, color: .green, charachPoints: charachSet, repeatType: .singleDayQuest(date: Date.now))
         realmController.add(quest: quest)
 
-        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "Quest1", icon: .backpack, color: .gray, charachPoints: charachSet, questRepeatStr: .eachWeek(days: [5])))
+        realmController.update(questKey: realmController.questsAll.first!.key, withValues: Quest(name: "Quest1", icon: .tray, color: .gray, charachPoints: charachSet, repeatType: .eachWeek(days: [5])))
 
         XCTAssertEqual(realmController.questsAll.first?.name, "Quest1")
     }
@@ -105,7 +105,7 @@ final class QuestsTests: XCTestCase {
         // thurstday
         
         let quests = repeatTypes.enumerated().map {
-            Quest(name: "Quest\($0.offset )", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: $0.element)
+            Quest(name: "Quest\($0.offset )", icon: .tray, color: .green, charachPoints: charachSet, repeatType: $0.element)
         }
         
         quests.forEach { realmController.add(quest: $0) }
@@ -131,7 +131,7 @@ final class QuestsTests: XCTestCase {
         let charachSet = [Characteristic : Int]()
         
         let quests = dates.enumerated().map {
-            Quest(name: "Quest\($0.offset )", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: $0.element)
+            Quest(name: "Quest\($0.offset )", icon: .tray, color: .green, charachPoints: charachSet, repeatType: $0.element)
         }
         
         quests.forEach { realmController.add(quest: $0) }
@@ -161,7 +161,7 @@ final class QuestsTests: XCTestCase {
         ]
 
         let quests = repeatTypes.enumerated().map {
-            Quest(name: "Quest\($0.offset )", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: $0.element )
+            Quest(name: "Quest\($0.offset )", icon: .tray, color: .green, charachPoints: charachSet, repeatType: $0.element )
         }
         
         quests.forEach{ realmController.add(quest: $0) }
@@ -202,7 +202,7 @@ final class QuestsTests: XCTestCase {
         
         
         let quests = repeatTypes.enumerated().map {
-            Quest(name: "Quest\($0.offset )", icon: .backpack, color: .green, charachPoints: charachSet, questRepeatStr: $0.element )
+            Quest(name: "Quest\($0.offset )", icon: .tray, color: .green, charachPoints: charachSet, repeatType: $0.element )
         }
         quests.forEach{ realmController.add(quest: $0) }
         
