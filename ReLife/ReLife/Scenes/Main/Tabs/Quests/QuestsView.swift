@@ -82,8 +82,11 @@ extension QuestsView {
         }
     }
     
+    @ViewBuilder
     func TomorrowView() -> some View {
-        CustomSection(header: Date.now.adding(days: 1).string(withFormat: "YYYY.MM.dd"), isFinishable: false, quests: model.questTomorrow)
+        let tomorrow = Date.now.adding(days: 1).string(withFormat: "YYYY.MM.dd")
+        
+        CustomSection(header: tomorrow, isFinishable: false, quests: model.questTomorrow)
     }
 }
 
@@ -183,7 +186,7 @@ struct QuestAccordeonView: View {
     @State var isComplete = false
     
     var isExpandable: Bool {
-        !quest.descript.isEmpty
+        !quest.descr.isEmpty
     }
     
     
@@ -250,7 +253,7 @@ struct QuestAccordeonView: View {
             Divider()
                 .padding(.horizontal, 18)
             
-            Text(quest.descript)
+            Text(quest.descr)
                .myFont(size: 14).italic()
                 .padding(15)
         }

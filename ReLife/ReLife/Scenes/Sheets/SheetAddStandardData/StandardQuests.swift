@@ -187,7 +187,7 @@ extension StandardQuests {
                      charachPoints: self.genearateCharachPoints(from: characteristics),
                      repeatType: self.repeatType,
                      repeatTimes: self.repeatsPerDay,
-                     descript: self.descr
+                     descr: self.descr
                     )
     }
 }

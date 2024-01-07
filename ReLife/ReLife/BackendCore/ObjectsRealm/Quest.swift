@@ -11,7 +11,8 @@ public class Quest: Object, Identifiable {
     @Persisted private var iconStr: String
     @Persisted var colorHex: List<Float>
     @Persisted private var questRepeatStr: String
-    @Persisted var descript: String
+    @Persisted var repeatTimes: Int
+    @Persisted var descr: String
     
     var isStandardQuest: Bool {
         return StandardQuests(rawValue: self.key) != nil
@@ -20,7 +21,6 @@ public class Quest: Object, Identifiable {
     var questRepeat: QuestRepeatType { get { QuestRepeatType.fromString(questRepeatStr) } set { questRepeatStr = newValue.toString() } }
     var icon: QuestIcon { get { QuestIcon(rawValue: self.iconStr) ?? QuestIcon.bathtub  } set { self.iconStr = newValue.rawValue } }
     
-    @Persisted var repeatTimes: Int
     
     override init() {
         super.init()
@@ -28,7 +28,7 @@ public class Quest: Object, Identifiable {
         self.iconStr = QuestIcon.americanFootball.rawValue
     }
     
-    convenience init(key: String, name: String, icon: QuestIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descript: String = "") {
+    convenience init(key: String, name: String, icon: QuestIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descr: String = "") {
         self.init()
         self.key = key
         self.name = name
@@ -39,10 +39,10 @@ public class Quest: Object, Identifiable {
         charachPoints.forEach {
             self.charachPoints.setValue($0.value, forKey: $0.key.key)
         }
-        self.descript = descript
+        self.descr = descr
     }
     
-    convenience init(name: String, icon: QuestIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descript: String = "") {
+    convenience init(name: String, icon: QuestIcon, color: NSColor, charachPoints : Dictionary<Characteristic, Int>, repeatType: QuestRepeatType, repeatTimes: Int = 1, descr: String = "") {
         self.init()
         self.name = name
         self.iconStr = icon.rawValue
@@ -52,7 +52,7 @@ public class Quest: Object, Identifiable {
         charachPoints.forEach {
             self.charachPoints.setValue($0.value, forKey: $0.key.key)
         }
-        self.descript = descript
+        self.descr = descr
     }
 }
 

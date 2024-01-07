@@ -23,15 +23,14 @@ public class RealmController {
         }
         
         let config = test
-        ? Realm.Configuration(fileURL: testDbUrl, inMemoryIdentifier: "testRealm", schemaVersion: 1)
-        : Realm.Configuration(encryptionKey: nil, schemaVersion: 1)
+        ? Realm.Configuration(fileURL: testDbUrl, inMemoryIdentifier: "testRealm", schemaVersion: 2)
+        : Realm.Configuration(encryptionKey: nil, schemaVersion: 2)
         
         if !test, let dbUrl = config.fileURL?.path {
             print("db: \(dbUrl)")
         }
         
         let r = try? Realm(configuration: config)
-        
         
 //        print("REALM: \(r!.configuration.fileURL)")
         self.realm = r!
@@ -57,7 +56,7 @@ extension RealmController {
             }
         }
     }
-
+    
     func update(questKey: String, withValues: Quest) {
         if let quest = realm.object(ofType: Quest.self, forPrimaryKey: questKey) {
             try! realm.write {
@@ -67,6 +66,7 @@ extension RealmController {
                 quest.charachPoints = withValues.charachPoints
                 quest.questRepeat = withValues.questRepeat
                 quest.repeatTimes = withValues.repeatTimes
+                quest.descr = withValues.descr
             }
         }
     }

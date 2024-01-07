@@ -19,7 +19,7 @@ struct SheetQuestEditorView: View {
         self.model = model
         self.type = type
         self.name = quest?.name ?? ""
-        self.deteils = quest?.descript ?? ""
+        self.deteils = quest?.descr ?? ""
         
         if let quest {
             self.icon = type == .questEditor ? quest.icon.rawValue : QuestIcon.batteryFull.rawValue
