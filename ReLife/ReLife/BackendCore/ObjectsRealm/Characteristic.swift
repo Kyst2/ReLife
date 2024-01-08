@@ -7,7 +7,7 @@ public class Characteristic: Object, Identifiable {
     @Persisted private var iconStr: String
     @Persisted var points: Int
     
-    var icon: CharachIcon { get { CharachIcon(rawValue: self.iconStr) ?? CharachIcon.arrows  } set { self.iconStr = newValue.rawValue } }
+    var icon: CharachIcon { get { CharachIcon(rawValue: self.iconStr) ?? CharachIcon.arrows } set { self.iconStr = newValue.rawValue } }
     
     public override static func primaryKey() -> String? {
         return "key"
@@ -34,6 +34,13 @@ public class Characteristic: Object, Identifiable {
         self.iconStr = icon.rawValue
         self.key = name.lowercased()
         self.points = 0
+    }
+    
+    convenience init(st: StandardCharach) {
+        self.init()
+        self.key = st.rawValue
+        self.name = st.title
+        self.iconStr = st.icon.rawValue
     }
     
     func setName(_ name: String) {

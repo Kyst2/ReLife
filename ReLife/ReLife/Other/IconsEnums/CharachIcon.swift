@@ -1,9 +1,7 @@
 
 enum CharachIcon: String, RawRepresentable, CaseIterable {
-    case figurC = "figure.cooldown"
-    case figureMind = "figure.mind.and.body"
-    
-    
+    case health = "figure.mind.and.body"
+    case atleticism = "figure.cooldown"
     case books = "books.vertical"
     case graduationCap = "graduationcap.fill"
     case chessBoard = "rectangle.checkered"
@@ -65,4 +63,5 @@ enum CharachIcon: String, RawRepresentable, CaseIterable {
     case sniper = "dot.scope"
     case chart = "chart.bar.xaxis.ascending.badge.clock"
     case chart2 = "chart.line.uptrend.xyaxis"
+    
 }

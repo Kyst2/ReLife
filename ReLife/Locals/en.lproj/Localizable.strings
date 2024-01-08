@@ -72,7 +72,11 @@
 /////////////////////
 //QUESTS
 /////////////////////
-"charach.health" = "Health";
+"charach_health" = "Health";
+"charach_tideness" = "Tideness";
+"charach_althleticism" = "Athleticism";
+"charach_mind" = "Mind";
+
 
 /////////////////////
 //QUESTS
