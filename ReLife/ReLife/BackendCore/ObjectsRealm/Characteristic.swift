@@ -34,6 +34,13 @@ public class Characteristic: Object, Identifiable {
         self.points = 0
     }
     
+    convenience init(st: StandardCharach) {
+        self.init()
+        self.key = st.rawValue
+        self.name = st.title
+        self.icon = st.icon.rawValue
+    }
+    
     func setName(_ name: String) {
         self.key = name
         self.name = name

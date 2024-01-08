@@ -1,23 +1,59 @@
 import Foundation
 
-enum StandardCharach: String {
-    case health
-    case tideness
-    case atleticism
-    case mind
+enum StandardCharach: String, CaseIterable {
+    case health         = "charach_health"
+    case tideness       = "charach_tideness"
+    case atleticism     = "charach_althleticism"
+    case mind           = "charach_mind"
+}
+
+extension StandardCharach {
+    var icon: CharachIcon {
+        switch self {
+        case .health:
+            return .health
+        case .tideness:
+            return .laurelR
+        case .mind:
+            return .brain
+        case .atleticism:
+            return .atleticism
+        }
+    }
+    
+    var title: String {
+        self.rawValue.localized
+    }
 }
 
 enum StandardQuests: String, CaseIterable {
-    case cleanTeeth   = "quest.cleanTeeth"
-    case dantistVisit = "quest.dantistVisit"
-    case cleanApartment = "quest.cleanApartment"
-    case learnSwift   = "quest.learnSwift"
-    case playLearnGuitar   = "quest.learnGuitar"
-    case doPushups   = "quest.sport"
-    case ginecolog = "quest.ginecolog"
-    case ginecologDetailed = "quest.ginecologDetailed"
-    case drinkWater = "quest.drinkWater"
-    case washHair = "quest.washHair"
+    case cleanTeeth                 = "quest.cleanTeeth"
+    case dantistVisit               = "quest.dantistVisit"
+    case cleanApartment             = "quest.cleanApartment"
+    case learnSwift                 = "quest.learnSwift"
+    case playLearnGuitar            = "quest.learnGuitar"
+    case doPushups                  = "quest.sport"
+    case drinkWater                 = "quest.drinkWater"
+    case washHair                   = "quest.washHair"
+    
+    case wGinecolog                 = "quest.ginecolog"
+    case wGinecologDetailed         = "quest.ginecologDetailed"
+    
+    //case mProctolog               = "quest.proctolog"
+    //case mProctologDetailed       = "quest.proctologDetailed"
+    
+    //case abdominalMassage         = "quest.abdominalMassage"
+    //case faceFitness              = "quest.faceFitness"
+    //case eyeFitness               = "quest.eyeFitness"
+    //case callYourParents          = "quest.callYourParents"
+    //case tikTokVideo              = "quest.tikTokVideo"
+    //case goToSleepAtTime          = "quest.goSleep"
+    //case socialMediaLess1hrDay    = "quest.socialMediaLess1hrDay"
+    //case readBook                 = "quest.readBook" //min 50 pages
+    //case checkWeight              = "quest.checkWeight"
+    //case
+    //case
+    //case 
 }
 
 
@@ -41,9 +77,9 @@ extension StandardQuests {
             return .guitars
         case .doPushups:
             return .dumbell
-        case .ginecolog:
+        case .wGinecolog:
             return .stethoscope
-        case .ginecologDetailed:
+        case .wGinecologDetailed:
             return .stethoscope
         case .drinkWater:
             return .waterDrop
@@ -67,9 +103,9 @@ extension StandardQuests {
             return QuestRepeatType.eachWeek(days: [1,3,5])
         case .doPushups:
             return QuestRepeatType.eachWeek(days: [1,3,5])
-        case .ginecolog:
+        case .wGinecolog:
             return QuestRepeatType.repeatEvery(days: 180, startingFrom: Date.now.adding(days: -1) )
-        case .ginecologDetailed:
+        case .wGinecologDetailed:
             return QuestRepeatType.repeatEvery(days: 360 * 3, startingFrom: Date.now.adding(days: -1) )
         case .drinkWater:
             return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
@@ -92,9 +128,9 @@ extension StandardQuests {
             return 1
         case .doPushups:
             return 1
-        case .ginecolog:
+        case .wGinecolog:
             return 1
-        case .ginecologDetailed:
+        case .wGinecologDetailed:
             return 1
         case .drinkWater:
             return 3
@@ -146,12 +182,12 @@ extension StandardQuests {
                 (StandardCharach.health, 100),
                 (StandardCharach.tideness, 100)
             ]
-        case .ginecolog:
+        case .wGinecolog:
             data = [
                 (StandardCharach.health, 100),
                 (StandardCharach.tideness, 100)
             ]
-        case .ginecologDetailed:
+        case .wGinecologDetailed:
             data = [
                 (StandardCharach.health, 100),
                 (StandardCharach.tideness, 100)

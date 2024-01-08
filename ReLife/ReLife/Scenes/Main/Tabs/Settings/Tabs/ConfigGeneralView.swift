@@ -132,6 +132,7 @@ extension ConfigGeneralView {
             .padding(.vertical, 10)
             .padding(.leading, 20)
             .disabled(!enableDangerZone)
+            .id("key.sheet.success".localized) // hack: UI upd on localization change
         }
     }
     
