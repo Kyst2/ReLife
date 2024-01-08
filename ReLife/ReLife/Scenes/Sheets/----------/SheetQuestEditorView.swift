@@ -214,23 +214,3 @@ fileprivate extension TextField {
 }
 
 
-
-
-
-
-
-//move to another place!
-
-
-//struct ChevronUpDown: View {
-//    var body: some View {
-//        Text.sfSymbol("chevron.up.chevron.down")
-//            .foregroundColor(.black)
-//            .background( RoundedRectangle(cornerRadius: 3).padding(.horizontal, -4) )
-//    }
-//}
-
-
-
-
-

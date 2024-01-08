@@ -37,7 +37,10 @@ fileprivate extension ConfigCharacteristicsView {
                 ForEach(characteristics) { char in
                     
                     CharacteristicEdit(name: char.name, icon: char.icon) {
+                        let sheet = AnyView(SheetCharEdit(name: char.name)
+                        )
                         
+                        GlobalDialog.shared.dialog = .view(view: sheet)
                     }.contextMenu{
                         Button {
                             
