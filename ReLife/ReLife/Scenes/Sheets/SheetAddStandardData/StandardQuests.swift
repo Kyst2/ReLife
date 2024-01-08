@@ -27,34 +27,48 @@ extension StandardCharach {
 }
 
 enum StandardQuests: String, CaseIterable {
-    case cleanTeeth                 = "quest.cleanTeeth"
+    //BOTH
+    case cleanTeeth                 = "quest.cleanTeeth"// флос, чистка зубів, чистка язика
     case dantistVisit               = "quest.dantistVisit"
     case cleanApartment             = "quest.cleanApartment"
     case learnSwift                 = "quest.learnSwift"
     case playLearnGuitar            = "quest.learnGuitar"
-    case doPushups                  = "quest.sport"
+    case sport                      = "quest.sport" // на прикладі віджимань
     case drinkWater                 = "quest.drinkWater"
     case washHair                   = "quest.washHair"
-    
-    case wGinecolog                 = "quest.ginecolog"
-    case wGinecologDetailed         = "quest.ginecologDetailed"
-    
-    //case mProctolog               = "quest.proctolog"
-    //case mProctologDetailed       = "quest.proctologDetailed"
-    
     //case abdominalMassage         = "quest.abdominalMassage"
     //case faceFitness              = "quest.faceFitness"
     //case eyeFitness               = "quest.eyeFitness"
     //case callYourParents          = "quest.callYourParents"
     //case tikTokVideo              = "quest.tikTokVideo"
-    //case goToSleepAtTime          = "quest.goSleep"
+    //case goToSleepAtTime          = "quest.goSleep" // вправи для тіла перед сном, способи швидше заснути, поради як легше прокидатися
     //case socialMediaLess1hrDay    = "quest.socialMediaLess1hrDay"
-    //case readBook                 = "quest.readBook" //min 50 pages
+    //case professionalGrowth       = "quest.professionalGrowth" //at least 20 mins a day of reading/watching blogs
     //case checkWeight              = "quest.checkWeight"
-    //case
-    //case
-    //case 
+    //case toxicPeopleCleanup       = "quest.toxicPeopleCleanup" // once a year
+    //case yoga1hr                  = "quest.yoga1hr" // 2 times a week
+    //case steps8000                = "quest.8000steps"
+    //
+    
+    //WOMEN
+    case wGinecolog                 = "quest.ginecolog"
+    case wGinecologDetailed         = "quest.ginecologDetailed"
+    //case wKegel                   = "quest.wKegel"
+    
+    //MAN
+    //case mProctolog               = "quest.proctolog"
+    //case mProctologDetailed       = "quest.proctologDetailed"
+    //case mKegel                   = "quest.mKegel"
 }
+/* ?????
+ * Провітрити кімнату
+ * Вмити обличчя вранці
+ * ранкова зарядка
+ * Вправи на поставу можна додати якщо в деталях описати як їх робити. Або ж зняти відео як їх робити.
+ * Прийом вітамінів? Особливості комбінування вітамінів?
+ * А ще прикольно перед місячними рекомендувати купити продукти які полегшать пережити ці дні - якісь поради що до дісменореї. Покласти подушку і лягти животом на неї зверху може допомагати.
+
+ */
 
 
 
@@ -75,7 +89,7 @@ extension StandardQuests {
             return .book
         case .playLearnGuitar:
             return .guitars
-        case .doPushups:
+        case .sport:
             return .dumbell
         case .wGinecolog:
             return .stethoscope
@@ -101,7 +115,7 @@ extension StandardQuests {
             return QuestRepeatType.repeatEvery(days: 1, startingFrom: Date.now)
         case .playLearnGuitar:
             return QuestRepeatType.eachWeek(days: [1,3,5])
-        case .doPushups:
+        case .sport:
             return QuestRepeatType.eachWeek(days: [1,3,5])
         case .wGinecolog:
             return QuestRepeatType.repeatEvery(days: 180, startingFrom: Date.now.adding(days: -1) )
@@ -126,7 +140,7 @@ extension StandardQuests {
             return 3
         case .playLearnGuitar:
             return 1
-        case .doPushups:
+        case .sport:
             return 1
         case .wGinecolog:
             return 1
@@ -177,7 +191,7 @@ extension StandardQuests {
                 (StandardCharach.health, 100),
                 (StandardCharach.tideness, 100)
             ]
-        case .doPushups:
+        case .sport:
             data = [
                 (StandardCharach.health, 100),
                 (StandardCharach.tideness, 100)
