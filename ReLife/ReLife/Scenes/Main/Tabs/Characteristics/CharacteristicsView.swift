@@ -64,7 +64,7 @@ struct CharacteristicsList: View {
             HStack {
                 VStack {
                     ForEach(charsAndPoints) { wrapper in
-                        Charact(name: wrapper.charac.name, icon: wrapper.charac.icon, points: wrapper.points)
+                        Charact(name: wrapper.charac.name, icon: wrapper.charac.icon.rawValue, points: wrapper.points)
                     }
                 }
                 .frame(maxWidth: 300)

@@ -35,7 +35,6 @@ public class RealmController {
 //        print("REALM: \(r!.configuration.fileURL)")
         self.realm = r!
     }
-   
 }
 
 extension RealmController {
